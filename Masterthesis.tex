@@ -1,0 +1,55 @@
+%\documentclass[12pt]{article}
+\documentclass[BCOR=26.2mm,DIV11,titlepage,a4paper,oneside]{scrbook}
+\usepackage{scrhack}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{subcaption}
+
+%fancyheadings funktioniert nicht mehr mit der KOMA Script Klasse scrbook
+
+\usepackage{wrapfig}
+
+\usepackage[authoryear,round]{natbib}
+
+% Mittels [H] können Bilder genau an einer Stelle positioniert werden
+\usepackage{float}
+\usepackage{hyperref}
+% bewirkt das HyperLinks in der PDF nicht umrandet oder farbig sind
+\hypersetup{colorlinks=false}
+
+%Paket zur Erzeugung von Anführungszeichen durch \enquote{Text}
+\usepackage[ngerman]{babel}
+\usepackage[babel, german=quotes]{csquotes}
+
+%Verhindern, dass eine neue Seite für ein einzelnes Wort/Zeile verwendet wird
+\clubpenalty = 10000 % schliesst Schusterjungen aus 
+\widowpenalty = 10000 % schliesst Hurenkinder aus (keine Beleidigung, sondern wirklich ein Fachbegriff)
+
+\begin{document}
+
+\input{./chapter/titelseite}
+
+\tableofcontents
+\setcounter{page}{1}
+\newpage
+
+\input{./chapter/abstract}
+\newpage
+\input{./chapter/einleitung}
+\newpage
+\input{./chapter/kapitel1}
+\newpage
+\input{./chapter/kapitel2}
+\newpage
+\input{./chapter/fazit}
+
+
+\newpage
+\include{./chapter/verzeichnisse}
+\include{./chapter/eid}
+
+\end{document}
