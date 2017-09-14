@@ -1,11 +1,11 @@
-\select@language {ngerman}
+\select@language {english}
 \contentsline {chapter}{\numberline {1}Einleitung}{4}{chapter.1}
 \contentsline {chapter}{\numberline {2}Description of problem}{5}{chapter.2}
 \contentsline {chapter}{\numberline {3}Description of hand in digital space}{6}{chapter.3}
-\contentsline {subsection}{\numberline {3.0.1}History}{6}{subsection.3.0.1}
-\contentsline {subsection}{\numberline {3.0.2}Physiological structure of the human hand}{6}{subsection.3.0.2}
-\contentsline {subsection}{\numberline {3.0.3}Digital hand models}{6}{subsection.3.0.3}
-\contentsline {chapter}{\numberline {4}Fazit}{7}{chapter.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{8}{chapter*.5}
-\contentsline {chapter}{Tabellenverzeichnis}{9}{chapter*.6}
-\contentsline {chapter}{Literaturverzeichnis}{10}{chapter*.6}
+\contentsline {section}{\numberline {3.1}Physiological structure of the human hand}{6}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Constraints in Hand Motion}{8}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Digital hand models}{9}{section.3.2}
+\contentsline {chapter}{\numberline {4}Fazit}{10}{chapter.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{11}{chapter*.7}
+\contentsline {chapter}{Tabellenverzeichnis}{12}{chapter*.8}
+\contentsline {chapter}{Literaturverzeichnis}{13}{chapter*.9}
