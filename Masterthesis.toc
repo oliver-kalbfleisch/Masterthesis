@@ -3,9 +3,12 @@
 \contentsline {chapter}{\numberline {2}Description of problem}{5}{chapter.2}
 \contentsline {chapter}{\numberline {3}Description of hand in digital space}{6}{chapter.3}
 \contentsline {section}{\numberline {3.1}Physiological structure of the human hand}{6}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Constraints in Hand Motion}{8}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Digital hand models}{9}{section.3.2}
-\contentsline {chapter}{\numberline {4}Fazit}{10}{chapter.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{11}{chapter*.7}
-\contentsline {chapter}{Tabellenverzeichnis}{12}{chapter*.8}
-\contentsline {chapter}{Literaturverzeichnis}{13}{chapter*.9}
+\contentsline {subsection}{\numberline {3.1.1}Constraints in Hand Motion}{7}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Kinematics}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Forward Kinematics}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Inverse Kinematics}{10}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Digital hand models}{10}{section.3.3}
+\contentsline {chapter}{\numberline {4}Fazit}{11}{chapter.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{12}{chapter*.8}
+\contentsline {chapter}{Tabellenverzeichnis}{13}{chapter*.9}
+\contentsline {chapter}{Literaturverzeichnis}{14}{chapter*.10}

@@ -26,7 +26,7 @@ Not all of the joints in the human hand have equak degrees of freedom. Their fun
 \end{figure}
 When looking at the DOFs diplayed in Figure \ref{dof_image}, each finger (II-V) sums up to 4 DOFs and the thumb to 5 DOFs. Also considering 6 DOFs for the rotation and position of the whole and itsself, the result gets us to 27 DOFs  for the human hand.
 \subsection{Constraints in Hand Motion}
-A full usage of all the declared DOFs would lead to al large amount of possible combination. Since the hand is not only made up of bones but alsomMuscles and the skin, we can impose some constraints to the movement of the joints. Ling, Wu and Huang[\cite{LIN.2000}] propsed following classification for the constrainsts:
+A full usage of all the declared DOFs would lead to al large amount of possible combination. Since the hand is not only made up of bones but also Muscles and the skin, we can impose some constraints( \cite{Badler.1987}) to the movement of the joints. Ling, Wu and Huang(\cite{LIN.2000}) propsed following classification for the constrainsts:
 \begin{itemize}
 \item \textbf{Type I constraints}\\
 	-A constraint that limits the range of finger motions based on hand anatomy
@@ -48,7 +48,7 @@ The following inequalities can be used to describe these constraints:\\
 -15°\leq \Theta _{MP\_abduct/adduct} \leq 15°
 \end{split}
 \end{equation}
-A further constraint thath is specific to the middle finger is, that this finger normally does not abduct and adduct much. Therefore we can infer an approximation and thereby remove 1DOF from the model:
+A further constraint that is specific to the middle finger is, that this fingers MP normally does not abduct and adduct much. Therefore we can infer an approximation and thereby remove 1DOF from the model:
 \begin{equation}
 \Theta _{MP\_abduct/adduct}=0°
 \end{equation}
@@ -58,11 +58,29 @@ The same behavior can be seen in the combination of hand parts labeled W(the con
 \end{equation}
 Since the DIP,PIP and MP jonts of our index, middle, ring, and little fingers only have 1DOF for flexion, we can further asume that their motion is limited to movement in one plane. \\
 \textbf{Type II}\\
-\\The \textbf{Type II} constraints can be split into interfinger and intrafinger constraints. Regarding intrafinger constraints between the joints of the same finger, human hand anatomy implies that to bend the DIP joints  on  either the index, middle, ring or little fingers,the corresponding PIP joints of thath finger must also be bent. The approximation for this relation can be described as :
+\\The \textbf{Type II} constraints can be split into interfinger and intrafinger constraints. Regarding intrafinger constraints between the joints of the same finger, human hand anatomy implies that to bend the DIP joints  on  either the index, middle, ring or little fingers,the corresponding PIP joints of thath finger must also be bent. The approximation for this relation[\cite{Rijpkema.1991}] can be described as :
 
 \begin{equation}
 \Theta _{DIP} =\frac{2}{3}\Theta _{PIP}
 \end{equation}
 Interfinger constraints can be imposed between joints of adjacent fingers. Interfinger constraints describe that the bending of an MP joint in the index finger forces the MP joint in the middle finger to bend as well.\\
  When combinig the constraints described in the above equations, the starting number 21 DOF's of the human hand can be reduced to 15. Inequalities for these cases, obtained through empiric studies, can be found in \citep{LEE.1995}.\\
+\section{Kinematics}
+ The preceeding sections gave an overview of how we can describe a model of the human hand and introduced some limiting constraints. With the model and the constraints, we can now start to build a kinematic system for the animation of the model.\\
+Kinematic systems contain so called \textit{kinematic chains}, which consist of a \textit{starting point}or \textit{root}, kinematic elements like \textit{joints}, \textit{links} and an \textit{endpoint}, also called \textit{end effector}. Applied to the human hand, the whole hand model represents the kinematic system. This system contains several \textit{kinematic chains}, namely the fingers of the hand with the fingertips beeing the \textit{end effectors} of each of these chains.\\
+As we begin to move our hands, the states of the kinemtic chains begin to change. Joint angles and end effector positions are modified until the end position is reached. To represent the new position and agnle dataset of our physical hand with our kinematic system, two major paths for achieving a solution can be taken.
+ \subsection{Forward Kinematics}Forward
+ \label{Forward Kinematics}  Kinmatics (FK) uses the knowledge of the new angles and positions after the application of known transformations to the kinematic chain. The data of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is then used to solve the problem of finding the \textit{end effector's} position. The advantage of an FK solution is that there is always an unique solution to the problem. In consequence, this approach is commonly used in the field of robotics, where the information on the chain elements is easily available.\\
+The tracking of the human hand and all if its chain components is rather complicated.Therefore a solution which takes a known position of the \textit{end effektor} and calculates the parameters for the rest of the cain would be more desireable.
+ \subsection{Inverse Kinematics}
+\begin{quote}Inverse Kinematics (IK) is a method for computing the posture via estimating each individual degree of freedom in order to satisfy a given task~\cite[S.~14]{AndreasAristidouandJoanLasenby.}\end{quote}
+The concept of \textit{Inverse Kinematics}  (IK)already describes it's principle in it's name. It take the reversed approach in comparison to the FK principle in chapter \ref{Forward Kinematics}. Instead of knowing the states of the chain elements and calculating the resulting position of the \textit{end effector}, we take the position of the \textit{end effector} and try to retrieve the possible states of the other chain elements. In contrary to having a unique solution with the FK approach, the IK approach can end at the point of not finding a suitable solution. Figure \ref{IkSolutions} diplays three possible outcomes for the IK approach.
+\begin{figure}[H]
+\includegraphics[scale=0.6]{images/Ik_figure.jpg}
+\caption{Possible solution for an IK problem of a human finger:\\(a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.}
+\label{IkSolutions}
+\end{figure}
+
+
 \section{Digital hand models}
+
