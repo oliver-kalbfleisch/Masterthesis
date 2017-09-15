@@ -1,4 +1,6 @@
 %!TEX root = ../MAsterthesis.tex
+
+
 \chapter{Description of hand in digital space}
 Tracking of the human hand has always been a challenging Problem. In comaprison to other larger bodyparts like the Arm or the head, the human hand itself contains a large variety of smaller parts, namely bones and muscles. These components have to be taken into acount when trying to replicate the natural motion of the hand in digital space.\\
 \section{Physiological structure of the human hand}
@@ -8,9 +10,9 @@ Tracking of the human hand has always been a challenging Problem. In comaprison 
 	\label{Handstructure} 
 	\caption{Bone structure of the human left hand (\cite{LEE.1995})}
 \end{figure}
-All of the hand components are connected to at least one neighboring component via a joint. Teh joints affect the position of the connected components. To describe the movement of the hand components, we can use the roation angles of the joints to correlate to a specific position.
+All of the hand components are connected to at least one neighboring component via a joint. Teh joints affect the position of the connected components. To describe the movement of the hand components, we can use the roation angles of the joints to correlate to a specific position.\\
 To do so, we define a local coordinate system for each of the exiting hand joints. By doing so, we achieve a sequence of rotaions in the local coordinate systems of the joints. Such a sequence can then be used to describe a specific movement and/or position of a component.
-Not all of the joints in the human hand have equak degrees of freedom. Their functionality can be classified in the amount of DOFs (Degrees of freedom)\cite{KOREIN.1985}
+Not all of the joints in the human hand have equal degrees of freedom. Their functionality can be classified in the amount of DOFs (Degrees of freedom)\cite{KOREIN.1985}
 \begin{itemize}
 \item 1 DOF \\
 	- A joint movement that can perfom a \textbf{flexion} or \textbf{twist} in one direction
@@ -36,10 +38,10 @@ A full usage of all the declared DOFs would lead to al large amount of possible 
 	-A constraint that limits position based on natural hand motions
 \end{itemize} 
 The \textbf{Type I} and \textbf{Type II} constarints rely on the physiological and mechanical properties of the humand.\textbf{Type III} constraints are results of common and natural
-movements and can be differing form person to person. As these movements are to some degree simular for everyone, a broad grouping can be applied. The curling of the fingers at the sane time when forming a fist is way more natural than curling each finger by itsself. Here the motion of the hand is quite simular between different persons, but the constraints cannot be described in a mathematical form. 
+movements and can be differing form person to person. As these movements are to some degree simular for everyone, a broad grouping can be applied. The curling of the fingers at the sane time when forming a fist is way more natural than curling each finger by itsself. Here the motion of the hand is quite simular between different persons, but the constraints cannot be described in a mathematical form. \\
  A \textbf{Type I} constraint example would be that the position of the fingertip is kimited by the length of the other finger segments and therby can only reach as far as the combined length.\\An example for \textbf{Type II} constraints would be that, for your fingertip to touch your hand palm, all joints in the finger have to be bend to achieve this position.
 The following inequalities can be used to describe these constraints:\\
-\\\textbf{Type I}
+\textbf{Type I}
 \begin{equation}
 \begin{split}
 0°\leq \Theta _{MP\_flex} \leq 90°\\
@@ -58,7 +60,7 @@ The same behavior can be seen in the combination of hand parts labeled W(the con
 \end{equation}
 Since the DIP,PIP and MP jonts of our index, middle, ring, and little fingers only have 1DOF for flexion, we can further asume that their motion is limited to movement in one plane. \\
 \textbf{Type II}\\
-\\The \textbf{Type II} constraints can be split into interfinger and intrafinger constraints. Regarding intrafinger constraints between the joints of the same finger, human hand anatomy implies that to bend the DIP joints  on  either the index, middle, ring or little fingers,the corresponding PIP joints of thath finger must also be bent. The approximation for this relation[\cite{Rijpkema.1991}] can be described as :
+The \textbf{Type II} constraints can be split into interfinger and intrafinger constraints. Regarding intrafinger constraints between the joints of the same finger, human hand anatomy implies that to bend the DIP joints  on  either the index, middle, ring or little fingers,the corresponding PIP joints of thath finger must also be bent. The approximation for this relation[\cite{Rijpkema.1991}] can be described as :
 
 \begin{equation}
 \Theta _{DIP} =\frac{2}{3}\Theta _{PIP}
@@ -83,4 +85,3 @@ The concept of \textit{Inverse Kinematics}  (IK)already describes it's principle
 
 
 \section{Digital hand models}
-

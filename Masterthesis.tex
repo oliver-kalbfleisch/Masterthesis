@@ -1,5 +1,5 @@
 %\documentclass[12pt]{article}
-\documentclass[BCOR=26.2mm,DIV11,titlepage,a4paper,oneside]{scrbook}
+\documentclass[12pt,titlepage,a4paper,oneside]{scrbook}
 \usepackage{scrhack}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -8,6 +8,14 @@
 \usepackage{caption}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{subcaption}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=26.2mm,
+ right=32.8mm,
+ top=20mm,
+ bottom=24mm
+ }
 \renewcommand{\familydefault}{\sfdefault}
 
 %fancyheadings funktioniert nicht mehr mit der KOMA Script Klasse scrbook
@@ -29,11 +37,16 @@
 %Verhindern, dass eine neue Seite für ein einzelnes Wort/Zeile verwendet wird
 \clubpenalty = 10000 % schliesst Schusterjungen aus 
 \widowpenalty = 10000 % schliesst Hurenkinder aus (keine Beleidigung, sondern wirklich ein Fachbegriff)
+\linespread{1.25}
+\setlength{\parindent}{0pt}
+\setkomafont{chapter}{\normalfont\bfseries\fontsize{20}{15.5}\selectfont\scshape}
+\setkomafont{section}{\normalfont\bfseries\fontsize{15}{15.5}\selectfont}
+\setkomafont{subsection}{\normalfont\slshape\fontsize{12}{15.5}\selectfont}
+\DeclareCaptionFont{xipt}{\fontsize{7.5}{13}\mdseries}
+\usepackage[font=xipt,labelfont=bf]{caption}
 
 \begin{document}
-
 \input{./chapter/titelseite}
-
 \tableofcontents
 \setcounter{page}{1}
 \newpage
@@ -52,5 +65,4 @@
 \newpage
 \include{./chapter/verzeichnisse}
 \include{./chapter/eid}
-
 \end{document}
