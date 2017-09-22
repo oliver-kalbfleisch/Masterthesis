@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  22 SEP 2017 14:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  22 SEP 2017 16:13
 entering extended mode
 **MAsterthesis.tex
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.tex
@@ -1071,30 +1071,29 @@ File: images/Ik_figure.jpg Graphic file (type jpg)
 Package pdftex.def Info: images/Ik_figure.jpg used on input line 107.
 (pdftex.def)             Requested size: 277.63939pt x 178.86963pt.
  [10]
-<images/FabrikIteration.jpg, id=182, 402.00188pt x 666.23906pt>
+<images/FabrikIteration.jpg, id=184, 402.00188pt x 666.23906pt>
 File: images/FabrikIteration.jpg Graphic file (type jpg)
 
 <use images/FabrikIteration.jpg>
-Package pdftex.def Info: images/FabrikIteration.jpg used on input line 118.
+Package pdftex.def Info: images/FabrikIteration.jpg used on input line 132.
 (pdftex.def)             Requested size: 245.22078pt x 406.40523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--121
+Underfull \hbox (badness 10000) in paragraph at lines 129--135
 
  []
 
-
-Underfull \hbox (badness 1097) in paragraph at lines 121--126
+[11 <G:/Dropbox/Dropbox/Masterarbeit/git/images/Ik_figure.jpg>]
+Underfull \hbox (badness 1097) in paragraph at lines 135--140
 []\OT1/cmss/m/n/12 The \OT1/cmss/bx/n/12 FAB-RIK \OT1/cmss/m/n/12 al-go-rithm d
 oes
  []
 
 
-Underfull \hbox (badness 4660) in paragraph at lines 121--126
+Underfull \hbox (badness 4660) in paragraph at lines 135--140
 \OT1/cmss/m/n/12 whether the in-tended tar-get
  []
 
-[11 <G:/Dropbox/Dropbox/Masterarbeit/git/images/Ik_figure.jpg> <G:/Dropbox/Drop
-box/Masterarbeit/git/images/FabrikIteration.jpg>] [12]) [13]
+[12 <G:/Dropbox/Dropbox/Masterarbeit/git/images/FabrikIteration.jpg>]) [13]
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\fazit.tex
 Chapter 4.
 ) [14
@@ -1149,10 +1148,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 69.
  ) 
 Here is how much of TeX's memory you used:
- 20765 strings out of 493921
- 382488 string characters out of 3144873
- 503082 words of memory out of 3000000
- 23599 multiletter control sequences out of 15000+200000
+ 20773 strings out of 493921
+ 382625 string characters out of 3144873
+ 503213 words of memory out of 3000000
+ 23604 multiletter control sequences out of 15000+200000
  13676 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  73i,19n,77p,617b,601s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1176,9 +1175,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files (x86)/MiKTeX
 onts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb>
-Output written on MAsterthesis.pdf (20 pages, 414799 bytes).
+Output written on MAsterthesis.pdf (20 pages, 418740 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
+ 335 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
  150 words of extra memory for PDF output out of 10000 (max. 10000000)
 

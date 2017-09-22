@@ -110,6 +110,20 @@ In contrary to having a unique solution with the FK approach, the IK approach ca
 \end{figure}
 \subsubsection{Nonlinear Programming}
 \subsubsection{Jacobian Inverse}
+One common approach to solve the Ik problem is the utilization of a Jacobian Matrix. This matrix contains the partial derivates of the chain systems relative to the end effector \textbf{s}. When using the Jacobian, a linear approximation  of the IK problem will be the resulting operation. The approximation's components model the end effector's realtive movement to changes in transitions of the systems link translations and joint angles. Therefoe, the resulting function is dependant on the joint angles $\pmb{\theta}$ values and can be defined as
+\begin{equation}
+\label{Jacobian definition}
+J(\pmb{\theta})_{ij}=\left(\frac{\partial\textbf{s}_{i}}{\partial\theta_{j}}\right)_{ij}
+\end{equation}
+with \textit{i}=1,...,k and \textit{j}= 1,...,n.
+Further readings on methods for the calculation of Jacobian matrices can be found in \cite{Orin.1984}. Based on definition \ref{Jacobian definition}), an entry for the j-th rotational joint would be calculated as follows:
+\begin{equation}
+\label{Jacobian entry calc}
+\frac{\partial \textbf{s}_{i}}{\partial \theta_{j}}= \textbf{v}_{j}\times(\textbf{s}_{i}-\textbf{p}_{j})
+\end{equation}
+where $\textbf{p}_{j}$ is the position of the joint, and $\textbf{v}_{j}$ is the unit vector pointing along the current axis of rotation for the joint.
+
+
 \subsection{FABRIK Algorithm}
 
  A more recent approach in the kinematics field is the \textbf{FABRIK} algorithm proposed by Aristidou
@@ -127,7 +141,7 @@ But before calculations can begin, the algorithm has to check whether the intend
  dist_{t,d_{1}}< \sum_{k=1}^{i}{d_{i}}
 \end{equation}\\The inverse calculation step is the first step, which is diplayed in \textbf{(b)} and \textbf{(c)}.The calculation is started at the end effector, moving to the root of the chain. 
 If the summed distance is greater, then the \textbf{t} is within the reach of the system and the calculation can continue, otherwise the calculation has to be aborted and the error has to be manged otherwise.
-Assuming this requirement to be met, we can now begin with the first calculation. Therefore we assume that the new position $\textbf{p}_{n}^{'}$ is equal to \textbf{t}.
+Assuming this requirement to be met, we can now begin with the first calculation. Therefore we assume that the new position $\textbf{p}_{n}^{'}$ with n=4,...,1 is equal to \textbf{t}.
 \begin{equation}
  \textbf{p}_{n}^{'}=\textbf{t}
 \end{equation}\\
@@ -141,7 +155,7 @@ B&=\textbf{p}_{n-1}\\
 \end{equation}
 The resultng position of the new $\textbf{p}_{n-1}^{'}$ point is located in this line with the distance of $\textbf{d}_{n-1}$ from $\textbf{p}_{n}^{'}$ (see \textbf{(c)}).
 \begin{equation}
-\textbf{p}_{n-1}^{'}= \textbf{p}_{n}^{'}+ (\overline{AB}\cdot\textbf{d}_{n-1}) TODO correct
+\textbf{p}_{n-1}^{'}= \textbf{p}_{n}^{'}+ \left(\frac{\overline{AB}}{|\overline{AB}|}\cdot\textbf{d}_{n-1}\right)
 \end{equation}
 Consecutively, this is done with the remaining joints until the root joint is reached(see \textbf{(d)}).
 This finishes the first halv of the iteration step.With the calculated positions, we now perform a forard calculation, starting from the root until we reach the end effector. Since the root of the system normally does not move from it's initial position, we have to reset the root jont to this value before starting to calculate the new positions of the subsequent joints(see\textbf{(e)}).
