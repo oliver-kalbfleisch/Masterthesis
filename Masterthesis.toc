@@ -7,9 +7,11 @@
 \contentsline {section}{\numberline {3.2}Kinematics}{9}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Forward Kinematics}{9}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Inverse Kinematics}{10}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}FABRIK Algorithm}{10}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Digital hand models}{12}{section.3.3}
-\contentsline {chapter}{\numberline {4}Fazit}{13}{chapter.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{14}{chapter*.9}
-\contentsline {chapter}{Tabellenverzeichnis}{15}{chapter*.10}
-\contentsline {chapter}{Literaturverzeichnis}{16}{chapter*.11}
+\contentsline {subsubsection}{\nonumberline Nonlinear Programming}{11}{section*.8}
+\contentsline {subsubsection}{\nonumberline Jacobian Inverse}{11}{section*.9}
+\contentsline {subsection}{\numberline {3.2.3}FABRIK Algorithm}{11}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Digital hand models}{13}{section.3.3}
+\contentsline {chapter}{\numberline {4}Fazit}{14}{chapter.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{15}{chapter*.11}
+\contentsline {chapter}{Tabellenverzeichnis}{16}{chapter*.12}
+\contentsline {chapter}{Literaturverzeichnis}{17}{chapter*.13}

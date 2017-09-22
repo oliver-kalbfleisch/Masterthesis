@@ -45,10 +45,10 @@ The following inequalities can be used to describe these constraints:\\
 \textbf{Type I:}
 \begin{equation}
 \begin{split}
-0°\leq \Theta _{MP\_flex} \leq 90°\\
-0°\leq \Theta _{PIP\_flex} \leq 110°\\
-0°\leq \Theta _{DIP\_flex} \leq 90°\\
--15°\leq \Theta _{MP\_abduct/adduct} \leq 15°
+0°&\leq \Theta _{MP\_flex} \leq 90°\\
+0°&\leq \Theta _{PIP\_flex} \leq 110°\\
+0°&\leq \Theta _{DIP\_flex} \leq 90°\\
+-15°&\leq \Theta _{MP\_abduct/adduct} \leq 15°
 \end{split}
 \end{equation}
 A further constraint that is specific to the middle finger is, that this fingers MP normally does not abduct and adduct much. Therefore we can infer an approximation and thereby remove 1DOF from the model:
@@ -73,26 +73,54 @@ Interfinger constraints can be imposed between joints of adjacent fingers. Inter
 Kinematic systems contain so called \textit{kinematic chains}, which consist of a \textit{starting point}or \textit{root}, kinematic elements like \textit{joints}, \textit{links} and an \textit{endpoint}, also called \textit{end effector}. Applied to the human hand, the whole hand model represents the kinematic system. This system contains several \textit{kinematic chains}, namely the fingers of the hand with the fingertips beeing the \textit{end effectors} of each of these chains.\\
 As we begin to move our hands, the states of the kinemtic chains begin to change. Joint angles and end effector positions are modified until the end position is reached. To represent the new position and agnle dataset of our physical hand with our kinematic system, two major paths for achieving a solution can be taken.
  \subsection{Forward Kinematics}Forward
- \label{Forward Kinematics}  Kinmatics (FK) uses the knowledge of the new angles and positions after the application of known transformations to the kinematic chain. The data of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is then used to solve the problem of finding the \textit{end effector's} position. The advantage of an FK solution is that there is always an unique solution to the problem. In consequence, this approach is commonly used in the field of robotics, where the information on the chain elements is easily available.\\
-The tracking of the human hand and all if its chain components is rather complicated.Therefore a solution which takes a known position of the \textit{end effektor} and calculates the parameters for the rest of the cain would be more desireable.
+ \label{Forward Kinematics}  Kinmatics (FK) uses the knowledge of the new angles and positions after the application of known transformations to the kinematic chain. The data of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is then used to solve the problem of finding the \textit{end effector's} position.\\
+We can denote the exisiting end effectors relative postion to an origin as $ s_{1},...,s_{k}$. The $s_{i}$ positon is the result of th combination of all the joint angles in the corresponding kinemtaic chain. Respectively, we define the target positon of the end effectors as $t_{1},...,t_{i}$, with $t_{i}$ beeing the target positiojn for the end effector $s_{i}$. The required positional change for the end effector can now be described as $e_{i}=t_{i}-s_{i}$. In systems with more than one end effector, like our hand system, the components can be written as vectors.
+\begin{equation}
+\begin{split}
+\vec{\textbf{s}}&=(\textbf{s}_{1},...,\textbf{s}_{n})^{T}\\
+\vec{\textbf{t}}&=(\textbf{t}_{1},...,\textbf{t}_{n})^{T}\\
+\vec{\textbf{e}}&= \vec{\textbf{t}}-\vec{\textbf{s}}
+\end{split}
+\end{equation}
+As the vector components of $\vec{\textbf{s}}$ are reults of the chain joint angles $\theta_{1},...,\theta_{n}$ and therefore are effected by them, we define 
+\begin{equation}
+\label{forward kinematic solution}
+\begin{split}
+\vec{\textbf{s}_{i}}&=f_{i}(\pmb{\theta})\\
+\vec{\textbf{s}}&=f(\pmb{\theta})\\
+\end{split}
+\end{equation}
+with $\pmb{\theta}$ beeing the column vector $\pmb{\theta}=(\theta_{1},...,\theta_{n})^{T}$.The second vector equation displayed in (\ref{forward kinematic solution}) is also callled the \textit{Forward Kinematics}(FK) solution.\\
+The advantage of an FK solution is that there is always an unique solution to the problem. In consequence, this approach is commonly used in the field of robotics, where the information on the chain elements is easily available.\\
+The tracking of the human hand and all if its chain components is rather complicated.Therefore a solution which takes a known position of the \textit{end effektor} and calculates the parameters for the rest of the cain would be more desireable.\\
+
  \subsection{Inverse Kinematics}
  \label{inverse kinematics}
 \begin{quote}Inverse Kinematics (IK) is a method for computing the posture via estimating each individual degree of freedom in order to satisfy a given task~\cite[S.~14]{AndreasAristidouandJoanLasenby.}\end{quote}
-The concept of \textit{Inverse Kinematics}  (IK)already describes it's principle in it's name. It take the reversed approach in comparison to the FK principle in chapter \ref{Forward Kinematics}. Instead of knowing the states of the chain elements and calculating the resulting position of the \textit{end effector}, we take the position of the \textit{end effector} and try to retrieve the possible states of the other chain elements. In contrary to having a unique solution with the FK approach, the IK approach can end at the point of not finding a suitable solution. Figure \ref{IkSolutions} diplays three possible outcomes for the IK approach.
+The concept of \textit{Inverse Kinematics}  (IK)already describes it's principle in it's name. It take the reversed approach in comparison to the FK principle in chapter \ref{Forward Kinematics}. Instead of knowing the states of the chain elements and calculating the resulting position of the \textit{end effector}, we take the position of the \textit{end effector} and try to retrieve the possible states of the other chain elements. 
+\begin{equation}
+\pmb{\theta}=f^{-1}(\vec{\textbf{s}_{d}})
+\end{equation}
+The reult of this equation is the vector $\pmb{\theta}$ for which the values of $\vec{\textbf{s}}$ coincide to the desired configuration $\vec{\textbf{s}_{d}}$. In the case of an optimal result, this configuration would have the same position values as the target positions.\\ The main problem with this method occurs in the calulaton of the $f^{-1}$ function, due to it beeing a highly non linear operator which is not easily invertible.Some of the approaches that are used to counter this problem will be displayed later on in this chapter.\\
+In contrary to having a unique solution with the FK approach, the IK approach can end at the point of not finding a suitable solution. Figure \ref{IkSolutions} diplays three possible outcomes for the IK approach.
 \begin{figure}[H]
 \includegraphics[scale=0.6]{images/Ik_figure.jpg}
 \caption{Possible solution for an IK problem of a human finger:\\(a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.}
 \label{IkSolutions}
 \end{figure}
+\subsubsection{Nonlinear Programming}
+\subsubsection{Jacobian Inverse}
 \subsection{FABRIK Algorithm}
-A more recent approach in the kinematics field is the \textbf{FABRIK} Aagorithm proposed by Aristidou
- and Lasenby\cite{Aristidou.2011}.As shown in section \ref{inverse kinematics}, these approaches all depend on computational intensive matrix operation like calculating an inverse and may have problems with matrix singularity.\\ The \textbf{FABRIK} doesn not depend on these matrix operations as is solves for the position of a point on a line to retrieve the new joint positions. This is done in an forward and also inverse solving approach, itterating these steps until the calculated position converges towards the target position from the tracking data.\\
- Figure \ref{Fabrik_Iteration} illustrates the steps that are contained in one iteration step.
- \begin{wrapfigure}{l}{0.61\textwidth}
-\includegraphics[scale=0.7]{images/FabrikIteration.jpg}
+
+ A more recent approach in the kinematics field is the \textbf{FABRIK} algorithm proposed by Aristidou
+ and Lasenby\cite{Aristidou.2011}.As shown in section \ref{inverse kinematics}, these approaches all depend on computational intensive matrix operation like calculating an inverse and may have problems with matrix singularity.\\
+\begin{wrapfigure}{r}{0.61\textwidth}
+\includegraphics[scale=0.61]{images/FabrikIteration.jpg}
 \caption{Forward and backward calculation steps for one iteration of the \textbf{FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite{Aristidou.2011} }
 \label{Fabrik_Iteration}
 \end{wrapfigure}
+The \textbf{FABRIK} algorithm does not depend on these matrix operations as is solves for the position of a point on a line to retrieve the new joint positions. This is done in an forward and also inverse solving approach, itterating these steps until the calculated position converges towards the target position from the tracking data.\\
+Figure \ref{Fabrik_Iteration} illustrates the steps that are contained in one iteration step.
 The chain joints are denoted as $\textbf{p}_{\textit{i}}$ with the distance $\textbf{d}_{i}$ being $|\textbf{p}_{\textit{i+1}}-\textbf{p}_{\textit{i}}|$. The target point for the end effector is denoted as \textbf{t}. Step \textbf{(a)} displays the starting pont of the iteration. The joint positions are taken from either a previous iteration or from an initial calibration. \\
 But before calculations can begin, the algorithm has to check whether the intended target point \textbf{t} is reachable for the end effector. This is done by measuring the distance between the root of the kinamtic chain and the target point \textbf{t}. This value is then compared with the sum of the distances $\textbf{d}_{i}$.
 \begin{equation}
@@ -106,14 +134,14 @@ Assuming this requirement to be met, we can now begin with the first calculation
 From this new point, we can construct a line that goes through $\textbf{p}_{n}^{'}$ and $\textbf{p}_{n-1}$.
 \begin{equation}
 \begin{split}
-A=\textbf{p}_{n}^{'}\\
-B=\textbf{p}_{n-1}\\
-\textbf{l}_{n-1}=\overline{AB}\\
+A&=\textbf{p}_{n}^{'}\\
+B&=\textbf{p}_{n-1}\\
+\textbf{l}_{n-1}&=\overline{AB}\\
 \end{split}
 \end{equation}
 The resultng position of the new $\textbf{p}_{n-1}^{'}$ point is located in this line with the distance of $\textbf{d}_{n-1}$ from $\textbf{p}_{n}^{'}$ (see \textbf{(c)}).
 \begin{equation}
-\textbf{p}_{n-1}^{'}= \textbf{p}_{n}^{'}+ (\overline{AB}\cdot\textbf{d}_{n-1})
+\textbf{p}_{n-1}^{'}= \textbf{p}_{n}^{'}+ (\overline{AB}\cdot\textbf{d}_{n-1}) TODO correct
 \end{equation}
 Consecutively, this is done with the remaining joints until the root joint is reached(see \textbf{(d)}).
 This finishes the first halv of the iteration step.With the calculated positions, we now perform a forard calculation, starting from the root until we reach the end effector. Since the root of the system normally does not move from it's initial position, we have to reset the root jont to this value before starting to calculate the new positions of the subsequent joints(see\textbf{(e)}).
