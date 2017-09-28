@@ -76,6 +76,7 @@ As we begin to move our hands, the states of the kinemtic chains begin to change
  \label{Forward Kinematics}  Kinmatics (FK) uses the knowledge of the new angles and positions after the application of known transformations to the kinematic chain. The data of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is then used to solve the problem of finding the \textit{end effector's} position.\\
 We can denote the exisiting end effectors relative postion to an origin as $ s_{1},...,s_{k}$. The $s_{i}$ positon is the result of th combination of all the joint angles in the corresponding kinemtaic chain. Respectively, we define the target positon of the end effectors as $t_{1},...,t_{i}$, with $t_{i}$ beeing the target positiojn for the end effector $s_{i}$. The required positional change for the end effector can now be described as $e_{i}=t_{i}-s_{i}$. In systems with more than one end effector, like our hand system, the components can be written as vectors.
 \begin{equation}
+\label{fk components}
 \begin{split}
 \vec{\textbf{s}}&=(\textbf{s}_{1},...,\textbf{s}_{n})^{T}\\
 \vec{\textbf{t}}&=(\textbf{t}_{1},...,\textbf{t}_{n})^{T}\\
@@ -91,18 +92,19 @@ As the vector components of $\vec{\textbf{s}}$ are reults of the chain joint ang
 \end{split}
 \end{equation}
 with $\pmb{\theta}$ beeing the column vector $\pmb{\theta}=(\theta_{1},...,\theta_{n})^{T}$.The second vector equation displayed in (\ref{forward kinematic solution}) is also callled the \textit{Forward Kinematics}(FK) solution.\\
-The advantage of an FK solution is that there is always an unique solution to the problem. In consequence, this approach is commonly used in the field of robotics, where the information on the chain elements is easily available.\\
+\\The advantage of an FK solution is that there is always an unique solution to the problem. In consequence, this approach is commonly used in the field of robotics, where the information on the chain elements is easily available.\\
 The tracking of the human hand and all if its chain components is rather complicated.Therefore a solution which takes a known position of the \textit{end effektor} and calculates the parameters for the rest of the cain would be more desireable.\\
 
  \subsection{Inverse Kinematics}
  \label{inverse kinematics}
 \begin{quote}Inverse Kinematics (IK) is a method for computing the posture via estimating each individual degree of freedom in order to satisfy a given task~\cite[S.~14]{AndreasAristidouandJoanLasenby.}\end{quote}
-The concept of \textit{Inverse Kinematics}  (IK)already describes it's principle in it's name. It take the reversed approach in comparison to the FK principle in chapter \ref{Forward Kinematics}. Instead of knowing the states of the chain elements and calculating the resulting position of the \textit{end effector}, we take the position of the \textit{end effector} and try to retrieve the possible states of the other chain elements. 
+The concept of \textit{Inverse Kinematics}  (IK) already describes it's principle in it's name. It takes the reversed approach in comparison to the FK principle in chapter \ref{Forward Kinematics}. Instead of knowing the states of the chain elements and calculating the resulting position of the \textit{end effector}, we take the position of the \textit{end effector} and try to retrieve the possible states of the other chain elements. 
 \begin{equation}
+\label{ik problem formula}
 \pmb{\theta}=f^{-1}(\vec{\textbf{s}_{d}})
 \end{equation}
-The reult of this equation is the vector $\pmb{\theta}$ for which the values of $\vec{\textbf{s}}$ coincide to the desired configuration $\vec{\textbf{s}_{d}}$. In the case of an optimal result, this configuration would have the same position values as the target positions.\\ The main problem with this method occurs in the calulaton of the $f^{-1}$ function, due to it beeing a highly non linear operator which is not easily invertible.Some of the approaches that are used to counter this problem will be displayed later on in this chapter.\\
-In contrary to having a unique solution with the FK approach, the IK approach can end at the point of not finding a suitable solution. Figure \ref{IkSolutions} diplays three possible outcomes for the IK approach.
+The result of this equation is the vector $\pmb{\theta}$ for which the values of $\vec{\textbf{s}}$ coincide to the desired configuration $\vec{\textbf{s}_{d}}$. In the case of an optimal result, this configuration would have the same position values as the target positions.\\ The main problem with this method occurs in the calulaton of the $f^{-1}$ function, due to it beeing a highly non linear operator which is not easily invertible. Some of the approaches that are used to counter this problem will be displayed later on in this chapter.\\
+\\In contrary to having a unique solution with the FK approach, the IK approach can end at the point of not finding a suitable solution. Figure \ref{IkSolutions} diplays three possible outcomes for the IK approach.
 \begin{figure}[H]
 \includegraphics[scale=0.6]{images/Ik_figure.jpg}
 \caption{Possible solution for an IK problem of a human finger:\\(a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.}
@@ -110,18 +112,72 @@ In contrary to having a unique solution with the FK approach, the IK approach ca
 \end{figure}
 \subsubsection{Nonlinear Programming}
 \subsubsection{Jacobian Inverse}
-One common approach to solve the Ik problem is the utilization of a Jacobian Matrix. This matrix contains the partial derivates of the chain systems relative to the end effector \textbf{s}. When using the Jacobian, a linear approximation  of the IK problem will be the resulting operation. The approximation's components model the end effector's realtive movement to changes in transitions of the systems link translations and joint angles. Therefoe, the resulting function is dependant on the joint angles $\pmb{\theta}$ values and can be defined as
+One common approach to solve the IK problem is the utilization of a Jacobian Matrix and an iterative calulaton process. This matrix contains the partial derivates of the chain systems relative to the end effector \textbf{s}. When using the Jacobian, a linear approximation  of the IK problem will be applied for solving. The approximation's components model the end effector's realtive movement to changes in transitions of the systems link translations and joint angles. Therefore, the resulting function is dependant on the joint angles $\pmb{\theta}$ values and can be defined as
 \begin{equation}
 \label{Jacobian definition}
 J(\pmb{\theta})_{ij}=\left(\frac{\partial\textbf{s}_{i}}{\partial\theta_{j}}\right)_{ij}
 \end{equation}
 with \textit{i}=1,...,k and \textit{j}= 1,...,n.
-Further readings on methods for the calculation of Jacobian matrices can be found in \cite{Orin.1984}. Based on definition \ref{Jacobian definition}), an entry for the j-th rotational joint would be calculated as follows:
+Further readings on methods for the calculation of Jacobian matrices can be found in \cite{Orin.1984}. Based on definition (\ref{Jacobian definition}), an entry for the j-th rotational joint would be calculated as follows:
 \begin{equation}
 \label{Jacobian entry calc}
 \frac{\partial \textbf{s}_{i}}{\partial \theta_{j}}= \textbf{v}_{j}\times(\textbf{s}_{i}-\textbf{p}_{j})
 \end{equation}
 where $\textbf{p}_{j}$ is the position of the joint, and $\textbf{v}_{j}$ is the unit vector pointing along the current axis of rotation for the joint.
+Taking the derivate of definition (\ref{forward kinematic solution}) with respect to time gives the basicequation for forward kinematics that describes the velocities of the end effectors:
+\begin{equation}
+\label{fk derivate}
+\dot{\vec{\pmb{s}}}=\pmb{J}\pmb{(\theta)}\dot{\pmb{\theta}}
+\end{equation}
+\\ Now having all the values for the anlges, the \textit{end effector} position and the target positions, we can compute the resulting Jacobian matrix.
+Thereafter we seek an update value $\Delta\pmb{\theta}$ for incementing the current joint values:
+\begin{equation}
+\label{theta calc}
+\pmb{\theta}_{new}=\pmb{\theta}_{curr}+\Delta\pmb{\theta}
+\end{equation}
+The idea here is that the  chosen value for $\Delta\pmb{\theta}$ should lead to the resulting $\Delta\pmb{\vec{s}}$ beeing approximately equal to $\vec{\textbf{e}}$ from (\ref{fk components}). The $\vec{\textbf{e}}$ can be approximated by:
+\begin{equation}
+\label{delta s approx}
+\Delta\pmb{\vec{s}}\approx \pmb{J(\theta_{curr})}\Delta\pmb{\theta}
+\end{equation}
+Using this approximation  we can reformulate the FK problem as $\pmb{}\vec{\pmb{e}}=J\Delta\pmb{\theta}$ and therefore our inverse kinematics problem form \ref{ik problem formula} can be expressed as $ \Delta\pmb{\theta}=J^{-1}\vec{\pmb{e}}$. \\The problem we run into with this solution is the construction of the inverse Jacobian matrix. The Jacobian J may not be square or invertible. In the case of it beeing invertible , the result may only work inferiorly because of it beeing nearly singular. Beeing singular means that no change in joint angle values may achieve the desired end effector position as an outcome.
+\subsubsection{Jacobian Transpose}
+One approach to calculating the value of $\Delta\pmb{\theta}$ without having to calcualte the inverse of \textbf{J} is done by relpacing the inverse with the transpose of \textbf{J}.
+\begin{equation}
+\label{delta s approx}
+\Delta\pmb{\theta}=\alpha \pmb{J}^{T}\vec{\pmb{e}}
+\end{equation}
+Of course the transpose and the inverse of \textbf{J} are not the same thing. When using the theorems displayed in \cite{.1984b,Wolovich.1984} we can show that: 
+\begin{equation}
+\label{transpose show}
+\langle JJ^{T}\vec{\pmb{e}},\vec{\pmb{e}}\rangle=\langle J^{T}\vec{\pmb{e}},J^{T}\vec{\pmb{e}}\rangle=\|J^{T}\vec{\pmb{e}}\|\geq 0
+\end{equation}
+Under a sufficiently small $\alpha>0$ the updated angles from \ref{theta calc} will change the end efector positions by approximately $\alpha JJ^{T}\vec{\pmb{e}}$. They also state that 
+the value of $\alpha$ can be calculated by minimising the new value of the error vector $\vec{\pmb{e}}$ after each update.
+\begin{equation}
+\label{transpose show}
+\alpha=\frac{\langle\vec{\pmb{e}},JJ^{T}\vec{\pmb{e}}\rangle}{\langle JJ^{T}\vec{\pmb{e}},JJ^{T}\vec{\pmb{e}}\rangle}
+\end{equation}
+\subsubsection{Jacobian Pseudo Inverse}
+Instead of calculating the normal inverse of the Jacoboian, which can lead to the problems described before, we can use the so called \textit{pseudo-inverse}\cite{Dahmen.2008} for the calculation. The \textit{pseudoinverse} is defined for all matrices J, even ones
+which are not square or not of full row rank.
+\begin{equation}
+\label{pseudo inv def}
+\Delta\pmb{\theta}=J^{\dagger}\vec{\pmb{e}}
+\end{equation}
+\\The \textit{pseudoinverse} represents the best possible solution for $ J\Delta\pmb{\theta}=\vec{\pmb{e}}$ in respect to least squares. It has the favourable properties thath if the $\vec{\pmb{e}}$ Vector lies within the range of the \textbf{J}
+
+
+
+
+
+First, suppose ~e is in the range (i.e., the
+column span) of J . In this case, J∆θ = ~e; furthermore, ∆θ is the unique
+vector of smallest magnitude satisfying J∆θ = ~e. Second, suppose that ~e
+is not in the range of J . In this case, J∆θ = ~e is impossible. However,
+∆θ has the property that it minimizes the magnitude of the difference
+J∆θ − ~e. Furthermore, ∆θ is the unique vector of smallest magnitude
+which minimizes ||J∆θ −~e||, or equivalently, which minimizes ||J∆θ −~e||2 .
 
 
 \subsection{FABRIK Algorithm}
@@ -160,6 +216,6 @@ The resultng position of the new $\textbf{p}_{n-1}^{'}$ point is located in this
 Consecutively, this is done with the remaining joints until the root joint is reached(see \textbf{(d)}).
 This finishes the first halv of the iteration step.With the calculated positions, we now perform a forard calculation, starting from the root until we reach the end effector. Since the root of the system normally does not move from it's initial position, we have to reset the root jont to this value before starting to calculate the new positions of the subsequent joints(see\textbf{(e)}).
 
-Analogous to the procedure in the inverse step, we construct the lines between the points and determine the new positon values of the joints. The end result of this step is shown in (f). At this point, we can decide if the result position of the end effector is appropriate in comparison to the value of \textbf{t}. A simple threshold value for this case could be the position difference between these two points.
+Analogous to the procedure in the inverse step, we construct the lines between the points and determine the new positon values of the joints. The end result of this step is shown in \textbf{(f)}. At this point, we can decide if the result position of the end effector is appropriate in comparison to the value of \textbf{t}. A simple threshold value for this case could be the position difference between these two points.
 
 \section{Digital hand models}
