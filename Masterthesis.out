@@ -1,14 +1,15 @@
 \BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Description of problem}{}% 2
-\BOOKMARK [0][-]{chapter.3}{Description of hand in digital space}{}% 3
-\BOOKMARK [1][-]{section.3.1}{Physiological structure of the human hand}{chapter.3}% 4
-\BOOKMARK [2][-]{subsection.3.1.1}{Constraints in Hand Motion}{section.3.1}% 5
-\BOOKMARK [1][-]{section.3.2}{Kinematics}{chapter.3}% 6
-\BOOKMARK [2][-]{subsection.3.2.1}{Forward Kinematics}{section.3.2}% 7
-\BOOKMARK [2][-]{subsection.3.2.2}{Inverse Kinematics}{section.3.2}% 8
-\BOOKMARK [2][-]{subsection.3.2.3}{FABRIK Algorithm}{section.3.2}% 9
-\BOOKMARK [1][-]{section.3.3}{Digital hand models}{chapter.3}% 10
-\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 11
-\BOOKMARK [0][-]{chapter*.13}{Abbildungsverzeichnis}{}% 12
-\BOOKMARK [0][-]{chapter*.14}{Tabellenverzeichnis}{}% 13
-\BOOKMARK [0][-]{chapter*.15}{Literaturverzeichnis}{}% 14
+\BOOKMARK [0][-]{chapter.2}{Description of hand in digital space}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Physiological structure of the human hand}{chapter.2}% 3
+\BOOKMARK [2][-]{subsection.2.1.1}{Constraints in Hand Motion}{section.2.1}% 4
+\BOOKMARK [1][-]{section.2.2}{Kinematics}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.1}{Forward Kinematics}{section.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.2}{Inverse Kinematics}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.3}{FABRIK Algorithm}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Digital hand models}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.3.1}{1}{section.2.3}% 10
+\BOOKMARK [0][-]{chapter.3}{Tracking in real space}{}% 11
+\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 12
+\BOOKMARK [0][-]{chapter*.17}{Abbildungsverzeichnis}{}% 13
+\BOOKMARK [0][-]{chapter*.18}{Tabellenverzeichnis}{}% 14
+\BOOKMARK [0][-]{chapter*.19}{Literaturverzeichnis}{}% 15

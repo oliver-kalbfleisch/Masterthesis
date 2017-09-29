@@ -1,9 +1,10 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Bone structure of the human left hand (\cite {LEE.1995})\relax }}{5}{figure.caption.5}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Representation of the DOFs of the human hand\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Possible solution for an IK problem of a human finger: (a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Forward and backward calculation steps for one iteration of the \textbf {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite {Aristidou.2011} \relax }}{12}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Bone structure of the human left hand (\cite {LEE.1995})\relax }}{6}{figure.caption.5}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Representation of the DOFs of the human hand\relax }}{7}{figure.caption.6}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Possible solution for an IK problem of a human finger: (a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.\relax }}{11}{figure.caption.7}
-\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Forward and backward calculation steps for one iteration of the \textbf {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite {Aristidou.2011} \relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Example for an optical tracking system with passive infrared reflector markers \cite {optitrack.2017}\relax }}{16}{figure.caption.14}
 \addvspace {10\p@ }

@@ -69,6 +69,7 @@ The \textbf{Type II} constraints can be split into interfinger and intrafinger c
 Interfinger constraints can be imposed between joints of adjacent fingers. Interfinger constraints describe that the bending of an MP joint in the index finger forces the MP joint in the middle finger to bend as well.\\
  When combinig the constraints described in the above equations, the starting number 21 DOF's of the human hand can be reduced to 15. Inequalities for these cases, obtained through empiric studies, can be found in \citep{LEE.1995}.\\
 \section{Kinematics}
+\label{kinematics}
  The preceeding sections gave an overview of how we can describe a model of the human hand and introduced some limiting constraints. With the model and the constraints, we can now start to build a kinematic system for the animation of the model.\\
 Kinematic systems contain so called \textit{kinematic chains}, which consist of a \textit{starting point}or \textit{root}, kinematic elements like \textit{joints}, \textit{links} and an \textit{endpoint}, also called \textit{end effector}. Applied to the human hand, the whole hand model represents the kinematic system. This system contains several \textit{kinematic chains}, namely the fingers of the hand with the fingertips beeing the \textit{end effectors} of each of these chains.\\
 As we begin to move our hands, the states of the kinemtic chains begin to change. Joint angles and end effector positions are modified until the end position is reached. To represent the new position and agnle dataset of our physical hand with our kinematic system, two major paths for achieving a solution can be taken.
@@ -91,7 +92,7 @@ As the vector components of $\vec{\textbf{s}}$ are reults of the chain joint ang
 \vec{\textbf{s}}&=f(\pmb{\theta})\\
 \end{split}
 \end{equation}
-with $\pmb{\theta}$ beeing the column vector $\pmb{\theta}=(\theta_{1},...,\theta_{n})^{T}$.The second vector equation displayed in (\ref{forward kinematic solution}) is also callled the \textit{Forward Kinematics}(FK) solution.\\
+\\With $\pmb{\theta}$ beeing the column vector $\pmb{\theta}=(\theta_{1},...,\theta_{n})^{T}$.The second vector equation displayed in (\ref{forward kinematic solution}) is also callled the \textit{Forward Kinematics}(FK) solution.\\
 \\The advantage of an FK solution is that there is always an unique solution to the problem. In consequence, this approach is commonly used in the field of robotics, where the information on the chain elements is easily available.\\
 The tracking of the human hand and all if its chain components is rather complicated.Therefore a solution which takes a known position of the \textit{end effektor} and calculates the parameters for the rest of the cain would be more desireable.\\
 
@@ -168,18 +169,6 @@ which are not square or not of full row rank.
 \\The \textit{pseudoinverse} represents the best possible solution for $ J\Delta\pmb{\theta}=\vec{\pmb{e}}$ in respect to least squares. It has the favourable properties thath if the $\vec{\pmb{e}}$ Vector lies within the range of the \textbf{J}
 
 
-
-
-
-First, suppose ~e is in the range (i.e., the
-column span) of J . In this case, J∆θ = ~e; furthermore, ∆θ is the unique
-vector of smallest magnitude satisfying J∆θ = ~e. Second, suppose that ~e
-is not in the range of J . In this case, J∆θ = ~e is impossible. However,
-∆θ has the property that it minimizes the magnitude of the difference
-J∆θ − ~e. Furthermore, ∆θ is the unique vector of smallest magnitude
-which minimizes ||J∆θ −~e||, or equivalently, which minimizes ||J∆θ −~e||2 .
-
-
 \subsection{FABRIK Algorithm}
 
  A more recent approach in the kinematics field is the \textbf{FABRIK} algorithm proposed by Aristidou
@@ -219,3 +208,5 @@ This finishes the first halv of the iteration step.With the calculated positions
 Analogous to the procedure in the inverse step, we construct the lines between the points and determine the new positon values of the joints. The end result of this step is shown in \textbf{(f)}. At this point, we can decide if the result position of the end effector is appropriate in comparison to the value of \textbf{t}. A simple threshold value for this case could be the position difference between these two points.
 
 \section{Digital hand models}
+
+\subsection{1}
