@@ -14,10 +14,14 @@
 \contentsline {section}{\numberline {2.3}Digital hand models}{14}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}1}{14}{subsection.2.3.1}
 \contentsline {chapter}{\numberline {3}Tracking in real space}{15}{chapter.3}
-\contentsline {subsubsection}{\nonumberline Optical tracking}{15}{section*.13}
-\contentsline {subsubsection}{\nonumberline Magnetic tracking}{16}{section*.15}
-\contentsline {subsubsection}{\nonumberline Accoustic tracking}{17}{section*.16}
-\contentsline {chapter}{\numberline {4}Fazit}{18}{chapter.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{19}{chapter*.17}
-\contentsline {chapter}{Tabellenverzeichnis}{20}{chapter*.18}
-\contentsline {chapter}{Literaturverzeichnis}{22}{chapter*.19}
+\contentsline {section}{\numberline {3.1}General tracking technologies}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Optical tracking}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Magnetic tracking}{16}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Accoustic tracking}{17}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Hand tracking Systems}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Sensor based approach}{17}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}optical approach}{18}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Fazit}{20}{chapter.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{21}{chapter*.16}
+\contentsline {chapter}{Tabellenverzeichnis}{22}{chapter*.17}
+\contentsline {chapter}{Literaturverzeichnis}{25}{chapter*.18}

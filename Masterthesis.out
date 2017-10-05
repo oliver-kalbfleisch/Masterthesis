@@ -9,7 +9,14 @@
 \BOOKMARK [1][-]{section.2.3}{Digital hand models}{chapter.2}% 9
 \BOOKMARK [2][-]{subsection.2.3.1}{1}{section.2.3}% 10
 \BOOKMARK [0][-]{chapter.3}{Tracking in real space}{}% 11
-\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 12
-\BOOKMARK [0][-]{chapter*.17}{Abbildungsverzeichnis}{}% 13
-\BOOKMARK [0][-]{chapter*.18}{Tabellenverzeichnis}{}% 14
-\BOOKMARK [0][-]{chapter*.19}{Literaturverzeichnis}{}% 15
+\BOOKMARK [1][-]{section.3.1}{General tracking technologies}{chapter.3}% 12
+\BOOKMARK [2][-]{subsection.3.1.1}{Optical tracking}{section.3.1}% 13
+\BOOKMARK [2][-]{subsection.3.1.2}{Magnetic tracking}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.3}{Accoustic tracking}{section.3.1}% 15
+\BOOKMARK [1][-]{section.3.2}{Hand tracking Systems}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Sensor based approach}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{optical approach}{section.3.2}% 18
+\BOOKMARK [0][-]{chapter.4}{Fazit}{}% 19
+\BOOKMARK [0][-]{chapter*.16}{Abbildungsverzeichnis}{}% 20
+\BOOKMARK [0][-]{chapter*.17}{Tabellenverzeichnis}{}% 21
+\BOOKMARK [0][-]{chapter*.18}{Literaturverzeichnis}{}% 22
