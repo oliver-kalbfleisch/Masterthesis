@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  6 OCT 2017 15:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  6 OCT 2017 15:56
 entering extended mode
 **MAsterthesis.tex
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.tex
@@ -1108,7 +1108,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--114
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-34.def"
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
 ) [11] [12]
-<images/FabrikIteration.jpg, id=289, 402.00188pt x 666.23906pt>
+[13] <images/FabrikIteration.jpg, id=297, 402.00188pt x 666.23906pt>
 File: images/FabrikIteration.jpg Graphic file (type jpg)
 
 <use images/FabrikIteration.jpg>
@@ -1130,8 +1130,8 @@ Underfull \hbox (badness 4660) in paragraph at lines 230--235
 \OT1/cmss/m/n/12 whether the in-tended tar-get
  []
 
-[13 <G:/Dropbox/Dropbox/Masterarbeit/git/images/FabrikIteration.jpg>] [14])
-[15] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\kapitel3.tex
+[14 <G:/Dropbox/Dropbox/Masterarbeit/git/images/FabrikIteration.jpg>]) [15]
+(G:\Dropbox\Dropbox\Masterarbeit\git\chapter\kapitel3.tex
 Chapter 3.
 <images/flex13MocapVolume.png, id=324, 682.55pt x 376.40625pt>
 File: images/flex13MocapVolume.png Graphic file (type png)
@@ -1262,7 +1262,7 @@ onts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MAsterthesis.pdf (29 pages, 623645 bytes).
+Output written on MAsterthesis.pdf (29 pages, 623551 bytes).
 PDF statistics:
  548 PDF objects out of 1000 (max. 8388607)
  123 named destinations out of 1000 (max. 500000)
