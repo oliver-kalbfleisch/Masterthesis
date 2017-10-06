@@ -31,7 +31,7 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Physiological structure of the human hand}{5}{section.2.1}}
-\newlabel{physiological structure}{{2.1}{5}{Physiological structure of the human hand}{section.2.1}{}}
+\newlabel{p}{{2.1}{5}{Physiological structure of the human hand}{section.2.1}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{Handstructure}{{\caption@xref {Handstructure}{ on input line 11}}{5}{Physiological structure of the human hand}{figure.caption.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Bone structure of the human left hand (\cite  {LEE.1995})\relax }}{5}{figure.caption.5}}
@@ -46,7 +46,8 @@
 \newlabel{kinematics}{{2.2}{8}{Kinematics}{section.2.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Forward Kinematics}{8}{subsection.2.2.1}}
 \newlabel{Forward Kinematics}{{2.2.1}{8}{Forward Kinematics}{subsection.2.2.1}{}}
-\citation{AndreasAristidouandJoanLasenby.}
+\citation{AndreasAristidouandJoanLasenby.2009}
+\citation{AndreasAristidouandJoanLasenby.2009}
 \newlabel{fk components}{{\relax 2.5}{9}{Forward Kinematics}{equation.2.2.5}{}}
 \newlabel{forward kinematic solution}{{\relax 2.6}{9}{Forward Kinematics}{equation.2.2.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Inverse Kinematics}{9}{subsection.2.2.2}}
@@ -55,65 +56,70 @@
 \citation{Orin.1984}
 \@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Possible solution for an IK problem of a human finger: (a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.\relax }}{10}{figure.caption.7}}
 \newlabel{IkSolutions}{{\relax 2.3}{10}{Possible solution for an IK problem of a human finger:\\(a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Nonlinear Programming}{10}{section*.8}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Jacobian Inverse}{10}{section*.9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Jacobian Inverse}{10}{subsection.2.2.3}}
 \newlabel{Jacobian definition}{{\relax 2.8}{10}{Jacobian Inverse}{equation.2.2.8}{}}
 \newlabel{Jacobian entry calc}{{\relax 2.9}{10}{Jacobian Inverse}{equation.2.2.9}{}}
+\newlabel{fk derivate}{{\relax 2.10}{10}{Jacobian Inverse}{equation.2.2.10}{}}
 \citation{.1984b,Wolovich.1984}
 \citation{Dahmen.2008}
-\newlabel{fk derivate}{{\relax 2.10}{11}{Jacobian Inverse}{equation.2.2.10}{}}
 \newlabel{theta calc}{{\relax 2.11}{11}{Jacobian Inverse}{equation.2.2.11}{}}
 \newlabel{delta s approx}{{\relax 2.12}{11}{Jacobian Inverse}{equation.2.2.12}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Jacobian Transpose}{11}{section*.10}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Jacobian Transpose}{11}{section*.8}}
 \newlabel{delta s approx}{{\relax 2.13}{11}{Jacobian Transpose}{equation.2.2.13}{}}
 \newlabel{transpose show}{{\relax 2.14}{11}{Jacobian Transpose}{equation.2.2.14}{}}
 \newlabel{transpose show}{{\relax 2.15}{11}{Jacobian Transpose}{equation.2.2.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Jacobian Pseudo Inverse}{11}{section*.9}}
+\newlabel{pseudo inv def}{{\relax 2.16}{11}{Jacobian Pseudo Inverse}{equation.2.2.16}{}}
+\citation{Golub.1965}
+\citation{Wampler.1986,Nakamura.1986}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Singular Value Decomposition}{12}{section*.10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Damped Least Squares}{12}{subsection.2.2.4}}
+\citation{Chiaverini.1994,AndreasAristidouandJoanLasenby.2009}
 \citation{Aristidou.2011}
 \citation{Aristidou.2011}
 \citation{Aristidou.2011}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Jacobian Pseudo Inverse}{12}{section*.11}}
-\newlabel{pseudo inv def}{{\relax 2.16}{12}{Jacobian Pseudo Inverse}{equation.2.2.16}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}FABRIK Algorithm}{12}{subsection.2.2.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Forward and backward calculation steps for one iteration of the \textbf  {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite  {Aristidou.2011} \relax }}{12}{figure.caption.12}}
-\newlabel{Fabrik_Iteration}{{\relax 2.4}{12}{Forward and backward calculation steps for one iteration of the \textbf {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite {Aristidou.2011} \relax }{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Digital hand models}{14}{section.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}1}{14}{subsection.2.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Newton Methods}{13}{subsection.2.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}FABRIK Algorithm}{13}{subsection.2.2.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Forward and backward calculation steps for one iteration of the \textbf  {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite  {Aristidou.2011} \relax }}{13}{figure.caption.11}}
+\newlabel{Fabrik_Iteration}{{\relax 2.4}{13}{Forward and backward calculation steps for one iteration of the \textbf {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite {Aristidou.2011} \relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Digital hand models}{15}{section.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}1}{15}{subsection.2.3.1}}
 \citation{Bolt.1980}
 \citation{Sturman.1994b}
 \citation{Welch.2002,Rolland.2001}
 \citation{Raab.1979}
 \citation{optitrack.2017}
 \citation{optitrack.2017}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Tracking in real space}{15}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Tracking in real space}{16}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}General tracking technologies}{15}{section.3.1}}
-\newlabel{General tracking technologies}{{3.1}{15}{General tracking technologies}{section.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Optical tracking}{15}{subsection.3.1.1}}
-\newlabel{optic reflector tracking}{{\caption@xref {optic reflector tracking}{ on input line 13}}{16}{Optical tracking}{figure.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Example for an optical tracking system with passive infrared reflector markers \cite  {optitrack.2017}\relax }}{16}{figure.caption.13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Magnetic tracking}{16}{subsection.3.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}General tracking technologies}{16}{section.3.1}}
+\newlabel{General tracking technologies}{{3.1}{16}{General tracking technologies}{section.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Optical tracking}{16}{subsection.3.1.1}}
+\newlabel{optic reflector tracking}{{\caption@xref {optic reflector tracking}{ on input line 13}}{17}{Optical tracking}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Example for an optical tracking system with passive infrared reflector markers \cite  {optitrack.2017}\relax }}{17}{figure.caption.12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Magnetic tracking}{17}{subsection.3.1.2}}
 \citation{Foxlin.1998}
 \citation{Wang.2009}
 \citation{Wang.2009}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Accoustic tracking}{17}{subsection.3.1.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Hand tracking Systems}{17}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Sensor based approach}{17}{subsection.3.2.1}}
-\newlabel{Sensor based approach}{{3.2.1}{17}{Sensor based approach}{subsection.3.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Accoustic tracking}{18}{subsection.3.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Hand tracking Systems}{18}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Sensor based approach}{18}{subsection.3.2.1}}
+\newlabel{Sensor based approach}{{3.2.1}{18}{Sensor based approach}{subsection.3.2.1}{}}
 \citation{Duca.2007,Fredriksson.2008,Wang.2009}
 \citation{Wang.2009}
 \citation{LaGorce.2008}
 \citation{Huttenlocher.1993}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}optical approach}{18}{subsection.3.2.2}}
-\newlabel{optical approach}{{3.2.2}{18}{optical approach}{subsection.3.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Color glove setup used by Wang and Popovic \cite  {Wang.2009} \relax }}{18}{figure.caption.14}}
-\newlabel{wang color glove}{{\relax 3.2}{18}{Color glove setup used by Wang and Popovic \cite {Wang.2009} \relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}optical approach}{19}{subsection.3.2.2}}
+\newlabel{optical approach}{{3.2.2}{19}{optical approach}{subsection.3.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Color glove setup used by Wang and Popovic \cite  {Wang.2009} \relax }}{19}{figure.caption.13}}
+\newlabel{wang color glove}{{\relax 3.2}{19}{Color glove setup used by Wang and Popovic \cite {Wang.2009} \relax }{figure.caption.13}{}}
 \citation{Fredriksson.2008}
 \citation{Fredriksson.2008}
 \citation{Fredriksson.2008}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Color glove setup used by Fredriksson and Ryen \cite  {Fredriksson.2008} \relax }}{19}{figure.caption.15}}
-\newlabel{wang color glove}{{\relax 3.3}{19}{Color glove setup used by Fredriksson and Ryen \cite {Fredriksson.2008} \relax }{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Fazit}{20}{chapter.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Color glove setup used by Fredriksson and Ryen \cite  {Fredriksson.2008} \relax }}{20}{figure.caption.14}}
+\newlabel{wang color glove}{{\relax 3.3}{20}{Color glove setup used by Fredriksson and Ryen \cite {Fredriksson.2008} \relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Fazit}{21}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@input{./chapter/verzeichnisse.aux}

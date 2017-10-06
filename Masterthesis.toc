@@ -6,22 +6,24 @@
 \contentsline {section}{\numberline {2.2}Kinematics}{8}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Forward Kinematics}{8}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Inverse Kinematics}{9}{subsection.2.2.2}
-\contentsline {subsubsection}{\nonumberline Nonlinear Programming}{10}{section*.8}
-\contentsline {subsubsection}{\nonumberline Jacobian Inverse}{10}{section*.9}
-\contentsline {subsubsection}{\nonumberline Jacobian Transpose}{11}{section*.10}
-\contentsline {subsubsection}{\nonumberline Jacobian Pseudo Inverse}{12}{section*.11}
-\contentsline {subsection}{\numberline {2.2.3}FABRIK Algorithm}{12}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Digital hand models}{14}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}1}{14}{subsection.2.3.1}
-\contentsline {chapter}{\numberline {3}Tracking in real space}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}General tracking technologies}{15}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Optical tracking}{15}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Magnetic tracking}{16}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Accoustic tracking}{17}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Hand tracking Systems}{17}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Sensor based approach}{17}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}optical approach}{18}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Fazit}{20}{chapter.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{21}{chapter*.16}
-\contentsline {chapter}{Tabellenverzeichnis}{22}{chapter*.17}
-\contentsline {chapter}{Literaturverzeichnis}{25}{chapter*.18}
+\contentsline {subsection}{\numberline {2.2.3}Jacobian Inverse}{10}{subsection.2.2.3}
+\contentsline {subsubsection}{\nonumberline Jacobian Transpose}{11}{section*.8}
+\contentsline {subsubsection}{\nonumberline Jacobian Pseudo Inverse}{11}{section*.9}
+\contentsline {subsubsection}{\nonumberline Singular Value Decomposition}{12}{section*.10}
+\contentsline {subsection}{\numberline {2.2.4}Damped Least Squares}{12}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Newton Methods}{13}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}FABRIK Algorithm}{13}{subsection.2.2.6}
+\contentsline {section}{\numberline {2.3}Digital hand models}{15}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}1}{15}{subsection.2.3.1}
+\contentsline {chapter}{\numberline {3}Tracking in real space}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}General tracking technologies}{16}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Optical tracking}{16}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Magnetic tracking}{17}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Accoustic tracking}{18}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Hand tracking Systems}{18}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Sensor based approach}{18}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}optical approach}{19}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Fazit}{21}{chapter.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{22}{chapter*.15}
+\contentsline {chapter}{Tabellenverzeichnis}{23}{chapter*.16}
+\contentsline {chapter}{Literaturverzeichnis}{26}{chapter*.17}

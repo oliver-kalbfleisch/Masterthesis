@@ -1,4 +1,16 @@
-﻿% This file was created with Citavi 5.7.0.0
+% Encoding: UTF-8
+
+@Article{golub1965calculating,
+  author    = {Golub, Gene and Kahan, William},
+  title     = {Calculating the singular values and pseudo-inverse of a matrix},
+  journal   = {Journal of the Society for Industrial and Applied Mathematics, Series B: Numerical Analysis},
+  year      = {1965},
+  volume    = {2},
+  number    = {2},
+  pages     = {205--224},
+  publisher = {SIAM},
+}
+
 
 @proceedings{.1984,
  year = {1984},
@@ -68,10 +80,9 @@
 }
 
 
-@article{AndreasAristidouandJoanLasenby.2009,
+@article{AndreasAristidouandJoanLasenby.,
  author = {{Andreas Aristidou and Joan Lasenby}},
- year = {2009},
- title = {Inverse Kinematics: a review of existing techniques and introduction of a new fast iterative solver: University of Cambridge, Department of Engineering},
+ title = {Inverse Kinematics: a review of existing techniques and introduction of a new fast iterative solver},
  keywords = {Inverse Kinematics FABRIK Joint configuration CCD Jacobian Inverse},
  urldate = {2017-09-14}
 }
@@ -220,20 +231,6 @@ these methods in estimating both marker and CoR positions.},
 }
 
 
-@article{Chiaverini.1994,
- author = {Chiaverini, S. and Siciliano, B. and Egeland, O.},
- year = {1994},
- title = {Review of the damped least-squares inverse kinematics with experiments on an industrial robot manipulator},
- pages = {123--134},
- pagination = {page},
- volume = {2},
- number = {2},
- issn = {10636536},
- journal = {IEEE Transactions on Control Systems Technology},
- doi = {10.1109/87.294335}
-}
-
-
 @article{Cootes.1995,
  author = {Cootes, Timothy F. and Taylor, Christopher J. and Cooper, David H. and Graham, Jim},
  year = {1995},
@@ -270,33 +267,6 @@ these methods in estimating both marker and CoR positions.},
  publisher = {{Springer-Verlag Berlin Heidelberg}},
  isbn = {9783540764939},
  series = {Springer-Lehrbuch}
-}
-
-
-@article{DavidE.Orin.1984,
- abstract = {This paper discusses and compares six different methods for calculating the Jacobian for a manipulator. We enumerate the computational efficiency of each in terms general N- degree-of-freedom of the total number of multiplications, addiof the number of matrix-vector operations
-
-tions/subtractions, and trigonometric functions required as well as in terms
-
-needed. We also give the execution times on a
-
-minicomputer for determining the Jacobian for an
-
-of the best new
-
-PDP-11/70 example seven-degree-of-freedom manipulator. This paper formulates one
-
-methods for determining the Jacobian.},
- author = {{David E. Orin} and {William W. Schrader}},
- year = {1984},
- title = {Efficient Computation of the Jacobian for Robot Manipulators},
- urldate = {2017-10-06},
- pages = {66--75},
- pagination = {page},
- volume = {3},
- number = {4},
- issn = {0278-3649},
- journal = {The International Journal of Robotics Research}
 }
 
 
@@ -387,20 +357,6 @@ methods for determining the Jacobian.},
  title = {Marker-less Tracking for AR: A Learning-Based Approach},
  keywords = {Augmented reality;Marker-less Tracking;Marker-less Tracking, Augmented Reality},
  urldate = {2017-10-05}
-}
-
-
-@article{Golub.1965,
- author = {Golub, Gene and Kahan, William},
- year = {1965},
- title = {Calculating the singular values and pseudo-inverse of a matrix},
- url = {http://statistics.uchicago.edu/~lekheng/courses/302/classics/golub-kahan.pdf},
- urldate = {2017-10-06},
- pages = {205--224},
- pagination = {page},
- volume = {2},
- number = {2},
- journal = {ISAM}
 }
 
 
@@ -757,20 +713,6 @@ methods for determining the Jacobian.},
 }
 
 
-@article{Nakamura.1986,
- author = {Nakamura, Yoshihiko and Hanafusa, Hideo},
- year = {1986},
- title = {Inverse Kinematic Solutions With Singularity Robustness for Robot Manipulator Control},
- pages = {163},
- pagination = {page},
- volume = {108},
- number = {3},
- issn = {00220434},
- journal = {Journal of Dynamic Systems, Measurement, and Control},
- doi = {10.1115/1.3143764}
-}
-
-
 @book{Nirei.1996,
  author = {Nirei, Kenichi and Saito, Hideo and Mochimaru, Masaaki and Ozawa, Shinji},
  year = {1996},
@@ -942,14 +884,6 @@ methods for determining the Jacobian.},
  year = {2014},
  title = {3D Hand Tracking: A thesis submitted in partial fulfilment of the requirements of Bournemouth University for the degree of Doctor of Philosophy},
  urldate = {2017-08-17}
-}
-
-
-@article{SamuelR.Buss.2009,
- author = {{Samuel R. Buss}},
- year = {2009},
- title = {Introduction to Inverse Kinematics with Jacobian Transpose, Pseudoinverse and Damped Least Squares methods},
- urldate = {2017-10-06}
 }
 
 
@@ -1158,20 +1092,6 @@ The second approach, tree-based filtering, combines ideas from detection and Bay
 }
 
 
-@article{Wampler.1986,
- author = {Wampler, Charles},
- year = {1986},
- title = {Manipulator Inverse Kinematic Solutions Based on Vector Formulations and Damped Least-Squares Methods},
- pages = {93--101},
- pagination = {page},
- volume = {16},
- number = {1},
- issn = {0018-9472},
- journal = {IEEE Transactions on Systems, Man, and Cybernetics},
- doi = {10.1109/TSMC.1986.289285}
-}
-
-
 @article{Wan.2014,
  author = {Wan, Jun and Ruan, Qiuqi and An, Gaoyun and Li, Wei and Liang, Yanyan and Zhao, Ruizhen},
  year = {2014},
@@ -1355,4 +1275,4 @@ The second approach, tree-based filtering, combines ideas from detection and Bay
  doi = {10.1145/195826.195827}
 }
 
-
+@Comment{jabref-meta: databaseType:bibtex;}

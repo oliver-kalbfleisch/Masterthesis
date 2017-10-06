@@ -99,21 +99,20 @@ The tracking of the human hand and all if its chain components is rather complic
 
  \subsection{Inverse Kinematics}
  \label{inverse kinematics}
-\begin{quote}Inverse Kinematics (IK) is a method for computing the posture via estimating each individual degree of freedom in order to satisfy a given task~\cite[S.~14]{AndreasAristidouandJoanLasenby.}\end{quote}
+\begin{quote}Inverse Kinematics (IK) is a method for computing the posture via estimating each individual degree of freedom in order to satisfy a given task~\cite{AndreasAristidouandJoanLasenby.2009}\end{quote}
 The concept of \textit{Inverse Kinematics}  (IK) already describes it's principle in it's name. It takes the reversed approach in comparison to the FK principle in chapter \ref{Forward Kinematics}. Instead of knowing the states of the chain elements and calculating the resulting position of the \textit{end effector}, we take the position of the \textit{end effector} and try to retrieve the possible states of the other chain elements. 
 \begin{equation}
 \label{ik problem formula}
 \pmb{\theta}=f^{-1}(\vec{\textbf{s}_{d}})
 \end{equation}
-The result of this equation is the vector $\pmb{\theta}$ for which the values of $\vec{\textbf{s}}$ coincide to the desired configuration $\vec{\textbf{s}_{d}}$. In the case of an optimal result, this configuration would have the same position values as the target positions.\\ The main problem with this method occurs in the calulaton of the $f^{-1}$ function, due to it beeing a highly non linear operator which is not easily invertible. Some of the approaches that are used to counter this problem will be displayed later on in this chapter.\\
+The result of this equation is the vector $\pmb{\theta}$ for which the values of $\vec{\textbf{s}}$ coincide to the desired configuration $\vec{\textbf{s}_{d}}$. In the case of an optimal result, this configuration would have the same position values as the target positions.\\ The main problem with this method occurs in the calulaton of the $f^{-1}$ function, due to it beeing a highly non linear operator which is not easily invertible.The approaches that \cite{AndreasAristidouandJoanLasenby.2009} describes to counter this problem will be displayed later on in this chapter.\\
 \\In contrary to having a unique solution with the FK approach, the IK approach can end at the point of not finding a suitable solution. Figure \ref{IkSolutions} diplays three possible outcomes for the IK approach.
 \begin{figure}[H]
 \includegraphics[scale=0.6]{images/Ik_figure.jpg}
 \caption{Possible solution for an IK problem of a human finger:\\(a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.}
 \label{IkSolutions}
 \end{figure}
-\subsubsection{Nonlinear Programming}
-\subsubsection{Jacobian Inverse}
+\subsection{Jacobian Inverse}
 One common approach to solve the IK problem is the utilization of a Jacobian Matrix and an iterative calulaton process. This matrix contains the partial derivates of the chain systems relative to the end effector \textbf{s}. When using the Jacobian, a linear approximation  of the IK problem will be applied for solving. The approximation's components model the end effector's realtive movement to changes in transitions of the systems link translations and joint angles. Therefore, the resulting function is dependant on the joint angles $\pmb{\theta}$ values and can be defined as
 \begin{equation}
 \label{Jacobian definition}
@@ -167,7 +166,57 @@ which are not square or not of full row rank.
 \label{pseudo inv def}
 \Delta\pmb{\theta}=J^{\dagger}\vec{\pmb{e}}
 \end{equation}
-\\The \textit{pseudoinverse} represents the best possible solution for $ J\Delta\pmb{\theta}=\vec{\pmb{e}}$ in respect to least squares. It has the favourable properties thath if the $\vec{\pmb{e}}$ Vector lies within the range of the \textbf{J}
+\\The \textit{pseudoinverse} represents the best possible solution for $ J\Delta\pmb{\theta}=\vec{\pmb{e}}$ in respect to least squares, but does suffer from instability near singularities. It has the property that the matrix $(I − J^{\dagger}J)$ performs a projection onto the nullspace of \textbf{J} . Therefore, for all vectors $\varphi, J(I −J^{\dagger}J)\varphi = 0$. Therefore $\Delta\pmb{\theta}$ can be set by
+\begin{equation}
+\Delta\pmb{\theta}=J^{\dagger}\vec{\pmb{e}}+(I-J^{\dagger}J)\varphi
+\end{equation}
+for any vector $\varphi$ and still obtain a value for $\Delta\theta$ which minimises the value $ J\Delta\pmb{\theta} −\vec{\pmb{e}}$.
+\\The pseudoinverse of \textbf{J} can be derived as follows:
+\begin{equation}
+\begin{split}
+\pmb{J}^{\dagger}&=(\pmb{J}^{T}\pmb{J})^{-1}\pmb{J}^{T}\\
+\Delta\pmb{\theta}&=(\pmb{J}^{T}\pmb{J})^{-1}\pmb{J}^{T}\vec{\pmb{e}}\\
+(\pmb{J}^{T}\pmb{J})\Delta\pmb{\theta}&=\pmb{J}^{T}\vec{\pmb{e}}\\
+\end{split}
+\end{equation}
+Using $\vec{\pmb{y}}=\pmb{J}^{T}\vec{\pmb{e}}$, we can now solve the equation $(\pmb{J}^{T}\pmb{J})\Delta\pmb{\theta}=\vec{\pmb{y}}$
+
+\subsubsection{Singular Value Decomposition}
+The usage of a \textit{singular value decomposition} is another method of calculating the \textit{pseudoinverse} of a jacobian matrix. A singular value decomposition of \textbf{J} consists of expressing \textbf{J} in the form
+\begin{equation}
+\pmb{J} = \pmb{UDV^{T}}
+\end{equation} 
+For an \textit{m×n} Jacobian matrix, \textbf{U} is\textit{ m×m} and the columns are the eigenvectors of $JJ^{T}$. \textbf{D} is \textit{m×n}, and the entries are zero except along the diagonal where $d_{ii}=\sigma_{i}$ with $\pmb{\sigma_{i}}$ beeing the singular value and $\sigma 1\geq \sigma 2 \geq ...\geq \sigma m \geq 0$. Singular values are the nonnegative square roots of the eigenvalues of $JJ^{T}$ and $ J^{T}J$.\textbf{V} is \textit{n×n} and the columns are the eigenvectors of $J^{J}J$.
+The construction of the pseudonverse is done as follows:
+\begin{equation}
+\pmb{J}^{\dagger} = \pmb{VD^{\dagger}U^{T}}
+\end{equation} 
+The pseudo-inverse of the diagonal matrix \textbf{D} is obtained by replacing each positive diagonal entry with it's reciprocal \cite{Golub.1965}.
+\subsection{Damped Least Squares}
+ The \textit{Dampened Least Squares} method is is applied for inverse kinematics as it avoids the singularity problems that can occur when using the pseudoinverse.It further provides a numerical stable method for selecting $\Delta\theta$. First occurences for inverse kinematics can be found in \cite{Wampler.1986,Nakamura.1986}.
+Instead of finding the minimum for $\Delta\theta$ as a best seolution for the equation displayed in \ref{fk components}, the goal of this methodd is to find the value that minimizes the following quantity with $\lambda \in \mathbb{R} $ as a dampening factor.
+\begin{equation}
+\parallel J\Delta\pmb{\theta}-\vec{\pmb{e}}\parallel^{2}+\lambda^{2}\parallel\Delta\pmb{\theta}\parallel^{2}
+\end{equation}
+which can be rewritten to the corresponding 
+\begin{equation}
+(\pmb{J}^{T}\pmb{J}+\lambda^{2}I)\Delta\pmb{\theta}=\pmb{J}^{T}\vec{\pmb{e}}
+\end{equation}
+and therefore 
+\begin{equation}
+\Delta\pmb{\theta}=(\pmb{J}^{T}\pmb{J}+\lambda^{2}I)^{-1}\pmb{J}^{T}\vec{\pmb{e}}
+\end{equation}
+The selection of a correct $\lambda$ value is essential for this method, small values of $\lambda$ give accurate solutions but low robustness to the occurrence of singular and near-singular configurations, while large  values of $\lambda$ result in low tracking accuracy even when a feasible and accurate solution would be possible\cite{Chiaverini.1994,AndreasAristidouandJoanLasenby.2009}.
+
+\subsection{Newton Methods}
+The Newton family of methods is based on a second order Taylor series expansion of the object function f(x):
+\begin{equation}
+f(x+\sigma)= f(x)+ [\bigtriangledown f(x)]^{T}\sigma + \frac{1}{2}\sigma^{T}H_{f}(x)\sigma
+\end{equation}
+
+where Hf(x) is the Hessian matrix. The downside of this approach is that the calculation of the Hessian matrix bares high computational cost for each iteration as a result of its complexity. Like the approximation of the Jacobian inverse, several attemps to lower the computational cost have benn made by utilizing an approximation of the Hessian matrix based on a function gradient value.\\
+Since the Newton methods are posed as a minimisation problem, they return smooth motion without erratic discontinuities.
+The Newton methods also have the advantage that they do not suffer from singularity problems, such as that which occurs when finding the Jacobian Inverse.
 
 
 \subsection{FABRIK Algorithm}
