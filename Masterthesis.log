@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  6 OCT 2017 15:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  12 OCT 2017 13:58
 entering extended mode
 **MAsterthesis.tex
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.tex
@@ -663,7 +663,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks42
 \@floatcapt=\box42
 )
-Package scrhack Info: loading float hack on input line 31.
+Package scrhack Info: loading float hack on input line 32.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\koma-script\float.hak"
 File: float.hak 2015/02/07 v3.16 KOMA-Script package (hacking package float)
@@ -768,7 +768,7 @@ LaTeX Info: Redefining \pageref on input line 6369.
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 33.
+(scrhack)             need that hack, on input line 34.
 
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -785,7 +785,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip56
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 33.
+Package hyperref Info: Option `colorlinks' set `false' on input line 34.
 
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.aux
 
@@ -799,20 +799,20 @@ LaTeX Warning: Label `wang color glove' multiply defined.
 
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\verzeichnisse.aux)
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\eid.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -872,7 +872,7 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 51.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -881,9 +881,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count153
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
 
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.out)
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.out)
@@ -921,19 +921,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 arbeit/git/images/THlogoheader.pdf>] [2])
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 52.
+(Font)              size <20.74> substituted on input line 53.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 52.
+(Font)              using `OT1/cmss/bx/n' instead on input line 53.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 52.
+(Font)              size <20.74> substituted on input line 53.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' in size <20> not available
-(Font)              size <20.74> substituted on input line 52.
+(Font)              size <20.74> substituted on input line 53.
 
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.toc)
 \tf@toc=\write5
@@ -941,7 +941,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.54 \newpage
+l.55 \newpage
               [1
 
 
@@ -961,7 +961,7 @@ l.4 \newpage
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\einleitung.tex
 Chapter 1.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--59
+Underfull \hbox (badness 10000) in paragraph at lines 2--60
 
  []
 
@@ -1133,7 +1133,11 @@ Underfull \hbox (badness 4660) in paragraph at lines 230--235
 [14 <G:/Dropbox/Dropbox/Masterarbeit/git/images/FabrikIteration.jpg>]) [15]
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\kapitel3.tex
 Chapter 3.
-<images/flex13MocapVolume.png, id=324, 682.55pt x 376.40625pt>
+
+Package natbib Warning: Citation `Sturman.1994b' on page 16 undefined on input 
+line 6.
+
+<images/flex13MocapVolume.png, id=323, 682.55pt x 376.40625pt>
 File: images/flex13MocapVolume.png Graphic file (type png)
 
 <use images/flex13MocapVolume.png>
@@ -1146,53 +1150,70 @@ Package pdftex.def Info: images/flex13MocapVolume.png used on input line 14.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [17 <G:/Dropbox/Dropbox/Masterarbeit/git/images/flex13MocapVolume.png>]
-<images/wang_color_glove.JPG, id=346, 382.42876pt x 131.74219pt>
-File: images/wang_color_glove.JPG Graphic file (type jpg)
+<images/acceleglove.JPG, id=346, 286.82156pt x 259.7203pt>
+File: images/acceleglove.JPG Graphic file (type jpg)
 
-<use images/wang_color_glove.JPG>
-Package pdftex.def Info: images/wang_color_glove.JPG used on input line 34.
-(pdftex.def)             Requested size: 233.28119pt x 80.36261pt.
+<use images/acceleglove.JPG>
+Package pdftex.def Info: images/acceleglove.JPG used on input line 37.
+(pdftex.def)             Requested size: 143.41042pt x 129.85983pt.
 
-Overfull \hbox (9.86832pt too wide) in paragraph at lines 34--35
+Overfull \hbox (1.14664pt too wide) in paragraph at lines 37--38
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--37
+Underfull \hbox (badness 10000) in paragraph at lines 29--39
 
  []
 
-[18] [19 <G:/Dropbox/Dropbox/Masterarbeit/git/images/wang_color_glove.JPG>]
-<images/fredrikkson_color_glove.JPG, id=372, 300.3722pt x 274.77657pt>
+[18] [19 <G:/Dropbox/Dropbox/Masterarbeit/git/images/acceleglove.JPG>]
+<images/wang_color_glove.JPG, id=374, 382.42876pt x 131.74219pt>
+File: images/wang_color_glove.JPG Graphic file (type jpg)
+
+<use images/wang_color_glove.JPG>
+Package pdftex.def Info: images/wang_color_glove.JPG used on input line 51.
+(pdftex.def)             Requested size: 233.28119pt x 80.36261pt.
+
+Overfull \hbox (9.86832pt too wide) in paragraph at lines 51--52
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--54
+
+ []
+
+[20 <G:/Dropbox/Dropbox/Masterarbeit/git/images/wang_color_glove.JPG>]
+<images/fredrikkson_color_glove.JPG, id=396, 300.3722pt x 274.77657pt>
 File: images/fredrikkson_color_glove.JPG Graphic file (type jpg)
 
 <use images/fredrikkson_color_glove.JPG>
 Package pdftex.def Info: images/fredrikkson_color_glove.JPG used on input line 
-48.
+65.
 (pdftex.def)             Requested size: 183.22676pt x 167.61345pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--51
+Underfull \hbox (badness 10000) in paragraph at lines 63--68
 \OT1/cmss/m/n/12 stips, color mark-ers for the palm and a col-ored band for the
  wrist.
  []
 
-) [20 <G:/Dropbox/Dropbox/Masterarbeit/git/images/fredrikkson_color_glove.JPG>]
-(G:\Dropbox\Dropbox\Masterarbeit\git\chapter\fazit.tex
+[21 <G:/Dropbox/Dropbox/Masterarbeit/git/images/fredrikkson_color_glove.JPG>])
+[22] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\fazit.tex
 Chapter 4.
-) [21
+) [23
 
 
 ] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\verzeichnisse.tex
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.lof)
 \tf@lof=\write6
- [22
+ [24
 
 
 
 ]
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.lot)
 \tf@lot=\write7
- [23
+ [25
 
 
 ]
@@ -1201,25 +1222,28 @@ Chapter 4.
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 26.
 
-[24
+[26
 
 
-] [25]) [26]) (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\eid.tex) [27
+] [27] [28]) [29]) (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\eid.tex)
+[30
 
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
 
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 (G:\Dropbox\Dropbox\Masterarbeit\git\MAsterthesis.aux
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\verzeichnisse.aux)
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\eid.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `MAsterthesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9ABAFF88C77B13E68CDC012FD9240A47;1681.
+(rerunfilecheck)             Checksum: 58F35CFA962FF5D1261CA7DA666334DF;1681.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1231,13 +1255,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 22044 strings out of 493921
- 398156 string characters out of 3144873
- 510536 words of memory out of 3000000
- 24790 multiletter control sequences out of 15000+200000
+ 22079 strings out of 493921
+ 398866 string characters out of 3144873
+ 511168 words of memory out of 3000000
+ 24814 multiletter control sequences out of 15000+200000
  14911 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  73i,20n,77p,1866b,601s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1262,9 +1286,9 @@ onts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MAsterthesis.pdf (29 pages, 623551 bytes).
+Output written on MAsterthesis.pdf (32 pages, 658921 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 123 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 590 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

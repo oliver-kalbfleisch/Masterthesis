@@ -7,6 +7,7 @@
 \contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Forward and backward calculation steps for one iteration of the \textbf {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite {Aristidou.2011} \relax }}{14}{figure.caption.11}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Example for an optical tracking system with passive infrared reflector markers \cite {optitrack.2017}\relax }}{17}{figure.caption.12}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Color glove setup used by Wang and Popovic \cite {Wang.2009} \relax }}{19}{figure.caption.13}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Color glove setup used by Fredriksson and Ryen \cite {Fredriksson.2008} \relax }}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Acceleglove system with the described sensor positions \cite {HernandezRebollar.2002}\relax }}{19}{figure.caption.13}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Color glove setup used by Wang and Popovic \cite {Wang.2009} \relax }}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Color glove setup used by Fredriksson and Ryen \cite {Fredriksson.2008} \relax }}{21}{figure.caption.15}
 \addvspace {10\p@ }
