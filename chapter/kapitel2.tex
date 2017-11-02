@@ -82,7 +82,7 @@ We can denote the exisiting end effectors relative postion to an origin as $ s_{
 \begin{split}
 \vec{\textbf{s}}&=(\textbf{s}_{1},...,\textbf{s}_{n})^{T}\\
 \vec{\textbf{t}}&=(\textbf{t}_{1},...,\textbf{t}_{n})^{T}\\
-\vec{\textbf{e}}&= \vec{\textbf{t}}-\vec{\textbf{s}}
+\vec{\textbf{e}}&= \vec{\textbf{t}}-\vec{\textbf{s}}\\
 \end{split}
 \end{equation}
 As the vector components of $\vec{\textbf{s}}$ are reults of the chain joint angles $\theta_{1},...,\theta_{n}$ and therefore are effected by them, we define 
@@ -217,6 +217,8 @@ f(x+\sigma)= f(x)+ [\bigtriangledown f(x)]^{T}\sigma + \frac{1}{2}\sigma^{T}H_{f
 where Hf(x) is the Hessian matrix. The downside of this approach is that the calculation of the Hessian matrix bares high computational cost for each iteration as a result of its complexity. Like the approximation of the Jacobian inverse, several attemps to lower the computational cost have benn made by utilizing an approximation of the Hessian matrix based on a function gradient value.\\
 Since the Newton methods are posed as a minimisation problem, they return smooth motion without erratic discontinuities.
 The Newton methods also have the advantage that they do not suffer from singularity problems, such as that which occurs when finding the Jacobian Inverse.
+\subsection{Sequential Monte Carlo Method}
+Sequential Monte Carlo Methods (SMCM) Methods are a relative young approch in solving IK problems. Courty and Arnaud \cite{Courty.2008} proposed such a technique, whose main advantage is the usage of a sampling approach. When doing so,the IK problem can be solved  through the usage of direct kinematics, avoiding the numerical inversion of the forward operator.
 
 \newpage
 \subsection{FABRIK Algorithm}

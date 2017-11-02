@@ -23,20 +23,23 @@ In comparison to other tracking technologies, the magnetic field tracking soluti
 The principles of accoustic tracking are very simular to those of the optic tracking technologies. Instead of using lightwaves, the systems utilize acoustic pulses of ultrasonic wavelenghts to time the time of flight between emitter and sensor for range measurement. To get a good measuring result from the systems, the used accoustic transducerst have to be as omnidirectional as possible,so that the signal can be detected no matter how the emitter is positioned or oriented in the tracking volume. For the speakers to acchieve a wide beam width, their size has to be small.\\ To be able to build the microphones into the tracker, they can only have active surfaces a few millimeters in diameter. This leads to a reduction in range as the efficiency of accoustic transducers is proportial to the active surface area. Also accoustic systems can have problems with ambient noises occluding the signal. This becomes even mor critical when using such a system outdoors.\\Soundwaves travel at a much slower speed than lightwaves which brings benefits and downsides with it. Soundwaves can be reflected from objects, producing so echos which arrive at the recieving sensor at a later point in time. Here the slower speed can be beneficial as we can await the first sound occurence to arrive at the sensor and filter out all later reflections from the data. The reflections of the previous pluse also have to be subsided before a new measurement can be made, lowering the uodate rates of the system. The air the soundwaves travel through is also a limiting factor as humidity, airpressure and air currents can influence the travelling soundwaves.In comparison to the optical systems, the accoustic systems are not as prone to occlusion errors since soundwaves have a better ability to bend around obstacles  than lightwaves.
 \\Most of these downside can be adressed with a combination of these systems with another form of tracking like in \cite{Foxlin.1998}.
 \section{Hand tracking Systems}
-In comparison to the tracking of the whole human body, the tracking of the human hands with their maximum of 27 DoF's each in a small space is rather difficult to handle. 
+In comparison to the tracking of the whole human body, the tracking of the human hands with their maximum of 27 DoF's each in a small space is rather difficult to handle.\\
+The systems that try to achieve this have to encounter  deveral difficulties. Self Occlusion also plays a great role in the Systems design, especiall when working with only one tracking optical system for reduced complexity. Also these systems eed to maintain a certain amount of processing speed for achieving a fluent reproduction of the captured motion. This demands the capability of processing large amaounts of data in very short intervals. Most prototpy testing for the described systems will be done in an controlled environemtn where the background is known. For a more widespread use , the systems need to becapable of registering the hand on an unrestricted background, which may have a wide range of patterns, xolor and lighting differences. Also human hand motion itsself is quite fast, resulting in a higher framerate demand for the tracking cameras.\\
+The following section will describe different approaches to soleve the aforementioned difficulties.
+
 \subsection{Sensor based approach}
 \label{Sensor based approach}
 Tracking systems thath make use of sensors mounted to the hand via straps or a glove have alread been in use since the 1970's. First prototype glove systems included the Sayre Glove\cite{ThomasA.DeFanti.1977} and the Digital Entry Data Glove\cite{Grimes.1983}.\\
 The Sayre glove is based off an idea of Richard Sayre. The system utilizes a light sourec and a photocekk which are connected via a flexible tube. These components are mounted along each finger of the hand. The light that passes through the tube is infulenced by the bending angle of the tube which corresponds to the finger bending.
 a large bending angle of the finger induces a larger bending angle of the tube, reducing the intensity of the light that reaches the photodiode. The resulting voltage in the photocell can then be mapped to a specific bending angle of the finger.\\
 The Digital Entry Data Glove was patented by Gary Grimes in 1983. Instead of using only one type of sensors for measurement, this glove based systems used several sensor types for different measurements.
-Touch or proximity sensors were used for determining whether the user’s thumb was touching another part of the hand or fingers. To measure the flexion of the joints in the thumb, index, and little finger four “knuckle-bend sensors” were used.\\
-To get measurements  for the tilting of the hand in respect to the horizontal plane two tilt sensors were mounted. Finally two inertial sensors for measuring the twisting of the forearm and the flexing of the wrist were utilzed.This glove was intended for creating “alphanumeric characters” from hand positions. Recognition of hand signs was performed via a hard-wired circuitry, which mapped 80 unique combinations of sensor readings to a subset of the 96 printable ASCII characters.\\
+Touch or proximity sensors were used for determining whether the user’s thumb was touching another part of the hand or fingers. To measure the flexion of the joints in the thumb, index, and little finger four “knuckle-bend sensors” were used.
 \begin{wrapfigure}[11]{r}{5cm}
 \label{acceleglove}
 \includegraphics[scale=0.5]{images/acceleglove.JPG} 
 \caption{Acceleglove system with the described sensor positions \cite{HernandezRebollar.2002}}
 \end{wrapfigure}
+To get measurements  for the tilting of the hand in respect to the horizontal plane two tilt sensors were mounted. Finally two inertial sensors for measuring the twisting of the forearm and the flexing of the wrist were utilzed.This glove was intended for creating “alphanumeric characters” from hand positions. Recognition of hand signs was performed via a hard-wired circuitry, which mapped 80 unique combinations of sensor readings to a subset of the 96 printable ASCII characters.
 \\These early systems only provided a limited amount of sensors and were rather unpractical in usse. As they were developed to serve very specific applications,  they were used only briefly, and never commercialized.
 \\Newer developements in this sector include \cite{Kuroda.2004,HernandezRebollar.2002,Majeau.2012}. The \textit{AcceleGlove} presented by \cite{HernandezRebollar.2002} consistsis  of six dual-axis accelerometers, mounted on the fingers and the back of the palm, reporting position with respect to the gravitational vector. Sensors are placed on the back of the middle phalanges, on the back of the distal phalange of the thumb, and on the back of the palm.\\
 Kuroda et al \cite{Kuroda.2004} introduced the \textit{StrinGlov}, which obtains full degrees of freedom of human hand using 24 Inductcoders and 9 contact sensors, and encodes hand postures into posture codes on its own DSP. The bending angles of the fingers are measured with the inductcoders. These sensors realte the finger movement to a change in magnetic flux induced by the movement of the sensor parts thath are attached to the finger. The sensor functionality is simular to the functionality of the light sensors from  \cite{ThomasA.DeFanti.1977}. The 9 contact sensors, also based on magnetic fields,  are put on the fingertips and on the inside of the hand to be able to measure contact between two fingetips or the fingertips and the hand. The system furthermore benefits from simple structure, which leads to low production cost. 
@@ -44,55 +47,44 @@ Majeau et al \cite{Majeau.2012} propsed a systems that uses optical flexion sens
 The cange in intensity of both measurting techniques can be mapped to corresponding hnd movements.
 \\Further readings on sensor based hand tracking systems can be found in \cite{Dipietro.2008,Sturman.1994}
 
-\subsection{optical approach}
-\label{Optical approach} 
-Optical approaches use properties of the human hand to hand to estimate the current position. The evaluation of hte hand pose is usually split up into two steps. The first one is the registration of the "real" hand. This is mostly done by at least one camera which is aimed at the hand, supplying a "continous" data stream to the evaluation Software. In the secinbd step, the evaluation software then tries to find key spots in the provided images. This data is then used for the search of the mathcing digital pose. The definition of these key spots can be achieved by several techniques.\\
-\begin{wrapfigure}{r}{0.52\textwidth}
+\subsection{Optical marker approach}
+\label{Optical marker approach} 
+Optical approaches use properties of the human hand to hand to estimate the current position. The evaluation of the hand pose is usually split up into two steps. The first one is the registration of the "real" hand.\\
+\begin{wrapfigure}[7]{r}{0.52\textwidth}
 \includegraphics[scale=0.61]{images/wang_color_glove.JPG}
 \caption{Color glove setup used by Wang and Popovic \cite{Wang.2009} }
 \label{wang color glove}
 \end{wrapfigure}
+This is mostly done by at least one camera which is aimed at the hand, supplying a "continous" data stream to the evaluation Software. In the secinbd step, the evaluation software then tries to find key spots in the provided images. This data is then used for the search of the mathcing digital pose. The definition of these key spots can be achieved by several techniques.\\
 An example is the usage of some kind of marking for finger segments as displayed in \cite{Duca.2007,Fredriksson.2008,Wang.2009}.
-In the method described by Wang and Popovic \cite{Wang.2009},a specially colored glove is used. The glove is segemnted into ten segments, colored randomly from a pool of ten distinct colors (see Figure \ref{wang color glove}). The color pool was limited by the color distinguishing capabilities of the camera used in the experiment. The setup used was engineered to fit the standard home user capabilities, so when using a higher grade camera more color variation could be possible. They used more large pattern areas on the glove to minder the risk of occlusion problems which could appear with smaller patch areas.The pattern is createdby selecting twenty seed triangles on a 3-D hand model that are maximally distant from each other. The remaining triangles are assigned into patches based on their distance to each of these seeds. Each patch is assigned one of the ten colors at random. The jagged boundaries between the patches are artifacts from the low triangle count of the used hand model.\\
-Algortihms that use other characteristics for tracking like texture or shading \cite{LaGorce.2008} rely on an acurate pose from a previous frame to constrain the posure search in the current frame. When using bare hand pose estimation two different handposes can map to similar images. This can lead to an inacurate pose estimation and the breakdown of the algorithm if the wrong estimation is made.
-The benefit of the color glove is that the unique patch pattern, hand poses always map to ditinguishable images, simplifying the search process. Therefore it can effectively recover itsself at each frame without the need of a previous frame.\\
-With the colored glove as a tracking feature, the images from the camera are prepared for a database sampling step. The database that was used consisted of 18,000 finger configurations. A distance metric between two configurations was defined as the root mean square (RMS) error between the vertex positions of the corresponding skinned hand models. With this distance metric, a low dispersion low-dispersion sampling was used to draw a uniform set of samples from the overcomplete collection of finger configurations.
-The selected configurations are rendered at various 3-D orientations using a (synthetic) hand model at a fixed position from the (virtual) camera.
-The camera image was compared then compared to the databse iamges. The comaprison is done via a nearest neighbor lookup using a Hausdorff-like distance \cite{Huttenlocher.1993} and penalizing the distance to the closest pixel of the same color in the other image.The resulkting pose from the database can then be applied to the digital hand model.
+In the method described by Wang and Popovic \cite{Wang.2009},a specially colored glove is used. The glove is segemnted into ten segments, colored randomly from a pool of ten distinct colors (see Figure \ref{wang color glove}).
 
-The method presented by Fredriksson and Ryen \cite{Fredriksson.2008} also uses a color coded glove. In constrast to the fully colored glove described before, the used glove only has colored fingerstips, color markers for the palm and a colored band for the wrist.
-\begin{wrapfigure}{r}{0.52\textwidth}
+\begin{wrapfigure}[13]{r}{0.42\textwidth}
 \includegraphics[scale=0.61]{images/fredrikkson_color_glove.JPG}
 \caption{Color glove setup used by Fredriksson and Ryen \cite{Fredriksson.2008} }
 \label{wang color glove}
 \end{wrapfigure}
+ The color pool was limited by the color distinguishing capabilities of the camera used in the experiment. The setup used was engineered to fit the standard home user capabilities, so when using a higher grade camera more color variation could be possible. They used more large pattern areas on the glove to minder the risk of occlusion problems which could appear with smaller patch areas.
+The pattern is createdby selecting twenty seed triangles on a 3-D hand model that are maximally distant from each other. The remaining triangles are assigned into patches based on their distance to each of these seeds. Each patch is assigned one of the ten colors at random. The jagged boundaries between the patches are artifacts from the low triangle count of the used hand model.
+Algortihms that use other characteristics for tracking like texture or shading \cite{LaGorce.2008} rely on an acurate pose from a previous frame to constrain the posure search in the current frame. When using bare hand pose estimation two different handposes can map to similar images. This can lead to an inacurate pose estimation and the breakdown of the algorithm if the wrong estimation is made.
+The benefit of the color glove is that the unique patch pattern, hand poses always map to ditinguishable images, simplifying the search process. Therefore it can effectively recover itsself at each frame without the need of a previous frame.
+With the colored glove as a tracking feature, the images from the camera are prepared for a database sampling step. The database that was used consisted of 18,000 finger configurations. 
+A distance metric between two configurations was defined as the root mean square (RMS) error between the vertex positions of the corresponding skinned hand models. With this distance metric, a low dispersion low-dispersion sampling was used to draw a uniform set of samples from the overcomplete collection of finger configurations.
+The selected configurations are rendered at various 3-D orientations using a (synthetic) hand model at a fixed position from the (virtual) camera.
+The camera image was compared then compared to the databse iamges. The comaprison is done via a nearest neighbor lookup using a Hausdorff-like distance \cite{Huttenlocher.1993} and penalizing the distance to the closest pixel of the same color in the other image.The resulkting pose from the database can then be applied to the digital hand model.
+The method presented by Fredriksson and Ryen \cite{Fredriksson.2008} also uses a color coded glove. In constrast to the fully colored glove described before, the used glove only has colored fingerstips, color markers for the palm and a colored band for the wrist.
+
 The palm markers and the wrist band are used to retrieve the 3D position of the hand. The wrist marker is furthermore used to define the bondingbox of the the tracking area in a calibration process. Defining a bounding greatly simplifies further image analysis operations by taking away a large amount of uneeded image data.
 After determining position and orientation of the hand in 3d by utilizing wrist band an palm marker position, the system tracks the grip angle and the lateral tilt angle for each finger. The grip angle is defined as as the curling of the finger towards the palm.The second angle is defined as the lateral tilt angle which measures the spread of the fingers.
 The grip angle is calulated by comparing the density of finger pixels around an estimated knuckle line. from the density, an estimations for
 the finger’s Y position around an origin position at the knuckle’s base is made. This value is then transformed into an angle value using an inverse tangent operation.
 
-One downside of this tracking method is that it does not yet incoorporate the movement of the thumb. The thumbhas other movement possibilities and therefore need a differnt algorithmic approach. Also the approach only focusses on the the tracking of the hand data and does not yet implement a digital counterpart like the previously described system.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+One downside of this tracking method is that it does not yet incoorporate the movement of the thumb. The thumb has other movement possibilities and therefore needs a differnt algorithmic approach. Also the approach only focusses on the the tracking of the hand data and does not yet implement a digital counterpart like the previously described system.
+\subsection{Image analysis approach}
+Hand tracking with image anlysis and optical markers has the flaw that the markers have to be put onto the hand in some kind of fashion. Using a glove for this purpose imposes just a litte bit of inconvenience, but have the drawback of not fitting every handshape equalliy and also having to deal with hygene when switching between users. The most natural way of tracking the human hand would be by simply using the properties of the human hand like skin color and shap for tracking. This would remove the need for any artificaly added tracking features and have the greatest amount of comfort for the human user.
+A full overview of the technological advances in this area can be found in \cite{Moeslund.2006,Moeslund.2001}. This paper will only highlight some of the main topics displayed.\\
+As already explained before, the human hand motion leads to a large variety of shapes with many self-occlusions, which becomes even more critical when trying to reproduce the human hand pose via Computer vision. Also the seperaton between background image information and the relavant hand information is a major topic, which is usually also the first step in the algorithmix process.
+An established method for the extraction of Background data was presented by Stauffer and Grimson \cite{Stauffer.1999}. It uses the Idea of representing  each pixel value as a mixture of Gaussian functions (\textit{MoG}) and updating these pixels during runtime with new guassian functions. The conbeniece of this method is that it is also able to substract background information from uncontrolled environments, making it possible for systems to work outside of lab conditions.
 
 
 
