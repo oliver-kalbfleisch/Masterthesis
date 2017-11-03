@@ -1,9 +1,9 @@
-%!TEX root = ../MAsterthesis.tex
+%!TEX root = ../Masterthesis.tex
 \chapter{Tracking in real space}
 The previous sections provided information on the structure of the human hand and how to represent it in the digital space. To apply the algorithms presented in Section \ref{kinematics} to our digital hand model, we need input data from our real world representative.
 \section{General tracking technologies}
 \label{General tracking technologies}
-The methods for gaining positional data can be roughly categorized into two major groups, glove based methods and vision based methods. Glove based methods have already been in developement since the 1980's \cite{Bolt.1980} and have since then resulted in several solution attempts. Sturman and Zeltzer gave a survey on the exsisting tracking mehtods in their paper \cite{Sturman.1994b}. \\They distinguish between two areas of tracking, first the  3D positional tracking of the hand (and also other bodyparts) without regard to the hands shape and secondly the tracking of the hand shape with glove technologies.\\These tracking technologies presented are still applied today in modern tracking solutions \cite{Welch.2002,Rolland.2001}. They account for solutions based in optical tracking based on marker detection, magnetic detection via measurements of an artificial megnetic field\cite{Raab.1979} and accoustic measurements via triangulaton of ultrasonic pings.
+The methods for gaining positional data can be roughly categorized into two major groups, glove based methods and vision based methods. Glove based methods have already been in developement since the 1980's \cite{Bolt.1980} and have since then resulted in several solution attempts. Sturman and Zeltzer gave a survey on the exsisting tracking mehtods in their paper \cite{Sturman.1994}. \\They distinguish between two areas of tracking, first the  3D positional tracking of the hand (and also other bodyparts) without regard to the hands shape and secondly the tracking of the hand shape with glove technologies.\\These tracking technologies presented are still applied today in modern tracking solutions \cite{Welch.2002,Rolland.2001}. They account for solutions based in optical tracking based on marker detection, magnetic detection via measurements of an artificial megnetic field\cite{Raab.1979} and accoustic measurements via triangulaton of ultrasonic pings.
 
 \subsection{Optical tracking}
 
@@ -62,9 +62,9 @@ In the method described by Wang and Popovic \cite{Wang.2009},a specially colored
 \begin{wrapfigure}[13]{r}{0.42\textwidth}
 \includegraphics[scale=0.61]{images/fredrikkson_color_glove.JPG}
 \caption{Color glove setup used by Fredriksson and Ryen \cite{Fredriksson.2008} }
-\label{wang color glove}
+\label{Fredriksson color glove}
 \end{wrapfigure}
- The color pool was limited by the color distinguishing capabilities of the camera used in the experiment. The setup used was engineered to fit the standard home user capabilities, so when using a higher grade camera more color variation could be possible. They used more large pattern areas on the glove to minder the risk of occlusion problems which could appear with smaller patch areas.
+
 The pattern is createdby selecting twenty seed triangles on a 3-D hand model that are maximally distant from each other. The remaining triangles are assigned into patches based on their distance to each of these seeds. Each patch is assigned one of the ten colors at random. The jagged boundaries between the patches are artifacts from the low triangle count of the used hand model.
 Algortihms that use other characteristics for tracking like texture or shading \cite{LaGorce.2008} rely on an acurate pose from a previous frame to constrain the posure search in the current frame. When using bare hand pose estimation two different handposes can map to similar images. This can lead to an inacurate pose estimation and the breakdown of the algorithm if the wrong estimation is made.
 The benefit of the color glove is that the unique patch pattern, hand poses always map to ditinguishable images, simplifying the search process. Therefore it can effectively recover itsself at each frame without the need of a previous frame.
@@ -84,7 +84,28 @@ One downside of this tracking method is that it does not yet incoorporate the mo
 Hand tracking with image anlysis and optical markers has the flaw that the markers have to be put onto the hand in some kind of fashion. Using a glove for this purpose imposes just a litte bit of inconvenience, but have the drawback of not fitting every handshape equalliy and also having to deal with hygene when switching between users. The most natural way of tracking the human hand would be by simply using the properties of the human hand like skin color and shap for tracking. This would remove the need for any artificaly added tracking features and have the greatest amount of comfort for the human user.
 A full overview of the technological advances in this area can be found in \cite{Moeslund.2006,Moeslund.2001}. This paper will only highlight some of the main topics displayed.\\
 As already explained before, the human hand motion leads to a large variety of shapes with many self-occlusions, which becomes even more critical when trying to reproduce the human hand pose via Computer vision. Also the seperaton between background image information and the relavant hand information is a major topic, which is usually also the first step in the algorithmix process.
-An established method for the extraction of Background data was presented by Stauffer and Grimson \cite{Stauffer.1999}. It uses the Idea of representing  each pixel value as a mixture of Gaussian functions (\textit{MoG}) and updating these pixels during runtime with new guassian functions. The conbeniece of this method is that it is also able to substract background information from uncontrolled environments, making it possible for systems to work outside of lab conditions.
+An established method for the extraction of background data was introduced by Stauffer and Grimson \cite{Stauffer.1999}. It uses the idea of representing each pixel value as a mixture of Gaussian functions (\textit{MoG}) and updating these pixels during runtime with new guassian functions.
+The algorithm stores mean, variance, and likelyhood value, based on previous values, for each pixel loaction and distribution.\\\\ 
+A new input is compared to the stored mean values for each distribution at this location.
+A result that is less than a constant times the variance declares that this pixel is part of that distribution and it is updated accordingly. For a higher result, a new distribution is created which replaces the least probable distribution. A new input belongs to the background if the distribution that it is part of is one of the most likely distributions.
+A foregrund Pixel that keeps the same color over time will slowy be incorporated into the background.
+The decision rule, whether a new pixel belongs to an existing distribution or not, can be written as \cite{Kristensen.Feb.2007}:
+\begin{equation}
+ if\ (|P_{new} −P^{d}_{mean}|\leq KP^{d}_{std})\quad then \quad P_{new}\  \in\ Distribution\ d
+\end{equation}
+where $P_{new}$ is the new pixel value, $P^{d}_{mean}$ and $P^{d}_{std}$ are the stored mean value and standard deviation of distribution \textit{d},and \textit{K} is a constant.The conveniece of this method is that it is also able to substract background information from uncontrolled environments, making it possible for systems to work outside of lab conditions.
+After the segmentation of foreground an background is achieved,the hand pose has to be retrieved from the left over image data. Solutions for retireving a foll set of DOF as hand pose estimatin data can be split into two main categories\cite{Erol.2007}, \textit{Model-based tracking} and \textit{Single frame pose estimation}. \\\\
+\textit{Model-based tracking} refers to a top-down tracking method based on parametric models of the 3D hand shape and its kinematic structure. The root idea here is to excecute a search at each frame of an image sequence to find the pose of the shape model that best matches the features extracted from the image(s). A prediction based on previous motion and dynamics data from the object is set up as a base for the search. Optimization features can be incooperated, like employing a local search around the calculated prediction to produce a single best estimate at each frame. The downside of this method represents itsself in the weaknes of accumulating errors over longer runtime periods due to occlusions and complexity of hand motion. These can be overcome by keeping track of multiple outcome hypotheses at each frame for error reduction.\\\\
+\textit{Single frame pose estimation}in,contrast to the previous method ,does not utilize assumption on time coherence. Another motivation for this approach is the rapid motion of the hand and fingers. Images of consecutive frames can be very different, making time coherence assumptions useless.
+
+
+
+
+
+
+
+
+
 
 
 
