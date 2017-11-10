@@ -1,8 +1,9 @@
 
 \chapter{Description of hand in digital space}
+\label{sec:Description_of_hand_in_digital_space}
 Tracking of the human hand has always been a challenging problem. In comaprison to other larger bodyparts like the arm or the head, the human hand itself contains a large variety of smaller parts, namely bones and muscles. These components have to be taken into acount when trying to replicate the natural motion of the hand in digital space.\\
 \section{Physiological structure of the human hand}
-\label{p}
+\label{sec:Physiological_structure_of_the_human_hand}
 Lee and Kuni \citep{LEE.1995} describe the human hand as "an articulated structure with about 30 degrees of freedom [which] changes shape in various ways by its joint movemnents."
 \begin{figure}[H]
 	\includegraphics[scale=0.8]{images/hand.jpg}
@@ -67,12 +68,16 @@ The \textbf{Type II} constraints can be split into interfinger and intrafinger c
 \end{equation}
 Interfinger constraints can be imposed between joints of adjacent fingers. Interfinger constraints describe that the bending of an MP joint in the index finger forces the MP joint in the middle finger to bend as well.\\
  When combinig the constraints described in the above equations, the starting number 21 DOF's of the human hand can be reduced to 15. Inequalities for these cases, obtained through empiric studies, can be found in \citep{LEE.1995}.\\
+ \todo{maybe move hand model section to here?}
 \section{Kinematics}
 \label{kinematics}
  The preceeding sections gave an overview of how we can describe a model of the human hand and introduced some limiting constraints. With the model and the constraints, we can now start to build a kinematic system for the animation of the model.\\
-Kinematic systems contain so called \textit{kinematic chains}, which consist of a \textit{starting point}or \textit{root}, kinematic elements like \textit{joints}, \textit{links} and an \textit{endpoint}, also called \textit{end effector}. Applied to the human hand, the whole hand model represents the kinematic system. This system contains several \textit{kinematic chains}, namely the fingers of the hand with the fingertips beeing the \textit{end effectors} of each of these chains.\\
+Kinematic systems contain so called \textit{kinematic chains}, which consist of a \textit{starting point} or \textit{root}, kinematic elements like \textit{joints}, \textit{links} and an \textit{endpoint}, also called \textit{end effector}. Applied to the human hand, the whole hand model represents the kinematic system. This system contains several \textit{kinematic chains}, namely the fingers of the hand with the fingertips beeing the \textit{end effectors} of each of these chains.\\\\
+Each of these components has it's set of DOF's which can be described mathematically. The established convention for describing this kind of linked systems is the \textit{Denavit-Hartenberg} convention (D-H)\cite{Denavit.1955}. It was actually introduced for the order to standardize the coordinate frames for spatial linkages in the field of robotics, but has since thean be applied in other fields as well.\cite{Spong.2008}\todo{Denavit Hartenberg formmulation for coordinate System definition and transformation}  \\
 As we begin to move our hands, the states of the kinemtic chains begin to change. Joint angles and end effector positions are modified until the end position is reached. To represent the new position and agnle dataset of our physical hand with our kinematic system, two major paths for achieving a solution can be taken.
- \subsection{Forward Kinematics}Forward
+ \subsection{Forward Kinematics}
+ 
+ Forward
  \label{Forward Kinematics}  Kinmatics (FK) uses the knowledge of the new angles and positions after the application of known transformations to the kinematic chain. The data of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is then used to solve the problem of finding the \textit{end effector's} position.\\
 We can denote the exisiting end effectors relative postion to an origin as $ s_{1},...,s_{k}$. The $s_{i}$ positon is the result of th combination of all the joint angles in the corresponding kinemtaic chain. Respectively, we define the target positon of the end effectors as $t_{1},...,t_{i}$, with $t_{i}$ beeing the target positiojn for the end effector $s_{i}$. The required positional change for the end effector can now be described as $e_{i}=t_{i}-s_{i}$. In systems with more than one end effector, like our hand system, the components can be written as vectors.
 \begin{equation}
@@ -217,7 +222,7 @@ Since the Newton methods are posed as a minimisation problem, they return smooth
 The Newton methods also have the advantage that they do not suffer from singularity problems, such as that which occurs when finding the Jacobian Inverse.
 \subsection{Sequential Monte Carlo Method}
 Sequential Monte Carlo Methods (SMCM) Methods are a relative young approch in solving IK problems. Courty and Arnaud \cite{Courty.2008} proposed such a technique, whose main advantage is the usage of a sampling approach. When doing so,the IK problem can be solved  through the usage of direct kinematics, avoiding the numerical inversion of the forward operator.
-
+\todo{ add other missing methods, maybe only as further are}
 
 \newpage
 \subsection{FABRIK Algorithm}
@@ -256,3 +261,5 @@ Consecutively, this is done with the remaining joints until the root joint is re
 This finishes the first halv of the iteration step.With the calculated positions, we now perform a forard calculation, starting from the root until we reach the end effector. Since the root of the system normally does not move from it's initial position, we have to reset the root jont to this value before starting to calculate the new positions of the subsequent joints(see\textbf{(e)}).
 
 Analogous to the procedure in the inverse step, we construct the lines between the points and determine the new positon values of the joints. The end result of this step is shown in \textbf{(f)}. At this point, we can decide if the result position of the end effector is appropriate in comparison to the value of \textbf{t}. A simple threshold value for this case could be the position difference between these two points.
+\todo{constraints adding for the algorithm}
+\todo{review of algorithm capacilities}

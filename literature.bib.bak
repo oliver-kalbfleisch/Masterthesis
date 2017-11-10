@@ -7,41 +7,22 @@
 }
 
 
-@book{.1998,
- year = {1998},
- title = {Automatic Face and Gesture Recognition, 1998. Proceedings. Third IEEE International Conference on},
- isbn = {9780818683442}
-}
-
-
-@book{.1998b,
- year = {1998},
- title = {Proceedings},
- keywords = {Gestes;Interaction homme-machine (Informatique);Perception des visages;Reconnaissance optique des formes (Informatique);Traitement d'images},
- address = {[Piscataway, NJ]},
- publisher = {IEEE}
-}
-
-
-@book{.1998c,
- year = {1998},
- title = {Third IEEE International Conference on Automatic Face and Gesture Recognition, 1998. Proceedings},
- publisher = {{IEEE / Institute of Electrical and Electronics Engineers Incorporated}}
+@article{.1984b,
+ year = {1984},
+ title = {Robust Control of Robotic Manipulators},
+ pages = {2435--2440},
+ pagination = {page},
+ volume = {17},
+ number = {2},
+ issn = {1474-6670},
+ journal = {IFAC Proceedings Volumes},
+ doi = {10.1016/S1474-6670(17)61347-8}
 }
 
 
 @proceedings{.2001,
  year = {2001},
  title = {BMVC}
-}
-
-
-@book{.2002c1998,
- year = {2002, c1998},
- title = {Third IEEE International Conference on Automatic Face and Gesture Recognition: Proceedings : April 14-16, 1998, Nara, Japan},
- keywords = {Extraction des primitives;Reconnaissance des gestes;Reconnaissance faciale},
- address = {Los Alamitos, Calif.},
- publisher = {{IEEE Computer Society}}
 }
 
 
@@ -68,20 +49,6 @@
  title = {Snakes: Active contour models},
  url = {https://link.springer.com/article/10.1007%2FBF00133570?LI=true},
  urldate = {2017-08-17}
-}
-
-
-@article{A.Balestrino.1984,
- author = {{A. Balestrino} and {G. De Maria} and {L. Sciavicco}},
- year = {1984},
- title = {Robust Control of Robotic Manipulators},
- pages = {2435--2440},
- pagination = {page},
- volume = {17},
- number = {2},
- issn = {1474-6670},
- journal = {IFAC Proceedings Volumes},
- doi = {10.1016/S1474-6670(17)61347-8}
 }
 
 
@@ -276,14 +243,6 @@ these methods in estimating both marker and CoR positions.},
 }
 
 
-@misc{Chaudhary.20130310,
- author = {Chaudhary, Ankit and Raheja, J. L. and Das, Karen and Raheja, Sonia},
- year = {2013},
- title = {Intelligent Approaches to interact with Machines using Hand Gesture Recognition in Natural way: A Survey},
- url = {http://arxiv.org/pdf/1303.2292}
-}
-
-
 @article{Chiaverini.1994,
  author = {Chiaverini, S. and Siciliano, B. and Egeland, O.},
  year = {1994},
@@ -380,16 +339,6 @@ methods for determining the Jacobian.},
 }
 
 
-@article{Denavit.1955,
- author = {Denavit, Jacques},
- year = {1955},
- title = {A kinematic notation for lower-pair mechanisms based on matrices},
- pages = {215--221},
- pagination = {page},
- journal = {ASME J. Appl. Mech.}
-}
-
-
 @book{DesmondChik.2008,
  author = {{Desmond Chik} and {Jochen Trumpf} and {Nicol N. Schraudolph}},
  year = {2008},
@@ -443,32 +392,12 @@ methods for determining the Jacobian.},
  author = {Erol, Ali and Bebis, George and Nicolescu, Mircea and Boyle, Richard D. and Twombly, Xander},
  year = {2007},
  title = {Vision-based hand pose estimation: A review},
- urldate = {2017-10-29},
  pages = {52--73},
  pagination = {page},
  volume = {108},
  number = {1-2},
  journal = {Computer vision and image understanding},
  doi = {10.1016/j.cviu.2006.10.012}
-}
-
-
-@article{FabienneLathuiIiere.2000,
- abstract = {v. 1. Computer vision and image analysis -- v. 2. Pattern recognition and neural networks -- v. 3. Image speech and signal processing -- v. 4. Applications robotics systems and architectures},
- author = {{Fabienne LathuiIiere} and {Jean-Yves Herve}},
- year = {2000},
- title = {Visual Tracking of Hand Posture with Occlusion Handling: Proceedings : Barcelona, Spain, September 3-7, 2000},
- keywords = {Computer vision;Congresses;Pattern recognition systems},
- urldate = {2017-10-29}
-}
-
-
-@book{FG.20,
- year = {20--},
- title = {3rd. International Conference on Face {\&} Gesture Recognition,Nara, Japan, 141998-04-16},
- address = {[S.l.]n[s.n.]},
- isbn = {9780818683442},
- institution = {FG}
 }
 
 
@@ -614,28 +543,6 @@ methods for determining the Jacobian.},
 }
 
 
-@book{IanBullock.2012,
- abstract = {Fourth IEEE RAS/EMBS International Conference on Biomedical Robotics and Biomechatronics, June 24-27, 2012, Roma, Italy},
- author = {{Ian Bullock} and {Julia Borras Sol} and {Aaron Dollar}},
- year = {2012},
- title = {4th IEEE RAS {\&} EMBS International Conference on Biomedical Robotics and Biomechatronics (BioRob), 2012: 24 - 27 June 2012, Rome, Italy ; [including] the first edition of the Symposium on Surgical Robotics ; part of the Bioengineering Week (June 20 - 29, 2012)},
- keywords = {Biological systems modeling;Biomechatronic and human-centred design;Bionics;Congresses;ilmpub;Locomotion and manipulation in robots and biological systems;Mechatronics;Robotics;Robotics in medicine},
- address = {Piscataway, NJ},
- urldate = {2017-11-03},
- publisher = {IEEE},
- institution = {{Robotics and Automation Society} and {Engineering in Medicine and Biology Society} and {IEEE RAS {\&} EMBS International Conference on Biomedical Robotics and Biomechatronics (BioRob)} and {IEEE RAS {\&} EMBS International Conference on Biomedical Robotics and Biomechatronics} and {Symposium on Surgical Robotics} and {Bioengineering Week}}
-}
-
-
-@proceedings{IasonasOikonomidis.2010,
- year = {2010},
- title = {Markerless and Efficient 26-DOF Hand Pose Recovery},
- urldate = {2017-10-29},
- editor = {{Iasonas Oikonomidis}, Nikolaos Kyriazis and {Antonis A. Argyros}},
- institution = {Springer}
-}
-
-
 @book{IasonOikonomidis.2011,
  author = {{Iason Oikonomidis} and {Nikolaos Kyriazis} and {Antonis A. Argyros}},
  year = {2011},
@@ -711,36 +618,6 @@ methods for determining the Jacobian.},
 }
 
 
-@proceedings{IEEEComputerSocietyConferenceonComputerVisionandPatternRecognition.1999,
- year = {1999},
- title = {1999 IEEE Computer Society Conference on Computer Vision and Pattern Recognition: June 23-25, 1999 Fort Collins, Colorado},
- address = {Los Alamitos, Ca},
- publisher = {{IEEE Computer Society}},
- isbn = {0-7695-0149-4},
- institution = {{IEEE Computer Society Conference on Computer Vision and Pattern Recognition} and {IEEE Computer Society}}
-}
-
-
-@book{IEEEInternationalConferenceonAutomaticFaceandGestureRecognition(FG).1998,
- year = {1998},
- title = {Proceedings},
- address = {Los Alamitos, Calif. [u.a.]},
- publisher = {{IEEE Computer Society}},
- isbn = {9780818683466},
- institution = {{IEEE International Conference on Automatic Face and Gesture Recognition (FG)}}
-}
-
-
-@book{IEEEInternationalConferenceonAutomaticFaceandGestureRecognition.1998,
- year = {1998},
- title = {Proceedings of the third IEEE International Conference on Automatic Face and Gesture Recognition, April 14-16, 1998, Nara, Japan},
- address = {Los Alamitos},
- publisher = {{IEEE Computer Society}},
- isbn = {9780818683442},
- institution = {{IEEE International Conference on Automatic Face and Gesture Recognition}}
-}
-
-
 @proceedings{IEEEWorkshoponMotionofNonRigidandArticulatedObjects.1994,
  year = {1994},
  title = {Proceedings of the 1994 IEEE Workshop on Motion of Non-Rigid and Articulated Objects, November 11-12, 1994, Austin, Texas},
@@ -807,15 +684,6 @@ methods for determining the Jacobian.},
 }
 
 
-@article{JeromeMartin.1998,
- author = {{Jerome Martin} and {Vincent Devin} and {James L. Crowley}},
- year = {1998},
- title = {Active Hand Tracking},
- urldate = {2017-11-02},
- journal = {Third International IEEE Conference on Automatic Face and Gesture Recognition}
-}
-
-
 @inproceedings{Kato.1999,
  author = {Kato, H. and Billinghurst, M.},
  title = {Marker tracking and HMD calibration for a video-based augmented reality conferencing system},
@@ -844,30 +712,6 @@ methods for determining the Jacobian.},
 }
 
 
-@book{Kimmel.2011,
- year = {2011},
- title = {Computer vision - ACCV 2010: 10th Asian Conference on Computer Vision, Queenstown, New Zealand, November 8 - 12, 2010 ; revised selected papers, part III},
- keywords = {Artificial intelligence;Computer graphics;Computer science;Computer software;Computer vision;Optical pattern recognition;Visualization},
- address = {Berlin},
- volume = {6494},
- publisher = {Springer},
- isbn = {978-3-642-19318-7},
- series = {Lecture Notes in Computer Science},
- editor = {Kimmel, Ron and Klette, Reinhard and Sugimoto, Akihiro},
- doi = {10.1007/978-3-642-19318-7}
-}
-
-
-@book{Kimmel.2011b,
- year = {2011},
- title = {Computer Vision -- ACCV 2010: 10th Asian Conference on Computer Vision, Queenstown, New Zealand, November 8-12, 2010, Revised Selected Papers, Part III},
- address = {Berlin, Heidelberg},
- publisher = {{Springer Berlin Heidelberg}},
- isbn = {978-3-642-19318-7},
- editor = {Kimmel, Ron and Klette, Reinhard and Sugimoto, Akihiro}
-}
-
-
 @book{Korein.1985,
  author = {Korein, James Urey},
  year = {1985},
@@ -877,21 +721,6 @@ methods for determining the Jacobian.},
  publisher = {{MIT Press}},
  isbn = {0262111047},
  series = {ACM distinguished dissertations}
-}
-
-
-@incollection{Kristensen.Feb.2007,
- abstract = {To efficiently classify and track video objects in a surveillance application, it is essential to reduce the amount of streaming data. One solution is to segment the video into background, i.e. stationary objects, and foreground, i.e. moving objects, and then discard the background. One such motion segmentation algorithm that has proven reliable is the Stauffer and Grimson algorithm. This paper investigates how different color spaces affect the segmentation result in terms of noise and shadow sensitivity. Shadows are especially problematic since they not only distort shape but can also result in falsely connected objects that will complicate tracking and classification. Therefore, a new decision kernel for the segmentation algorithm is presented. This kernel alters the probability of foreground detection to reduce shadows and to increase the chance of correct segmentation for objects with a skin tone color, e.g. faces.},
- author = {Kristensen, Fredrik and Nilsson, Peter and {\"O}wall, Viktor},
- title = {Background Segmentation Beyond RGB},
- pages = {602--612},
- bookpagination = {page},
- publisher = {{Springer London}},
- isbn = {978-3-540-32432-4},
- editor = {Narayanan, P. J. and Nayar, Shree K. and Shum, Heung-Yeung},
- booktitle = {Computer Vision - ACCV 2006},
- year = {Feb. 2007},
- address = {Guildford}
 }
 
 
@@ -1092,21 +921,6 @@ methods for determining the Jacobian.},
 }
 
 
-@inproceedings{Mo.2005,
- author = {Mo, Zhenyao and Lewis, J. P. and Neumann, Ulrich},
- title = {SmartCanvas},
- pages = {239},
- bookpagination = {page},
- publisher = {ACM},
- isbn = {1581138946},
- editor = {{St. Amant}, Rob},
- booktitle = {Proceedings of the 10th international conference on Intelligent user interfaces},
- year = {2005},
- address = {New York, NY},
- doi = {10.1145/1040830.1040881}
-}
-
-
 @article{ModMaasum.2015,
  abstract = {Hand gesture recognition system has evolved tremendously in the recent few years because of its ability to interact with machine efficiently. Mankind tries to incorporate human gestures into modern technology by searching and finding a replacement of multi touch technology which does not require any touching movement on screen. This paper presents an overview on several methods to realize hand gesture recognition by using three main modules: camera and segmentation module, detection module and feature extraction module. There are many methods which can be used to get the respective results depending on its advantages. Summary of previous research and results of hand gesture methods as well as comparison between gesture recognition are also given in this paper.},
  author = {{Mod Ma'asum}, Farah Farhana and Sulaiman, Suhana and Saparon, Azilah},
@@ -1118,32 +932,6 @@ methods for determining the Jacobian.},
  issn = {1757-8981},
  journal = {IOP Conference Series: Materials Science and Engineering},
  doi = {10.1088/1757-899X/99/1/012012}
-}
-
-
-@article{Moeslund.2001,
- author = {Moeslund, Thomas B. and Granum, Erik},
- year = {2001},
- title = {A Survey of Computer Vision-Based Human Motion Capture},
- pages = {231--268},
- pagination = {page},
- volume = {81},
- number = {3},
- journal = {Computer vision and image understanding},
- doi = {10.1006/cviu.2000.0897}
-}
-
-
-@article{Moeslund.2006,
- author = {Moeslund, Thomas B. and Hilton, Adrian and Kr{\"u}ger, Volker},
- year = {2006},
- title = {A survey of advances in vision-based human motion capture and analysis},
- pages = {90--126},
- pagination = {page},
- volume = {104},
- number = {2-3},
- journal = {Computer vision and image understanding},
- doi = {10.1016/j.cviu.2006.08.002}
 }
 
 
@@ -1161,17 +949,6 @@ methods for determining the Jacobian.},
 }
 
 
-@book{Narayanan.Feb.2007,
- abstract = {Annotation},
- year = {Feb. 2007},
- title = {Computer Vision - ACCV 2006: 7th Asian Conference on Computer Vision, Hyderabad, India, January 13-16, 2006, Proceedings, Part II},
- address = {Guildford},
- publisher = {{Springer London}},
- isbn = {978-3-540-32432-4},
- editor = {Narayanan, P. J. and Nayar, Shree K. and Shum, Heung-Yeung}
-}
-
-
 @book{Nirei.1996,
  author = {Nirei, Kenichi and Saito, Hideo and Mochimaru, Masaaki and Ozawa, Shinji},
  year = {1996},
@@ -1181,23 +958,6 @@ methods for determining the Jacobian.},
  urldate = {2017-10-05},
  publisher = {{Institute of Electrical and Electronics Engineers} and {Can be ordered from IEEE Service Center}},
  institution = {{Institute of Electrical and Electronics Engineers}}
-}
-
-
-@incollection{Oikonomidis.2011,
- abstract = {We present a novel method that, given a sequence of synchronized views of a human hand, recovers its 3D position, orientation and full articulation parameters. The adopted hand model is based on properly selected and assembled 3D geometric primitives. Hypothesized configurations/poses of the hand model are projected to different camera views and image features such as edge maps and hand silhouettes are computed. An objective function is then used to quantify the discrepancy between the predicted and the actual, observed features. The recovery of the 3D hand pose amounts to estimating the parameters that minimize this objective function which is performed using Particle Swarm Optimization. All the basic components of the method (feature extraction, objective function evaluation, optimization process) are inherently parallel. Thus, a GPU-based implementation achieves a speedup of two orders of magnitude over the case of CPU processing. Extensive experimental results demonstrate qualitatively and quantitatively that accurate 3D pose recovery of a hand can be achieved robustly at a rate that greatly outperforms the current state of the art.},
- author = {Oikonomidis, Iasonas and Kyriazis, Nikolaos and Argyros, Antonis A.},
- title = {Markerless and Efficient 26-DOF Hand Pose Recovery},
- url = {https://doi.org/10.1007/978-3-642-19318-7_58},
- pages = {744--757},
- bookpagination = {page},
- publisher = {{Springer Berlin Heidelberg}},
- isbn = {978-3-642-19318-7},
- editor = {Kimmel, Ron and Klette, Reinhard and Sugimoto, Akihiro},
- booktitle = {Computer Vision -- ACCV 2010: 10th Asian Conference on Computer Vision, Queenstown, New Zealand, November 8-12, 2010, Revised Selected Papers, Part III},
- year = {2011},
- address = {Berlin, Heidelberg},
- doi = {10.1007/978-3-642-19318-7_58}
 }
 
 
@@ -1255,20 +1015,6 @@ methods for determining the Jacobian.},
 }
 
 
-@article{Pavlovic.1997,
- author = {Pavlovic, V. I. and Sharma, R. and Huang, T. S.},
- year = {1997},
- title = {Visual interpretation of hand gestures for human-computer interaction: A review},
- pages = {677--695},
- pagination = {page},
- volume = {19},
- number = {7},
- issn = {01628828},
- journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
- doi = {10.1109/34.598226}
-}
-
-
 @article{Penrose.1956,
  abstract = {Mathematical Proceedings of the Cambridge Philosophical Society},
  author = {Penrose, R. and Todd, J. A.},
@@ -1319,21 +1065,6 @@ methods for determining the Jacobian.},
 }
 
 
-@article{Rautaray.2015,
- abstract = {As computers become more pervasive in society, facilitating natural human--computer interaction (HCI) will have a positive impact on their use. Hence, there has been growing interest in the development of new approaches and technologies for bridging the human--computer barrier. The ultimate aim is to bring HCI to a regime where interactions with computers will be as natural as an interaction between humans, and to this end, incorporating gestures in HCI is an important research area. Gestures have long been considered as an interaction technique that can potentially deliver more natural, creative and intuitive methods for communicating with our computers. This paper provides an analysis of comparative surveys done in this area. The use of hand gestures as a natural interface serves as a motivating force for research in gesture taxonomies, its representations and recognition techniques, software platforms and frameworks which is discussed briefly in this paper. It focuses on the three main phases of hand gesture recognition i.e. detection, tracking and recognition. Different application which employs hand gestures for efficient interaction has been discussed under core and advanced application domains. This paper also provides an analysis of existing literature related to gesture recognition systems for human computer interaction by categorizing it under different key parameters. It further discusses the advances that are needed to further improvise the present hand gesture recognition systems for future perspective that can be widely used for efficient human computer interaction. The main goal of this survey is to provide researchers in the field of gesture based HCI with a summary of progress achieved to date and to help identify areas where further research is needed.},
- author = {Rautaray, Siddharth S. and Agrawal, Anupam},
- year = {2015},
- title = {Vision based hand gesture recognition for human computer interaction: A survey},
- pages = {1--54},
- pagination = {page},
- volume = {43},
- number = {1},
- issn = {1573-7462},
- journal = {Artificial Intelligence Review},
- doi = {10.1007/s10462-012-9356-9}
-}
-
-
 @inproceedings{Rehg.1994,
  author = {Rehg, James M. and Kanade, Takeo},
  title = {Visual tracking of high dof articulated structures: An application to human hand tracking},
@@ -1369,16 +1100,6 @@ methods for determining the Jacobian.},
  issn = {01679457},
  journal = {Human Movement Science},
  doi = {10.1016/S0167-9457(99)00023-8}
-}
-
-
-@misc{RichardWatson.1993,
- author = {{Richard Watson}},
- date = {1993},
- title = {A Survey of Gesture Recognition Techniques},
- address = {Dublin},
- urldate = {2017-10-29},
- institution = {{Department of Computer Science,Trinity College}}
 }
 
 
@@ -1486,20 +1207,6 @@ presented to validate the proposed method.},
 }
 
 
-@inproceedings{Segen.1999,
- author = {Segen, J. and Kumar, S.},
- title = {Shadow gestures: 3D hand pose estimation using a single camera},
- pages = {479--485},
- bookpagination = {page},
- publisher = {{IEEE Computer Society}},
- isbn = {0-7695-0149-4},
- booktitle = {1999 IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
- year = {1999},
- address = {Los Alamitos, Ca},
- doi = {10.1109/CVPR.1999.786981}
-}
-
-
 @article{Shan.2007,
  author = {Shan, Caifeng and Tan, Tieniu and Wei, Yucheng},
  year = {2007},
@@ -1509,23 +1216,6 @@ presented to validate the proposed method.},
  volume = {40},
  number = {7},
  journal = {Pattern recognition}
-}
-
-
-@book{Spong.2006,
- author = {Spong, Mark W. and Hutchinson, Seth and Vidyasagar, Mathukumalli},
- year = {2006},
- title = {Robot modeling and control},
- volume = {3},
- publisher = {{Wiley New York}}
-}
-
-
-@book{Spong.2008,
- author = {Spong, Mark W. and Vidyasagar, Mathukumalli},
- year = {2008},
- title = {Robot dynamics and control},
- publisher = {{John Wiley {\&} Sons}}
 }
 
 
@@ -1550,33 +1240,6 @@ presented to validate the proposed method.},
  title = {Fast Tracking of Hand and Finger Articulations Using a Single Depth Camera},
  keywords = {3D Interaction;Hand tracking;realtime Tracking},
  urldate = {2017-08-17}
-}
-
-
-@proceedings{St.Amant.2005,
- year = {2005},
- title = {Proceedings of the 10th international conference on Intelligent user interfaces},
- keywords = {Computer science},
- address = {New York, NY},
- publisher = {ACM},
- isbn = {1581138946},
- editor = {{St. Amant}, Rob},
- institution = {{ACM Special Interest Group on Artificial Intelligence} and {ACM Special Interest Group on Computer-Human Interaction}},
- doi = {10.1145/1040830}
-}
-
-
-@inproceedings{Stauffer.1999,
- author = {Stauffer, C. and Grimson, W.E.L.},
- title = {Adaptive background mixture models for real-time tracking},
- pages = {246--252},
- bookpagination = {page},
- publisher = {{IEEE Computer Society}},
- isbn = {0-7695-0149-4},
- booktitle = {1999 IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
- year = {1999},
- address = {Los Alamitos, Ca},
- doi = {10.1109/CVPR.1999.784637}
 }
 
 
@@ -1836,20 +1499,6 @@ The second approach, tree-based filtering, combines ideas from detection and Bay
  publisher = {{IEEE Computer Society}},
  isbn = {0-7695-0939-8},
  institution = {{Workshop on Human Motion} and {IEEE Computer Society}}
-}
-
-
-@article{Wren.1997,
- author = {Wren, C. R. and Azarbayejani, A. and Darrell, T. and Pentland, A. P.},
- year = {1997},
- title = {Pfinder: Real-time tracking of the human body},
- pages = {780--785},
- pagination = {page},
- volume = {19},
- number = {7},
- issn = {01628828},
- journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
- doi = {10.1109/34.598236}
 }
 
 

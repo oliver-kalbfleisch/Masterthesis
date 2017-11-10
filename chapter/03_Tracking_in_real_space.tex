@@ -3,7 +3,7 @@
 The previous sections provided information on the structure of the human hand and how to represent it in the digital space. To apply the algorithms presented in Section \ref{kinematics} to our digital hand model, we need input data from our real world representative.
 \section{General tracking technologies}
 \label{General tracking technologies}
-The methods for gaining positional data can be roughly categorized into two major groups, glove based methods and vision based methods. Glove based methods have already been in developement since the 1980's \cite{Bolt.1980} and have since then resulted in several solution attempts. Sturman and Zeltzer gave a survey on the exsisting tracking mehtods in their paper \cite{Sturman.1994}. \\They distinguish between two areas of tracking, first the  3D positional tracking of the hand (and also other bodyparts) without regard to the hands shape and secondly the tracking of the hand shape with glove technologies.\\These tracking technologies presented are still applied today in modern tracking solutions \cite{Welch.2002,Rolland.2001}. They account for solutions based in optical tracking based on marker detection, magnetic detection via measurements of an artificial megnetic field\cite{Raab.1979} and accoustic measurements via triangulaton of ultrasonic pings.
+The methods for gaining positional data can be roughly categorized into two major groups, glove based methods and vision based methods. Glove based methods have already been in developement since the 1980's \cite{Bolt.1980} and have since then resulted in several solution attempts. Sturman and Zeltzer gave a survey on the exsisting tracking mehtods in their paper \cite{Sturman.1994}. \\They distinguish between two areas of tracking, first the 3D positional tracking of the hand (and also other bodyparts) without regard to the hands shape and secondly the tracking of the hand shape with glove technologies.\\These tracking technologies presented are still applied today in modern tracking solutions \cite{Welch.2002,Rolland.2001}. They account for solutions based in optical tracking based on marker detection, magnetic detection via measurements of an artificial magnetic field\cite{Raab.1979} and accoustic measurements via triangulaton of ultrasonic pings.
 
 \subsection{Optical tracking}
 
@@ -24,11 +24,11 @@ The principles of accoustic tracking are very simular to those of the optic trac
 \\Most of these downside can be adressed with a combination of these systems with another form of tracking like in \cite{Foxlin.1998}.
 \section{Hand tracking Systems}
 In comparison to the tracking of the whole human body, the tracking of the human hands with their maximum of 27 DoF's each in a small space is rather difficult to handle.\\
-The systems that try to achieve this have to encounter  deveral difficulties. Self Occlusion also plays a great role in the Systems design, especiall when working with only one tracking optical system for reduced complexity. Also these systems eed to maintain a certain amount of processing speed for achieving a fluent reproduction of the captured motion. This demands the capability of processing large amaounts of data in very short intervals. Most prototpy testing for the described systems will be done in an controlled environemtn where the background is known. For a more widespread use , the systems need to becapable of registering the hand on an unrestricted background, which may have a wide range of patterns, xolor and lighting differences. Also human hand motion itsself is quite fast, resulting in a higher framerate demand for the tracking cameras.\\
-The following section will describe different approaches to soleve the aforementioned difficulties.
+The systems that try to achieve this have to encounter several difficulties. Self occlusion also plays a great role in the system design, especiall when working with only one tracking optical system for reduced complexity. Also these systems need to maintain a certain amount of processing speed for achieving a fluent reproduction of the captured motion. This demands the capability of processing large amounts of data in very short intervals. Most prototype testing for the described systems will be done in an controlled environement where the background is known. For a more widespread use, these systems need to be capable of registering the hand on an unrestricted background, which may have a wide range of patterns, color and lighting differences. Also human hand motion itsself is quite fast, resulting in a higher framerate demand for the tracking cameras.\\
+The following section will describe different approaches to solve the aforementioned difficulties.
 
-\subsection{Sensor based approach}
-\label{Sensor based approach}
+\subsection{Sensor based}
+\label{Sensor based}
 Tracking systems thath make use of sensors mounted to the hand via straps or a glove have alread been in use since the 1970's. First prototype glove systems included the Sayre Glove\cite{ThomasA.DeFanti.1977} and the Digital Entry Data Glove\cite{Grimes.1983}.\\
 The Sayre glove is based off an idea of Richard Sayre. The system utilizes a light sourec and a photocekk which are connected via a flexible tube. These components are mounted along each finger of the hand. The light that passes through the tube is infulenced by the bending angle of the tube which corresponds to the finger bending.
 a large bending angle of the finger induces a larger bending angle of the tube, reducing the intensity of the light that reaches the photodiode. The resulting voltage in the photocell can then be mapped to a specific bending angle of the finger.\\
@@ -47,8 +47,8 @@ Majeau et al \cite{Majeau.2012} propsed a systems that uses optical flexion sens
 The cange in intensity of both measurting techniques can be mapped to corresponding hnd movements.
 \\Further readings on sensor based hand tracking systems can be found in \cite{Dipietro.2008,Sturman.1994}
 
-\subsection{Optical marker approach}
-\label{Optical marker approach} 
+\subsection{Appearance Based - Optical marker}
+\label{Appearance Based Optical marker}
 Optical approaches use properties of the human hand to hand to estimate the current position. The evaluation of the hand pose is usually split up into two steps. The first one is the registration of the "real" hand.\\
 \begin{wrapfigure}[7]{r}{0.52\textwidth}
 \includegraphics[scale=0.61]{images/wang_color_glove.JPG}
@@ -80,8 +80,8 @@ The grip angle is calulated by comparing the density of finger pixels around an 
 the finger’s Y position around an origin position at the knuckle’s base is made. This value is then transformed into an angle value using an inverse tangent operation.
 
 One downside of this tracking method is that it does not yet incoorporate the movement of the thumb. The thumb has other movement possibilities and therefore needs a differnt algorithmic approach. Also the approach only focusses on the the tracking of the hand data and does not yet implement a digital counterpart like the previously described system.
-\subsection{Image analysis approach}
-Hand tracking with image anlysis and optical markers has the flaw that the markers have to be put onto the hand in some kind of fashion. Using a glove for this purpose imposes just a litte bit of inconvenience, but have the drawback of not fitting every handshape equalliy and also having to deal with hygene when switching between users. The most natural way of tracking the human hand would be by simply using the properties of the human hand like skin color and shap for tracking. This would remove the need for any artificaly added tracking features and have the greatest amount of comfort for the human user.
+\subsection{Model Based - Image analysis}
+Hand tracking with image anlysis of optical marker positions has the flaw that theses markers have to be put onto the hand in some kind of fashion. Using a glove for this purpose imposes just a litte bit of inconvenience, but have the drawback of not fitting every handshape equalliy and also having to deal with hygene when switching between users. The most natural way of tracking the human hand would be by simply using the properties of the human hand like skin color and shap for tracking. This would remove the need for any artificaly added tracking features and have the greatest amount of comfort for the human user.
 A full overview of the technological advances in this area can be found in \cite{Moeslund.2006,Moeslund.2001}. This paper will only highlight some of the main topics displayed.\\
 As already explained before, the human hand motion leads to a large variety of shapes with many self-occlusions, which becomes even more critical when trying to reproduce the human hand pose via Computer vision. Also the seperaton between background image information and the relavant hand information is a major topic, which is usually also the first step in the algorithmix process.
 An established method for the extraction of background data was introduced by Stauffer and Grimson \cite{Stauffer.1999}. It uses the idea of representing each pixel value as a mixture of Gaussian functions (\textit{MoG}) and updating these pixels during runtime with new guassian functions.
