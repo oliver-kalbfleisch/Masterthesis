@@ -1,1 +1,27 @@
 \chapter{System prequisites}
+
+Befor elaborating a final system conception, some prequisites have to be defined.
+
+System components to be defined:
+\begin{itemize}
+ \item Tracking Hardware
+ \item Image analysis
+ \item Inverse kinameatics algorithm
+ \item Handmodel
+ \item Display hardware 
+ \end{itemize} 
+
+ \section{Display}
+ Before analyzing the other components of the system, the final display hardware   properties have to be defined as these are the determinig factor for all other components. Since the goal of hand and object tracking is mostly immersive when using a virtaul reality headset rather than a normal display, these do not need to be taken into consideration.\\
+Another device category which may be in the focus of interest are current mobile device Plattforms like \textit{Google cardboard} or the \textit{Samsung Gear} plattform.In terms of creating an low cost consumer grade solution, these devvices should be the first catergory to look at, as they are more wiedely available and do not need extra hardware except the smartphone. Most modern devices have native suport of WebGL in the Browser, making it fairly easy to display VR Content. They also come with the convenience of already having a set of integrated sensors for position an rotation integrated. The downside of this device class apperas when taking a look at the hardware specifications of these devices. Although the newest high tier consumer grade devices do have a good performance output for their size,but still no comparison for a Desktop Setup. \todo {get device specs for current phones} Also these devices, as they are first of all mobile phones, lack in terms of connection ports, for wire connections, making it necessarry to mostly communicate over wireless protocols. This causes a growth in  Infrastructure (Server, Hotspot, etc.) and also introduces pyhsical delay through signal transmission.\\
+After these first eliminary steps, only pure VR-Headsets like the \textit{HTC Vive} or \textit{Occulus Rift}\todo {get refs for devices}  should be the main focus. These headsets also provide the capabilites of motion tracking while utilizing the processing capabilites of a desicated GPU and highpower CPU capabilities of modern desktop computers. Through these, they provide a variety of connection ports for wired connections, eliminating the need for wireless transmissions. In terms of cost, these devices do lie on the more costly side as you need the headset itsself and a hardware setup which is capable of providing the output framerate needed. But with the latest generations of GPU's and CPU's, reaching this goal was mafde possible for the normal consumer.\\
+The \textit{HTC Vive}\todo {Occulus specs}  is able to display 90 Images per second on both of its displays with each having a resolution of 1080x1200 pixels\todo{ref}. The duration of one frame is therfore around 10 ms. This is the timeframe in which the rest of the componets have to supply the image data, do the image analysis to retrieve the tracking data, recalculate the IK model, calculate the object posiiton and render the whole scene.
+
+\section{Tracking Hardware}
+ As explained int the previous chapters, the motion of the human hand can be complex and in some cases realy fast. Therefore, the optical tracking hardware should idealy be able to record images with the same or higher frequency as the display medium that is to be used. Prosumer and professional grade cameras are theoretically able to produce these kind of Framerates (60 Hz and above), but most of the time store these high framerate videos directly to a hard drive rather than broadcasting them somewhere as most of the current day devices are not able to display such high framerates yet. Also the hardware that is needed to record such specific high framerates is relatively expensive. Consumer grade cameras like the GoPro that are affordable, can record at a Framerate of 120 Hz but the live transmission of this material has a lack of several frames.\\
+When trying to utilize low cost hardware the limitation of recording and sending a video signal from a camera to a processing hardware will therfore be limited to 60fps. This process would also introduce further latency on the transport and would force a further reduction of framerate to satify the tmeframe given by the Display framerate.
+\\Another option that can be taken into consideration is to completely eliminate the need to transport the image data from camera to another device. This can be achieved when the camera and the computational hardware are located on the same hardware. The \textit{Rapsberry Pi 3} microcomputer, which comes from the Internet of things world provides this capability. It combines a quite powerfull computation capacity with an onboard hardware connector for a camera.The camera is able to record in a FullHD resolution at \todo{Hz?} and at lower resolutions up to 120Hz. The camera module is dircetly connected onthe the chipboard, providing direct access for further processing.
+\section{image analysis}
+\section{inverse kinematics}
+\section{handmodel}
+ 

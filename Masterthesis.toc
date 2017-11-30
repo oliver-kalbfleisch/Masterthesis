@@ -1,5 +1,5 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Description of hand in digital space}{2}{chapter.2}
 \contentsline {section}{\numberline {2.1}Physiological structure of the human hand}{2}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Constraints in Hand Motion}{3}{subsection.2.1.1}
@@ -7,9 +7,9 @@
 \contentsline {subsection}{\numberline {2.2.1}Forward Kinematics}{6}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Inverse Kinematics}{6}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Jacobian Inverse}{7}{subsection.2.2.3}
-\contentsline {subsubsection}{\nonumberline Jacobian Transpose}{8}{section*.8}
-\contentsline {subsubsection}{\nonumberline Jacobian Pseudo Inverse}{9}{section*.9}
-\contentsline {subsubsection}{\nonumberline Singular Value Decomposition}{9}{section*.10}
+\contentsline {subsubsection}{\nonumberline Jacobian Transpose}{8}{section*.9}
+\contentsline {subsubsection}{\nonumberline Jacobian Pseudo Inverse}{9}{section*.10}
+\contentsline {subsubsection}{\nonumberline Singular Value Decomposition}{9}{section*.11}
 \contentsline {subsection}{\numberline {2.2.4}Damped Least Squares}{10}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Newton Methods}{10}{subsection.2.2.5}
 \contentsline {subsection}{\numberline {2.2.6}Sequential Monte Carlo Method}{11}{subsection.2.2.6}
@@ -25,9 +25,14 @@
 \contentsline {subsection}{\numberline {3.2.3}Model Based - Image analysis}{20}{subsection.3.2.3}
 \contentsline {chapter}{\numberline {4}Digital hand models}{22}{chapter.4}
 \contentsline {chapter}{\numberline {5}System prequisites}{24}{chapter.5}
-\contentsline {chapter}{\numberline {6}System conception}{25}{chapter.6}
-\contentsline {chapter}{\numberline {7}System Evaluation}{26}{chapter.7}
-\contentsline {chapter}{\numberline {8}Resume}{27}{chapter.8}
-\contentsline {chapter}{Abbildungsverzeichnis}{i}{chapter*.20}
-\contentsline {chapter}{Tabellenverzeichnis}{ii}{chapter*.21}
-\contentsline {chapter}{Literaturverzeichnis}{vii}{chapter*.22}
+\contentsline {section}{\numberline {5.1}Display}{24}{section.5.1}
+\contentsline {section}{\numberline {5.2}Tracking Hardware}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}image analysis}{26}{section.5.3}
+\contentsline {section}{\numberline {5.4}inverse kinematics}{26}{section.5.4}
+\contentsline {section}{\numberline {5.5}handmodel}{26}{section.5.5}
+\contentsline {chapter}{\numberline {6}System conception}{27}{chapter.6}
+\contentsline {chapter}{\numberline {7}System Evaluation}{28}{chapter.7}
+\contentsline {chapter}{\numberline {8}Resume}{29}{chapter.8}
+\contentsline {chapter}{Abbildungsverzeichnis}{i}{chapter*.27}
+\contentsline {chapter}{Tabellenverzeichnis}{ii}{chapter*.28}
+\contentsline {chapter}{Literaturverzeichnis}{vii}{chapter*.29}
