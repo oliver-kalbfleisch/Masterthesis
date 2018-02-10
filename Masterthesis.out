@@ -27,15 +27,15 @@
 \BOOKMARK [1][-]{section.5.4}{inverse kinematics}{chapter.5}% 27
 \BOOKMARK [1][-]{section.5.5}{handmodel}{chapter.5}% 28
 \BOOKMARK [0][-]{chapter.6}{System conception}{}% 29
-\BOOKMARK [1][-]{section.6.1}{Image Analysis with OpenCV 3 and Python on the Raspberry}{chapter.6}% 30
-\BOOKMARK [2][-]{subsection.6.1.1}{Image acquisition from camera}{section.6.1}% 31
-\BOOKMARK [2][-]{subsection.6.1.2}{Image conversion to HSV colorspace}{section.6.1}% 32
-\BOOKMARK [2][-]{subsection.6.1.3}{Mask construction and Filtering}{section.6.1}% 33
-\BOOKMARK [2][-]{subsection.6.1.4}{Contour finding an Position calculation}{section.6.1}% 34
-\BOOKMARK [2][-]{subsection.6.1.5}{Sending of positional data via Network as UPD Package}{section.6.1}% 35
-\BOOKMARK [1][-]{section.6.2}{Technical conception}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.1}{Technical conception}{chapter.6}% 30
+\BOOKMARK [1][-]{section.6.2}{Image Analysis with OpenCV 3 and Python on the Raspberry}{chapter.6}% 31
+\BOOKMARK [2][-]{subsection.6.2.1}{Image acquisition from camera}{section.6.2}% 32
+\BOOKMARK [2][-]{subsection.6.2.2}{Image conversion to HSV colorspace}{section.6.2}% 33
+\BOOKMARK [2][-]{subsection.6.2.3}{Mask construction and filtering}{section.6.2}% 34
+\BOOKMARK [2][-]{subsection.6.2.4}{Contour finding an position calculation}{section.6.2}% 35
+\BOOKMARK [2][-]{subsection.6.2.5}{Sending of positional data via network as UPD package}{section.6.2}% 36
 \BOOKMARK [0][-]{chapter.7}{System Evaluation}{}% 37
 \BOOKMARK [0][-]{chapter.8}{Resume}{}% 38
-\BOOKMARK [0][-]{chapter*.32}{Abbildungsverzeichnis}{}% 39
-\BOOKMARK [0][-]{chapter*.33}{Tabellenverzeichnis}{}% 40
-\BOOKMARK [0][-]{chapter*.34}{Literaturverzeichnis}{}% 41
+\BOOKMARK [0][-]{chapter*.35}{Abbildungsverzeichnis}{}% 39
+\BOOKMARK [0][-]{chapter*.36}{Tabellenverzeichnis}{}% 40
+\BOOKMARK [0][-]{chapter*.37}{Literaturverzeichnis}{}% 41
