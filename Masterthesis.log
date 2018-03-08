@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  10 FEB 2018 15:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.27)  8 MAR 2018 16:55
 entering extended mode
 **Masterthesis.tex
 (G:\Dropbox\Dropbox\Masterarbeit\git\Masterthesis.tex
@@ -987,7 +987,7 @@ LaTeX Info: Redefining \nameref on input line 53.
 \@outlinefile=\write4
 
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\titelseite.tex
-<images/THlogoheader.pdf, id=170, 115.43124pt x 62.2325pt>
+<images/THlogoheader.pdf, id=178, 115.43124pt x 62.2325pt>
 File: images/THlogoheader.pdf Graphic file (type pdf)
 
 <use images/THlogoheader.pdf>
@@ -1071,7 +1071,7 @@ tination with the same identifier (name{page.}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.37 ...n to HSV colorspace}{30}{subsection.6.2.2}
+l.37 ...n to HSV colorspace}{29}{subsection.6.2.2}
                                                    [3
 
 
@@ -1084,20 +1084,12 @@ een already used, duplicate ignored
 l.57 \newpage
               [1] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\Introduction.tex
 Chapter 1.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 9.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 4--59
 
- []
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 7.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--59
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.59 \newpage
@@ -1117,7 +1109,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <15> not available
 (Font)              size <14.4> substituted on input line 5.
 
-<images/hand.jpg, id=252, 386.19281pt x 324.46219pt>
+<images/hand.jpg, id=261, 386.19281pt x 324.46219pt>
 File: images/hand.jpg Graphic file (type jpg)
  <use images/hand.jpg>
 Package pdftex.def Info: images/hand.jpg used on input line 9.
@@ -1135,106 +1127,104 @@ LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <7.5> not available
 
 
  <G:/Dropbox/Dropbox/Masterarbeit/git/images/hand.jpg>]
-<images/Hand_DOFs.JPG, id=264, 326.72063pt x 328.97906pt>
+<images/Hand_DOFs.JPG, id=273, 326.72063pt x 328.97906pt>
 File: images/Hand_DOFs.JPG Graphic file (type jpg)
 
 <use images/Hand_DOFs.JPG>
 Package pdftex.def Info: images/Hand_DOFs.JPG used on input line 25.
 (pdftex.def)             Requested size: 261.37685pt x 263.1836pt.
  [3 <G:/Dropbox/Dropbox/Masterarbeit/git/images/Hand_DOFs.JPG>] [4]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 71.
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 75.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 98--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--103
 
  []
 
-[6] <images/Ik_figure.jpg, id=317, 462.72874pt x 298.11375pt>
+[6] <images/Ik_figure.jpg, id=326, 462.72874pt x 298.11375pt>
 File: images/Ik_figure.jpg Graphic file (type jpg)
 
 <use images/Ik_figure.jpg>
-Package pdftex.def Info: images/Ik_figure.jpg used on input line 114.
+Package pdftex.def Info: images/Ik_figure.jpg used on input line 115.
 (pdftex.def)             Requested size: 277.63939pt x 178.86963pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--117
+Underfull \hbox (badness 10000) in paragraph at lines 111--118
 
  []
 
 [7 <G:/Dropbox/Dropbox/Masterarbeit/git/images/Ik_figure.jpg>] [8]
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-34.def"
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
-) [9] [10]
-[11] <images/FabrikIteration.jpg, id=392, 402.00188pt x 666.23906pt>
+) [9]
+<images/FabrikIteration.jpg, id=381, 402.00188pt x 666.23906pt>
 File: images/FabrikIteration.jpg Graphic file (type jpg)
 
 <use images/FabrikIteration.jpg>
-Package pdftex.def Info: images/FabrikIteration.jpg used on input line 232.
+Package pdftex.def Info: images/FabrikIteration.jpg used on input line 229.
 (pdftex.def)             Requested size: 245.22078pt x 406.40523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--235
+Underfull \hbox (badness 10000) in paragraph at lines 227--232
 
  []
 
-
-Underfull \hbox (badness 1097) in paragraph at lines 235--240
+[10]
+Underfull \hbox (badness 1097) in paragraph at lines 232--237
 []\OT1/cmss/m/n/12 The \OT1/cmss/bx/n/12 FAB-RIK \OT1/cmss/m/n/12 al-go-rithm d
 oes
  []
 
 
-Underfull \hbox (badness 4660) in paragraph at lines 235--240
+Underfull \hbox (badness 4660) in paragraph at lines 232--237
 \OT1/cmss/m/n/12 whether the in-tended tar-get
  []
 
-[12 <G:/Dropbox/Dropbox/Masterarbeit/git/images/FabrikIteration.jpg>]
-Overfull \hbox (12.76955pt too wide) in paragraph at lines 264--264
+[11 <G:/Dropbox/Dropbox/Masterarbeit/git/images/FabrikIteration.jpg>]
+Overfull \hbox (12.76955pt too wide) in paragraph at lines 261--261
 [][][][]\OT1/cmss/m/n/12 constraints 
  []
 
 
-Overfull \hbox (12.76955pt too wide) in paragraph at lines 264--264
+Overfull \hbox (12.76955pt too wide) in paragraph at lines 261--261
 [][][][]\OT1/cmss/m/n/12 constraints 
  []
 
 
-Overfull \hbox (12.76955pt too wide) in paragraph at lines 264--264
+Overfull \hbox (12.76955pt too wide) in paragraph at lines 261--261
 [][][][]\OT1/cmss/m/n/12 constraints 
  []
 
 
-Overfull \hbox (12.76955pt too wide) in paragraph at lines 264--264
+Overfull \hbox (12.76955pt too wide) in paragraph at lines 261--261
 [][][][]\OT1/cmss/m/n/12 constraints 
  []
 
 )
 
-LaTeX Warning: Marginpar on page 13 moved.
+LaTeX Warning: Marginpar on page 12 moved.
 
-[13] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\03_Tracking_in_real_space.tex
+[12] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\03_Tracking_in_real_space.tex
 Chapter 3.
-<images/flex13MocapVolume.png, id=421, 682.55pt x 376.40625pt>
+<images/flex13MocapVolume.png, id=423, 682.55pt x 376.40625pt>
 File: images/flex13MocapVolume.png Graphic file (type png)
 
 <use images/flex13MocapVolume.png>
 Package pdftex.def Info: images/flex13MocapVolume.png used on input line 14.
 (pdftex.def)             Requested size: 409.53316pt x 225.84547pt.
- [14
+ [13
 
 
-] [15 <G:/Dropbox/Dropbox/Masterarbeit/git/images/flex13MocapVolume.png>] [16]
-<images/acceleglove.JPG, id=449, 286.82156pt x 259.7203pt>
+] [14 <G:/Dropbox/Dropbox/Masterarbeit/git/images/flex13MocapVolume.png>] [15]
+<images/acceleglove.JPG, id=451, 286.82156pt x 259.7203pt>
 File: images/acceleglove.JPG Graphic file (type jpg)
 
 <use images/acceleglove.JPG>
@@ -1245,8 +1235,8 @@ Overfull \hbox (1.14664pt too wide) in paragraph at lines 40--41
 [][] 
  []
 
-[17 <G:/Dropbox/Dropbox/Masterarbeit/git/images/acceleglove.JPG>]
-<images/wang_color_glove.JPG, id=472, 382.42876pt x 131.74219pt>
+[16 <G:/Dropbox/Dropbox/Masterarbeit/git/images/acceleglove.JPG>]
+<images/wang_color_glove.JPG, id=474, 382.42876pt x 131.74219pt>
 File: images/wang_color_glove.JPG Graphic file (type jpg)
 
 <use images/wang_color_glove.JPG>
@@ -1262,8 +1252,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--59
 
  []
 
-[18 <G:/Dropbox/Dropbox/Masterarbeit/git/images/wang_color_glove.JPG>]
-<images/fredrikkson_color_glove.JPG, id=488, 300.3722pt x 274.77657pt>
+[17 <G:/Dropbox/Dropbox/Masterarbeit/git/images/wang_color_glove.JPG>]
+<images/fredrikkson_color_glove.JPG, id=490, 300.3722pt x 274.77657pt>
 File: images/fredrikkson_color_glove.JPG Graphic file (type jpg)
 
 <use images/fredrikkson_color_glove.JPG>
@@ -1275,65 +1265,77 @@ Overfull \hbox (2.78017pt too wide) in paragraph at lines 65--66
 [][] 
  []
 
-[19 <G:/Dropbox/Dropbox/Masterarbeit/git/images/fredrikkson_color_glove.JPG>]
+[18 <G:/Dropbox/Dropbox/Masterarbeit/git/images/fredrikkson_color_glove.JPG>]
 Underfull \hbox (badness 10000) in paragraph at lines 86--95
 
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 97--102
+[19]
+Overfull \hbox (1.1502pt too wide) in paragraph at lines 102--102
+[][][][]\OT1/cmss/m/n/12 continue  
+ []
+
+
+Overfull \hbox (1.1502pt too wide) in paragraph at lines 102--102
+[][][][]\OT1/cmss/m/n/12 continue  
+ []
+
+
+Overfull \hbox (1.1502pt too wide) in paragraph at lines 102--102
+[][][][]\OT1/cmss/m/n/12 continue  
+ []
+
+
+Overfull \hbox (1.1502pt too wide) in paragraph at lines 102--102
+[][][][]\OT1/cmss/m/n/12 continue  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--102
+Underfull \hbox (badness 10000) in paragraph at lines 97--103
 
  []
 
-) [21] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\04_Digital_hand_models.tex
+) [20] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\04_Digital_hand_models.tex
 Chapter 4.
-<images/Pavlovic-Sharmaetal.jpg, id=523, 524.1984pt x 145.5036pt>
+<images/Pavlovic-Sharmaetal.jpg, id=526, 524.1984pt x 145.5036pt>
 File: images/Pavlovic-Sharmaetal.jpg Graphic file (type jpg)
 
 <use images/Pavlovic-Sharmaetal.jpg>
 Package pdftex.def Info: images/Pavlovic-Sharmaetal.jpg used on input line 6.
 (pdftex.def)             Requested size: 429.63663pt x 119.25598pt.
- [22
+ [21
 
 
- <G:/Dropbox/Dropbox/Masterarbeit/git/images/Pavlovic-Sharmaetal.jpg>]) [23]
+ <G:/Dropbox/Dropbox/Masterarbeit/git/images/Pavlovic-Sharmaetal.jpg>]) [22]
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\05_System_prequisites.tex
 Chapter 5.
 
-LaTeX Warning: Marginpar on page 24 moved.
+LaTeX Warning: Marginpar on page 23 moved.
 
-[24
+[23
 
 
 ]
-
-LaTeX Warning: Marginpar on page 25 moved.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--31
+Underfull \hbox (badness 10000) in paragraph at lines 23--32
 
  []
 
-[25]
-
-LaTeX Warning: Marginpar on page 26 moved.
-
-[26]) [27]
+[24] [25]) [26]
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\06_System_conception.tex
 Chapter 6.
-<images/technical_setup.jpg, id=560, 752.8125pt x 182.6825pt>
+<images/technical_setup.jpg, id=562, 752.8125pt x 182.6825pt>
 File: images/technical_setup.jpg Graphic file (type jpg)
 
 <use images/technical_setup.jpg>
 Package pdftex.def Info: images/technical_setup.jpg used on input line 4.
 (pdftex.def)             Requested size: 429.63663pt x 104.26111pt.
 
-<images/pionhole.JPG, id=562, 587.94656pt x 171.64125pt>
+<images/pionhole.JPG, id=564, 587.94656pt x 171.64125pt>
 File: images/pionhole.JPG Graphic file (type jpg)
 
 <use images/pionhole.JPG>
@@ -1344,7 +1346,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--20
 
  []
 
-[28
+[27
 
 
  <G:/Dropbox/Dropbox/Masterarbeit/git/images/technical_setup.jpg>]
@@ -1387,22 +1389,12 @@ Overfull \hbox (1.1502pt too wide) in paragraph at lines 39--39
 [][][][]\OT1/cmss/m/n/12 continue  
  []
 
-[29 <G:/Dropbox/Dropbox/Masterarbeit/git/images/pionhole.JPG>]
+[28 <G:/Dropbox/Dropbox/Masterarbeit/git/images/pionhole.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
 
-! LaTeX Error: There's no line here to end.
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.54 \\T
-        he tread takes the data of the current image frame and hands it over...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[30]
+[29]
 Overfull \hbox (4.3377pt too wide) in paragraph at lines 69--69
 [][][][]\OT1/cmss/m/n/12 elaborate  
  []
@@ -1422,15 +1414,62 @@ Overfull \hbox (4.3377pt too wide) in paragraph at lines 69--69
 [][][][]\OT1/cmss/m/n/12 elaborate  
  []
 
-[31]) [32]
+[30]) [31]
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\07_System_Evaluation.tex
 Chapter 7.
-) [33
+
+Overfull \hbox (36.57481pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmss/m/n/12 messwerttabelle  
+ []
 
 
-] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\fazit.tex
+Overfull \hbox (36.57481pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmss/m/n/12 messwerttabelle  
+ []
+
+
+Overfull \hbox (36.57481pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmss/m/n/12 messwerttabelle  
+ []
+
+
+Overfull \hbox (36.57481pt too wide) in paragraph at lines 5--5
+[][][][]\OT1/cmss/m/n/12 messwerttabelle  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--15
+
+ []
+
+[32
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+<images/pi_workflow_500.jpg, id=609, 1017.8025pt x 1148.29pt>
+File: images/pi_workflow_500.jpg Graphic file (type jpg)
+
+<use images/pi_workflow_500.jpg>
+Package pdftex.def Info: images/pi_workflow_500.jpg used on input line 24.
+(pdftex.def)             Requested size: 407.1138pt x 459.30786pt.
+ [33]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 28.
+
+
+Overfull \hbox (51.47371pt too wide) in paragraph at lines 32--44
+ [][] 
+ []
+
+) [34 <G:/Dropbox/Dropbox/Masterarbeit/git/images/pi_workflow_500.jpg>]
+(G:\Dropbox\Dropbox\Masterarbeit\git\chapter\fazit.tex [35]
 Chapter 8.
-) [34
+) [36
 
 
 ] (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\verzeichnisse.tex
@@ -1469,15 +1508,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
 (G:\Dropbox\Dropbox\Masterarbeit\git\chapter\eid.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
+Package rerunfilecheck Info: File `Masterthesis.out' has not changed.
+(rerunfilecheck)             Checksum: 84668370A56463A93FA541635B7E20EC;3023.
 
-
-Package rerunfilecheck Warning: File `Masterthesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Masterthesis.out':
-(rerunfilecheck)             Before: 2EE7640A4DA280B32C4F5B632640B96C;2893
-(rerunfilecheck)             After:  8C81FE8AE4189968B08E5A8414F69F72;2893.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -1488,10 +1521,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 22931 strings out of 493921
- 415299 string characters out of 3144873
- 541215 words of memory out of 3000000
- 25569 multiletter control sequences out of 15000+200000
+ 22952 strings out of 493921
+ 415734 string characters out of 3144873
+ 540484 words of memory out of 3000000
+ 25582 multiletter control sequences out of 15000+200000
  16538 words of font info for 59 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  73i,20n,77p,1883b,707s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1517,9 +1550,9 @@ iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Masterthesis.pdf (47 pages, 894780 bytes).
+Output written on Masterthesis.pdf (49 pages, 1118553 bytes).
 PDF statistics:
- 822 PDF objects out of 1000 (max. 8388607)
- 197 named destinations out of 1000 (max. 500000)
- 401 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 848 PDF objects out of 1000 (max. 8388607)
+ 204 named destinations out of 1000 (max. 500000)
+ 422 words of extra memory for PDF output out of 10000 (max. 10000000)
 

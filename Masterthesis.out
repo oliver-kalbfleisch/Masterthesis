@@ -8,24 +8,24 @@
 \BOOKMARK [2][-]{subsection.2.2.3}{Jacobian Inverse}{section.2.2}% 8
 \BOOKMARK [2][-]{subsection.2.2.4}{Damped Least Squares}{section.2.2}% 9
 \BOOKMARK [2][-]{subsection.2.2.5}{Newton Methods}{section.2.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.6}{Sequential Monte Carlo Method}{section.2.2}% 11
-\BOOKMARK [2][-]{subsection.2.2.7}{FABRIK Algorithm}{section.2.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Tracking in real space}{}% 13
-\BOOKMARK [1][-]{section.3.1}{General tracking technologies}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.1.1}{Optical tracking}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.2}{Magnetic tracking}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.3}{Accoustic tracking}{section.3.1}% 17
-\BOOKMARK [1][-]{section.3.2}{Hand tracking Systems}{chapter.3}% 18
-\BOOKMARK [2][-]{subsection.3.2.1}{Sensor based}{section.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.2.2}{Appearance Based - Optical marker}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.3}{Model Based - Image analysis}{section.3.2}% 21
-\BOOKMARK [0][-]{chapter.4}{Digital hand models}{}% 22
-\BOOKMARK [0][-]{chapter.5}{System prequisites}{}% 23
-\BOOKMARK [1][-]{section.5.1}{Display}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.2}{Tracking Hardware}{chapter.5}% 25
-\BOOKMARK [1][-]{section.5.3}{image analysis}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.4}{inverse kinematics}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.5}{handmodel}{chapter.5}% 28
+\BOOKMARK [2][-]{subsection.2.2.6}{FABRIK Algorithm}{section.2.2}% 11
+\BOOKMARK [0][-]{chapter.3}{Tracking in real space}{}% 12
+\BOOKMARK [1][-]{section.3.1}{General tracking technologies}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.1.1}{Optical tracking}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.2}{Magnetic tracking}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.3}{Accoustic tracking}{section.3.1}% 16
+\BOOKMARK [1][-]{section.3.2}{Hand tracking Systems}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.2.1}{Sensor based}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.2}{Appearance Based - Optical marker}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.3}{Model Based - Image analysis}{section.3.2}% 20
+\BOOKMARK [0][-]{chapter.4}{Digital hand models}{}% 21
+\BOOKMARK [0][-]{chapter.5}{System prequisites}{}% 22
+\BOOKMARK [1][-]{section.5.1}{Display}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.2}{Tracking Hardware}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.3}{Input data cleaning}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.4}{Image analysis}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.5}{Inverse kinematics}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.6}{Hand model}{chapter.5}% 28
 \BOOKMARK [0][-]{chapter.6}{System conception}{}% 29
 \BOOKMARK [1][-]{section.6.1}{Technical conception}{chapter.6}% 30
 \BOOKMARK [1][-]{section.6.2}{Image Analysis with OpenCV 3 and Python on the Raspberry}{chapter.6}% 31
@@ -34,8 +34,10 @@
 \BOOKMARK [2][-]{subsection.6.2.3}{Mask construction and filtering}{section.6.2}% 34
 \BOOKMARK [2][-]{subsection.6.2.4}{Contour finding an position calculation}{section.6.2}% 35
 \BOOKMARK [2][-]{subsection.6.2.5}{Sending of positional data via network as UPD package}{section.6.2}% 36
-\BOOKMARK [0][-]{chapter.7}{System Evaluation}{}% 37
-\BOOKMARK [0][-]{chapter.8}{Resume}{}% 38
-\BOOKMARK [0][-]{chapter*.35}{Abbildungsverzeichnis}{}% 39
-\BOOKMARK [0][-]{chapter*.36}{Tabellenverzeichnis}{}% 40
-\BOOKMARK [0][-]{chapter*.37}{Literaturverzeichnis}{}% 41
+\BOOKMARK [2][-]{subsection.6.2.6}{object tracking}{section.6.2}% 37
+\BOOKMARK [0][-]{chapter.7}{System Evaluation}{}% 38
+\BOOKMARK [1][-]{section.7.1}{Image processing performance}{chapter.7}% 39
+\BOOKMARK [0][-]{chapter.8}{Resume}{}% 40
+\BOOKMARK [0][-]{chapter*.39}{Abbildungsverzeichnis}{}% 41
+\BOOKMARK [0][-]{chapter*.40}{Tabellenverzeichnis}{}% 42
+\BOOKMARK [0][-]{chapter*.41}{Literaturverzeichnis}{}% 43

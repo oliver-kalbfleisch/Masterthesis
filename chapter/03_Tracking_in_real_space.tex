@@ -99,7 +99,7 @@ where $P_{new}$ is the new pixel value, $P^{d}_{mean}$ and $P^{d}_{std}$ are the
 After the segmentation of foreground an background is achieved,the hand pose has to be retrieved from the left over image data. Solutions for retireving a foll set of DOF as hand pose estimatin data can be split into two main categories\cite{Erol.2007}, \textit{Model-based tracking} and \textit{Single frame pose estimation}. \\\\
 \textit{Model-based tracking} refers to a top-down tracking method based on parametric models of the 3D hand shape and its kinematic structure. The root idea here is to excecute a search at each frame of an image sequence to find the pose of the shape model that best matches the features extracted from the image(s). A prediction based on previous motion and dynamics data from the object is set up as a base for the search. Optimization features can be incooperated, like employing a local search around the calculated prediction to produce a single best estimate at each frame. The downside of this method represents itsself in the weaknes of accumulating errors over longer runtime periods due to occlusions and complexity of hand motion. These can be overcome by keeping track of multiple outcome hypotheses at each frame for error reduction.\\\\
 \textit{Single frame pose estimation}in,contrast to the previous method ,does not utilize assumption on time coherence. Another motivation for this approach is the rapid motion of the hand and fingers. Images of consecutive frames can be very different, making time coherence assumptions useless.
-
+\todo{continue}
 
 
 
