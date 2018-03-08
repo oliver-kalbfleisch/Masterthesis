@@ -73,7 +73,8 @@ Interfinger constraints can be imposed between joints of adjacent fingers. Inter
 \label{kinematics}
  The preceeding sections gave an overview of how we can describe a model of the human hand and introduced some limiting constraints. With the model and the constraints, we can now start to build a kinematic system for the animation of the model.\\
 Kinematic systems contain so called \textit{kinematic chains}, which consist of a \textit{starting point} or \textit{root}, kinematic elements like \textit{joints}, \textit{links} and an \textit{endpoint}, also called \textit{end effector}. Applied to the human hand, the whole hand model represents the kinematic system. This system contains several \textit{kinematic chains}, namely the fingers of the hand with the fingertips beeing the \textit{end effectors} of each of these chains.\\\\
-Each of these components has it's set of DOF's which can be described mathematically. The established convention for describing this kind of linked systems is the \textit{Denavit-Hartenberg} convention (D-H)\cite{Denavit.1955}. It was actually introduced for the order to standardize the coordinate frames for spatial linkages in the field of robotics, but has since thean be applied in other fields as well.\cite{Spong.2008}\todo{Denavit Hartenberg formmulation for coordinate System definition and transformation}  \\
+Each of these components has it's set of DOF's which can be described mathematically. The established convention for describing this kind of linked systems is the \textit{Denavit-Hartenberg} convention (D-H)\cite{Denavit.1955}. It was actually introduced for the order to standardize the coordinate frames for spatial linkages in the field of robotics, but has since thean be applied in other fields as well.\cite{Spong.2008}
+\\\todo{Denavit Hartenberg formmulation for coordinate System definition and transformation}  \\
 As we begin to move our hands, the states of the kinemtic chains begin to change. Joint angles and end effector positions are modified until the end position is reached. To represent the new position and agnle dataset of our physical hand with our kinematic system, two major paths for achieving a solution can be taken.
  \subsection{Forward Kinematics}
  
@@ -102,7 +103,7 @@ The tracking of the human hand and all if its chain components is rather complic
 
  \subsection{Inverse Kinematics}
  \label{inverse kinematics}
-\begin{quote}Inverse Kinematics (IK) is a method for computing the posture via estimating each individual degree of freedom in order to satisfy a given task~\cite{AndreasAristidouandJoanLasenby.2009}\end{quote}
+\begin{quote}"Inverse Kinematics (IK) is a method for computing the posture via estimating each individual degree of freedom in order to satisfy a given task" \cite{AndreasAristidouandJoanLasenby.2009}\end{quote}
 The concept of \textit{Inverse Kinematics}  (IK) already describes it's principle in it's name. It takes the reversed approach in comparison to the FK principle in chapter \ref{Forward Kinematics}. Instead of knowing the states of the chain elements and calculating the resulting position of the \textit{end effector}, we take the position of the \textit{end effector} and try to retrieve the possible states of the other chain elements. 
 \begin{equation}
 \label{ik problem formula}
@@ -220,11 +221,7 @@ f(x+\sigma)= f(x)+ [\bigtriangledown f(x)]^{T}\sigma + \frac{1}{2}\sigma^{T}H_{f
 where Hf(x) is the Hessian matrix. The downside of this approach is that the calculation of the Hessian matrix bares high computational cost for each iteration as a result of its complexity. Like the approximation of the Jacobian inverse, several attemps to lower the computational cost have benn made by utilizing an approximation of the Hessian matrix based on a function gradient value.\\
 Since the Newton methods are posed as a minimisation problem, they return smooth motion without erratic discontinuities.
 The Newton methods also have the advantage that they do not suffer from singularity problems, such as that which occurs when finding the Jacobian Inverse.
-\subsection{Sequential Monte Carlo Method}
-Sequential Monte Carlo Methods (SMCM) Methods are a relative young approch in solving IK problems. Courty and Arnaud \cite{Courty.2008} proposed such a technique, whose main advantage is the usage of a sampling approach. When doing so,the IK problem can be solved  through the usage of direct kinematics, avoiding the numerical inversion of the forward operator.
-\todo{ add other missing methods, maybe only as further are}
 
-\newpage
 \subsection{FABRIK Algorithm}
 
  A more recent approach in the kinematics field is the \textbf{FABRIK} algorithm proposed by Aristidou and Lasenby\cite{Aristidou.2011}.As shown in section \ref{inverse kinematics}, these approaches all depend on computational intensive matrix operation like calculating an inverse and may have problems with matrix singularity.\\
