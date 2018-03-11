@@ -8,7 +8,7 @@ System components to be defined:
  \item Display hardware
  \item Tracking Hardware
  \item Image analysis
- \item Input data cleaning
+ \item Data cleaning
  \item Inverse kinameatics algorithm
  \item Hand model
  \end{itemize} 
@@ -29,8 +29,8 @@ As the hardware setup of the Rapsberry Pi with the camera is realtively easy and
 Furthermore the image operations that need to be independantly applied to each of the cameras frames can be done on the two sperate device, eliminating the need for sending data trafic with image informaton through the network for postprocessing.
 \\Downside of this method is thath with all stereoscopic camera Setups, the two cameras need to have some kind of frame synchronization to get the right two frames for evaluation.
 \\As the setup is not only meant for tracking the hand, but also for tracking objects in the tracking space, the system needs to be capable to do this task as well. Since the computatonal power of the raspberry is limited at some point, it is to be evaluated if a seperate hardware component is needed for the object tracking or if the tracking can be integrated into the tracking procedure of the hand markers. Another question that has to be investigated would be, how important the depth position for the to be tracked object really is as they will not be floating in space while beeing tracked. Maybe a combination of hand position data and object orientation can already function as a suitable taracking method.
-\section{Input data cleaning}
-Every system that deasl with the computation of live data is suspect to data fluctuation in input and output values. It is also to be assumed that the system will not be able to achieve an ideal sysnchronization between the cameras. This will probably introduce a degradation of tracking performance which has to be handeled. It has to be evaluated at which pont a data cleanig will lead to the best end results.
+\section{Data cleaning}
+Every system that deasl with the computation of live data is suspect to data fluctuation in input and output values. It is also to be assumed that the system will not be able to achieve an ideal sysnchronization between the cameras. This will probably introduce a degradation of tracking performance which has to be handeled. It has to be evaluated at which point a data cleanig will lead to the best end results.
 \section{Image analysis}
 The images recorded by the camera system need to be processed further down the line to get the positional data of selected hand features. The most common library to do such kinds of image processing is the \textit{OpenCv} library which is originally written in C and was ported into several other programming languages. It has build in features for camera calibration, color and object detection as well as several image optimization features that might be helpfull for the processing.
 \section{Inverse kinematics}
