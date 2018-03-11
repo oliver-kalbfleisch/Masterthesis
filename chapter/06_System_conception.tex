@@ -48,14 +48,49 @@ The python programm prototype that is used for tracking the specified color mark
 \end{itemize}
 
 \subsection{Image acquisition from camera}
-As the computaion times for image filtering and mask generation may vary, it makes sense to seperate the image acquisition from the computation part. Threfore the loading of the raw image data frame from the camera is outsourced into its own thread. Also this allows us to trigger the frame grabbing on both devices for synchronization. Frame grabbing synchronization is done via triggering a PWM signal on one of the raspberrys and sending it to the other Pi.
+As the computation times for image filtering and mask generation may vary, it makes sense to seperate the image acquisition from the computation part. Threfore the loading of the raw image data frame from the camera is outsourced into its own thread. Also this allows us to trigger the frame grabbing on both devices for synchronization. Frame grabbing synchronization can be done via triggering a PWM signal on one of the raspberrys and sending it to the other Pi.
 The synchronousety of the two frame reading threads is assumed for the first implementation and has to be tested on a finished setup.\\
 
-The tread takes the data of the current image frame and hands it over to the main thread, where the image processing is handeled. For the first frames, the full image data is needed as the position of the markers is not yet known. Performancewise, this introduces a lot of overhead, since each mask generation step for the specific colors hast to go through the complete image data, meaning every pixel has to be read out at least 5 times to get the tracking for all different markers. After a few frames, we get hold of the marker position and can define a reduced region of interest (ROI) on the image. The new ROI results from the positional data from the previous frame and has to be dimmensioned correctly as to incorporate the possibility of large position differences between consecutive frames. Should no marker be found in the defined ROI or the certanty of the result is not high enough, the frame has to be dropped and the next frame should utilize the whole image data.
+The tread takes the data of the current image frame and hands it over to the main thread, where the image processing is handeled. For the first frames, the full image data is needed as the position of the markers is not yet known. Performancewise, this introduces a lot of overhead, since each mask generation step for the specific colors hast to go through the complete image data, meaning every pixel has to be read out at least 5 times to get the tracking for all different markers.\\
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/ROI.jpg}
+\caption{ROI calculation for consecutive frames}
+\label{roi_calc} 
+\end{figure}
+After a few frames, we get hold of the marker position and can define a reduced region of interest (ROI) on the image (Figure \ref{roi_calc}). The new ROI results from the positional data of the previous frame and has to be dimmensioned correctly as to incorporate the possibility of large position differences between consecutive frames.\\
+Furthermore the offset position, preferably the top left corner of the region, has to be kept track of. By taking a subregion of the frame as input for further processing, the resulting coordinates relate to the top left corner of this subregion as origin. Consequently only the first set of coordinates has the correct origin as refernce point for the next frame. Consecutive frames need this information to retireve the correct subregion from the full frame by adding the offset to the calculated positional data.
+First frame ROI calculation is based on a mimimum axis-aligned bounding box(AABB) fitted onto the marker. The offset value for the ROI is added to the bounding box values resulting in a rectangle dataset containig the position of the offsetted top-left corner $\vec{\mathbf{tl}}$ and the offsetted 
+\textbf{width} and \textbf{height} of the ROI reactangle:
+\begin{equation}
+\begin{split}
+\vec{\mathbf{tl_{0}}}&=(AABB_{x_{0}}-\text{offset}_{x},AABB_{y_{0}}-\text{offset}_{y})\\
+\mathbf{width}&=AABB{w_{0}}+(2\cdot\text{offset}_{x})\\
+\mathbf{height}&=AABB_{h_{0}}+(2\cdot\text{offset}_{y})\\
+\end{split}
+\end{equation}
+These values are taken to extract the subregion of the consecutive at $\vec{\mathbf{tl}}$ with size of width and height. The $\vec{\mathbf{tl}}$ value is also saved as offset value $\vec{\mathbf{OffPos}}$ .
+The position calculation for the proximate frame will utilize the offset value as follows:
+\begin{equation}
+\begin{split}
+\vec{\mathbf{tl_{1}}_{x}}&=x_{1}+\vec{\mathbf{OffPos}}_{x}-\text{offset}_{x} \\ \vec{\mathbf{tl_{1}}_{y}}&=y_{1}+\vec{\mathbf{OffPos}}_{y}-\text{offset}_{y}\\
+\mathbf{width}&=AABB_{w_{1}}+(2\cdot\text{offset}_{x})\\
+\mathbf{height}&=AABB_{h_{1}}+(2\cdot\text{offset}_{y})\\
+\end{split}
+\end{equation}
+This should result in the correct positional data for all frames following the inital frame.
+Finally,the resulting rectangle has to be fitted onto the size boundaries of the full image frame. When applying a fixed offset value, the resulting region that will be extracted from the following frame might reach outside the size boundaries of the full frame. This can happen when the markers are positioned near the edges of the frame. Trying to read out pixels outside the avaialable size of the image will without doubt result into an error by reason of unavailable data at these points. Therefore the combination of position width, height and offset has to be clamped to fit into the available image data:
+\begin{equation}
+\begin{split}
+\textbf{width}&=\text(max(0,min(\mathbf{width},image_{width}))\\
+\textbf{height}&=\text(max(0,min(\mathbf{height},image_{height}))
+\end{split}
+\end{equation}
+Another option which could be evaluated instead of clamping the area would be shifting the offset point to a position where it does not violate the image boundaries and  thereby preserving the size of the ROI.\\
+Should no marker be found in the defined ROI or the certanty of the result is not high enough, the frame has to be dropped and the next frame should utilize the whole image data.
 \subsection{Image conversion to HSV colorspace}
 The image data that is supplied by the camera comes in an RGB data format, which we could already use for the further calculation. It does though make more sense to convert the imput data into the HSV colorspace. Since we are not using high precision cameras, it is necessary to define a range of color values around the desired color which we want to track. The HSV colorspace is displayed as a cone, in comparison to the RGB colorspace, which is diplayed as a cube. The color values for the HSV space are all located on a cirle spanning form 0 to 360 degrees. The Hue value (H)corresponds to the angleon the cirlce, where $0^\circ$ corresponds to a redish color, $120^\circ$ lies inthe area of green and $240^\circ$ and obove correspond to blue. The sturation value (s) coresponds to the amount of white the color contains  where 0 is pure white and 100 corresponds to the fully saturated color. For optimal results, only highly saturated colors should be used to ensure correct color detection. The last compoonent is the value component (V) which describes the intensity of the color. Alike the value settings for the saturation, value ranges of at leas 50 should be used for tracking precision.
 \\
-For tracking the five fingers of the hand we need five distinguishable colors. Here the primary colors red, green and blue will be the choice for the first three colors. The other two selcted colors \todo {check test results} are orange and yellow. To be able to clearly ditinguis these colors in the video frame, a constant and homogenous lighting is needed as well as a color themeprature of the lighting that is in the neutral area to not change the color of the markers.
+For tracking the five fingers of the hand we need five distinguishable colors. Here the primary colors red, green and blue will be the choice for the first three colors. The other two selcted colors \todo {check test results} are orange and yellow. To be able to clearly ditinguis these colors in the video frame, a constant and homogenous lighting is needed as well as a color temeprature of the lighting that is in the neutral area to not change the color of the markers.
 \\the color conversion from the input RGB values to the desired HSV colorspace is done as follows:
 \begin{equation}
 \begin{split}
@@ -65,7 +100,7 @@ hsv_{up}=(hue_{targetcolor}-sensitivity,100,100)\\
 \end{equation}
 \subsection{Mask construction and filtering}
 \todo {orig image and mask images for display}
-These values are the used as the parameters for a mask generation which generates a binary mask for the current frame where all pixels whose values lie outside of the specified range are set to zero (black) and the remaining are set to 255 (white).For these masks to work properly, any other larger objects thath might contain similar colors should be removed from the scene to eliminate worng tracking data. As all digital cameras tend to have signal noise in the sensor data , high frequenc  noise in the color channels will be present. This noise needs to be filtered out before any further computaion on the image data can be done.\\
+These values are the used as the parameters for a mask generation which generates a binary mask for the current frame where all pixels whose values lie outside of the specified range are set to zero (black) and the remaining are set to 255 (white).For these masks to work properly, any other larger objects thath might contain similar colors should be removed from the scene to eliminate worng tracking data. As all digital cameras tend to have signal noise in the sensor data , high frequenc  noise in the color channels will be present. This noise should be filtered out before any further computaion on the image data can be done.\\
 The first step in this progress is to use a gaussian filter to blurr the mask. After this step an erosion and a dilation is applied to the image tho further eliminate unwanted noise.\todo {elaborate}
 \subsection{Contour finding an position calculation}
 With the cleaned mask we can continue and search for the white areas in the mask which might represent our target. Under the assumption thath we have removed all other parasitic objects from the image, the marker should be the largest area of positive pixels in the mask frame. Therefore only the largest area found in the search is taken as the desired tracking marker. For the selected area, a fitting bounding box is calculated and the center of this box is used as the positonal parameter of the tracking marker.

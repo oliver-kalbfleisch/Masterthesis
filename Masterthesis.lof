@@ -16,6 +16,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Technical conseptiopn of the single hardware parts\relax }}{27}{figure.caption.25}
 \contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Image point projection for pinhole camera systems\cite {Hartley.2000}\relax }}{28}{figure.caption.26}
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces ROI calculation for consecutive frames\relax }}{30}{figure.caption.30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Workflow of the C++ implementaion with threadpool solution and ROI\relax }}{34}{figure.caption.37}
+\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Workflow of the C++ implementaion with threadpool solution and ROI\relax }}{35}{figure.caption.38}
 \addvspace {10\p@ }
