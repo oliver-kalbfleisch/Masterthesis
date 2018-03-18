@@ -11,12 +11,12 @@
 \contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Color glove setup used by Wang and Popovic \cite {Wang.2009} \relax }}{17}{figure.caption.17}
 \contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Color glove setup used by Fredriksson and Ryen \cite {Fredriksson.2008} \relax }}{18}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Pavlovic, Sharma et al: Hand models. Different hand models can be used to represent the same hand posture. (a) 3D Textured volumetric model. (b) 3D wireframe volumetric model. (c) 3D skeletal model. (d) Binary silhouette. (e) Contour.\relax }}{21}{figure.caption.20}
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Pavlovic, Sharma et al: Hand models. Different hand models can be used to represent the same hand posture. (a) 3D Textured volumetric model. (b) 3D wire frame volumetric model. (c) 3D skeletal model. (d) Binary silhouette. (e) Contour.\relax }}{21}{figure.caption.19}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Technical conseptiopn of the single hardware parts\relax }}{27}{figure.caption.25}
-\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Image point projection for pinhole camera systems\cite {Hartley.2000}\relax }}{28}{figure.caption.26}
-\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces ROI calculation for consecutive frames\relax }}{30}{figure.caption.30}
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Technical conception of the single hardware parts\relax }}{28}{figure.caption.25}
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Image point projection for pinhole camera systems\cite {Hartley.2000}\relax }}{29}{figure.caption.27}
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces ROI calculation for consecutive frames\relax }}{31}{figure.caption.31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Workflow of the C++ implementaion with threadpool solution and ROI\relax }}{35}{figure.caption.38}
+\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Work flow of the C++ implementation with thread pool solution and ROI\relax }}{37}{figure.caption.39}
 \addvspace {10\p@ }

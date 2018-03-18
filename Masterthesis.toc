@@ -25,23 +25,24 @@
 \contentsline {chapter}{\numberline {4}Digital hand models}{21}{chapter.4}
 \contentsline {chapter}{\numberline {5}System prequisites}{23}{chapter.5}
 \contentsline {section}{\numberline {5.1}Display}{23}{section.5.1}
-\contentsline {section}{\numberline {5.2}Tracking Hardware}{24}{section.5.2}
-\contentsline {section}{\numberline {5.3}Data cleaning}{25}{section.5.3}
-\contentsline {section}{\numberline {5.4}Image analysis}{26}{section.5.4}
-\contentsline {section}{\numberline {5.5}Inverse kinematics}{26}{section.5.5}
-\contentsline {section}{\numberline {5.6}Hand model}{26}{section.5.6}
-\contentsline {chapter}{\numberline {6}System conception}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Technical conception}{27}{section.6.1}
-\contentsline {section}{\numberline {6.2}Image Analysis with OpenCV 3 and Python on the Raspberry}{27}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Image acquisition from camera}{29}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Image conversion to HSV colorspace}{31}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Mask construction and filtering}{32}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Contour finding an position calculation}{32}{subsection.6.2.4}
-\contentsline {subsection}{\numberline {6.2.5}Sending of positional data via network as UPD package}{32}{subsection.6.2.5}
-\contentsline {subsection}{\numberline {6.2.6}object tracking}{32}{subsection.6.2.6}
-\contentsline {chapter}{\numberline {7}System Evaluation}{33}{chapter.7}
-\contentsline {section}{\numberline {7.1}Image processing performance}{33}{section.7.1}
-\contentsline {chapter}{\numberline {8}Resume}{37}{chapter.8}
-\contentsline {chapter}{Abbildungsverzeichnis}{i}{chapter*.40}
-\contentsline {chapter}{Tabellenverzeichnis}{ii}{chapter*.41}
-\contentsline {chapter}{Literaturverzeichnis}{vii}{chapter*.42}
+\contentsline {section}{\numberline {5.2}Tracking technology}{24}{section.5.2}
+\contentsline {section}{\numberline {5.3}Tracking Hardware}{24}{section.5.3}
+\contentsline {section}{\numberline {5.4}Data cleaning}{26}{section.5.4}
+\contentsline {section}{\numberline {5.5}Image analysis}{26}{section.5.5}
+\contentsline {section}{\numberline {5.6}Inverse kinematics}{26}{section.5.6}
+\contentsline {section}{\numberline {5.7}Hand model}{27}{section.5.7}
+\contentsline {chapter}{\numberline {6}System conception}{28}{chapter.6}
+\contentsline {section}{\numberline {6.1}Technical conception}{28}{section.6.1}
+\contentsline {section}{\numberline {6.2}Image Analysis with OpenCV 3 and Python on the Raspberry}{28}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Image acquisition from camera}{30}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Image conversion to HSV colorspace}{32}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Mask construction and filtering}{33}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Contour finding and position calculation}{34}{subsection.6.2.4}
+\contentsline {subsection}{\numberline {6.2.5}Sending of positional data via network as UPD package}{34}{subsection.6.2.5}
+\contentsline {subsection}{\numberline {6.2.6}object tracking}{34}{subsection.6.2.6}
+\contentsline {chapter}{\numberline {7}System Evaluation}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}Image processing performance}{35}{section.7.1}
+\contentsline {chapter}{\numberline {8}Resume}{39}{chapter.8}
+\contentsline {chapter}{Abbildungsverzeichnis}{i}{chapter*.41}
+\contentsline {chapter}{Tabellenverzeichnis}{ii}{chapter*.42}
+\contentsline {chapter}{Literaturverzeichnis}{vii}{chapter*.43}
