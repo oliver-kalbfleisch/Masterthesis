@@ -3,17 +3,17 @@
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/technical_setup.jpg}
 \caption{Technical conception of the single hardware parts}
-\label{technical-copnception}
+\label{fig:technical-copnception}
 \end{figure} 
-The technical setup of the whole system is relatively simple. Instead of using one large dimensioned unit which takes care of all calculations, the image processing steps that have to be done on both stereo images anyway, are outsourced onto the Raspberry Pis. 
-\todo{rewrite}As already mentioned in the conception phase, the image processing done directly on the Pi also reduces latency.This  would occur when sending image data over network channels to the main unit.\\
+As depicted in Figure \ref{fig:technical-copnception} the technical components of the setup are realtively simple.Instead of using one large dimensioned unit which takes care of all calculations, the image processing steps that have to be done on both stereo images anyway, are outsourced onto the Raspberry Pi's.
+The mage processing can be dne on the two Pi's in parallel, whch cuts down processing time. Furthermore the image data stay on the device and does not have to be sent to a min unit whch would introduce network and data readng latency.\\
 The two \textbf{Raspberry Pi 3 Model B}, which are used as the controllers for the \textbf{Raspberry Pi Camera} are connected via network cable to a network switch. A connection over wireless network would be possible with the on-board capabilities, but this might create latency problems and/or signal interference with other existing networks. Therefor a cable connection is the safer solution.
 The switch also connects to the "Master" PC to which the "Slave" Pi's communicate their data. The Master also takes care of the stereoscopic calculations,as it is dimensioned with far more computational power than the slaves. The 2D positional data from the slaves and the calculation results from the stereo image disparity is fed into the hand model running on the "Master". The model solution is then applied to the digital hand model and rendered to the HMD.
 \section{Image Analysis with OpenCV 3 and Python on the Raspberry}
 For the image analysis part, \textit{OpenCV3} with it's \textit{Python 3} bindings is chosen. The \textit{OpenCV} package needs to be downloaded and compiled onto each device before it can be used.
 Before the actual image analysis part can take place, the used cameras need to be calibrated. As they are basically pinhole cameras, they introduce amounts of radial and tangential distortion to the images. These distortions need to be compensated for, especially when using them as source for the stereo images. Image distortion in these pictures would lead to incorrect calculations for image depth.
 \textit{OpenCV} supplies the tools to calculate the distortion parameters as well as the camera matrix \cite{Opencv.2018}.
-The camera matrix is basically a description for the transformation of points in 3D object space to the 2D image space of the camera. For the used Cameras, we can consider a central projection of points in space onto our image plane. The center of the camera is considered the center of an euclidean coordinate system and the projection plane \textbf{z} is located at distance \textit{f} equal to the focal length of the camera.\\
+The camera matrix is basically a description for the transformation of points in 3D object space to the 2D image space of the camera. For the used Cameras, we can consider a central projection of points in space onto our image plane. The center of the camera is considered the center of an euclidean coordinate system and the projection plane \textbf{z} is located at distance \textit{f} equal to the focal length of the camera.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/pionhole.JPG}
 \caption{Image point projection for pinhole camera systems\cite{Hartley.2000}}
@@ -24,8 +24,7 @@ As shown in Figure \ref{pinholecamera_mapping}, a point from the object space ca
 (X,Y,Z)^{T} \mapsto (fX/Z,fY/Z)^{T}
 \end{equation}
 \todo {elaborate}
-
-For the calculation of the image distortion , \textit{OpenCv} uses a chessboard image for calibration. The printed image is held in front of the camera at a constant distance and rotated and positioned differently. After every position/rotation change an image of the pattern should be taken.
+For the calculation of the image distortion , \textit{OpenCV} uses a chessboard image for calibration. The printed image is held in front of the camera at a constant distance and rotated and positioned differently. After every position/rotation change an image of the pattern should be taken.
 These images are then used to find the corners at the intersection of the black and white squares. With the previous knowledge of the square sizes, the projection errors in radial and tangential directions can be calculated:\todo{add Source code}
 \begin{equation}
 \begin{split}
@@ -47,17 +46,22 @@ The python program prototype that is used for tracking the specified color marke
 \item Contour finding an position calculation
 \item Sending of positional data via Network as UPD Package
 \end{itemize}
+\subsection{System Parameters}
+\label{System Parameters}
+
+
 
 \subsection{Image acquisition from camera}
 As the computation times for image filtering and mask generation may vary, it makes sense to separate the image acquisition from the computation part.Therefore the loading of the image data frame from the camera is outsourced into its own thread. Also this allows us to trigger the frame grabbing on both devices for synchronization. Frame grabbing synchronization can be done via triggering a PWM signal on one of the raspberry's and sending it to the other Pi.
-The synchronicity of the two frame reading threads is assumed for the first implementation and has to be tested on a finished setup.\\
-The tread takes the data of the current image frame and hands it over to the main thread, where the image processing is handled. For the first frames, the full image data is needed as the position of the markers is not yet known. Performance-wise, this introduces a lot of overhead, since each mask generation step for the specific colors hast to go through the complete image data, meaning every pixel has to be read out at least 5 times to get the tracking for all different markers.\\
+The synchronicity of the two frame reading threads is assumed for the first implementation and has to be tested on a finished setup.
+
+The tread takes the data of the current image frame and hands it over to the main thread, where the image processing is handled. For the first frames, the full image data is needed as the position of the markers is not yet known. Performance-wise, this introduces a lot of overhead, since each mask generation step for the specific colors hast to go through the complete image data, meaning every pixel has to be read out at least 5 times to get the tracking for all different markers.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/ROI.jpg}
 \caption{ROI calculation for consecutive frames}
 \label{roi_calc} 
 \end{figure}
-After a few frames, we get hold of the marker position and can define a reduced region of interest (ROI) on the image (Figure \ref{roi_calc}). The new ROI results from the positional data of the previous frame and has to be dimensioned correctly as to incorporate the possibility of large position differences between consecutive frames.\\
+After a few frames, we get hold of the marker position and can define a reduced region of interest (ROI) on the image (Figure \ref{roi_calc}). The new ROI results from the positional data of the previous frame and has to be dimensioned correctly as to incorporate the possibility of large position differences between consecutive frames.
 Furthermore the offset position, preferably the top left corner of the region, has to be kept track of. By taking a sub-region of the frame as input for further processing, the resulting coordinates relate to the top left corner of this sub-region as origin. Consequently only the first set of coordinates has the correct origin as reference point for the next frame. Consecutive frames need this information to retrieve the correct sub-region from the full frame by adding the offset to the calculated positional data.
 First frame ROI calculation is based on a minimum axis-aligned bounding box(AABB) fitted onto the marker. The offset value for the ROI is added to the bounding box values resulting in a rectangle data-set containing the position of the offset top-left corner $\vec{\mathbf{tl}}$ and the offset 
 \textbf{width} and \textbf{height} of the ROI rectangle:
@@ -85,35 +89,140 @@ Finally,the resulting rectangle has to be fitted onto the size boundaries of the
 \textbf{height}&=\text(max(0,min(\mathbf{height},image_{height}))
 \end{split}
 \end{equation}
-Another option which could be evaluated instead of clamping the area would be shifting the offset point to a position where it does not violate the image boundaries and  thereby preserving the size of the ROI.\\
+Another option which could be evaluated instead of clamping the area would be shifting the offset point to a position where it does not violate the image boundaries and  thereby preserving the size of the ROI.
 Should no marker be found in the defined ROI or the certainty of the result is not high enough, the frame has to be dropped and the next frame should utilize the whole image data.
 \subsection{Image conversion to HSV colorspace}
 The image data that is supplied by the camera comes in an RGB data format, which we could already use for the further calculation. It does though make more sense to convert the input data into the HSV colorspace. Since we are not using high precision cameras, it is necessary to define a range of color values around the desired color which we want to track. The HSV colorspace is displayed as a cone, in comparison to the RGB colorspace, which is displayed as a cube. The color values for the HSV space are all located on a circle spanning form 0 to 360 degrees. The Hue value (H)corresponds to the angle on the circle, where $0^\circ$ corresponds to a reddish color, $120^\circ$ lies in the area of green and $240^\circ$ and above correspond to blue. The saturation value (s) corresponds to the amount of white the color contains  where 0 is pure white and 100 corresponds to the fully saturated color. For optimal results, only highly saturated colors should be used to ensure correct color detection. The last component is the value component (V) which describes the intensity of the color. Alike the value settings for the saturation, value ranges of at leas 50 should be used for tracking precision.
-\\
 For tracking the five fingers of the hand we need five distinguishable colors. Here the primary colors red, green and blue will be the choice for the first three colors. The other two selected colors \todo {check test results} are orange and yellow. To be able to clearly distinguish these colors in the video frame, a constant and homogeneous lighting is needed as well as a color temperature of the lighting that is in the neutral area to not change the color of the markers.
 \\the color conversion from the input RGB values to the desired HSV colorspace is done as follows:
 \begin{equation}
 \begin{split}
-hsv_{low}=(hue_{targetcolor}-sensitivity,100,100)\\
-hsv_{up}=(hue_{targetcolor}-sensitivity,100,100)\\
+hsv_{low}&=(hue_{targetcolor}-sensitivity,100,100)\\
+hsv_{up}&=(hue_{targetcolor}-sensitivity,100,100)\\
 \end{split}
 \end{equation}
 \subsection{Mask construction and filtering}
 \todo {orig image and mask images for display}
-These values are the used as the parameters for a mask generation which generates a binary mask for the current frame where all pixels whose values lie outside of the specified range are set to zero (black) and the remaining are set to 255 (white).For these masks to work properly, any other larger objects that might contain similar colors should be removed from the scene to eliminate wrong tracking data. The used cameras run on an automated white balance and exposure mode. The variation of these values can cause shifts in the appearance of the colored markers and therefore alter the generated masks. To compensate for white balance shifting, a non-white ideally diffuse reflecting background should be used for the tracking space. Also the auto modes should be turned off and appropriate values for white balance and exposure have to be determined at the initialization step of the system.\\As all digital cameras tend to have signal noise in the sensor data , high frequency  noise in the color channels will be present. This noise should be filtered out before any further computation on the image data can be done.\\
-The first step in this progress is to use a Gaussian filter to blur the mask.
-The Gaussian filter acts as a low pass filter for the image. The application of the filter cuts out high frequency noise generated by the sensor electronic and other factors. The downside of applying a Blur onto the generated image is a loss of detail. As the markers will not be utilizing complex geometric forms or fine patterns, the loss of details is acceptable.\\After this step an erosion and a dilation is applied to the image tho further eliminate unwanted noise. A combination of these two morphological operation  is used to further improve the data of the thresholded binary image\cite[chapter~3.11-12]{Davies.2017}.\todo {elaborate}.
-Erosion and dilation operation on thresholded images perform the tasks of removing light spots on dark backgrounds as well as dark spots on light backgrounds. These spots are normaly the result of the remaining image noise after the blurring or incorrect pixel values from the camera which case the pixel to be incorrectly thresholded.
+These values are the used as the parameters for a mask generation which generates a binary mask for the current frame where all pixels whose values lie outside of the specified range are set to zero (black) and the remaining are set to 255 (white).For these masks to work properly, any other larger objects that might contain similar colors should be removed from the scene to eliminate wrong tracking data. The used cameras run on an automated white balance and exposure mode. The variation of these values can cause shifts in the appearance of the colored markers and therefore alter the generated masks. To compensate for white balance shifting, a non-white ideally diffuse reflecting background should be used for the tracking space. Also the auto modes should be turned off and appropriate values for white balance and exposure have to be determined at the initialization step of the system.As all digital cameras tend to have signal noise in the sensor data , high frequency  noise in the color channels will be present. This noise should be filtered out before any further computation on the image data can be done.
+The first step in this progress is to use a Gaussian filter to blur the mask.\\
+The Gaussian filter acts as a low pass filter for the image. The application of the filter cuts out high frequency noise generated by the sensor electronic and other factors. The downside of applying a Blur onto the generated image is a loss of detail. As the markers will not be utilizing complex geometric forms or fine patterns, the loss of details is acceptable.\\
+After this step an erosion and a dilation is applied to the image tho further eliminate unwanted noise. A combination of these two morphological operation is used to further improve the data of the thresholded binary image\cite[chapter~3.11-12]{Davies.2017}.
+Erosion and dilation operation on thresholded images perform the tasks of removing light spots on dark backgrounds as well as dark spots on light backgrounds. These spots are usually the result of the remaining image noise after the blurring or incorrect pixel values from the camera which case the pixel to be incorrectly thresholded.
+To apply the specific operators to the image a mask ( often also called kernel) needs to be defined. These masks normally consist of an n x n shaped matrix where the values in the matrix rows and columns are either one or zero for binary images. An odd number of rows and columns is usually used to be able to define a center pixel. The central entry of the matrix corresponds to the current pixel of the image for which the morphological operation is to be applied. As the data of the pixel should be preserved, the value is set to one. 
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/morpological_kernels.jpg}
+\caption{ Example Mask of 3x3 size :\textbf{a)} empty mask \textbf{b)} Mask that keeps pixel value  \textbf{c)} combination of b) with a left shift   \textbf{d)} combination of b) with an upshift   \textbf{e)} isotropic mask}
+\label{morphological_ops} 
+\end{figure}
+The processing of these matrices is not very complex. The central pixel value and the values of the neighboring pixels are taken and summed up.The ones in the matrix outside of the center value define if the pixel is taken in for the operation. A threshold value is then defined. The result of the sum operation is compared to the threshold value. If above the threshold, the central pixel value is altered, depending on the image operation. If below, the current value is kept.
+\begin{algorithm}
+\SetAlgoLined
+\SetKwInOut{Input}{input}
+\SetKwData{Threshold}{threshVal}
+\SetKwData{Result}{result}
+\SetKwData{CentVal}{centVal}
+\SetKwData{OpVal}{opVal}
+\Input{threshold $threshVal$ value for the calculation, image segment $imgSegment$ of size $n\times n$, mask $morphMask$ of size $n \times n$, operation value (0 or 1) $opVal$, value of central pixel $centVal$}
+\BlankLine
+\KwResult{New value for pixel}
+\BlankLine
+\For{$i\leftarrow 0$ \KwTo maskHeight}{
+	\For{$j\leftarrow 0$ \KwTo maskWidth}
+	{
+	 \If{$morpMask[i,j] = 1$}{\Result$\leftarrow$\Result$ +morpMask[i,j]$}
+	}
+}
+\If{\Result $>=$ \Threshold}{\CentVal$=$ \OpVal}
+\caption{Pseudocode for the the pixel value calcuation}
+\label{mask_calc_pseudocode}
+\end{algorithm}
 
+When using for example the isotropic matrix displayed in Figure \ref{morphological_ops} e) and setting a threshold of 8 on an dilation operation, the result would be the filling of a white pixel when surrounded by black pixel. The same operation on an erosion would lead to an removal of a black pixel surrounded by white pixels.
 
+The combination of the morphological operator erode and dilate leads to two methods called \textit{morphological opening} and \textit{morphological closing}. The idea behind these two is to use the two basic operation in a certain order to enhance the binary image quality \cite[chapter~3.12]{Davies.2017}.
+The formal definition for the operation:
+\begin{equation}
+ \begin{split}
+O&=Original\; image \\
+\oplus&= Dilation\; operation\\
+E&=Erosion\; mask\\
+\ominus&= Erosion\; operation\\
+D&=Dilation\; mask\\
+\circ&= Morphologic\; opening\\
+\bullet&= Morphologic\; closing\\
+\\
+O\bullet D&=(O\oplus D)\ominus E\\
+O\circ D&=(O \ominus E)\oplus D\\
+\end{split}
+\end{equation}
 
+The \textit{morphological closing} operation is applied first to eliminate so called "salt noise" (white pixels in black area), narrow cracks, channels and 	small holes in the original image. The major part of the work for this operation is done on the areas where not tracking marker is found. It removes the remaining noise left over from the blur or signal distortion.
+
+The application of the \textit{morphological opening} removes so called "pepper noise", fine hairs and small protrusions. 
+The outcome of the practical application of the opening is the removal of wrong pixels inside the area of the color marker in the image. This helps with the later calculation of the bounding boxes as the algorithm searches for the largest closed area int the image.
+Generally the closing of an image enlarges it while filling bright defects inside of an black area and the opening makes it smaller while removing bright defects on a dark surface.
+As the system will not be handling large image data, the mask sizes can be kept low, utilizing the above described $3\times 3$ mask size. The structure options provided by \textit{OpenCV} contain a cross structure, an elliptical structure and a isotropic version. As it would be useful to get all surrounding image data and the tracking markers will not have complex geometric structures, the isotropic mask structure should be sufficient. The threshold limit  should be set to an  initially reasonable value with further testing on the running setup.
 \subsection{Contour finding and position calculation}
 With the cleaned mask we can continue and search for the white areas in the mask which might represent our target. Under the assumption that we have removed all other parasitic objects from the image, the marker should be the largest area of positive pixels in the mask frame. Therefore only the largest area found in the search is taken as the desired tracking marker. For the selected area, a fitting bounding box is calculated and the center of this box is used as the positional parameter of the tracking marker.
 \subsection{Sending of positional data via network as UPD package}
 The resulting data is then handed over to a UDP server which sends the positional data to the parent device where the stereoscopic calculations as well as the hand model and rendering is done
 \subsection{object tracking}
 \todo{add object tracking method -> visual or HTC vive tracker}
+\section{Stereoscopic calculations}
+On the parent device, the incoming positional data from both Raspberry's is collected and prepared for the stereoscopic calculation steps. The incoming data only consists of 2D position data of the tracked marker on the image plane. To retrieve depth information for correct spatial placement of the marker the image disparity of the two cameras can be utilized to calculate the object distance from the cameras.\cite{Tauer.2010}\\
+Before diving into the mathematical concepts, some essential terms have to be explained.
+These are:
+\begin{itemize}
+\item Interaxial distance
+\item Parallax
+\item Zero-point plane
+\end{itemize}
+\subsubsection{Interaxial distance}
+A stereoscopic imaging system is based off of our own human visual system as it produces stereoscopic images. Therefore such a system always consists of at leas two cameras which are mounted in parallel. The distance difference between the two cameras is called the "inter axial distance" of the system. The usual distance for such systems is the mean distance of the human eyes, which corresponds to around \todo {insert mm values} mm. Shifting the cameras closer together or further apart will change the resulting stereoscopic effect, where shifting the cameras closer together will enlarge objects and shifting the cameras further apart will make objects seem much smaller than they are. 
+\subsubsection{Parallax}
+Since the cameras are  separated by the \textit{interaxial distance}, a disparity in the generated images will occur. This means that the objects in the picture of the right camera will have a different position in terms of perspective than the images that result from the left camera. This resulting disparity is used to generate the 3D effect when displaying the images. The term "\textit{parallax}" is used to describe the comparison of the two images. The two images can have a negative, positive or zero \textit{parallax}.
+
+\subsubsection{Zero-point plane}
+The\textit{ zero point plane} is a special theoretical plane in a stereoscopic system. The location of the \textit{zero-point plane} defines the distance from the camera system at which the image points from both cameras match. Objects that lie before the \textit{zero-point plane} will have a negative \textit{parallax} and will appear closer to the viewer. Ton the opposite side, objects with positive \textit{parallax} will lie behind the zero point plane and therefore will appear further away.
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/Stereo_diagram.png}
+\caption{Stereoscopic areas}
+\label{stereo_diagram} 
+\end{figure}
+Additional attention needs to be put in the camera setup before calculating depth form disparity. The cameras need to be checked for horizontal alignment to achieve correct values for the calculation.
+\subsection{Depth calculation}
+With correctly aligned system, one can calculate the distance of an object from the cameras using common trigonometric fundamentals\cite{JernejMrovlje.2008,YasirDawoodSalman.2017}.
+\\
+The position for the right camera will be denoted as $S_{r}$ and the position of the left camera will be denoted as $S_{l}$ (see Figure \ref{stereo_Dimmensions}a).The resulting distance of $S_{l}-S_{r}$ is the \textit{interaxial distance} $B$ of the system. The view angle $\theta$ of the Camera, which should be the same for both cameras, will respectively be $\theta_{1}$ and $\theta{2}$. From the camera positioning, the assumption of parallel optical axes is made. The angles of $\phi_{l},\phi_{r}$ describe the resulting angle between the optical axis of the camera and the object.
+By using geometric derivations we can express that:\\
+\begin{equation}
+B= B_{1}+B_{2}=D\tan\varphi_{1}+D\tan\varphi_{2}
+\end{equation}\\
+Rearranging for D gives us:\\
+\begin{equation}
+D = \frac{B}{\tan\varphi_{1}+\tan\varphi_{2}}
+\end{equation}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/Stereo_Calc_4.JPG}
+\caption{Dimmensions for calculation.Images from:\cite{JernejMrovlje.2008}}
+\label{stereo_Dimmensions} 
+\end{figure}
+With Figure \ref{stereo_Dimmensions}b-c one can find that:
+\begin{equation}
+\frac{x_{1}}{\frac{x_{0}}{2}}=\frac{tan \varphi_1}{\tan(\frac{\varphi_{0}}{2})}
+\end{equation}\\
+\begin{equation}
+\frac{-x_{2}}{\frac{x_{0}}{2}}=\frac{tan \varphi_2}{\tan(\frac{\varphi_{0}}{2})}
+\end{equation}\\
+Resulting in the calculation of D to be expressible as:
+
+\begin{equation}
+D=\frac{Bx_0}{2\tan(\frac{\varphi_0}{2})(X_{L}-X_{R})}
+\end{equation}\\
+Where B is the distance between the cameras,$x_0$ being the horizontal width of the picture format in pixels, $\varphi_0$ representing the viewing angle of the camera and $(X_{L}-X_{R})$ representing the disparity between the two images in Pixels.
  
+
 
 
 

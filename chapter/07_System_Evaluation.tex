@@ -19,20 +19,15 @@ Utilization of the knowledge from these tests led to the implementation of the a
 The first frame is analyzed as a whole frame, optimally resulting in the detection of a marker. As the marker detection creates a rectangle around the tracked area, we already have the coordinates for the ROI and only have to add an offset to this area. This value of the offset has to be set high enough to ensure that in the following frame, the tracking marker is still contained in the ROI. It also has to be ensured, that the generated ROI is clamped to the frame dimensions. If not doing so, parts of the readout are can be located outside of the image plane, causing readout errors when used for the subsequent frame. The following frames will then be processed with the input of the ROI, selecting only the defined section of the image and updating the ROI with the new data for that frame.
 
 As already mentioned in the conceptional phase to lighting of the tracking area is a major factor. Variations of lighting intensity and color temperature cause the color of the trackers to shift their color. This can cause a fluctuation in the calculated tracker positions, as the defined color threshold ranges are kept as small as possible to achieve a clean separation of the tracker colors and reduce unwanted noise. 
-
-
-
-
-
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/pi_workflow_500.jpg}
 \caption{Work flow of the C++ implementation with thread pool solution and ROI}
 \label{c++ work flow map} 
 \end{figure}
-\begin{table}[]
+\begin{table}[H]
 \centering
-\caption{My caption}
-\label{my-label}
+\caption{Speed measurements for the used implementations}
+\label{Speed measurements for the used implementations}
 \begin{tabular}{|l|l|l|l|l}
 \cline{1-4}
 Timings in ms        & \begin{tabular}[c]{@{}l@{}}Python Single Thread \\ without ROI\end{tabular} & \begin{tabular}[c]{@{}l@{}}C++ Single Thread \\ without ROI\end{tabular} & \begin{tabular}[c]{@{}l@{}}C++ Single Threadpool \\ Thread with ROI\end{tabular} &  \\ \cline{1-4}
@@ -47,10 +42,77 @@ Position Calculation &                                                          
 ROI Readout          &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
 \end{tabular}
 \end{table}
+\subsection{ROI size and color accuracy}
+\todo{elaborate}
+System testing with the 5 different colored shrink tubing markers showed, that the color tracking for colors outside of the color range of the human skin tones (green,blue) is rather unproblematic. The color markers falling into the colorspace of posible light reflection from skin may cause probelms, dependng on the lighting situation of the setup.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/color_tracking_probs.png}
+\caption{Images showing reflection problems with  orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotaton of the hand, skin reflecton color falls into tracking threshold.}
+\label{img:Color_reflecton_problems} 
+\end{figure}
+Figure \ref{img:Color_reflecton_problems} displays such a case where depending on the orientation of the hand, refletion from the scenery lightng can fall int the color tone space of the tracked marker, causng large parts of the hand to light up in the image.Since the calculation of the trackng marker position relys on finding the largest closed "white" area in the thresholded image, this can cause a "jumping" of the calculated position. 
+\\\\The first solution for this problem is to narrow down the color threshold spans. By doing so, one can ensure that only the wanted colors are tracked. This method does have a downside effect. When the markers are moved in the tracking space, light variations and shadowing will cause the colors to shift their appearance slightly. With broader threshold ranges, this does not seem to be a large problem as these changes still lie inside the ranges.Narrowed down color ranges might not include these color variations, creating cavities in the thresholded image.\\ The applied morphological operations on the image can fix these problems up to a certain point, but for larger areas this could vary position tracking results.The implemented ROI feature speed up the whole system calculations once the colors are found. Before this point, the system scans whole frames to find colors, which takes more tme than the much smaller ROI regions.
+Empirical evaluations showed, that for the used tracking space, a ROI region size offset of 40 px in x and y directions produces the best results in terms of consistency. Smaller region offsets caused the system to use tracking for faster hand motion, which causes system slow down until the tracking has recovered. Generally, larger ROI's produce more constent tracking results at the cost of hgher calculation time.
+\begin{wrapfigure}[15]{r}{0.3\textwidth} 
+\centering
+\includegraphics[width=\textwidth/2,angle=-90]{images/color_markers_hand.jpg}
+\caption{First set of shrink tube color markers }
+\label{img:first_set_color_markers}
+\end{wrapfigure}
+\\The initial color marker size was selecetd to be relatively large, spanning most of the last segemnt size of each finger.
+The used material of the colored shrink tubing was selected because it seemed to be relatively diffuse und therefore unprone to errors resulting from the reflection of the scene lightng. The material turned out to be mostly diffuse reflecting, but dependng on color and angle of light incidence reflections in the color of the scene light did occur.\\
+A test set of smaller marker was also evaluated, showng similar tracking results to the larger markers and also the same color reflection problems. The benefit of a smaller marker size would be much lower restiction of the fnger movements and also unveiling the fingerstips of the fingers for better haptic interaction.
+As both markers showed the above described problem of mixing marker area with possble skin reflections, and improvement to the markers was applie. At both ends of the larger markers, a piece of gray colored tape was applied to create an artificial border for the tracking algortihm.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth/2]{images/small_and_improved_markers.jpg}
+\caption{First set of shrink tube color markers }
+\label{img:second_color_markers}
+\end{figure}
+The idea behind this solution was to create a fixed border between the color area of the tracker and the color area of the skin tones. The grey color of the border ensures that this area will not be tracked. The usage of black instead of gray would evenn furthermore ensure this. 
+\\Since the tresholding algorithm searches for the largest closed color area in the bnary thresholded image, this border should cause a seperation of unwanted skin reflecton area and actual tracker color area. The problem that the resultng color marker area might not be the largest area still presists after this improvement but this case has to be handeled seperately.
+\\Optical results showed that for the colors lying outside of the red to orange color spectrum that skin reflections produce, the artificial border stabilized the color detection.
+\\The idea of usng shrink tubing as marker material showed to be suitable except in the cases described above. One downside of the material is that the displayed colors are already the highest variety of available colors on the market. Other colors from the green and blue color areas like purple are simply not available or have to be ordered as a special request in larger amounts.
+\\Also the original diameter is much larger than a human finger. The used shrnk tube was able tu be shrunk to one thrd of its size. The reason for this was to be able to adapt to the variyng dameters of the human hand. The shrnking procedure requires a constan amount of heat to be applied to the material to activate the shrinking. The amount of heat that is needed surpasses the heat production of a standard hair dryer since the original application of shrink tubng is on heat resistant cables. The heat that needs to be applied can easily be more than 100 gegree Celsius, which makes a direct application on the users hand highly insecure.
+\\For the prototype, the shrink tube parts were shrunk with a standard cigarette lighter and continously fited onto the user finger until the desired form was reached. This method showed to  be suboptimal, since the flame of the lighter produces only a puntual heat source. Ths caused uneven shrinkage of the heated parts. This can lead to cavities or bumps in the material and change the refelection properties at these points. A regulated heat gun would probaly generate better results.\todo{test}
+\\To get smoother shrinking results, parts of pvc tubng with the correct diameter could be used as dummy parts for the man part of the shrinking.
 
 
 
+\newpage
+\subsection{Depth measurement accuracy}
+To determine the accuracy of the system for it's depth measurement values a simple test bench setup was used. The camera rig was aligned horizontally and fixed to the testbench. A large sized colored marker\todo{measure size} was used as target for detection. The marker marker was positioned at altering distances from the camera rig along the central axis of the camera rig. The height at which the camera rig is positioned in the experiment setup will be around 100 cm, so the measured distances started at 100 cm from the camera and were decremented in steps of 5 cm until 20 cm in front of the Camera Rig(see Appendix Table \ref{Depth measurement Values} and Figure \ref{char:DisparityToDistanceChart}).
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/Disparity_to_distance.JPG}
+\caption{Chart showing the results of the disparity measurement with a plotted trend line}
+\label{char:DisparityToDistanceChart} 
+\end{figure}
+The accuracy of the camera system is limited by the number of pixels in relation to the camera view angle:\\
+\begin{equation}
+\Delta\varphi=\frac{\varphi_0}{x_0}
+\end{equation}
+With the system set up at 640 pixels of image width and a horizontal viewing angle of $62.5^\circ$ \todo{raspi docu reference}, $\Delta\varphi$ is equal to $0.0977\frac{1^\circ}{pixel}$.
+The resulting error would be:
+\begin{equation}
+\frac{\tan \varphi}{\tan(\varphi -\Delta\varphi)}=\frac{\Delta D+D}{D}
+\end{equation}
+\begin{equation}
+\Delta D=\frac{D^{2}}{B} tan(\Delta\varphi)
+\end{equation}
+The system error for a $D=100cm$ would therefore result in about $2cm$ of possible error.
+As the measured values show deviations of up to $5\%$ from the correct value, the function from the trend line displayed in Figure \ref{char:DisparityToDistanceChart} was taken as a correcting factor for the depth calculation.\\
+Equation \ref{char:DisparityToDistanceChart} uses the uncorrected values for the calculation. Values lying on the trend line should correspond more exactly to the correct distance values \cite{ManafA.Mahammed.2013}. The equation can be rewritten to:
+\begin{equation}
+\label{equ:power_function}
+D=k*x^{z}
+\end{equation}
+with K being:
+\begin{equation}
+k=\frac{Bx_0}{2\tan(\frac{\varphi_0}{2}+\phi)}
+\end{equation}
+and x the disparity in pixels.
+The $\phi$ term in the equation above is used as a compensation for possible alignment errors.
+The trend line, which is fit to the measurements in Figure \ref{char:DisparityToDistanceChart} represents the the function needed to fulfill Equation \ref{equ:power_function}.The calculated values are $k=4543.3$ and $z=-1.035$.
+\todo{add chart for corected values}
+With the utilization of the corrected value formula, the accuracy of the depth measurement results is acceptable for the prototype applicaton. For future work, the distance measuremetn procedure could be applied with more measurement points to refine the resulting function for more precision.
 
-
-
- 

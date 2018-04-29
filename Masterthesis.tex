@@ -14,6 +14,8 @@
 \usepackage{textcomp}
 \usepackage{gensymb}
 \usepackage{todonotes} 
+\usepackage[english]{algorithm2e}
+\usepackage{pdflscape}
  \geometry{
  a4paper,
  left=26.2mm,
@@ -26,8 +28,8 @@
 %fancyheadings funktioniert nicht mehr mit der KOMA Script Klasse scrbook
 
 \usepackage{wrapfig}
-
 \usepackage[numbers,square,sort]{natbib}
+\bibliographystyle{dinat} % or try natplain or unsrtnat
 
 % Mittels [H] können Bilder genau an einer Stelle positioniert werden
 \usepackage{float}
@@ -55,7 +57,7 @@
 \tableofcontents
 \setcounter{page}{1}
 \newpage
-\input{./chapter/Introduction}
+\input{./chapter/01_introduction}
 \newpage
 \newpage
 \input{./chapter/02_Description_of_hand_in_digital_space}
@@ -76,4 +78,5 @@
 \newpage
 \include{./chapter/verzeichnisse}
 \include{./chapter/eid}
+\include{./chapter/Appendix}
 \end{document}

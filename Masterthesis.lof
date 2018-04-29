@@ -14,9 +14,17 @@
 \contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Pavlovic, Sharma et al: Hand models. Different hand models can be used to represent the same hand posture. (a) 3D Textured volumetric model. (b) 3D wire frame volumetric model. (c) 3D skeletal model. (d) Binary silhouette. (e) Contour.\relax }}{21}{figure.caption.19}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Technical conception of the single hardware parts\relax }}{28}{figure.caption.25}
-\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Image point projection for pinhole camera systems\cite {Hartley.2000}\relax }}{29}{figure.caption.27}
-\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces ROI calculation for consecutive frames\relax }}{31}{figure.caption.31}
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Technical conception of the single hardware parts\relax }}{28}{figure.caption.24}
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Image point projection for pinhole camera systems\cite {Hartley.2000}\relax }}{29}{figure.caption.25}
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces ROI calculation for consecutive frames\relax }}{31}{figure.caption.29}
+\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Example Mask of 3x3 size :\textbf {a)} empty mask \textbf {b)} Mask that keeps pixel value \textbf {c)} combination of b) with a left shift \textbf {d)} combination of b) with an upshift \textbf {e)} isotropic mask\relax }}{34}{figure.caption.32}
+\contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces Stereoscopic areas\relax }}{37}{figure.caption.39}
+\contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces Dimmensions for calculation.Images from:\cite {JernejMrovlje.2008}\relax }}{38}{figure.caption.40}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Work flow of the C++ implementation with thread pool solution and ROI\relax }}{37}{figure.caption.39}
+\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Work flow of the C++ implementation with thread pool solution and ROI\relax }}{42}{figure.caption.44}
+\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces Images showing reflection problems with orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotaton of the hand, skin reflecton color falls into tracking threshold.\relax }}{43}{figure.caption.47}
+\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces First set of shrink tube color markers \relax }}{44}{figure.caption.48}
+\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces First set of shrink tube color markers \relax }}{44}{figure.caption.49}
+\contentsline {figure}{\numberline {\relax 7.5}{\ignorespaces Chart showing the results of the disparity measurement with a plotted trend line\relax }}{46}{figure.caption.52}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
