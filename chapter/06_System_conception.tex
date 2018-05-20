@@ -8,7 +8,7 @@
 \todo{edit fgure above}As depicted in Figure \ref{fig:technical-copnception}, the technical components of the setup are realtively simple.Instead of using one large dimensioned unit which takes care of all calculations, the image processing steps that have to be done on both stereo images anyway, are outsourced onto the Raspberry Pi's.
 The image processing can be done on the two Pi's in parallel, which cuts down processing time. Furthermore the image data stay on the device and does not have to be sent to a min unit whch would introduce network and data reading latency.\\
 The two \textbf{Raspberry Pi 3 Model B}, which are used as the controllers for the \textbf{Raspberry Pi Camera} are connected via network cable to a network switch. A connection over wireless network would be possible with the on-board capabilities, but this might create latency problems and/or signal interference with other existing networks. Therefor a cable connection is the safer solution.
-The switch also connects to the "Master" PC to which the "Slave" Pi's communicate their data. The Master also takes care of the stereoscopic calculations,as it is dimensioned with far more computational power than the slaves. The 2D positional data from the slaves and the calculation results from the stereo image disparity is fed into the hand model running on the "Master". The model solution is then applied to the digital hand model and rendered to the HMD.
+The switch also connects to the "Master" PC to which the "Slave" Pi's communicate their data. The Master also takes care of the stereoscopic calculations,as it is dimensioned with far more computational power than the slaves. The 2D positional data from the slaves and the calculation results from the stereo image disparity is fed into the hand model running on the "Master". The model solution is then applied to the digital hand model and rendered.
 \newpage
 \section{Construction Details}
 For the physical construction of the system, it is important to know what the primary use case of the system will be. A mobile system is principally not impossible as the Raspberry Pi's could be run with battery power. A wireless communication leads to the beforehand described Problems and a long enough cable connection is rather cumbersome. Furthermore the cameras need to be calibrated at a fixed position for correct depth measurements. Some kind of mounting harness would be needed where the cameras stay in a fixed position.\\
@@ -16,14 +16,15 @@ A much easier approach for the first prototype is defining a seated usecase for 
 The tracking volume that needs to be accomplished for a seated position is also reduced by our physical limitations of the arm length. A tracking volume of about $100x100x100$ cm should be sufficient to track most of the movement.\\
 A frame of 30x30 mm construction Profile is used as base to mount all the components of the system. To reduce posiible color reflections from the background of the tracking space, black fabric is used as background material. The other components of the system are:
 \begin{itemize}
-\item 2 Raspberry Pi 3 Model 3 with 1GB RAM and a 64GB microSD Card running a current raspbian OS and a C++14 compiler
-\item 2 Raspberry Pi Camera Modules V2 with a 100cm connector cable
-\item 4 Port Ethernet Switch
+\item 2 Raspberry Pi 3 Model 3 with 1GB RAM and a 64GB microSD Card running a current Raspbian OS and a C++14 compiler
+\item Compiled version of OpenCV and Boost librarys
+\item 2 Raspberry Pi Camera Modules V2 with a 100 cm connector cable
+\item Ethernet Switch
 \item Monitor for calibration and debugging of the Raspberry side software
 \item PC capable of supporting a HMD and a current Java version 8+
 \item Mounting peripherals
 \item Active cooled case for the Raspberry to help with heart reduction
-\item Two micro USB power supplies with 3.0A output current
+\item Two micro USB power supplies with 3.0 A output current
 \end{itemize}
 The active cooled Raspberry pi cases are an optional part of the construction, but the real time image processing on the CPU of the Raspberry together with the running camera produces larger amounts of heat than in normal operation mode.The applied heat sinks and the active cooling fan help with faster heat dissipation. The 3.0A power supply units are recommended as lower output currents still work but can lead to a power brown out on the system. This can cause system damage over longer usage times and even make the used SD card unreadable.
 \subsubsection{Mounting peripherals}
@@ -72,14 +73,13 @@ The python program prototype that is used for tracking the specified color marke
 \begin{itemize}
 \item Image acquisition from camera
 \item Image conversion to HSV colorspace
-\item Mask construction and Filtering
+\item Mask construction and filtering
 \item Contour finding an position calculation
-\item Sending of positional data via Network as UPD Package
+\item Sending of positional data via network as UPD package
 \end{itemize}
 \subsection{Image acquisition from camera}
-As the computation times for image filtering and mask generation may vary, it makes sense to separate the image acquisition from the computation part.Therefore the loading of the image data frame from the camera is outsourced into its own thread. Also this allows us to trigger the frame grabbing on both devices for synchronization. Frame grabbing synchronization can be done via triggering a PWM signal on one of the raspberry's and sending it to the other Pi.
-The synchronicity of the two frame reading threads is assumed for the first implementation and has to be tested on a finished setup.
-
+As the computation times for image filtering and mask generation may vary, it makes sense to separate the image acquisition from the computation part.Therefore the loading of the image data frame from the camera is outsourced into its own thread.The synchronicity of the two frame reading threads is assumed for the first implementation and has to be tested on a finished setup.
+\\
 The tread takes the data of the current image frame and hands it over to the main thread, where the image processing is handled. For the first frames, the full image data is needed as the position of the markers is not yet known. Performance-wise, this introduces a lot of overhead, since each mask generation step for the specific colors hast to go through the complete image data, meaning every pixel has to be read out at least 5 times to get the tracking for all different markers.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/ROI.jpg}
@@ -203,36 +203,13 @@ The possibility to send multi- and/or broadcast messages via UDP also open up an
 \end{figure}
 \newpage
 \section{Data processing on the receiver side}
-\begin{wrapfigure}[30]{r}{\textwidth/2}
+\begin{wrapfigure}[26]{r}{\textwidth/2}
 \label{img:hand_model_workflow}
 \includegraphics[width=\textwidth/2]{images/Rendering_workflow.png} 
 \caption{Overview diagram of the processing steps for the hand model data on the client side}
 \end{wrapfigure}
 The parent unit receives the two UDP data streams form the Raspberry's. To ensure that the two data streams are separated and therefore distinguishable, each stream receives a dedicated listening port on the client side(Figure \ref{img:netzwerk_diagram}). This separation of data streams also makes it possible to separate the UDP listeners to separate running threads in the background, taking away the task of data processing from the main thread which is already tasked with the rendering of the virtual scene. The positional data will be encoded as comma separated x and y coordinate set. Data separation is done by a simple semicolon as a separator between the coordinate sets. This takes very simple substring operations on the client side to extract the single coordinate sets form the string that is send with the UDP package.
-\todo{maybe add pseudocode for string extraction}
-%\begin{algorithm}
-%\SetAlgoLined
-%\SetKwInOut{Input}{input}
-%\SetKwData{Threshold}{threshVal}
-%\SetKwData{Result}{result}
-%\SetKwData{CentVal}{centVal}
-%\SetKwData{OpVal}{opVal}
-%\Input{threshold $threshVal$ value for the calculation, image segment %$imgSegment$ of size $n\times n$, mask $morphMask$ of size $n \times n$, %operation value (0 or 1) $opVal$, value of central pixel $centVal$}
-%\BlankLine
-%\KwResult{New value for pixel}
-%\BlankLine
-%\For{$i\leftarrow 0$ \KwTo maskHeight}{
-%	\For{$j\leftarrow 0$ \KwTo maskWidth}
-%	{
-%	 \If{$morpMask[i,j] = 1$}{\Result$\leftarrow$\Result$ +morpMask[i,j]$}
-%	}
-%}
-%\If{\Result $>=$ \Threshold}{\CentVal$=$ \OpVal}
-%\caption{Pseudocode for the the pixel value calcuation}
-%\label{mask_calc_pseudocode}
-%\end{algorithm}
-After the string decoding, the extracted values are written into threadsafe variables.This allows the system to read current data without conflicting the writing process of the UPD threads.
-\todo{object tracking data}
+After the string decoding, the extracted values are written into thread-safe variables.This allows the system to read current data without conflicting the writing process of the UPD threads.
 \subsection{Stereoscopic calculations}
 The positional data that is extracted in the UDP data processing only consists of 2D position data of the tracked marker on the image plane. To retrieve depth information for correct spatial placement of the marker the image disparity of the two cameras can be utilized to calculate the object distance from the cameras.\cite{Tauer.2010}\\
 Before diving into the mathematical concepts, some essential terms have to be explained.

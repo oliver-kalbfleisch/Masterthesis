@@ -104,7 +104,7 @@ After the segmentation of foreground an background is achieved,the hand pose has
 \includegraphics[width=\textwidth/2]{images/kinnect.JPG} 
 \caption{Microsoft kinect camera system with the three used sensor units\cite{Zhang.2012}}
 \end{wrapfigure}
-The currently most used type of system for tracking hardware is a setup of a combination of RGB and infrared sensors for imaging an depth measurement.The first commercial system using this technology is the\textit{ Microsoft Kinect} system. The system uses a infrared projector and an infrared sensor to measure distances in the captured scene.\todo{\cite{Zhang.2012}}
+The currently most used type of system for tracking hardware is a setup of a combination of RGB and infrared sensors for imaging an depth measurement.The first commercial system using this technology is the\textit{ Microsoft Kinect} system\cite{Zhang.2012}. The system uses a infrared projector and an infrared sensor to measure distances in the captured scene.
 Newer systems that also incorporate depth sensing through infrared distance measurement are the \textit{Intel RealSense} system and the more consumer focused leap motion hand tracker. The\textit{ Leap Motion Controller} does not supply a separate RGB sensor and does therefore only provide depth measurement data within a specific range from the device\cite{Weichert.2013}.It combines two infrared cameras with three infrared emitter LED's, placing the system into the category if stereoscopic tracking systems.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/leapMotion.JPG}
@@ -119,6 +119,13 @@ The latest Product in this category are the \textit{Intel RealSense} camera syst
 \label{img:leapMotion} 
 \end{figure}
 The \textit{Kinect} can supply depth data at around 30 fps, it's modern  descendants from Intel can supply data at frame rates of up to 90 fps. The systems provide the convenience of not having to apply any form of distinguishable marking to the surface that has to be tracked. The downside of this feature is that the devices only supply SDKs for accessing the collected data from the device. The post processing of this data needs more sophisticated image analysis or neural network processing to figure out feature points of the tracked object from the supplied image data\cite{JamieShotton.2011,Oikonomidis.2011b}. Image analysis of large image can be costly for real time applications and the training of neural networks for the analysis can consume a lot of time and tweaking until the trained result fits the application.
+\\An recent approach of combining RGB-D Data and the usage of CNNs (Convolutional Neural Networks) to estimate hand pose and render a correct digital representaion of the hand is shown in \cite{FranziskaMueller.2017}.
+\\Their approach uses two subsequently applied CNNs to localize the hand and regress 3D joint locations. The first CNN estimates the 2D position of the hand center in the input. The combined information of the hand position together with the corresponding input depth value, is used to generate a normalized cropped image. this image is then fed into a second CNN to regress relative 3D hand joint
+locations in real time. Pose estimation is furthermore refined by using a kinematic pose tracking energy toa chieve more accuracy, robustness and
+temporal stability.
+\\They also introduce a new photorealistic dataset that uses a merged reality
+approach to capture and synthesize large amounts of annotated
+data of natural hand interaction in cluttered scenes for CNN training data.
 
 
 

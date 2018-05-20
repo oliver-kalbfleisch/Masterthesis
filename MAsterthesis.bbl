@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{58}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -115,6 +115,21 @@
   annual conference on Computer graphics and interactive techniques}.
 \newblock New York, NY~: ACM, 1998, S.~371--378. --
 \newblock ISBN 0897919998
+
+\bibitem[{Franziska Mueller} u.\,a.(2017){Franziska Mueller}, {Dushyant Mehta},
+  {Oleksandr Sotnychenko}, {Srinath Sridhar}, {Dan Casas} und {Christian
+  Theobalt}]{FranziskaMueller.2017}
+\dinatlabel{{Franziska Mueller} u.\,a. 2017} \textsc{{Franziska Mueller}}~;
+  \textsc{{Dushyant Mehta}}~; \textsc{{Oleksandr Sotnychenko}}~;
+  \textsc{{Srinath Sridhar}}~; \textsc{{Dan Casas}}~; \textsc{{Christian
+  Theobalt}}:
+\newblock Real-Time Hand Tracking Under Occlusion From an Egocentric RGB-D
+  Sensor.
+\newblock
+\newblock (2017). --
+\newblock URL
+  \url{http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w19/Mueller_Real-Time_Hand_Tracking_ICCV_2017_paper.pdf}.
+  -- Zugriffsdatum: 20.05.2018
 
 \bibitem[Fredriksson u.\,a.(2008)Fredriksson, Ryen und Fjeld]{Fredriksson.2008}
 \dinatlabel{Fredriksson u.\,a. 2008} \textsc{Fredriksson}, Jonas~;

@@ -1,7 +1,20 @@
 %!TEX root = ../Masterthesis.tex
 \chapter{System Evaluation}
 \section{Camera hardware and control}
-The image  processing of the camera frames on the raspberry can be a significant bottleneck for the system. Real time evaluation demands the processing time of a frame to be in the range of the time of the camera FPS. With the current system setup running at 30fps, this means that the image processing time, containing frame readout and downstream processing of the images, has to be done in about $1/30s$ or 33 ms to achieve "real time" processing.
+The image  processing of the camera frames on the raspberry can be a significant bottleneck for the system. Real time evaluation demands the processing time of a frame to be in the range of the time of the camera FPS. With the current system setup running at 30fps, this means that the image processing time, containing frame readout and downstream processing of the images, has to be done in about $1/30s$ or 33 ms to achieve "real time" processing. Professional stereoscopic setups use cameras with global shutters and a synchronization signal. This enables a sub frame synchronization of the two camera systems. The cameras used in the prototype setup use a rolling shutter instead. Since these cameras are designed to be of easy use for the normal consumer, they lack means of external synchronization. Furthermore, electrical drawings as well as controlling software are closed source. To achieve a from of hardware synchronization, a large amount of reverse engineering would be needed. The multi layered circuit board of the camera would also complicate the reverse engineering step. As the driver software is closed source, means of getting system information from and to the camera hardware for software synchronization is severely limited. For these reasons, attempting the synchronization of the data further down the processing pipeline is more reasonable.
+\\To synchronize the reading start point of both cameras the system boots up to the point where all needed components are initialized. At this point the program waits for a start message from the parent system via UDP. The parent system send the start message at the end of its initialization phase via a UDP broadcast, ensuing that both Raspberry's get the message at the same time.
+\newpage
+In the normal usage mode,the camera uses mostly automatic modes for parameter setup. This continuous measuring mode showed fluctuation in image brightness and color saturation. To eliminate this problem, all automatic modes are turned of in the camera initialization phase and fixed values are loaded from a JSON file. To get the values for the JSON file a calibration step was implemented into the command line tool. This calibration step enables the user to preview and manipulate the  following values for the camera:
+\begin{itemize}
+\item Saturation
+\item Brightness
+\item Gain
+\item Exposure time
+\item Contrast
+\item White balance values for blue and red channel
+\end{itemize}
+The user set calibration values can be written into a new JSON file and are directly loaded into the program after calibration is finished. Control over these parameters is crucial for achieving a constant color separation. \\The threshold values values for the color tracking also need to be initially calibrated. These values are dependent on the lighting situation and any change results in the need for re-calibration. To simplify this calibration a calibration function in the same fashion as the camera calibration was implemented. \todo{image of camera and color calibration} It prompts the user a preview of the resulting thresholded black and white image with applied camera settings. Range sliders for lower and upper boundaries for the three RGB components make it fairly easy to adjust and view thresholding results in real time. The calibration values can also be stored into a JSON file. The calibration values will be fed into the system after finishing and can be saved to a JSON file. This File can be read out on following program startups to eliminate the need of calibration at each startup.
+
 \section{Image processing performance}
 The first prototype implementation with \textit{OpenCV} in \textit{Python} showed, that a speed of  33 ms was reachable when only tracking one color. The implementation reached around 30-40 ms processing time when scanning whole images every time. An implementation of an \textit{"Region of interest"} feature  broke down the processing time to around 30 ms for a single color. The downside of the implementation was revealed when implementing the other 4 colors needed to do a full five finger tracking. This approach ramped-up processing time to around 100 ms per frame, making this solution run at 10 FPS.\\ 
 The sequential algorithm also showed another design flaw. When not utilizing the ROI approach, the algorithm would scan the whole grabbed camera frame for each color to create the corresponding threshold map. The \textit{OpenCV} color threshold methods are designed to only search for one color threshold at the time, therefore needing this procedure. One solution option is the already mentioned ROI usage. This solution would furthermore benefit from a multi threaded implementation, as we are not manipulating the original image. Parallel memory readout is not a problem and the generated mask can be saved separately.\\
@@ -10,27 +23,26 @@ A second performance issue that arose from the first prototype was that the inpu
 The rest of the processing steps were lying in the sub millisecond range and are therefore not as valuable for performance optimization.
 The results from this prototype showed, that the \textit{OpenCV-Python} combination is not suitable for reaching the 30 ms target time. \textit{Python} is not a very performant language in this area. The OpenCV library used by python is actually just the ported version of the C code library with bindings for python. As \textit{C} and \textit{C++} are more hardware near and therefore more performant, the second prototype implementation was done in \textit{C++}.
 \todo{Add measurement values}
-\begin{table}[ht]
-\centering
-\caption{Speed measurements for the used implementations}
-\label{Speed measurements for the used implementations}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{|l|l|l|l|l}
-\cline{1-4}
-Timings in ms        & \begin{tabular}[c]{@{}l@{}}Python Single Thread \\ without ROI\end{tabular} & \begin{tabular}[c]{@{}l@{}}C++ Single Thread \\ without ROI\end{tabular} & \begin{tabular}[c]{@{}l@{}}C++ Single Threadpool \\ Thread with ROI\end{tabular} &  \\ \cline{1-4}
-Frame Reading        &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
-HSV Conversion       & \multicolumn{1}{c|}{50.852}                                                 & \multicolumn{1}{c|}{41.125}                                              & omitted                                                                          &  \\ \cline{1-4}
-Image Blur          &                                                                             & \multicolumn{1}{c|}{147.239}                                             & 
-varies with ROI size &  \\ \cline{1-4}
-Mask erode/dilate   &                                                                             & \multicolumn{1}{c|}{165.663}                                             & varies with ROI size &  \\ \cline{1-4}
-Color Threshold      &                                                                             & \multicolumn{1}{c|}{14.686}                                              &                                                                                  &  \\ \cline{1-4}
-Position Calculation &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
-                     &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
-ROI Readout          &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
-\end{tabular}}
-\end{table} The usage of \textit{C++} as the programming language provides more control over memory management and therefore reduces unnecessary memory data copies as these can be handled by pointers to memory locations.\\
-\todo{test image correction time}
-The ported version of the Python code to\textit{ C+}+ initially showed similar performance measurements when using the sequential approach. This was to be expected, as it is the same code the python bindings are using. Further investigation into code timings showed, that another bottleneck was the image optimization feature which applied an erosion an dilation to remove high frequency noise in the image. This operation brought the time up to 100 ms processing time when processing the whole frame area, making the algorithm  not usable for "real time" application. \\Removing this feature brought a major speed up in processing time. 
+%\begin{table}[ht]
+%\centering
+%\caption{Speed measurements for the used implementations}
+%\label{Speed measurements for the used implementations}
+%\resizebox{\textwidth}{!}{
+%\begin{tabular}{|l|l|l|l|l}
+%\cline{1-4}
+%Timings in ms        & \begin{tabular}[c]{@{}l@{}}Python Single Thread \\ without ROI\end{tabular} & \begin{tabular}[c]{@{}l@{}}C++ Single Thread \\ without ROI\end{tabular} & \begin{tabular}[c]{@{}l@{}}C++ Single Threadpool \\ Thread with ROI\end{tabular} &  \\ \cline{1-4}
+%Frame Reading        &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
+%HSV Conversion       & \multicolumn{1}{c|}{50.852}                                                 & \multicolumn{1}{c|}{41.125}                                              & omitted                                                                          &  \\ \cline{1-4}
+%Image Blur          &                                                                             & \multicolumn{1}{c|}{147.239}                                             & 
+%varies with ROI size &  \\ \cline{1-4}
+%Mask erode/dilate   &                                                                             & \multicolumn{1}{c|}{165.663}                                             & varies with ROI size &  \\ \cline{1-4}
+%Color Threshold      &                                                                             & \multicolumn{1}{c|}{14.686}                                              &                                                                                  &  \\ \cline{1-4}
+%Position Calculation &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
+%                     &                                                                             %&                                                                          &                                                                                  &  \\ \cline{1-4}
+%ROI Readout          &                                                                             &                                                                          &                                                                                  &  \\ \cline{1-4}
+%\end{tabular}}
+%\end{table} The usage of \textit{C++} as the programming language provides more control over memory management and therefore reduces unnecessary memory data copies as these can be handled by pointers to memory locations.\\
+\\The ported version of the Python code to\textit{ C+}+ initially showed similar performance measurements when using the sequential approach. This was to be expected, as it is the same code the python bindings are using. Further investigation into code timings showed, that another bottleneck was the image optimization feature which applied an erosion an dilation to remove high frequency noise in the image. This operation brought the time up to 100 ms processing time when processing the whole frame area, making the algorithm  not usable for "real time" application. \\Removing this feature brought a major speed up in processing time. 
 Furthermore, the implementation of a thread pool, which handles all the color detection jobs, brought down the calculation time for 5 colors to around 120-140 ms. Although these times are still not usable for real time, it brought a significant performance boost.\\
 A test with lower resolution than 640x480 showed that the calculation time can be  reduced furthermore. This indicated that the ROI idea would be feasible for  further performance optimization. A test at a frame resolution of 320x240 pixels reduced the processing time for all five colors to below 10 ms.\\
 \begin{figure}[H]
@@ -77,7 +89,7 @@ Empirical evaluations showed, that for the used tracking space, a ROI region siz
 \caption{First set of shrink tube color markers }
 \label{img:first_set_color_markers}
 \end{wrapfigure}
-The initial color marker size was selecetd to be relatively large, spanning most of the last segemnt size of each finger.
+The initial color marker size was selected to be relatively large, spanning most of the last segment size of each finger.
 The used material of the colored shrink tubing was selected because it seemed to be relatively diffuse and therefore unprone to errors resulting from the reflection of the scene lighting. The material turned out to be mostly diffuse reflecting, but depending on color and angle of light incidence, reflections in the color of the scene light did occur.
 A test set of smaller marker was also evaluated, showing similar tracking results in comparison to the larger markers and also the same color reflection problems.\\The benefit of a smaller marker size would be much lower restriction of the finger movements and also unveiling the fingertips of the fingers for better haptic interaction.
 As both markers showed the above described problem of mixing marker area with possible skin reflections, and improvement to the markers was applied. At both ends of the larger markers, a piece of gray colored tape was applied to create an artificial border for the tracking algorithm.
@@ -87,7 +99,7 @@ As both markers showed the above described problem of mixing marker area with po
 \caption{Improved larger and smaller set of shrink tube color markers }
 \label{img:second_color_markers}
 \end{figure}
-The idea behind this solution was to create a fixed border between the color area of the tracker and the color area of the skin tones. The grey color of the border ensures that this area will not be tracked. The usage of black instead of gray would evenn furthermore ensure this. 
+The idea behind this solution was to create a fixed border between the color area of the tracker and the color area of the skin tones. The grey color of the border ensures that this area will not be tracked. The usage of black instead of gray would even furthermore ensure this. 
 \\Since the threshold algorithm searches for the largest closed color area in the binary threshold image, this border should cause a separation of unwanted skin reflection area and actual tracker color area. The problem that the resulting color marker area might not be the largest area still persists after this improvement, but this case has to be handled separately.
 \\Optical results showed that for the colors lying outside of the red to orange color spectrum that skin reflections produce, the artificial border stabilized the color detection.
 \\The idea of using shrink tubing as marker material showed to be suitable except in the cases described above. One downside of the material is that the displayed colors are already the highest variety of available colors on the market. Other colors from the green and blue color areas like purple are simply not available or have to be ordered as a special request in larger amounts.
@@ -102,7 +114,8 @@ The idea behind this solution was to create a fixed border between the color are
 \caption{Different types of tested markers. Thumb with complete acrylic coloring, index and ring finger with smaller shrink tube markers, middle finger with nail polish style acrylic color and little finger with large improved marker}
 \label{img:differnt_markers}
 \end{figure}
-The best tracking results in terms of stability and color separation were achieved with the acrylic paint as marker material. For the colors a mixture of blue and green color tones together with red tones in the purple and magenta section were chosen as the final colors. The usage of the acrylic color also provides the least degradation in terms of gripping haptics on the fingers.
+The best tracking results in terms of stability and color separation were achieved with the acrylic paint as marker material. For the colors a mixture of blue and green color tones together with red tones in the purple and magenta section were chosen as the final colors.
+\todo{Measurements} The usage of the acrylic color also provides the least degradation in terms of gripping haptics on the fingers.
 \subsection{Depth measurement accuracy}
 To determine the accuracy of the system for it's depth measurement values a simple test bench setup was used. The camera rig was aligned horizontally and fixed to the test bench. A large sized colored marker (75 mm x 50 mm) was used as target for detection. The marker marker was positioned at altering distances from the camera rig along the central axis of the camera rig. The height at which the camera rig is positioned in the experiment setup will be around 100 cm, so the measured distances started at 100 cm from the camera and were decremented in steps of 5 cm until 20 cm in front of the Camera Rig(see Appendix Table \ref{Depth measurement Values} and Figure \ref{char:DisparityToDistanceChart}).
 \begin{figure}[H]
@@ -138,7 +151,7 @@ and x the disparity in pixels.
 The $\phi$ term in the equation above is used as a compensation for possible alignment errors.
 The trend line, which is fit to the measurements in Figure \ref{char:DisparityToDistanceChart} represents the the function needed to fulfill Equation \ref{equ:power_function}.The calculated values are $k=4543.3$ and $z=-1.035$.
 With the utilization of the corrected value formula, the accuracy of the depth measurement results is acceptable for the prototype application. For future work, the distance measurement procedure could be applied with more measurement points to refine the resulting function for more precision. The measurement values that were retrieved can be found in the Appendix Table \ref{Depth measurement Values}.
-\subsection{Inverse kinematics algorithm}
+\section{Inverse kinematics algorithm}
 - missing feature for parabolic constraint curves
 - measure calculation times 
 - setup difficulty
