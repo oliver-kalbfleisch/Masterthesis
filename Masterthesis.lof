@@ -3,28 +3,38 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Bone structure of the human left hand (\cite {LEE.1995})\relax }}{2}{figure.caption.3}
 \contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Representation of the DOFs of the human hand\relax }}{3}{figure.caption.4}
-\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Possible solution for an IK problem of a human finger: (a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.\relax }}{7}{figure.caption.7}
-\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Forward and backward calculation steps for one iteration of the \textbf {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite {Aristidou.2011} \relax }}{11}{figure.caption.11}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Possible solution for an IK problem of a human finger: (a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Forward and backward calculation steps for one iteration of the \textbf {FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite {Aristidou.2011} \relax }}{11}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Example for an optical tracking system with passive infrared reflector markers \cite {optitrack.2017}\relax }}{14}{figure.caption.14}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Acceleglove system with the described sensor positions \cite {HernandezRebollar.2002}\relax }}{16}{figure.caption.15}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Color glove setup used by Wang and Popovic \cite {Wang.2009} \relax }}{17}{figure.caption.17}
-\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Color glove setup used by Fredriksson and Ryen \cite {Fredriksson.2008} \relax }}{18}{figure.caption.18}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Example for an optical tracking system with passive infrared reflector markers \cite {optitrack.2017}\relax }}{14}{figure.caption.13}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Acceleglove system with the described sensor positions \cite {HernandezRebollar.2002}\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Color glove setup used by Wang and Popovic \cite {Wang.2009} \relax }}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Color glove setup used by Fredriksson and Ryen \cite {Fredriksson.2008} \relax }}{18}{figure.caption.16}
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Microsoft kinect camera system with the three used sensor units\cite {Zhang.2012}\relax }}{20}{figure.caption.17}
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Visualization of a (a) Real (using Infrared Imaging) and (b) Schematic View of Leap Motion Controller\cite {Weichert.2013}.\relax }}{21}{figure.caption.19}
+\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Visualization of a \textit {Intel ReaslSense} depth module\cite {IntelCorporation.2018}\relax }}{21}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Pavlovic, Sharma et al: Hand models. Different hand models can be used to represent the same hand posture. (a) 3D Textured volumetric model. (b) 3D wire frame volumetric model. (c) 3D skeletal model. (d) Binary silhouette. (e) Contour.\relax }}{21}{figure.caption.19}
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Pavlovic, Sharma et al: Hand models. Different hand models can be used to represent the same hand posture. (a) 3D Textured volumetric model. (b) 3D wire frame volumetric model. (c) 3D skeletal model. (d) Binary silhouette. (e) Contour.\relax }}{23}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Technical conception of the single hardware parts\relax }}{28}{figure.caption.24}
-\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Image point projection for pinhole camera systems\cite {Hartley.2000}\relax }}{29}{figure.caption.25}
-\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces ROI calculation for consecutive frames\relax }}{31}{figure.caption.29}
-\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Example Mask of 3x3 size :\textbf {a)} empty mask \textbf {b)} Mask that keeps pixel value \textbf {c)} combination of b) with a left shift \textbf {d)} combination of b) with an upshift \textbf {e)} isotropic mask\relax }}{34}{figure.caption.32}
-\contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces Stereoscopic areas\relax }}{37}{figure.caption.39}
-\contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces Dimmensions for calculation.Images from:\cite {JernejMrovlje.2008}\relax }}{38}{figure.caption.40}
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Technical conception of the single hardware parts\relax }}{30}{figure.caption.22}
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Technical drawing of the camera holder\relax }}{32}{figure.caption.25}
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Printed camera holder with mounted cameras\relax }}{32}{figure.caption.26}
+\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Image point projection for pinhole camera systems\cite {Hartley.2000}\relax }}{33}{figure.caption.28}
+\contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces ROI calculation for consecutive frames\relax }}{35}{figure.caption.32}
+\contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces Example Mask of 3x3 size :\textbf {a)} empty mask \textbf {b)} Mask that keeps pixel value \textbf {c)} combination of b) with a left shift \textbf {d)} combination of b) with an upshift \textbf {e)} isotropic mask\relax }}{38}{figure.caption.34}
+\contentsline {figure}{\numberline {\relax 6.7}{\ignorespaces Workflow for the UDP Data packages that are send from the Raspberrys to the parent PC\relax }}{40}{figure.caption.37}
+\contentsline {figure}{\numberline {\relax 6.8}{\ignorespaces Overview diagram of the processing steps for the hand model data on the client side\relax }}{41}{figure.caption.38}
+\contentsline {figure}{\numberline {\relax 6.9}{\ignorespaces Stereoscopic areas\relax }}{43}{figure.caption.44}
+\contentsline {figure}{\numberline {\relax 6.10}{\ignorespaces Dimmensions for calculation.Images from:\cite {JernejMrovlje.2008}\relax }}{44}{figure.caption.45}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Work flow of the C++ implementation with thread pool solution and ROI\relax }}{42}{figure.caption.44}
-\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces Images showing reflection problems with orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotaton of the hand, skin reflecton color falls into tracking threshold.\relax }}{43}{figure.caption.47}
-\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces First set of shrink tube color markers \relax }}{44}{figure.caption.48}
-\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces First set of shrink tube color markers \relax }}{44}{figure.caption.49}
-\contentsline {figure}{\numberline {\relax 7.5}{\ignorespaces Chart showing the results of the disparity measurement with a plotted trend line\relax }}{46}{figure.caption.52}
+\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Work flow of the C++ implementation with thread pool solution and ROI\relax }}{48}{figure.caption.49}
+\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces Images showing reflection problems with orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotaton of the hand, skin reflecton color falls into tracking threshold.\relax }}{50}{figure.caption.52}
+\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces First set of shrink tube color markers \relax }}{51}{figure.caption.53}
+\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces Improved larger and smaller set of shrink tube color markers \relax }}{51}{figure.caption.54}
+\contentsline {figure}{\numberline {\relax 7.5}{\ignorespaces Different types of tested markers. Thumb with complete acrylic coloring, index and ring finger with smaller shrink tube markers, middle finger with nail polish style acrylic color and little finger with large improved marker\relax }}{53}{figure.caption.56}
+\contentsline {figure}{\numberline {\relax 7.6}{\ignorespaces Chart showing the results of the disparity measurement with a plotted trend line\relax }}{54}{figure.caption.57}
+\contentsline {figure}{\numberline {\relax 7.7}{\ignorespaces Hand model representatio of the used IK Framework: a) Kinematic chains and base structure, b) hand model with visualized movement constraints\relax }}{55}{figure.caption.59}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

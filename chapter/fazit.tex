@@ -1,16 +1,21 @@
-\chapter{Resume}
-
-Future work:\\
--improve depth tracking value preciion through a more elaborate calibration seesion where the depth correcton algorith is further optimized
+\chapter{Future Work}
+The system Evaluation showed that the principal functionality of the tracking system can be established with the selected component. One major point of improvement that could be applied to the system would be improvements to the used camera control framework. At the current state, a max frame rate of only 30 FPS readout is reachable while the hardware is theoretically able to supply up to 90 FPS readout. \todo{Furthermore the images are compressed with a JPEG algorithm which reduces color channel resolution. Access to the raw frame data from the camera would be beneficial to improve tracker color segmentation.}
+Large parts of the processing time on the raspberry side are accounted for by costly image optimization like blurring or stereoscopic transformations. These operations on whole images are classical candidates to be outsourced onto the GPU of the Raspberry for faster computation. A conversion of the existing OpenCV code into the Assembler like code for the raspberry GPU should be a future goal.
+-improve depth tracking value precision through a more elaborate calibration session where the depth correcton algorithm is further optimized
 \\
--improve image reading source code to accept hgher framerates. The hardware capacbilities provide image reading frequences of up to 90fps, current bottleneck is the c++ implementaion which only provides 30 fps max.
+-improve image reading source code to accept higher framerates. The hardware capacbilities provide image reading frequences of up to 90fps, current bottleneck is the c++ implementaion which only provides 30 fps max.
 \\
 -When utilizng higher framerates, the multiproceesng approach will be viable to gain performance. Optimizaton work on the implementaion can be done.\\
--Image manipulaton on the cpu is rather costly, even at small image sizes. The raspberry Pi has a "small" gpu unit onboard, whch is in dle state when the device is run in headless mode. The gpu could then be utilzed to do heavy weight image calculation such as stereo rectification.\\
--Optimization pont would also be creating a mor optimized verson of the color thresholding algorithm where the threshoding for all of the thracking colors is done in one run on the current frame. It is also to be evaluated if ths problem falls can be expressed as a SIMD functon and would benefit from the processng on the gpu.
+-Image manipulaton on the cpu is rather costly, even at small image sizes. The raspberry Pi has a "small" gpu unit onboard, whch is in dle state when the device is run in headless mode. The gpu could then be utilzed to do heavy weight image calculation such as stereo rectification.
+-Optimization point would also be creating a mor optimized verson of the color thresholding algorithm where the threshoding for all of the thracking colors is done in one run on the current frame. It is also to be evaluated if this problem falls can be expressed as a SIMD function and would benefit from the processng on the GPU.
 \\
 The current prototype is still missing an graphcal user interface on the display side. Further communication of states on the slave Pi's to the master unit would also be beneficial.
 \\
-The habd data that is used for prototyping is still hardcoded and only manually configurable. A calibration procedure for the system as well as a suitable data format for representing and translating these values for the IK algortihm s still to be done.
+The hand data that is used for prototyping is still hard coded and only manually configurable. A calibration procedure for the system as well as a suitable data format for representing and translating these values for the IK algortihm s still to be done.
 \\
 -Shrnk tubing showed to be a utilzable material for the usecase. Downsinde of the material is that the colors used are the largest spectrum of colors available on the market and geting outer colors is relatively hard. Other materal shuold be evaluated.
+
+\chapter{Resume}
+The constructed prototype showed, that it is possible to construct a basic hand and object tracking system with consumer grade hard and software.The limited hardware capabilities of the used Raspberry Pi showed to be able to supply enough processing power to run live image processing operations at up to 30 FPS. A downside of the used camera hardware is that the used sensor utilizes a rolling instead of a global shutter. This makes the synchronization of the two cameras for the stereoscopic setup harder. Furthermore, the cameras were not intended to be used in such a scenario, therefore they lack a frame synchronization feature. This downside has to be corrected on the software side.
+timimg measurements showed that at lower framerates, the described multithreaded processing approach does not reach much higher processing times than the sequential approach. The sequential process is also less error prone since it does not need the additional synchronization wrappings that the multithreadded approach needs. Should higher readout frame rates be achieved from the camera, the multithreaded approach should definitely be used.
+

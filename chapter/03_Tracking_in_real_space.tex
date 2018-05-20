@@ -47,11 +47,9 @@ Kuroda et al \cite{Kuroda.2004} introduced the \textit{StrinGlov}, which obtains
 Majeau et al \cite{Majeau.2012} propsed a systems that uses optical flexion sensors to determine the bending angles of the fingers. The opticcal flexion sensors consist of a LED, a Photodetector and an optical fibre. The LED emits light which travels through the optical fibres and the intensity that results as the output from the fibre end is measured by the Photosensor. This measuring principle also corresponds to the principle of \cite{ThomasA.DeFanti.1977}. Furthermore the system is also capable of measuring the abduction of two finger. Here the LED is mounted to one finger and the detector on the other. The optical fiber is run from the LED down the finger to the knuckle base and then up to the detector. When abducting the two fingers, the angle at the knuckle base changes, resulting in an intensity change at the detector through the loss of intensity at the curvature of the optic fiber.
 The change in intensity of both measuring techniques can be mapped to corresponding hand movements.
 Further readings on sensor based hand tracking systems can be found in \cite{Dipietro.2008,Sturman.1994}
-\todo{Find 1-2 newer systems for comparison}
-
 \subsection{Appearance Based - Optical marker}
 \label{Appearance Based Optical marker}
-Optical approaches use properties of the human hand to hand to estimate the current position. The evaluation of the hand pose is usually split up into two steps. The first one is the registration of the "real" hand.
+Optical approaches use properties of the human hand to hand to estimate the current position. The evaluation of the hand pose is usually split up into two steps. The first one is the registration of the "real" hand.\\
 \begin{wrapfigure}[7]{r}{0.52\textwidth}
 \includegraphics[scale=0.61]{images/wang_color_glove.JPG}
 \caption{Color glove setup used by Wang and Popovic \cite{Wang.2009} }
@@ -83,7 +81,7 @@ The grip angle is calculated by comparing the density of finger pixels around an
 One downside of this tracking method is that it does not yet incorporate the movement of the thumb. The thumb has other movement possibilities and therefore needs a different algorithmic approach. Also the approach only focuses on the the tracking of the hand data and does not yet implement a digital counterpart like the previously described system.
 \subsection{Model Based - Image analysis}
 Hand tracking with image analysis of optical marker positions has the flaw that theses markers have to be put onto the hand in some kind of fashion. Using a glove for this purpose imposes just a little bit of inconvenience, but have the drawback of not fitting every hand shape equally and also having to deal with hygiene when switching between users. The most natural way of tracking the human hand would be by simply using the properties of the human hand like skin color and shape for tracking. This would remove the need for any artificial added tracking features and have the greatest amount of comfort for the human user.
-A full overview of the technological advances in this area can be found in \cite{Moeslund.2006,Moeslund.2001}. This paper will only highlight some of the main topics displayed.
+A full overview of the technological advances in this area can be found in \cite{Moeslund.2006,Moeslund.2001}. This paper will only highlight some of the main topics displayed.\\\\
 As already explained before, the human hand motion leads to a large variety of shapes with many self-occlusions, which becomes even more critical when trying to reproduce the human hand pose via Computer vision. Also the separation between background image information and the relevant hand information is a major topic, which is usually also the first step in the algorithmic process.
 An established method for the extraction of background data was introduced by Stauffer and Grimson \cite{Stauffer.1999}. It uses the idea of representing each pixel value as a mixture of Gaussian functions (\textit{MoG}) and updating these pixels during run time with new Gaussian functions.
 The algorithm stores mean, variance, and likelihood value, based on previous values, for each pixel location and distribution. 
@@ -100,3 +98,30 @@ After the segmentation of foreground an background is achieved,the hand pose has
 \textbf{Model-based tracking} refers to a top-down tracking method based on parametric models of the 3D hand shape and its kinematic structure. The root idea here is to execute a search at each frame of an image sequence to find the pose of the shape model that best matches the features extracted from the image(s). A prediction based on previous motion and dynamics data from the object is set up as a base for the search. Optimization features can be incorporated, like employing a local search around the calculated prediction to produce a single best estimate at each frame. The downside of this method represents itself in the weakness of accumulating errors over longer run time periods due to occlusions and complexity of hand motion. These can be overcome by keeping track of multiple outcome hypotheses at each frame for error reduction.
 \\\\
 \textbf{Single frame pose estimation} in contrast to the previous method, does not utilize assumptions on time coherence. At each iteration of the search algorithm the whole data set is searched for a match.This on one side introduces more computational work for achieving a match, on the other side lowers the amount of constraints that have to be put on the user when initializing the tracker system. Furthermore, the possibly rapid motion of the human hands and fingers acts as factor failure for time coherence dependent approaches, where a single frame approach is not as vulnerable.
+\section{State of the art technologies}
+\begin{wrapfigure}[10]{r}{\textwidth/2}
+\label{img:kinect}
+\includegraphics[width=\textwidth/2]{images/kinnect.JPG} 
+\caption{Microsoft kinect camera system with the three used sensor units\cite{Zhang.2012}}
+\end{wrapfigure}
+The currently most used type of system for tracking hardware is a setup of a combination of RGB and infrared sensors for imaging an depth measurement.The first commercial system using this technology is the\textit{ Microsoft Kinect} system. The system uses a infrared projector and an infrared sensor to measure distances in the captured scene.\todo{\cite{Zhang.2012}}
+Newer systems that also incorporate depth sensing through infrared distance measurement are the \textit{Intel RealSense} system and the more consumer focused leap motion hand tracker. The\textit{ Leap Motion Controller} does not supply a separate RGB sensor and does therefore only provide depth measurement data within a specific range from the device\cite{Weichert.2013}.It combines two infrared cameras with three infrared emitter LED's, placing the system into the category if stereoscopic tracking systems.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/leapMotion.JPG}
+\caption{Visualization of a (a) Real (using Infrared Imaging) and (b) Schematic View of Leap Motion Controller\cite{Weichert.2013}.}
+\label{img:leapMotion} 
+\end{figure}
+The latest Product in this category are the \textit{Intel RealSense} camera systems\cite{IntelCorporation.2018}. The Intel systems, like the\textit{ Leap Motion Controller} utilize a stereoscopic infrared system setup, and can also provide RGB Sensor data, depending on the selected model.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{images/RealSense.png}
+\caption{Visualization of a \textit{Intel ReaslSense} depth module\cite{IntelCorporation.2018}}
+\label{img:leapMotion} 
+\end{figure}
+The \textit{Kinect} can supply depth data at around 30 fps, it's modern  descendants from Intel can supply data at frame rates of up to 90 fps. The systems provide the convenience of not having to apply any form of distinguishable marking to the surface that has to be tracked. The downside of this feature is that the devices only supply SDKs for accessing the collected data from the device. The post processing of this data needs more sophisticated image analysis or neural network processing to figure out feature points of the tracked object from the supplied image data\cite{JamieShotton.2011,Oikonomidis.2011b}. Image analysis of large image can be costly for real time applications and the training of neural networks for the analysis can consume a lot of time and tweaking until the trained result fits the application.
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{57}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -157,6 +157,13 @@
 \newblock New York, NY~: ACM, 2002, S.~259. --
 \newblock ISBN 1581135254
 
+\bibitem[HTC(2018)]{HTC.2018}
+\dinatlabel{HTC 2018} \textsc{HTC}:
+\newblock \emph{HTC Vive}.
+\newblock 2018. --
+\newblock URL \url{https://www.vive.com/de/product/}. -- Zugriffsdatum:
+  10.05.2018
+
 \bibitem[Huttenlocher u.\,a.(1993)Huttenlocher, Klanderman und
   Rucklidge]{Huttenlocher.1993}
 \dinatlabel{Huttenlocher u.\,a. 1993} \textsc{Huttenlocher}, D.~P.~;
@@ -166,6 +173,23 @@
   Intelligence}
 \newblock 15 (1993), Nr.~9, S.~850--863. --
 \newblock ISSN 01628828
+
+\bibitem[{Intel Corporation}(2018)]{IntelCorporation.2018}
+\dinatlabel{{Intel Corporation} 2018} \textsc{{Intel Corporation}}:
+\newblock \emph{Inter RealSense Technology}.
+\newblock 2018
+
+\bibitem[{Jamie Shotton} u.\,a.(2011){Jamie Shotton}, {Andrew Fitzgibbon}, {Mat
+  Cook}, {Toby Sharp}, {Mark Finocchio}, {Richard Moore}, {Alex Kipman} und
+  {Andrew Blake}]{JamieShotton.2011}
+\dinatlabel{{Jamie Shotton} u.\,a. 2011} \textsc{{Jamie Shotton}} (Hrsg.)~;
+  \textsc{{Andrew Fitzgibbon}} (Hrsg.)~; \textsc{{Mat Cook}} (Hrsg.)~;
+  \textsc{{Toby Sharp}} (Hrsg.)~; \textsc{{Mark Finocchio}} (Hrsg.)~;
+  \textsc{{Richard Moore}} (Hrsg.)~; \textsc{{Alex Kipman}} (Hrsg.)~;
+  \textsc{{Andrew Blake}} (Hrsg.):
+\newblock \emph{Real-Time Human Pose Recognition in Parts from Single Depth
+  Images}.
+\newblock 2011
 
 \bibitem[{Jernej Mrovlje} und {Damir Vrancic}(2008)]{JernejMrovlje.2008}
 \dinatlabel{{Jernej Mrovlje} und {Damir Vrancic} 2008} \textsc{{Jernej
@@ -264,7 +288,7 @@
 \newblock Object Distance Measurement by Stereo VISION.
 \newblock In: \emph{International Journal of Science and Applied Information
   Technology (IJSAIT)}
-\newblock 2 (2013), Nr.~05-08
+\newblock 2 (2013)
 
 \bibitem[Moeslund und Granum(2001)]{Moeslund.2001}
 \dinatlabel{Moeslund und Granum 2001} \textsc{Moeslund}, Thomas~B.~;
@@ -290,6 +314,23 @@
 \newblock 108 (1986), Nr.~3, S.~163. --
 \newblock ISSN 00220434
 
+\bibitem[{Oculus VR}(2018)]{OculusVR.2018}
+\dinatlabel{{Oculus VR} 2018} \textsc{{Oculus VR}}, LLC.:
+\newblock \emph{occulus rift}.
+\newblock 2018. --
+\newblock URL \url{http://www. oculusvr. com/rift}. -- Zugriffsdatum:
+  10.05.2018
+
+\bibitem[Oikonomidis u.\,a.(2011)Oikonomidis, Kyriazis und
+  Argyros]{Oikonomidis.2011b}
+\dinatlabel{Oikonomidis u.\,a. 2011} \textsc{Oikonomidis}, Iason~;
+  \textsc{Kyriazis}, Nikolaos~; \textsc{Argyros}, Antonis:
+\newblock Efficient model-based 3D tracking of hand articulations using Kinect.
+\newblock In: \textsc{Hoey}, Jesse (Hrsg.): \emph{Proceedings of the British
+  Machine Vision Conference 2011}.
+\newblock Durham~: {BMVA Press}, 2011, S.~101.1--101.11. --
+\newblock ISBN 1-901725-43-X
+
 \bibitem[Opencv(2018)]{Opencv.2018}
 \dinatlabel{Opencv 2018} \textsc{Opencv}:
 \newblock \emph{Camera Calibration}.
@@ -297,6 +338,12 @@
 \newblock URL
   \url{https://docs.opencv.org/3.1.0/dc/dbb/tutorial_py_calibration.html}. --
   Zugriffsdatum: 10.02.2018
+
+\bibitem[{OpenCV Team}(2018)]{OpenCVTeam.2018}
+\dinatlabel{{OpenCV Team} 2018} \textsc{{OpenCV Team}}:
+\newblock \emph{OpenCV}.
+\newblock 2018. --
+\newblock URL \url{https://opencv.org/}. -- Zugriffsdatum: 10.05.2018
 
 \bibitem[optitrack(2017)]{optitrack.2017}
 \dinatlabel{optitrack 2017} \textsc{optitrack}:
@@ -397,6 +444,15 @@
 \newblock Real-time hand-tracking with a color glove.
 \newblock In: \emph{ACM transactions on graphics (TOG)} Bd.~28, 2009, S.~63
 
+\bibitem[Weichert u.\,a.(2013)Weichert, Bachmann, Rudak und
+  Fisseler]{Weichert.2013}
+\dinatlabel{Weichert u.\,a. 2013} \textsc{Weichert}, Frank~; \textsc{Bachmann},
+  Daniel~; \textsc{Rudak}, Bartholom{\"a}us~; \textsc{Fisseler}, Denis:
+\newblock Analysis of the accuracy and robustness of the leap motion
+  controller.
+\newblock In: \emph{Sensors (Basel, Switzerland)}
+\newblock 13 (2013), Nr.~5, S.~6380--6393
+
 \bibitem[Welch und Foxlin(2002)]{Welch.2002}
 \dinatlabel{Welch und Foxlin 2002} \textsc{Welch}, G.~; \textsc{Foxlin}, E.:
 \newblock Motion tracking: No silver bullet, but a respectable arsenal.
@@ -419,5 +475,11 @@
 \newblock \emph{Distance measurement for self-driving cars using stereo camera
   in Zulikha}.
 \newblock 2017
+
+\bibitem[Zhang(2012)]{Zhang.2012}
+\dinatlabel{Zhang 2012} \textsc{Zhang}, Zhengyou:
+\newblock Microsoft Kinect Sensor and Its Effect.
+\newblock In: \emph{IEEE Multimedia}
+\newblock 19 (2012), Nr.~2, S.~4--10
 
 \end{thebibliography}
