@@ -147,7 +147,7 @@ One approach to calculating the value of $\Delta\pmb{\theta}$ without having to 
 \label{delta theta transpose}
 \Delta\pmb{\theta}=\alpha \pmb{J}^{T}\vec{\pmb{e}}
 \end{equation}
-\\Of course the transpose and the inverse of \textbf{J} are not the same thing. When using the theorems displayed in \cite{DavidE.Orin.1984,Wolovich.1984} we can show that:\\ 
+\\Of course the transpose and the inverse of \textbf{J} are not the same thing. When using the theorems displayed in \cite{Orin.1984,Wolovich.1984} we can show that:\\ 
 \begin{equation}
 \label{transpose show}
 \langle JJ^{T}\vec{\pmb{e}},\vec{\pmb{e}}\rangle=\langle J^{T}\vec{\pmb{e}},J^{T}\vec{\pmb{e}}\rangle=\|J^{T}\vec{\pmb{e}}\|\geq 0
@@ -218,15 +218,15 @@ The Newton methods also have the advantage that they do not suffer from singular
 \subsection{FABRIK Algorithm}
 \label{sec:fabrik_algorithm}
 A more recent approach in the kinematics field is the \textit{FABRIK} algorithm proposed by Aristidou and Lasenby\cite{Aristidou.2011}. As shown in section \ref{sec:inverse kinematics}, most approaches all depend on computational intensive matrix operation like calculating an inverse and may have problems with matrix singularity.\\
-\begin{wrapfigure}{r}{0.61\textwidth}
-\includegraphics[scale=0.61]{images/FabrikIteration.jpg}
+\begin{wrapfigure}[34]{r}{7cm}
+\includegraphics[width=\textwidth/2]{images/FabrikIteration.jpg}
 \caption{Forward and backward calculation steps for one iteration of the \textbf{FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite{Aristidou.2011} }
 \label{fig:Fabrik_Iteration}
 \end{wrapfigure}
 The \textit{FABRIK} algorithm does not depend on these matrix operations as is solves for the position of a point on a line to retrieve the new joint positions. This is done in an forward and also inverse solving approach, iterating these steps until the calculated position converges towards the target position from the tracking data.
-Figure \ref{fig:Fabrik_Iteration} illustrates the steps that are contained in one iteration step.
+\\Figure \ref{fig:Fabrik_Iteration} illustrates the steps that are contained in one iteration step.
 The chain joints are denoted as $\textbf{p}_{\textit{i}}$ with the distance $\textbf{d}_{i}$ being $|\textbf{p}_{\textit{i+1}}-\textbf{p}_{\textit{i}}|$. The target point for the end effector is denoted as \textbf{t}. Step \textbf{(a)} displays the starting point of the iteration. The joint positions are taken from either a previous iteration or from an initial calibration. 
-But before calculations can begin, the algorithm has to check whether the intended target point \textbf{t} is reachable for the end effector. This is done by measuring the distance between the root of the kinematic chain and the target point \textbf{t}. This value is then compared with the sum of the distances $\textbf{d}_{i}$.
+But before calculations can begin, the algorithm has to check whether the intended target point \textbf{t} is reachable for the end effector.This is done by measuring the distance between the root of the kinematic chain and the target point \textbf{t}. This value is then compared with the sum of the distances $\textbf{d}_{i}$.
 \begin{equation}
  dist_{t,d_{1}}< \sum_{k=1}^{i}{d_{i}}
 \end{equation}
@@ -251,5 +251,4 @@ B&=\textbf{p}_{n-1}\\
 This finishes the first halve of the iteration step.With the calculated positions, we now perform a forward calculation, starting from the root until we reach the end effector. Since the root of the system normally does not move from it's initial position, we have to reset the root joint to this value before starting to calculate the new positions of the subsequent joints(see\textbf{(e)}).
 
 Analogous to the procedure in the inverse step, we construct the lines between the points and determine the new position values of the joints. The end result of this step is shown in \textbf{(f)}. At this point, we can decide if the result position of the end effector is appropriate in comparison to the value of \textbf{t}. A simple threshold value for this case could be the position difference between these two points.
-\todo{constraints adding for the algorithm}
-\todo{review of algorithm capabilities}
+\\Since this algorithm does not rely on the heavy-weight matrix operations that the previously described methods incorporate, it converges much faster and in less iterations. Furthermore the incorporation of constraints to the calculation does not interfere with this values and is rather easy.

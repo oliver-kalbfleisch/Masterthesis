@@ -94,6 +94,7 @@ After the segmentation of foreground and background is achieved,the hand pose ha
 \\\\
 \textbf{Single frame pose estimation} in contrast to the previous method, does not utilize assumptions on time coherence. At each iteration of the search algorithm the whole data set is searched for a match.This on one side introduces more computational work for achieving a match, on the other side lowers the amount of constraints that have to be put on the user when initializing the tracker system. Furthermore, the possibly rapid motion of the human hands and fingers acts as factor failure for time coherence dependent approaches, where a single frame approach is not as vulnerable.
 \section{State of the art technologies}
+\label{sec:state_of_the_art}
 \begin{wrapfigure}[10]{r}{\textwidth/2}
 \label{img:kinect}
 \includegraphics[width=\textwidth/2]{images/kinnect.JPG} 
@@ -111,7 +112,7 @@ The latest product in this category are the \textit{Intel RealSense} camera syst
 \centering
 \includegraphics[width=0.6\textwidth]{images/RealSense.png}
 \caption{Visualization of a \textit{Intel ReaslSense} depth module\cite{IntelCorporation.2018}}
-\label{img:leapMotion} 
+\label{img:realsense} 
 \end{figure}
 The \textit{Kinect} can supply depth data at around 30 fps, it's modern  descendants from Intel can supply data at frame rates of up to 90 fps. The systems provide the convenience of not having to apply any form of distinguishable marking to the surface that has to be tracked. The downside of this feature is that the devices only supply SDKs for accessing the collected data from the device. The post processing of this data needs more sophisticated image analysis or neural network processing to figure out feature points of the tracked object from the supplied image data\cite{JamieShotton.2011,Oikonomidis.2011b}.\\Image analysis of large image can be costly for real time applications and the training of neural networks for the analysis can consume a lot of time and tweaking until the trained result fits the application.
 \\An recent approach of combining RGB-D Data and the usage of CNNs (Convolutional Neural Networks) to estimate hand pose and render a correct digital representaion of the hand is shown in \cite{FranziskaMueller.2017}.

@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{60}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -41,6 +41,16 @@
 \newblock New York, NY~: ACM, 1980, S.~262--270. --
 \newblock ISBN 0897910214
 
+\bibitem[Casiez u.\,a.(2012)Casiez, Roussel und Vogel]{Casiez.2012}
+\dinatlabel{Casiez u.\,a. 2012} \textsc{Casiez}, G{\'e}ry~; \textsc{Roussel},
+  Nicolas~; \textsc{Vogel}, Daniel:
+\newblock 1 euro filter.
+\newblock In: \textsc{Konstan}, Joseph~A. (Hrsg.)~; \textsc{Chi}, Ed~H.
+  (Hrsg.)~; \textsc{H{\"o}{\"o}k}, Kristina (Hrsg.): \emph{CHI 2012, it's the
+  experience}.
+\newblock New York, NY~: ACM, 2012, S.~2527. --
+\newblock ISBN 9781450310154
+
 \bibitem[Chiaverini u.\,a.(1994)Chiaverini, Siciliano und
   Egeland]{Chiaverini.1994}
 \dinatlabel{Chiaverini u.\,a. 1994} \textsc{Chiaverini}, S.~;
@@ -60,14 +70,6 @@
 \newblock (Springer-Lehrbuch). --
 \newblock URL \url{http://dx.doi.org/10.1007/978-3-540-76493-9}. --
 \newblock ISBN 9783540764939
-
-\bibitem[{David E. Orin} und {William W. Schrader}(1984)]{DavidE.Orin.1984}
-\dinatlabel{{David E. Orin} und {William W. Schrader} 1984} \textsc{{David E.
-  Orin}}~; \textsc{{William W. Schrader}}:
-\newblock Efficient Computation of the Jacobian for Robot Manipulators.
-\newblock In: \emph{The International Journal of Robotics Research}
-\newblock 3 (1984), Nr.~4, S.~66--75. --
-\newblock ISSN 0278-3649
 
 \bibitem[Davies(2017)]{Davies.2017}
 \dinatlabel{Davies 2017} \textsc{Davies}, E.~R.:
@@ -264,6 +266,13 @@
   \url{http://openresearchsoftware.metajnl.com/articles/10.5334/jors.116/galley/192/download/}.
   --
 \newblock ISSN 2049-9647
+
+\bibitem[LaViola(2003)]{LaViola.2003}
+\dinatlabel{LaViola 2003} \textsc{LaViola}, Joseph~J.:
+\newblock Double exponential smoothing: An alternative to Kalman filter-based
+  predictive tracking.
+\newblock In: \emph{Proceedings of the workshop on Virtual environments 2003},
+  2003, S.~199--206
 
 \bibitem[Lee und Kunii(1995)]{LEE.1995}
 \dinatlabel{Lee und Kunii 1995} \textsc{Lee}, Jintae~; \textsc{Kunii}, T.~L.:
@@ -467,6 +476,13 @@
   controller.
 \newblock In: \emph{Sensors (Basel, Switzerland)}
 \newblock 13 (2013), Nr.~5, S.~6380--6393
+
+\bibitem[Welch und Bishop(2001)]{Welch.2001}
+\dinatlabel{Welch und Bishop 2001} \textsc{Welch}, G.~; \textsc{Bishop}, G.:
+\newblock An Introduction to the Kalman Filter; SIGGRAPH 2001 Course 8; Los
+  Angeles, CA; Aug. 12-17, 2001; http.
+\newblock In: \emph{info. acm. org/pubs/toc/CRnotice. html}
+\newblock (2001), S.~1--80
 
 \bibitem[Welch und Foxlin(2002)]{Welch.2002}
 \dinatlabel{Welch und Foxlin 2002} \textsc{Welch}, G.~; \textsc{Foxlin}, E.:
