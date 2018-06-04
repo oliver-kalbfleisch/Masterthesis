@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{61}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -355,13 +355,20 @@
 \newblock Durham~: {BMVA Press}, 2011, S.~101.1--101.11. --
 \newblock ISBN 1-901725-43-X
 
-\bibitem[Opencv(2018)]{Opencv.2018}
-\dinatlabel{Opencv 2018} \textsc{Opencv}:
+\bibitem[Opencv(2018{\natexlab{a}})]{Opencv.2018}
+\dinatlabel{Opencv 2018{\natexlab{a}}} \textsc{Opencv}:
 \newblock \emph{Camera Calibration}.
 \newblock 2018. --
 \newblock URL
   \url{https://docs.opencv.org/3.1.0/dc/dbb/tutorial_py_calibration.html}. --
   Zugriffsdatum: 10.02.2018
+
+\bibitem[Opencv(2018{\natexlab{b}})]{Opencv.2018b}
+\dinatlabel{Opencv 2018{\natexlab{b}}} \textsc{Opencv}:
+\newblock \emph{Camera Calibration}.
+\newblock 2018. --
+\newblock URL
+  \url{https://docs.opencv.org/3.1.0/dc/dbb/tutorial_py_calibration.html}
 
 \bibitem[{OpenCV Team}(2018)]{OpenCVTeam.2018}
 \dinatlabel{{OpenCV Team} 2018} \textsc{{OpenCV Team}}:

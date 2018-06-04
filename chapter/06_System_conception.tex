@@ -55,9 +55,8 @@ As shown in Figure \ref{pinholecamera_mapping}, a point from the object space ca
 \begin{equation}
 (X,Y,Z)^{T} \mapsto (fX/Z,fY/Z)^{T}
 \end{equation}
-\todo {elaborate}
-For the calculation of the image distortion , \textit{OpenCV} uses a chessboard image for calibration. The printed image is held in front of the camera at a constant distance and rotated and positioned differently. After every position/rotation change an image of the pattern should be taken.
-These images are then used to find the corners at the intersection of the black and white squares. With the previous knowledge of the square sizes, the projection errors in radial and tangential directions can be calculated:\todo{add Source code}
+For the calculation of the image distortion , \textit{OpenCV} uses a chessboard image for calibration\cite{Opencv.2018b}. The printed image is held in front of the camera at a constant distance and rotated and positioned differently. After every position/rotation change an image of the pattern should be taken.
+These images are then used to find the corners at the intersection of the black and white squares. With the previous knowledge of the square sizes, the projection errors in radial and tangential directions can be calculated:
 \begin{equation}
 \begin{split}
 x_{tanDistorted}&=x(1+k_{1}r^{2}+k_{2}r^{4}+k_{3}+r^{6})\\
@@ -68,7 +67,7 @@ y_{radDistorted}&=x+[p_{1}(r^{2}+2y^{2})+2p_{2}xy]\\
 \end{split}
 \end{equation} 
 As can bee seen from the above equations, the parameters that need to be calculated are $k_{1},k_{2},p_{1},p_{2},k_{3}$ by the algorithm. These parameters are called the distortion coefficients. Together with the intrinsic and extrinsic parameters of the camera, the camera images can be distorted to get better image results. This undistortion operation has to be done on every image frame that the camera produces.\\
-When using a stereoscopic setup, the cameras have to be stereo rectified to account for vertical deviation between the camera images.\textit{OpenCv} also provides means for doing so. Instead of taking images with each camera separately, both cameras are triggered simultaneously to take an image of the single chessboard used for camera calibration. With this set of image pairs, the calibration utility is able to calculate a remapping transformation for each camera. After the application of this remapping, corresponding image points should be on the same horizontal level in the image.\\After the cameras are calibrated, the resulting image optimizations can be applied after image retrieval.The rest of the process is now comprised of:
+When using a stereoscopic setup, the cameras have to be stereo rectified to account for vertical deviation between the camera images.\textit{OpenCv} also provides means for doing so. Instead of taking images with each camera separately, both cameras are triggered simultaneously to take an image of the single chessboard used for camera calibration. With this set of image pairs, the calibration utility is able to calculate a remapping transformation for each camera. After the application of this remapping, corresponding image points should be on the same horizontal level in the image.\\After the cameras are calibrated, the resulting image optimization can be applied after image retrieval.\\The rest of the process is now comprised of:
 \begin{itemize}
 \item Image conversion to HSV colorspace
 \item Mask construction and filtering
@@ -124,7 +123,7 @@ hsv_{up}&=(hue_{targetcolor}-sensitivity,100,100)\\
 \subsection{Mask construction and filtering}
 \todo {orig image and mask images for display}
 The HSV color converted values are the used as the parameters for a binary mask generation on the current frame. In this mask all pixels who's values lie outside of the specified range are set to zero (black) and the remaining are set to 255 (white).For these masks to work properly, any other larger objects that might contain similar colors should be removed from the scene to eliminate wrong tracking data. \\The used cameras run on an automated white balance and exposure mode. The variation of these values can cause shifts in the appearance of the colored markers and therefore alter the generated masks. To compensate for white balance shifting, a non-white ideally diffuse reflecting background should be used for the tracking space. Also the auto modes should be turned off and appropriate values for white balance and exposure have to be determined at the initialization step of the system. As all digital cameras tend to have signal noise in the sensor data, high frequency noise in the color channels will be present.To reduce the base noise level, a good lighting situatuon should be provided. Low level light situations require a higher signal gain .While this produces a brighter image, it also amplifies the base signal noise of the camera. The remaining noise should be filtered out before any further computation on the image data can be done.\\
-The first step in this progress is to use a \textit{Gaussian filter} to blur the mask.\\
+The first step in this progress is to use a \textit{Gaussian filter} to blur the mask.
 The \textit{Gaussian filter} acts as a low-pass filter for the image.The downside of applying a blur onto the generated image is a loss of detail. As the markers will not be utilizing complex geometric forms or fine patterns, the loss of details is acceptable.\\
 After this step a combination of two morphological operation, erosion and dilation, is used to further improve the data of the thresholded binary image\cite[chapter~3.11-12]{Davies.2017}.
 Erosion and dilation operation on thresholded images perform the tasks of removing light spots on dark backgrounds as well as dark spots on light backgrounds. These spots are usually the result of the remaining image noise after the blurring or incorrect pixel values from the camera which case the pixel to be incorrectly thresholded.\\
@@ -184,24 +183,24 @@ With the cleaned mask we can continue and search for the white areas in the mask
 \subsection{object tracking}
 For the object tracking part, a setup consisting of an \textit{HTC Vive Tracker} and a \textit{Lighthouse Basestation} is chosen.Optical tracking via the camera system would be possible, but each object would require a further distinguishable color marker. The color marker also needs to be calibrated for before the system can track it. The HTC system uses infrared signals to measure the position of the marker in space in relation to the position of the lighthouse. These do not interfere with the camera image as the cameras have a built-in infrared filter. This system setup makes it possible to quickly change the tracked object used without the need for re-calibration. Only the tracker position in relation to the Hand tracking coordinate system has to be set in the initial start up phase.  
 \section{Systems communication}
-The data that is generated on the two Raspberry's has to be communicated to the "Master" unit where further processing is done. The data delay between the different endpoints should be minimal. As the data is streamed in real time, protocols like TCP, which utilize control mechanisms for package order and receiving of data use to much overhead. In the time-frame needed for the protocol to request a missing package again, the data will already be obsolete. \\Furthermore, the amount of data that is send in each data frame is minimal, as this is only the position value of the specified number of tracking points and some separators for string processing. Since the devices will be connected to a local network via a switch, network workload from other devices and protocols can be assumed minimal and not impacting transport time.\\
-Regarding all these points a simple UPD protocol setup seems to be the best choice. Package loss that might appear with UDP is not critical as it means only the loss of one frame data-set.\\
-It has to be ensured that the UDP data streams from both devices are recorded separately to ensure that the data can be separated correctly for the stereoscopic calculations.
-The possibility to send multi- and/or broadcast messages via UDP also open up an easy way of communication between the "Master" and the "Slave" Pi's for control communication.
-\begin{figure}[H]
+The data that is generated on the two Raspberry's has to be communicated to the "Master" unit where further processing is done. The data delay between the different endpoints should be minimal. As the data is streamed in real time, protocols like TCP, which utilize control mechanisms for package order and receiving of data use to much overhead. In the time-frame needed for the protocol to request a missing package again, the data will already be obsolete. \\Furthermore, the amount of data that is send in each data frame is minimal, as this is only the position value of the specified number of tracking points and some separators for string processing. Since the devices will be connected to a local network via a switch, network workload from other devices and protocols can be assumed minimal and not impacting transport time.\\\begin{figure}[H]
 \includegraphics[width=\textwidth]{images/Network_Diagram.png}
 \caption{Work-flow for the UDP Data packages that are send from the Raspberry's to the parent PC}
 \label{img:netzwerk_diagram} 
 \end{figure}
+Regarding all these points a simple UPD protocol setup seems to be the best choice. Package loss that might appear with UDP is not critical as it means only the loss of one frame data-set.\\
+It has to be ensured that the UDP data streams from both devices are recorded separately to ensure that the data can be separated correctly for the stereoscopic calculations.
+The possibility to send multi- and/or broadcast messages via UDP also open up an easy way of communication between the "Master" and the "Slave" Pi's for control communication.
+
 \section{Data processing on the receiver side}
-\begin{wrapfigure}[26]{r}{\textwidth/2}
+\begin{wrapfigure}[24]{r}{\textwidth/2}
 \label{img:hand_model_workflow}
 \includegraphics[width=\textwidth/2]{images/Rendering_workflow.png} 
 \caption{Overview diagram of the processing steps for the hand model data on the client side}
 \end{wrapfigure}
-To ensure that the two data streams are separated and therefore distinguishable, each stream receives a dedicated listening port on the client side(Figure \ref{img:netzwerk_diagram}), makeing it possible to separate the UDP listeners to separate running threads in the background.The positional data will be encoded as comma separated x and y coordinate set. Data separation is done by a simple semicolon as a separator between the coordinate sets. After the string decoding, the extracted values are written into thread-safe variables.This allows the system to read current data without conflicting the writing process of the UPD threads.
+To ensure that the two data streams are separated and therefore distinguishable, each stream receives a dedicated listening port on the client side (Figure \ref{img:netzwerk_diagram}), makeing it possible to separate the UDP listeners to separate running threads in the background.The positional data will be encoded as comma-separated x and y coordinate sets. Data separation is done by a simple semicolon as a separator between the coordinate sets. After the string decoding, the extracted values are written into thread-safe variables.This allows the system to read current data without conflicting the writing process of the UPD threads.
 \subsection{Stereoscopic calculations}
-The positional data that is extracted in the UDP data processing only consists of 2D position data. To retrieve depth information for correct spatial placement of the marker, the image disparity of the two cameras can be utilized to calculate the object distance from the cameras.\cite{Tauer.2010}\\
+The positional data that is extracted in the UDP data processing only consists of 2D position data. To retrieve depth information for correct spatial placement of the marker, the image disparity of the two cameras can be utilized to calculate the object distance from the cameras.\cite{Tauer.2010}\newpage
 Before diving into the mathematical concepts, some essential terms have to be explained.
 These are:
 \begin{itemize}
@@ -210,26 +209,26 @@ These are:
 \item Zero-point plane
 \end{itemize}
 \subsubsection{Inter-axial distance}
-A stereoscopic imaging system is based off of our own human visual system as it produces stereoscopic images. Therefore such a system always consists of at leas two cameras which are mounted in parallel. The distance difference between the two cameras is called the "inter axial distance" of the system. The usual distance for such systems is the mean distance of the human eyes, which corresponds to around 75mm. Shifting the cameras closer together or further apart will change the resulting stereoscopic effect, where shifting the cameras closer together will enlarge objects and shifting the cameras further apart will make objects seem much smaller than they are. 
+Stereoscopic imaging systems are based off of our own human visual system. Therefore such a system always consists of at leas two cameras which are mounted in parallel. The distance difference between the two cameras is called the \textit{"inter-axial distance"} of the system. The usual distance for such systems is the mean distance of the human eyes, which corresponds to around 75mm. shifting the cameras closer together or further apart will change the resulting stereoscopic effect, where shifting the cameras closer together will enlarge objects and shifting the cameras further apart will make objects seem much smaller than they are. 
 \subsubsection{Parallax}
-Since the cameras are  separated by the \textit{inter-axial distance}, a disparity in the generated images will occur. This means that the objects in the picture of the right camera will have a different position in terms of perspective than the images that result from the left camera. This resulting disparity is used to generate the 3D effect when displaying the images. The term "\textit{parallax}" is used to describe the comparison of the two images. The two images can have a negative, positive or zero \textit{parallax}.
+Through the spearation distance of the cameras, a \textit{disparity} in the generated images will occur. This means that the objects in the picture of the right camera will have a different position in terms of perspective than the images that result from the left camera. This resulting disparity is used to generate the 3D effect when displaying the images. The term "\textit{parallax}" is used to describe the comparison of the two images. The two images can have a negative, positive or zero \textit{parallax}.
 \subsubsection{Zero-point plane}
-The\textit{ zero point plane} is a special theoretical plane in a stereoscopic system. The location of the \textit{zero-point plane} defines the distance from the camera system at which the image points from both cameras match. Objects that lie before the \textit{zero-point plane} will have a negative \textit{parallax} and will appear closer to the viewer. Ton the opposite side, objects with positive \textit{parallax} will lie behind the zero point plane and therefore will appear further away.
+The\textit{ Zero-point plane} is a special theoretical plane in a stereoscopic system. The location of the \textit{Zero-point plane} defines the distance from the camera system at which the image points from both cameras coincide. As Figure \ref{img:stereo_diagram} shows, objects that lie before the \textit{zero-point plane}(closer to the camera) will have a negative \textit{parallax} and will appear closer to the viewer. On the opposite side, objects with positive \textit{parallax} will lie behind the zero point plane(further away from the camera) and therefore will appear further away.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/Stereo_diagram.png}
 \caption{Stereoscopic areas}
-\label{stereo_diagram} 
+\label{img:stereo_diagram} 
 \end{figure}
-Additional attention needs to be put in the camera setup before calculating depth form disparity. The cameras need to be checked for horizontal alignment to achieve correct values for the calculation.
+When setting up parallel stereoscopic setups,additional attention needs to be put in the camera placement before calculating depth form disparity. Horizontal misalignment of the cameras can lead to incorrect calculation results when calculating depth from disparity.
 \subsection{Depth calculation}
 With a correctly aligned system, one can calculate the distance of an object from the cameras using common trigonometric fundamentals\cite{JernejMrovlje.2008,YasirDawoodSalman.2017}.
 \\
-The position for the right camera will be denoted as $S_{r}$ and the position of the left camera will be denoted as $S_{l}$ (see Figure \ref{stereo_Dimmensions}a).The resulting distance of $S_{l}-S_{r}$ is the \textit{inter-axial distance} $B$ of the system. The view angle $\theta$ of the Camera, which should be the same for both cameras, will respectively be $\theta_{1}$ and $\theta{2}$. From the camera positioning, the assumption of parallel optical axes is made. The angles of $\phi_{l},\phi_{r}$ describe the resulting angle between the optical axis of the camera and the object.
-By using geometric derivations we can express that:\\
+The position for the right camera will be denoted as $S_{R}$ and the position of the left camera will be denoted as $S_{L}$.The resulting distance of $S_{L}-S_{R}$ is the \textit{inter-axial distance} $B$ of the system. The view angle $\theta$ of the Camera, which should be the same for both cameras, will respectively be $\theta_{1}$ and $\theta_{2}$. From the camera positioning, the assumption of parallel optical axes is made. The angles of $\phi_{l},\phi_{r}$ describe the resulting angle between the optical axis of the camera and the object.
+When looking at Figure\ref{stereo_Dimmensions}a),one can express that:\\
 \begin{equation}
 B= B_{1}+B_{2}=D\tan\varphi_{1}+D\tan\varphi_{2}
 \end{equation}\\
-Rearranging for D gives us:\\
+Rearranging for \textit{D} gives us:\\
 \begin{equation}
 D = \frac{B}{\tan\varphi_{1}+\tan\varphi_{2}}
 \end{equation}
@@ -245,15 +244,14 @@ With Figure \ref{stereo_Dimmensions}b)-c) one can find that:
 \begin{equation}
 \frac{-x_{2}}{\frac{x_{0}}{2}}=\frac{tan \varphi_2}{\tan(\frac{\varphi_{0}}{2})}
 \end{equation}\\
-Resulting in the calculation of D to be expressible as:
-
+Resulting in the calculation of \textit{D} to be expressible as:
 \begin{equation}
 D=\frac{Bx_0}{2\tan(\frac{\varphi_0}{2})(X_{L}-X_{R})}
 \end{equation}\\
-Where B is the distance between the cameras,$x_0$ being the horizontal width of the picture format in pixels, $\varphi_0$ representing the viewing angle of the camera and $(X_{L}-X_{R})$ representing the disparity between the two images in Pixels.
+Where B is the distance between the cameras, $x_0$ being the horizontal width of the picture format in pixels, $\varphi_0$ representing the viewing angle of the camera and $(X_{L}-X_{R})$ representing the disparity between the two images in Pixels.
 \subsection{Model position update}
 Before a solution with the inverse kinematics algorithm can be calculated, the hand movement in real space has to be matched with that on the digital side. To achieve this, a further marker besides the finger markings is required. A sixth color marker has to be positioned on top of the hand to serve as a global position reference. The position and rotation difference between the last and current frame can then be calculated from the tracking values and then be applied to the whole model.
 \subsection{Inverse Kinematics}
-For the inverse kinematics calculation, the \textit{Fabrik} algorithm that is described in Section \ref{sec:fabrik_algorithm} was selected. It does not require complex matrix calculations and has a fast convergence rate. For the implementation of the algorithm on the "Master" side, the \textit{Caliko} Java framework\cite{Lansley.2016} is used.The usage of the Java framework provides system independent implementations of the solution. The library supplies all the needed classes and function to create \textit{kinematic chains} and \textit{structures} as well as the implementation of the solving algorithm. It furthermore ships a visualization package which utilizes the \textit{Lightweight Java Game Library 3} (LWJG3).The provided classes can be used optionally for debug visualization or even as a base for a more sophisticated visualization as it is possible to load further components for i.e. VR into LWJGL.\\\\
+For the inverse kinematics calculation, the \textit{Fabrik} algorithm that is described in Section \ref{sec:fabrik_algorithm} was selected. It does not require complex matrix calculations and has a fast convergence rate. For the implementation of the algorithm on the "Master" side, the \textit{Caliko} Java framework\cite{Lansley.2016} is used.The usage of a Java framework provides a operating-system independent implementation of the solution. The library supplies all the needed classes and function to create \textit{kinematic chains} and \textit{structures} as well as the implementation of the algorithm itself. It furthermore ships a visualization package which utilizes the \textit{Lightweight Java Game Library 3} (LWJG3).The provided classes can be used optionally for debug visualization or even as a base for a more sophisticated visualization as it is possible to load further components for i.e. VR into LWJGL.\\\\
 For the inverse kinematics calculation to work properly, the updated bone positions and the calculated target points from the finger tracking are needed.
-For each finger a kinematic chain is set up with the correct bone length. The length of each bone has to be measured manually for the first prototype. Further iterations should provide a more elaborated and maybe even automated calibration procedure. The movement of each bone in the kinematic chains has to be restricted by constraints to restrict the algorithms solutions to physiological possible hand poses. The values for finger constraints that are described in Section \ref{sec:Physiological_structure_of_the_human_hand} should provide sufficient values. 
+The length of each bone for the hand model has to be measured manually for the first prototype.Further iterations should provide a more elaborated and maybe even automated calibration procedure. The movement of each bone in the kinematic chains has to be restricted by constraints to restrict the algorithms solutions to physiological possible hand poses. The values for finger constraints that are described in Section \ref{sec:Physiological_structure_of_the_human_hand} should provide sufficient starting values values. 
