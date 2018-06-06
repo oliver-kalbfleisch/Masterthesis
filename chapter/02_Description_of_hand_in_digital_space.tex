@@ -6,7 +6,7 @@ Tracking of the human hand has always been a challenging problem. In comparison 
 \label{sec:Physiological_structure_of_the_human_hand}
 Lee and Kuni \citep{LEE.1995} described the human hand as "\textit{an articulated structure with about 30 degrees of freedom [which] changes shape in various ways by its joint movements.}"
 \begin{figure}[H]
-
+	\centering
 	\includegraphics[width=\textwidth]{images/hand.jpg}
 	\label{Handstructure} 
 	\caption{Bone structure of the human left hand (\cite{LEE.1995})}
@@ -25,6 +25,7 @@ Not all of the joints in the human hand have equal \textit{degrees of freedom}. 
 \end{itemize}
 \end{flushleft}
 \begin{figure}[H]
+\centering
 \includegraphics[width=0.8\textwidth]{images/Hand_DOFs.JPG} 
 \caption{Types of degrees of freedom for the joints of the human hand}
 \label{img:dof_image} 
@@ -74,7 +75,7 @@ Kinematic systems contain so called \textit{kinematic chains}, which consist of 
 As hand movements starts, the states of the kinematic chains begin to change. Joint angles and end effector positions are modified until the end position is reached. To represent the new position and angle values of our physical hand with a kinematic system, two major paths for achieving a solution can be taken.
  \subsection{Forward Kinematics}
   \label{sec:Forward Kinematics} 
-The Forward kinematics(FK) approach uses the knowledge of the resulting angles and positions after the application of known transformations to the kinematic chain. The resulting new positions of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is used to solve the problem of finding the \textit{end effector's} position.\\\\
+The Forward kinematics (FK) approach uses the knowledge of the resulting angles and positions after the application of known transformations to the kinematic chain. The resulting new positions of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is used to solve the problem of finding the \textit{end effector's} position.\\\\
 We can denote the existing end effectors relative position to an origin as $ s_{1},...,s_{k}$. The $s_{i}$ position is the result of th combination of all the joint angles in the corresponding kinematic chain. Respectively, we define the target position of the end effectors as $t_{1},...,t_{i}$, with $t_{i}$ being the target position for the end effector $s_{i}$. The required positional change for the end effector can now be described as $e_{i}=t_{i}-s_{i}$. In systems with more than one end effector, like our hand system, the components can be written as vectors.\\
 \begin{equation}
 \label{fk components}
@@ -106,6 +107,7 @@ The concept of \textit{Inverse Kinematics}  (IK) already describes it's principl
 \\The result of this equation is the vector $\pmb{\theta}$ for which the values of $\vec{\textbf{s}}$ coincide to the desired configuration $\vec{\textbf{s}_{d}}$. In the case of an optimal result, this configuration would have the same position values as the target positions.\\\\ The main problem with this method occurs in the calulaton of the $f^{-1}$ function, due to it beeing a highly non linear operator which is not easily invertible.The approaches that \cite{AndreasAristidouandJoanLasenby.2009} describes to counter this problem will be displayed later on in this chapter.
 In contrary to having a unique solution with the FK approach, the IK approach can end at the point of not finding a suitable solution. Figure \ref{IkSolutions} displays three possible outcomes for the IK approach.
 \begin{figure}[H]
+\centering
 \includegraphics[scale=0.6]{images/Ik_figure.jpg}
 \caption{Possible solution for an IK problem of a human finger:(a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.}
 \label{IkSolutions}

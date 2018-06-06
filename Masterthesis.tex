@@ -16,6 +16,7 @@
 \usepackage[english]{algorithm2e}
 \usepackage{pdflscape}
 \usepackage{caption}
+\usepackage{tocloft}
 \captionsetup{justification   = raggedright,
               singlelinecheck = false}
 \geometry{
@@ -26,6 +27,11 @@
  bottom=24mm
  }
 \renewcommand{\familydefault}{\sfdefault}
+
+\renewcommand\cftchapfont{\small\bfseries}
+\renewcommand\cftsecfont{\small}
+\renewcommand\cftchappagefont{\large\bfseries}
+\renewcommand\cftsecpagefont{\small}
 
 %fancyheadings funktioniert nicht mehr mit der KOMA Script Klasse scrbook
 
@@ -57,13 +63,10 @@
 \newpage
 \input{./chapter/01_introduction}
 \newpage
-\newpage
 \input{./chapter/02_Description_of_hand_in_digital_space}
 \newpage
 \input{./chapter/03_Tracking_in_real_space}
 \newpage
-%\input{./chapter/04_Digital_hand_models}
-%\newpage
 \input{./chapter/05_System_prequisites}
 \input{./chapter/06_System_conception}
 \newpage
@@ -72,6 +75,6 @@
 \input{./chapter/fazit}
 \newpage
 \include{./chapter/verzeichnisse}
-\include{./chapter/eid}
+%\include{./chapter/eid}
 \include{./chapter/Appendix}
 \end{document}
