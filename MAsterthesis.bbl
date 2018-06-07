@@ -1,4 +1,4 @@
-\begin{thebibliography}{61}
+\begin{thebibliography}{59}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -117,21 +117,6 @@
   annual conference on Computer graphics and interactive techniques}.
 \newblock New York, NY~: ACM, 1998, S.~371--378. --
 \newblock ISBN 0897919998
-
-\bibitem[{Franziska Mueller} u.\,a.(2017){Franziska Mueller}, {Dushyant Mehta},
-  {Oleksandr Sotnychenko}, {Srinath Sridhar}, {Dan Casas} und {Christian
-  Theobalt}]{FranziskaMueller.2017}
-\dinatlabel{{Franziska Mueller} u.\,a. 2017} \textsc{{Franziska Mueller}}~;
-  \textsc{{Dushyant Mehta}}~; \textsc{{Oleksandr Sotnychenko}}~;
-  \textsc{{Srinath Sridhar}}~; \textsc{{Dan Casas}}~; \textsc{{Christian
-  Theobalt}}:
-\newblock Real-Time Hand Tracking Under Occlusion From an Egocentric RGB-D
-  Sensor.
-\newblock
-\newblock (2017). --
-\newblock URL
-  \url{http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w19/Mueller_Real-Time_Hand_Tracking_ICCV_2017_paper.pdf}.
-  -- Zugriffsdatum: 20.05.2018
 
 \bibitem[Fredriksson u.\,a.(2008)Fredriksson, Ryen und Fjeld]{Fredriksson.2008}
 \dinatlabel{Fredriksson u.\,a. 2008} \textsc{Fredriksson}, Jonas~;
@@ -329,6 +314,16 @@
 \newblock In: \emph{Computer vision and image understanding}
 \newblock 104 (2006), Nr.~2-3, S.~90--126
 
+\bibitem[Mueller u.\,a.(2017)Mueller, Mehta, Sotnychenko, Sridhar, Casas und
+  Theobalt]{Mueller.2017}
+\dinatlabel{Mueller u.\,a. 2017} \textsc{Mueller}, Franziska~; \textsc{Mehta},
+  Dushyant~; \textsc{Sotnychenko}, Oleksandr~; \textsc{Sridhar}, Srinath~;
+  \textsc{Casas}, Dan~; \textsc{Theobalt}, Christian:
+\newblock Real-time hand tracking under occlusion from an egocentric rgb-d
+  sensor.
+\newblock In: \emph{Proceedings of International Conference on Computer Vision
+  (ICCV)} Bd.~10, 2017
+
 \bibitem[Nakamura und Hanafusa(1986)]{Nakamura.1986}
 \dinatlabel{Nakamura und Hanafusa 1986} \textsc{Nakamura}, Yoshihiko~;
   \textsc{Hanafusa}, Hideo:
@@ -355,26 +350,13 @@
 \newblock Durham~: {BMVA Press}, 2011, S.~101.1--101.11. --
 \newblock ISBN 1-901725-43-X
 
-\bibitem[Opencv(2018{\natexlab{a}})]{Opencv.2018}
-\dinatlabel{Opencv 2018{\natexlab{a}}} \textsc{Opencv}:
+\bibitem[Opencv(2018)]{OpenCV.2018}
+\dinatlabel{Opencv 2018} \textsc{Opencv}:
 \newblock \emph{Camera Calibration}.
 \newblock 2018. --
 \newblock URL
   \url{https://docs.opencv.org/3.1.0/dc/dbb/tutorial_py_calibration.html}. --
   Zugriffsdatum: 10.02.2018
-
-\bibitem[Opencv(2018{\natexlab{b}})]{Opencv.2018b}
-\dinatlabel{Opencv 2018{\natexlab{b}}} \textsc{Opencv}:
-\newblock \emph{Camera Calibration}.
-\newblock 2018. --
-\newblock URL
-  \url{https://docs.opencv.org/3.1.0/dc/dbb/tutorial_py_calibration.html}
-
-\bibitem[{OpenCV Team}(2018)]{OpenCVTeam.2018}
-\dinatlabel{{OpenCV Team} 2018} \textsc{{OpenCV Team}}:
-\newblock \emph{OpenCV}.
-\newblock 2018. --
-\newblock URL \url{https://opencv.org/}. -- Zugriffsdatum: 10.05.2018
 
 \bibitem[optitrack(2017)]{optitrack.2017}
 \dinatlabel{optitrack 2017} \textsc{optitrack}:
@@ -459,7 +441,7 @@
 \bibitem[{Thomas A. DeFanti} und {Daniel J. Sandin}()]{ThomasA.DeFanti.1977}
 \dinatlabel{{Thomas A. DeFanti} und {Daniel J. Sandin} } \textsc{{Thomas A.
   DeFanti}}~; \textsc{{Daniel J. Sandin}}:
-\newblock \emph{Final Report to the National Endownment of the Arts}
+\newblock \emph{Final Report to the National Endownment of the Arts 1977}
 
 \bibitem[Wampler(1986)]{Wampler.1986}
 \dinatlabel{Wampler 1986} \textsc{Wampler}, Charles:

@@ -3,3 +3,7 @@ The style file: dinat.bst
 A level-1 auxiliary file: ./chapter/verzeichnisse.aux
 A level-1 auxiliary file: ./chapter/Appendix.aux
 Database file #1: literature.bib
+Warning--entry type for "Grimes.1983" isn't style-file defined
+--line 192 of file literature.bib
+Warning--empty pages in Mueller.2017
+(There were 2 warnings)

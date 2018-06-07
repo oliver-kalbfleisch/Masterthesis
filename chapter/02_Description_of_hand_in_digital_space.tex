@@ -13,7 +13,7 @@ Lee and Kuni \citep{LEE.1995} described the human hand as "\textit{an articulate
 \end{figure}
 All of the hand parts are connected to at least one neighboring part via a \textit{joint}. The \textit{joints} affect the position of the connected part. To describe the movement of the hand parts, we can use the rotation angles of the joints to correlate to a specific position.
 To do so, we define a local coordinate system for each of the exiting hand joints. Through these coordinate Systems, we achieve a sequence of rotations in the local coordinate systems of the joints. Such a sequence can then be used to describe a specific movement and/or position of a part.
-Not all of the joints in the human hand have equal \textit{degrees of freedom}. Their functionality can be classified in the amount of DOFs (\textit{degrees of freedom})\cite{KOREIN.1985}
+Not all of the joints in the human hand have equal \textit{degrees of freedom}. Their functionality can be classified in the amount of DOFs (\textit{degrees of freedom}) \cite{KOREIN.1985}
 \begin{flushleft}
 \begin{itemize}
 \item 1 DOF \\
@@ -32,7 +32,7 @@ Not all of the joints in the human hand have equal \textit{degrees of freedom}. 
 \end{figure}
 When looking at the DOF's displayed in Figure \ref{img:dof_image}, each finger (II-V) sums up to 4 DOF's and the thumb to 5 DOF's. Also considering 6 DOFs for the rotation and position of the whole hand, the total sum add up to 27 DOFs.
 \subsection{Constraints in hand motion}
-A full usage of all the declared DOFs would lead to a large amount of possible combinations. Since the hand is not only made up of bones but also muscles and the skin, we can impose some constraints \cite{Badler.1987,Pavlovic.1997} to the movement of the joints. Ling, Wu and Huang\cite{LIN.2000} proposed following classification for the constraints:
+A full usage of all the declared DOFs would lead to a large amount of possible combinations. Since the hand is not only made up of bones but also muscles and the skin, we can impose some constraints \cite{Badler.1987,Pavlovic.1997} to the movement of the joints. Ling, Wu and Huang  \cite{LIN.2000} proposed following classification for the constraints:
 \begin{itemize}
 \item \textbf{Type I constraints}\\
 	-A constraint that limits the range of finger motions based on hand anatomy
@@ -54,29 +54,29 @@ The \textbf{Type I} and \textbf{Type II} constraints rely on the physiological a
 \begin{equation}
 \Theta _{MP_{abduct/adduct}}=0\degree
 \end{equation}
-\\The same behavior can be seen in the combination of hand parts labeled W( the connection point between hand and lower arm). This approximation also eliminates one DOF on the connected thumb:\\
+\\The same behavior can be seen in the combination of hand parts labeled W (the connection point between hand and lower arm). This approximation also eliminates one DOF on the connected thumb:\\
 \begin{equation}
 \Theta _{W_{abduct/adduct}}=0\degree
 \end{equation}
 \\Since the DIP,PIP and MP joints of our index, middle, ring, and little fingers only have 1 DOF for flexion, we can further assume that their motion is limited to movement in one plane. \\\\
 The \textbf{Type II} constraints can be split into \textit{inter-finger} and\textit{ intra-finger} constraints.
 Regarding \textit{intra-finger} constraints between the joints of the same finger, human hand anatomy implies that to bend the DIP joints on the specific finger,the corresponding PIP joints of that finger must also be bent.
-The approximation for this relation\cite{Rijpkema.1991} can be described as :\\
+The approximation for this relation \cite{Rijpkema.1991} can be described as :\\
 \begin{equation}
 \Theta _{DIP} =\frac{2}{3}\Theta _{PIP}
 \end{equation}\\
 \\\textit{Inter-finger} constraints can be imposed between joints of adjacent fingers. \textit{Inter-finger} constraints describe that the bending of an MP joint in the index finger forces the MP joint in the middle finger to bend as well.\\
- When combining the constraints described in the above equations, the initital number 21 DOF's of the human hand can be reduced to 15. Inequalities for these cases, obtained through empiric studies, can be found in \citep{LEE.1995}.\\
+ When combining the constraints described in the above equations, the initial number 21 DOF's of the human hand can be reduced to 15. Inequalities for these cases, obtained through empiric studies, can be found in \citep{LEE.1995}.\\
 \section{Kinematics}
 \label{sec:kinematics}
 The preceding sections gave an overview of how we can describe a model of the human hand and introduced some limiting constraints. With the model and the constraints, we can now start to build a kinematic system for the animation of the model.\\\\
 Kinematic systems contain so called \textit{kinematic chains}, which consist of a \textit{starting point} or \textit{root}, kinematic elements like \textit{joints}, \textit{links} and an \textit{endpoint}, also called \textit{end effector}. Applied to the human hand, the whole hand model represents the kinematic system. This system contains several \textit{kinematic chains}, namely the fingers of the hand with the fingertips being the \textit{end effectors} of each of these chains.
-\\Each of these components has it's set of DOF's which can be described mathematically. The established convention for describing this kind of linked systems is the \textit{Denavit-Hartenberg} convention (D-H)\cite{Denavit.1955}. It was originally introduced in order to standardize the coordinate frames for spatial linkages in the field of robotics, but has since then been applied in other fields as well.\cite{Spong.2008}.  
+\\Each of these components has it's set of DOF's which can be described mathematically. The established convention for describing this kind of linked systems is the \textit{Denavit-Hartenberg} convention (D-H) \cite{Denavit.1955}. It was originally introduced in order to standardize the coordinate frames for spatial linkages in the field of robotics, but has since then been applied in other fields as well \cite{Spong.2008}.  
 As hand movements starts, the states of the kinematic chains begin to change. Joint angles and end effector positions are modified until the end position is reached. To represent the new position and angle values of our physical hand with a kinematic system, two major paths for achieving a solution can be taken.
  \subsection{Forward Kinematics}
   \label{sec:Forward Kinematics} 
 The Forward kinematics (FK) approach uses the knowledge of the resulting angles and positions after the application of known transformations to the kinematic chain. The resulting new positions of the \textit{joints} and \textit{links} between the \textit{root} and the \textit{end effector} is used to solve the problem of finding the \textit{end effector's} position.\\\\
-We can denote the existing end effectors relative position to an origin as $ s_{1},...,s_{k}$. The $s_{i}$ position is the result of th combination of all the joint angles in the corresponding kinematic chain. Respectively, we define the target position of the end effectors as $t_{1},...,t_{i}$, with $t_{i}$ being the target position for the end effector $s_{i}$. The required positional change for the end effector can now be described as $e_{i}=t_{i}-s_{i}$. In systems with more than one end effector, like our hand system, the components can be written as vectors.\\
+We can denote the existing end effectors relative position to an origin as $ s_{1},...,s_{k}$. The $s_{i}$ position is the result of the combination of all the joint angles in the corresponding kinematic chain. Respectively, we define the target position of the end effectors as $t_{1},...,t_{i}$, with $t_{i}$ being the target position for the end effector $s_{i}$. The required positional change for the end effector can now be described as $e_{i}=t_{i}-s_{i}$. In systems with more than one end effector, like our hand system, the components can be written as vectors.\\
 \begin{equation}
 \label{fk components}
 \begin{split}
@@ -93,7 +93,7 @@ We can denote the existing end effectors relative position to an origin as $ s_{
 \vec{\textbf{s}}&=f(\pmb{\theta})\\
 \end{split}
 \end{equation}
-\\With $\pmb{\theta}$ being the column vector $\pmb{\theta}=(\theta_{1},...,\theta_{n})^{T}$.The second vector equation displayed in (\ref{forward kinematic solution}) is also called the \textit{Forward Kinematics}(FK) solution.\\
+\\With $\pmb{\theta}$ being the column vector $\pmb{\theta}=(\theta_{1},...,\theta_{n})^{T}$.The second vector equation displayed in (\ref{forward kinematic solution}) is also called the \textit{Forward Kinematics} (FK) solution.\\
 The advantage of an FK solution is that there is always an unique solution to the problem. In consequence, this approach is commonly used in the field of robotics, where the information on the chain elements is easily available.
 The tracking of the human hand and all of its chain components is rather complicated. Therefore a solution which takes a known position of the \textit{end effector} and calculates the parameters for the rest of the chain is more desirable.
 \subsection{Inverse kinematics}
@@ -109,7 +109,7 @@ In contrary to having a unique solution with the FK approach, the IK approach ca
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{images/Ik_figure.jpg}
-\caption{Possible solution for an IK problem of a human finger:(a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution.(c) The target position can be reached with multiple different solutions.}
+\caption{Possible solution for an IK problem of a human finger: (a)The given target position of the end effector can not be reached. (b) The given target can only be reached by one solution. (c) The target position can be reached with multiple different solutions.}
 \label{IkSolutions}
 \end{figure}
 \subsection{Jacobian-based methods}
@@ -120,13 +120,13 @@ One common approach to solve the IK problem is the utilization of a Jacobian mat
 J(\pmb{\theta})_{ij}=\left(\frac{\partial\textbf{s}_{i}}{\partial\theta_{j}}\right)_{ij}
 \end{equation}
 \\ \textit{i}=1,...,k and \textit{j}= 1,...,n.
-Further readings on methods for the calculation of Jacobian matrices can be found in \cite{Orin.1984}. Based on definition (\ref{Jacobian definition}), an entry for the j-th rotational joint would be calculated as follows:\\
+Further readings on methods for the calculation of Jacobian matrices can be found in \cite{Orin.1984}. Based on Definition (\ref{Jacobian definition}), an entry for the j-th rotational joint would be calculated as follows:\\
 \begin{equation}
 \label{Jacobian entry calc}
 \frac{\partial \textbf{s}_{i}}{\partial \theta_{j}}= \textbf{v}_{j}\times(\textbf{s}_{i}-\textbf{p}_{j})
 \end{equation}
 \\Here $\textbf{p}_{j}$ is the position of the joint, and $\textbf{v}_{j}$ is the unit vector pointing along the current axis of rotation for the joint.
-Taking the derivative of definition (\ref{forward kinematic solution}) with respect to time gives the basic equation for forward kinematics that describes the velocities of the end effectors:
+Taking the derivative of Definition (\ref{forward kinematic solution}) with respect to time gives the basic equation for forward kinematics that describes the velocities of the end effectors:
 \begin{equation}
 \label{fk derivate}
 \dot{\vec{\pmb{s}}}=\pmb{J}\pmb{(\theta)}\dot{\pmb{\theta}}
@@ -142,7 +142,7 @@ Thereafter we seek an update value $\Delta\pmb{\theta}$ for incrementing the cur
 \label{delta s approx}
 \Delta\pmb{\vec{s}}\approx \pmb{J(\theta_{curr})}\Delta\pmb{\theta}
 \end{equation}
-\\Using this approximation  we can reformulate the FK problem as $\pmb{}\vec{\pmb{e}}=J\Delta\pmb{\theta}$ and therefore our inverse kinematics problem form \ref{ik problem formula} can be expressed as $ \Delta\pmb{\theta}=J^{-1}\vec{\pmb{e}}$. \\The problem we run into with this solution is the construction of the inverse Jacobian matrix. The Jacobian \textbf{J} may not be square or invertible. In the case of it beeing invertible, the result may only work inferiorly because of it being nearly singular. Being singular means that no change in joint angle values may achieve the desired end effector position as an outcome.
+\\Using this approximation  we can reformulate the FK problem as $\pmb{}\vec{\pmb{e}}=J\Delta\pmb{\theta}$ and therefore our inverse kinematics problem form \ref{ik problem formula} can be expressed as $ \Delta\pmb{\theta}=J^{-1}\vec{\pmb{e}}$. \\The problem we run into with this solution is the construction of the inverse Jacobian matrix. The Jacobian \textbf{J} may not be square or invertible. In the case of it being invertible, the result may only work inferiorly because of it being nearly singular. Being singular means that no change in joint angle values may achieve the desired end effector position as an outcome.
 \subsubsection{Jacobian transpose}
 One approach to calculating the value of $\Delta\pmb{\theta}$ without having to calculate the inverse of \textbf{J} is done by replacing the inverse with the transpose of \textbf{J}.\\
 \begin{equation}
@@ -161,7 +161,7 @@ the value of $\alpha$ can be calculated by minimizing the new value of the error
 \alpha=\frac{\langle\vec{\pmb{e}},JJ^{T}\vec{\pmb{e}}\rangle}{\langle JJ^{T}\vec{\pmb{e}},JJ^{T}\vec{\pmb{e}}\rangle}
 \end{equation}
 \subsubsection{Jacobian pseudo inverse}
-Instead of calculating the normal inverse of the Jacoboian, which can lead to the problems described before, we can use the so called \textit{pseudo-inverse}\cite{Dahmen.2008} for the calculation. The \textit{pseudo inverse} is defined for all matrices J, even ones
+Instead of calculating the normal inverse of the Jacoboian, which can lead to the problems described before, we can use the so called \textit{pseudo-inverse} \cite{Dahmen.2008} for the calculation. The \textit{pseudo inverse} is defined for all matrices J, even ones
 which are not square or not of full row rank.\\
 \begin{equation}
 \label{pseudo inv def}
@@ -186,7 +186,7 @@ The usage of a \textit{singular value decomposition} is another method of calcul
 \begin{equation}
 \pmb{J} = \pmb{UDV^{T}}
 \end{equation} 
-\\For an \textit{m×n} Jacobian matrix, \textbf{U} is\textit{ m×m} and the columns are the \textit{Eigenvectors} of $JJ^{T}$. \textbf{D} is \textit{m×n}, and the entries are zero except along the diagonal where $d_{ii}=\sigma_{i}$ with $\pmb{\sigma_{i}}$ beeing the singular value and $\sigma 1\geq \sigma 2 \geq ...\geq \sigma m \geq 0$. Singular values are the non-negative square roots of the \textit{Eigenvalues} of $JJ^{T}$ and $ J^{T}J$.\textbf{V} is \textit{n×n} and the columns are the eigenvectors of $J^{J}J$.
+\\For an \textit{m×n} Jacobian matrix, \textbf{U} is\textit{ m×m} and the columns are the \textit{Eigenvectors} of $JJ^{T}$. \textbf{D} is \textit{m×n}, and the entries are zero except along the diagonal where $d_{ii}=\sigma_{i}$ with $\pmb{\sigma_{i}}$ being the singular value and $\sigma 1\geq \sigma 2 \geq ...\geq \sigma m \geq 0$. Singular values are the non-negative square roots of the \textit{Eigenvalues} of $JJ^{T}$ and $ J^{T}J$.\textbf{V} is \textit{n×n} and the columns are the \textit{Eigenvectors} of $J^{J}J$.
 The construction of the pseudo inverse is done as follows:\\
 \begin{equation}
 \pmb{J}^{\dagger} = \pmb{VD^{\dagger}U^{T}}
@@ -206,23 +206,23 @@ Instead of finding the minimum for $\Delta\theta$ as a best solution for the equ
 \begin{equation}
 \Delta\pmb{\theta}=(\pmb{J}^{T}\pmb{J}+\lambda^{2}I)^{-1}\pmb{J}^{T}\vec{\pmb{e}}
 \end{equation}
-\\The selection of a correct $\lambda$ value is essential for this method, small values of $\lambda$ give accurate solutions but low robustness to the occurrence of singular and near-singular configurations, while large  values of $\lambda$ result in low tracking accuracy even when a feasible and accurate solution would be possible\cite{Chiaverini.1994,AndreasAristidouandJoanLasenby.2009}.
+\\The selection of a correct $\lambda$ value is essential for this method, small values of $\lambda$ give accurate solutions but low robustness to the occurrence of singular and near-singular configurations, while large  values of $\lambda$ result in low tracking accuracy even when a feasible and accurate solution would be possible  \cite{Chiaverini.1994,AndreasAristidouandJoanLasenby.2009}.
 
 \subsection{Newton Methods}
-The Newton family of methods is based on a second order Taylor series expansion of the object function f(x):\\
+The Newton family of methods is based on a second order Taylor series expansion of the object function \textbf{f(x)}:\\
 \begin{equation}
 f(x+\sigma)= f(x)+ [\bigtriangledown f(x)]^{T}\sigma + \frac{1}{2}\sigma^{T}H_{f}(x)\sigma
 \end{equation}
-\\where Hf(x) is the Hessian matrix. The downside of this approach is that the calculation of the Hessian matrix bares high computational cost for each iteration as a result of its complexity. Like the approximation of the Jacobian inverse, several attempts to lower the computational cost have benn made by utilizing an approximation of the Hessian matrix based on a function gradient value.
+\\where Hf(x) is the Hessian matrix. The downside of this approach is that the calculation of the Hessian matrix bares high computational cost for each iteration as a result of its complexity. Like the approximation of the Jacobian inverse, several attempts to lower the computational cost have been made by utilizing an approximation of the Hessian matrix based on a function gradient value.
 Since the Newton methods are posed as a minimization problem, they return smooth motion without erratic discontinuities.
 The Newton methods also have the advantage that they do not suffer from singularity problems, such as that which occurs when finding the Jacobian Inverse.
 \newpage
 \subsection{FABRIK Algorithm}
 \label{sec:fabrik_algorithm}
-A more recent approach in the kinematics field is the \textit{FABRIK} algorithm proposed by Aristidou and Lasenby\cite{Aristidou.2011}. As shown in section \ref{sec:inverse kinematics}, most approaches all depend on computational intensive matrix operation like calculating an inverse and may have problems with matrix singularity.\\
+A more recent approach in the kinematics field is the \textit{FABRIK} algorithm proposed by Aristidou and Lasenby \cite{Aristidou.2011}. As shown in section \ref{sec:inverse kinematics}, most approaches all depend on computational intensive matrix operation like calculating an inverse and may have problems with matrix singularity.\\
 \begin{wrapfigure}[34]{r}{7cm}
 \includegraphics[width=\textwidth/2]{images/FabrikIteration.jpg}
-\caption{Forward and backward calculation steps for one iteration of the \textbf{FABRIK}algorithm.(a) initial position of the system.(b)End effector is moved to target position.(c) Deterimne position of next joint on constructed line.(d)repeat until root is reached. (e)move root joint to initial position. (f) repeat calculation in reverse direction \cite{Aristidou.2011} }
+\caption{Forward and backward calculation steps for one iteration of the \textbf{FABRIK}algorithm. (a) Initial position of the system. (b) End effector is moved to target position. (c) Deterimne position of next joint on constructed line. (d) Repeat until root is reached. (e) Move root joint to initial position. (f) Repeat calculation in reverse direction \cite{Aristidou.2011} }
 \label{fig:Fabrik_Iteration}
 \end{wrapfigure}
 The \textit{FABRIK} algorithm does not depend on these matrix operations as is solves for the position of a point on a line to retrieve the new joint positions. This is done in an forward and also inverse solving approach, iterating these steps until the calculated position converges towards the target position from the tracking data.
@@ -245,12 +245,12 @@ B&=\textbf{p}_{n-1}\\
 \textbf{l}_{n-1}&=\overline{AB}\\
 \end{split}
 \end{equation}
-\\The resulting position of the new $\textbf{p}_{n-1}^{'}$ point is located on this line with the distance of $\textbf{d}_{n-1}$ from $\textbf{p}_{n}^{'}$ (see \textbf{(c)}).\\
+\\The resulting position of the new $\textbf{p}_{n-1}^{'}$ point is located on this line with the distance of $\textbf{d}_{n-1}$ from $\textbf{p}_{n}^{'}$ (see \textbf{(c)} ).\\
 \begin{equation}
 \textbf{p}_{n-1}^{'}= \textbf{p}_{n}^{'}+ \left(\frac{\overline{AB}}{|\overline{AB}|}\cdot\textbf{d}_{n-1}\right)
 \end{equation}
-\\Consecutively, this is done with the remaining joints until the root joint is reached(see \textbf{(d)}).
-This finishes the first halve of the iteration step.With the calculated positions, we now perform a forward calculation, starting from the root until we reach the end effector. Since the root of the system normally does not move from it's initial position, we have to reset the root joint to this value before starting to calculate the new positions of the subsequent joints(see\textbf{(e)}).
+\\Consecutively, this is done with the remaining joints until the root joint is reached (see \textbf{(d)}).
+This finishes the first halve of the iteration step.With the calculated positions, we now perform a forward calculation, starting from the root until we reach the end effector. Since the root of the system normally does not move from it's initial position, we have to reset the root joint to this value before starting to calculate the new positions of the subsequent joints (see\textbf{ (e)}).
 
 Analogous to the procedure in the inverse step, we construct the lines between the points and determine the new position values of the joints. The end result of this step is shown in \textbf{(f)}. At this point, we can decide if the result position of the end effector is appropriate in comparison to the value of \textbf{t}. A simple threshold value for this case could be the position difference between these two points.
 \\Since this algorithm does not rely on the heavy-weight matrix operations that the previously described methods incorporate, it converges much faster and in less iterations. Furthermore the incorporation of constraints to the calculation does not interfere with this values and is rather easy.
