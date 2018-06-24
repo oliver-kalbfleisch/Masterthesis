@@ -27,14 +27,10 @@
  bottom=24mm
  }
 \renewcommand{\familydefault}{\sfdefault}
-
 \renewcommand\cftchapfont{\small\bfseries}
 \renewcommand\cftsecfont{\small}
 \renewcommand\cftchappagefont{\large\bfseries}
 \renewcommand\cftsecpagefont{\small}
-
-%fancyheadings funktioniert nicht mehr mit der KOMA Script Klasse scrbook
-
 \usepackage{wrapfig}
 \usepackage[numbers,square,sort]{natbib}
 \bibliographystyle{dinat} % or try natplain or unsrtnat
@@ -48,7 +44,7 @@
 %Verhindern, dass eine neue Seite für ein einzelnes Wort/Zeile verwendet wird
 \clubpenalty = 10000 % schliesst Schusterjungen aus 
 \widowpenalty = 10000 % schliesst Hurenkinder aus (keine Beleidigung, sondern wirklich ein Fachbegriff)
-\linespread{1.25}
+%\linespread{1.25}
 \setlength{\parindent}{0pt}
 \setkomafont{chapter}{\normalfont\bfseries\fontsize{20}{15.5}\selectfont\scshape}
 \setkomafont{section}{\normalfont\bfseries\fontsize{15}{15.5}\selectfont}
@@ -57,23 +53,21 @@
 \usepackage[font=xipt,labelfont=bf]{caption}
 
 \begin{document}
+\frenchspacing 
 \input{./chapter/titelseite}
 \tableofcontents
 \setcounter{page}{1}
-\newpage
 \input{./chapter/01_introduction}
-\newpage
+
 \input{./chapter/02_Description_of_hand_in_digital_space}
-\newpage
+
 \input{./chapter/03_Tracking_in_real_space}
 \input{./chapter/05_System_prequisites}
 \input{./chapter/06_System_conception}
-\newpage
 \input{./chapter/07_System_Evaluation}
-\newpage
 \input{./chapter/fazit}
 \newpage
 \include{./chapter/verzeichnisse}
-%\include{./chapter/eid}
-\include{./chapter/Appendix}
+\include{./chapter/eid}
+%\include{./chapter/Appendix}
 \end{document}

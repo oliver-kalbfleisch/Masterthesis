@@ -1,0 +1,76 @@
+\contentsline {section}{\numberline {1}Physiological structure of the human hand}{2}
+\contentsline {subsection}{\numberline {1.1}Constraints in hand motion}{2}
+\contentsline {section}{\numberline {2}Kinematics}{3}
+\contentsline {subsection}{\numberline {2.1}Forward Kinematics}{3}
+\contentsline {subsection}{\numberline {2.2}Inverse kinematics}{3}
+\contentsline {subsection}{\numberline {2.3}Jacobian-based methods}{4}
+\contentsline {subsubsection}{\numberline {2.3.1}Jacobian inverse}{4}
+\contentsline {subsubsection}{\numberline {2.3.2}Jacobian transpose}{4}
+\contentsline {subsubsection}{\numberline {2.3.3}Jacobian pseudo inverse}{5}
+\contentsline {subsection}{\numberline {2.4}Singular Value Decomposition}{5}
+\contentsline {subsection}{\numberline {2.5}Damped Least Squares}{5}
+\contentsline {subsection}{\numberline {2.6}Newton Methods}{6}
+\contentsline {subsection}{\numberline {2.7}FABRIK Algorithm}{7}
+\contentsline {section}{\numberline {3}General tracking technologies}{10}
+\contentsline {subsection}{\numberline {3.1}Optical tracking}{10}
+\contentsline {subsection}{\numberline {3.2}Magnetic tracking}{10}
+\contentsline {subsection}{\numberline {3.3}Accoustic tracking}{10}
+\contentsline {section}{\numberline {4}Hand tracking Systems}{11}
+\contentsline {subsection}{\numberline {4.1}Sensor based}{11}
+\contentsline {subsection}{\numberline {4.2}Appearance Based - Optical marker}{12}
+\contentsline {subsection}{\numberline {4.3}Model Based - Image analysis}{13}
+\contentsline {section}{\numberline {5}State of the art technologies}{15}
+\contentsline {section}{\numberline {6}Display}{17}
+\contentsline {section}{\numberline {7}Tracking technology}{17}
+\contentsline {section}{\numberline {8}Tracking Hardware}{17}
+\contentsline {section}{\numberline {9}Data cleaning}{18}
+\contentsline {section}{\numberline {10}Image analysis}{18}
+\contentsline {section}{\numberline {11}Inverse kinematics}{18}
+\contentsline {section}{\numberline {12}Hand model}{18}
+\contentsline {section}{\numberline {13}Technical conception}{19}
+\contentsline {section}{\numberline {14}Construction Details}{20}
+\contentsline {subsubsection}{\numberline {14.0.1}Mounting peripherals}{20}
+\contentsline {section}{\numberline {15}Image analysis on the Raspberry}{20}
+\contentsline {subsection}{\numberline {15.1}Image acquisition from camera}{21}
+\contentsline {subsection}{\numberline {15.2}Image conversion to HSV colorspace}{21}
+\contentsline {subsection}{\numberline {15.3}Mask construction and filtering}{21}
+\contentsline {subsection}{\numberline {15.4}Contour finding and position calculation}{22}
+\contentsline {subsection}{\numberline {15.5}object tracking}{22}
+\contentsline {section}{\numberline {16}Systems communication}{22}
+\contentsline {section}{\numberline {17}Data processing on the receiver side}{24}
+\contentsline {subsection}{\numberline {17.1}Stereoscopic calculations}{25}
+\contentsline {subsubsection}{\numberline {17.1.1}Interaxial distance}{25}
+\contentsline {subsubsection}{\numberline {17.1.2}Parallax}{25}
+\contentsline {subsubsection}{\numberline {17.1.3}Zero-point plane}{25}
+\contentsline {subsection}{\numberline {17.2}Depth calculation}{25}
+\contentsline {subsection}{\numberline {17.3}Model position update}{26}
+\contentsline {subsection}{\numberline {17.4}Inverse Kinematics}{26}
+\contentsline {section}{\numberline {18}Camera hardware and control}{27}
+\contentsline {section}{\numberline {19}Image processing performance}{29}
+\contentsline {subsection}{\numberline {19.1}Color accuracy and ROI size}{30}
+\contentsline {subsection}{\numberline {19.2}Finger markers}{31}
+\contentsline {subsection}{\numberline {19.3}Depth measurement accuracy}{0}
+\contentsline {section}{\numberline {20}Data filtering}{1}
+\contentsline {section}{\numberline {21}Inverse kinematics algorithm}{0}
+\contentsline {chapter}{Abbildungsverzeichnis}{i}
+\contentsline {chapter}{Tabellenverzeichnis}{ii}
+\contentsline {chapter}{Literaturverzeichnis}{iii}
+\contentsline {section}{\numberline {22}Introduction}{vi}
+\contentsline {section}{\numberline {23}Related Work in Computer Graphics}{vii}
+\contentsline {section}{\numberline {24}Brief Overview of the Human Iris\penalty -\@M and Pupil}{viii}
+\contentsline {section}{\numberline {25}Models of Pupil Dynamics}{viii}
+\contentsline {subsection}{\numberline {25.1}Physiologically-Based Models}{viii}
+\contentsline {section}{\numberline {26}The Proposed Physiological-Based Model}{ix}
+\contentsline {subsection}{\numberline {26.1}Equilibrium Case}{ix}
+\contentsline {subsection}{\numberline {26.2}The Dynamic Case}{ix}
+\contentsline {subsection}{\numberline {26.3}Modeling Individual Differences}{x}
+\contentsline {subsection}{\numberline {26.4}The PLR Model Validation}{x}
+\contentsline {subsubsection}{\numberline {26.4.1}The Flashlight Experiments}{xi}
+\contentsline {paragraph}{\numberline {26.4.1.1}The second flashlight experiment}{xii}
+\contentsline {subsubsection}{\numberline {26.4.2}The 100-Watt Lightbulb Experiment}{xii}
+\contentsline {section}{\numberline {27}Modeling the Iris Deformation}{xii}
+\contentsline {subsection}{\numberline {27.1}Animating the Deformed Iridal Patterns}{xiii}
+\contentsline {section}{\numberline {28}Discussion}{xiii}
+\contentsline {section}{\numberline {29}Conclusion}{xiii}
+\contentsline {section}{\numberline {30}Typical references in new ACM Reference Format}{xiv}
+\contentsline {section}{\numberline {A}Classical Multidimensional Scaling}{xiv}
