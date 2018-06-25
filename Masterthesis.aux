@@ -1,7 +1,7 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
 \catcode 95\active
-\bibstyle{dinat}
+\bibstyle{natplain}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
 \global\let\oldcontentsline\contentsline
@@ -194,92 +194,95 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Image point projection for pinhole camera systems \cite  {Hartley.2000}\relax }}{30}{figure.caption.22}}
 \newlabel{pinholecamera_mapping}{{\relax 5.4}{30}{Image point projection for pinhole camera systems \cite {Hartley.2000}\relax }{figure.caption.22}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Image acquisition from the camera}{31}{subsection.5.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces ROI calculation for consecutive frames\relax }}{32}{figure.caption.23}}
-\newlabel{roi_calc}{{\relax 5.5}{32}{ROI calculation for consecutive frames\relax }{figure.caption.23}{}}
-\citation{Davies.2017}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces ROI Area workflow for consecutive frames\relax }}{31}{figure.caption.23}}
+\newlabel{roi_calc}{{\relax 5.5}{31}{ROI Area workflow for consecutive frames\relax }{figure.caption.23}{}}
+\citation{Cardani.2001}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Image conversion to HSV colorspace}{33}{subsection.5.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Color cone of the HSV colorspace with marked hue (H), saturation (S) and value (v) components. RGB colorspace cube with red, green and blue components \cite  {Cardani.2001}\relax }}{33}{figure.caption.24}}
+\newlabel{img:hsv_cone}{{\relax 5.6}{33}{Color cone of the HSV colorspace with marked hue (H), saturation (S) and value (v) components. RGB colorspace cube with red, green and blue components \cite {Cardani.2001}\relax }{figure.caption.24}{}}
+\citation{Davies.2017}
 \citation{Davies.2017}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Mask construction and filtering}{34}{subsection.5.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces  Example mask of 3x3 size :\textbf  {a)} Empty mask \textbf  {b)} Mask that keeps pixel value \textbf  {c)} Combination of b) with a left shift \textbf  {d)} Combination of b) with an up-shift \textbf  {e)} Isotropic mask\relax }}{34}{figure.caption.24}}
-\newlabel{morphological_ops}{{\relax 5.6}{34}{Example mask of 3x3 size :\textbf {a)} Empty mask \textbf {b)} Mask that keeps pixel value \textbf {c)} Combination of b) with a left shift \textbf {d)} Combination of b) with an up-shift \textbf {e)} Isotropic mask\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces  Example mask of 3x3 size : \textbf  {a)} Empty mask \textbf  {b)} Mask that keeps pixel value \textbf  {c)} Combination of b) with a left shift \textbf  {d)} Combination of b) with an up-shift \textbf  {e)} Isotropic mask\relax }}{34}{figure.caption.25}}
+\newlabel{morphological_ops}{{\relax 5.7}{34}{Example mask of 3x3 size : \textbf {a)} Empty mask \textbf {b)} Mask that keeps pixel value \textbf {c)} Combination of b) with a left shift \textbf {d)} Combination of b) with an up-shift \textbf {e)} Isotropic mask\relax }{figure.caption.25}{}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Pseudo-code for the the pixel value calculation\relax }}{35}{algocf.1}}
 \newlabel{mask_calc_pseudocode}{{1}{35}{Mask construction and filtering}{algocf.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Contour finding and position calculation}{36}{subsection.5.3.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.5}object tracking}{36}{subsection.5.3.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.5}Object tracking}{36}{subsection.5.3.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}Systems communication}{36}{section.5.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Work-flow for the UDP Data packages that are send from the Raspberry's to the parent PC\relax }}{37}{figure.caption.26}}
-\newlabel{img:netzwerk_diagram}{{\relax 5.7}{37}{Work-flow for the UDP Data packages that are send from the Raspberry's to the parent PC\relax }{figure.caption.26}{}}
 \citation{Tauer.2010}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Data processing on the receiver side}{38}{section.5.5}}
-\newlabel{img:hand_model_workflow}{{\caption@xref {img:hand_model_workflow}{ on input line 198}}{38}{Data processing on the receiver side}{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Overview diagram of the processing steps for the hand model data on the client side\relax }}{38}{figure.caption.27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Stereoscopic calculations}{38}{subsection.5.5.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Inter-axial distance}{39}{section*.28}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Parallax}{39}{section*.29}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Zero-point plane}{39}{section*.30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Work-flow for the UDP Data packages that are send from the Raspberry's to the parent PC\relax }}{37}{figure.caption.27}}
+\newlabel{img:netzwerk_diagram}{{\relax 5.8}{37}{Work-flow for the UDP Data packages that are send from the Raspberry's to the parent PC\relax }{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Data processing on the receiver side}{37}{section.5.5}}
+\newlabel{img:hand_model_workflow}{{\caption@xref {img:hand_model_workflow}{ on input line 206}}{37}{Data processing on the receiver side}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces Overview diagram of the processing steps for the hand model data on the "Master" side\relax }}{37}{figure.caption.28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Stereoscopic calculations}{37}{subsection.5.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Inter-axial distance}{38}{section*.29}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Parallax}{38}{section*.30}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Zero-point plane}{38}{section*.31}}
 \citation{JernejMrovlje.2008,YasirDawoodSalman.2017}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces Stereoscopic areas\relax }}{40}{figure.caption.31}}
-\newlabel{img:stereo_diagram}{{\relax 5.9}{40}{Stereoscopic areas\relax }{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Depth calculation}{40}{subsection.5.5.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Two camera setup with the marked stereoscopic areas\relax }}{39}{figure.caption.32}}
+\newlabel{img:stereo_diagram}{{\relax 5.10}{39}{Two camera setup with the marked stereoscopic areas\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Depth calculation}{39}{subsection.5.5.2}}
 \citation{JernejMrovlje.2008}
 \citation{Lansley.2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Dimmensions for calculation \cite  {JernejMrovlje.2008}.\relax }}{41}{figure.caption.32}}
-\newlabel{stereo_Dimmensions}{{\relax 5.10}{41}{Dimmensions for calculation \cite {JernejMrovlje.2008}.\relax }{figure.caption.32}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Model position update}{41}{subsection.5.5.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}Inverse Kinematics}{42}{subsection.5.5.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}System Evaluation}{43}{chapter.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces Camera viewing angles and distance values for calculation \cite  {JernejMrovlje.2008}.\relax }}{40}{figure.caption.33}}
+\newlabel{stereo_Dimmensions}{{\relax 5.11}{40}{Camera viewing angles and distance values for calculation \cite {JernejMrovlje.2008}.\relax }{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Model position update}{40}{subsection.5.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}Inverse Kinematics}{41}{subsection.5.5.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}System Evaluation}{42}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Final system setup with cameras on construction profile, color markers and visualization.\relax }}{43}{figure.caption.33}}
-\newlabel{img:complete_setup}{{\relax 6.1}{43}{Final system setup with cameras on construction profile, color markers and visualization.\relax }{figure.caption.33}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Camera hardware and control}{43}{section.6.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Camera and color calibration utility window\relax }}{44}{figure.caption.34}}
-\newlabel{fig:calibration_windows}{{\relax 6.2}{44}{Camera and color calibration utility window\relax }{figure.caption.34}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Image processing performance}{45}{section.6.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Intended work-flow of the C++ implementation with thread pool solution and ROI for high frame-rate solutions\relax }}{47}{figure.caption.35}}
-\newlabel{c++ work flow map}{{\relax 6.3}{47}{Intended work-flow of the C++ implementation with thread pool solution and ROI for high frame-rate solutions\relax }{figure.caption.35}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {\relax 6.1}{\ignorespaces measurement results for sequential processing timing measurement\relax }}{48}{table.caption.36}}
-\newlabel{tbl:sequential_performance_values}{{\relax 6.1}{48}{measurement results for sequential processing timing measurement\relax }{table.caption.36}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {\relax 6.2}{\ignorespaces Measurement values of implementation comparison\relax }}{48}{table.caption.37}}
-\newlabel{tbl:implementaion_comparison}{{\relax 6.2}{48}{Measurement values of implementation comparison\relax }{table.caption.37}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Color accuracy and ROI size}{49}{subsection.6.2.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Images showing reflection problems with orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotation of the hand, skin reflection color falls into tracking threshold.\relax }}{49}{figure.caption.38}}
-\newlabel{img:Color_reflecton_problems}{{\relax 6.4}{49}{Images showing reflection problems with orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotation of the hand, skin reflection color falls into tracking threshold.\relax }{figure.caption.38}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Finger markers}{50}{subsection.6.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces First set of shrink tube color markers \relax }}{50}{figure.caption.39}}
-\newlabel{img:first_set_color_markers}{{\relax 6.5}{50}{First set of shrink tube color markers \relax }{figure.caption.39}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces Improved larger and smaller set of shrink tube color markers \relax }}{50}{figure.caption.40}}
-\newlabel{img:second_color_markers}{{\relax 6.6}{50}{Improved larger and smaller set of shrink tube color markers \relax }{figure.caption.40}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.7}{\ignorespaces Finger marked with suitable acrylic colors\relax }}{51}{figure.caption.41}}
-\newlabel{img:final_markers}{{\relax 6.7}{51}{Finger marked with suitable acrylic colors\relax }{figure.caption.41}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.8}{\ignorespaces Bar chart showing position jitter of final colors in static position\relax }}{52}{figure.caption.42}}
-\newlabel{img:color_jitter}{{\relax 6.8}{52}{Bar chart showing position jitter of final colors in static position\relax }{figure.caption.42}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Depth measurement accuracy}{52}{subsection.6.2.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Final system setup with cameras on construction profile, color markers and visualization.\relax }}{42}{figure.caption.34}}
+\newlabel{img:complete_setup}{{\relax 6.1}{42}{Final system setup with cameras on construction profile, color markers and visualization.\relax }{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Camera hardware and control}{42}{section.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Camera and color calibration utility window\relax }}{43}{figure.caption.35}}
+\newlabel{fig:calibration_windows}{{\relax 6.2}{43}{Camera and color calibration utility window\relax }{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Image processing performance}{44}{section.6.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Intended work-flow of the C++ implementation with thread pool solution and ROI for high frame-rate solutions\relax }}{46}{figure.caption.36}}
+\newlabel{c++ work flow map}{{\relax 6.3}{46}{Intended work-flow of the C++ implementation with thread pool solution and ROI for high frame-rate solutions\relax }{figure.caption.36}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {\relax 6.1}{\ignorespaces Measurement results for sequential processing timing\relax }}{47}{table.caption.37}}
+\newlabel{tbl:sequential_performance_values}{{\relax 6.1}{47}{Measurement results for sequential processing timing\relax }{table.caption.37}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {\relax 6.2}{\ignorespaces Measurement values of implementation comparison\relax }}{47}{table.caption.38}}
+\newlabel{tbl:implementaion_comparison}{{\relax 6.2}{47}{Measurement values of implementation comparison\relax }{table.caption.38}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Color accuracy and ROI size}{48}{subsection.6.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Images showing reflection problems with orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotation of the hand, skin reflection color falls into tracking threshold.\relax }}{48}{figure.caption.39}}
+\newlabel{img:Color_reflecton_problems}{{\relax 6.4}{48}{Images showing reflection problems with orange color thresholding. a) Correct threshold with only the marker being thresholded b-c) Depending on the rotation of the hand, skin reflection color falls into tracking threshold.\relax }{figure.caption.39}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Finger markers}{49}{subsection.6.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces First set of shrink tube color markers \relax }}{49}{figure.caption.40}}
+\newlabel{img:first_set_color_markers}{{\relax 6.5}{49}{First set of shrink tube color markers \relax }{figure.caption.40}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces Improved larger and smaller set of shrink tube color markers \relax }}{49}{figure.caption.41}}
+\newlabel{img:second_color_markers}{{\relax 6.6}{49}{Improved larger and smaller set of shrink tube color markers \relax }{figure.caption.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.7}{\ignorespaces Finger marked with suitable acrylic colors\relax }}{50}{figure.caption.42}}
+\newlabel{img:final_markers}{{\relax 6.7}{50}{Finger marked with suitable acrylic colors\relax }{figure.caption.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.8}{\ignorespaces Bar chart showing position jitter of final colors in static position\relax }}{51}{figure.caption.43}}
+\newlabel{img:color_jitter}{{\relax 6.8}{51}{Bar chart showing position jitter of final colors in static position\relax }{figure.caption.43}{}}
 \citation{JernejMrovlje.2008}
 \citation{ManafA.Mahammed.2013}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.9}{\ignorespaces Chart showing the results of the disparity measurement with a plotted trend line\relax }}{53}{figure.caption.43}}
-\newlabel{char:DisparityToDistanceChart}{{\relax 6.9}{53}{Chart showing the results of the disparity measurement with a plotted trend line\relax }{figure.caption.43}{}}
-\newlabel{equ:delta_d}{{\relax 6.3}{53}{Depth measurement accuracy}{equation.6.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Depth measurement accuracy}{52}{subsection.6.2.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.9}{\ignorespaces Chart showing the results of the disparity measurement with a plotted trend line\relax }}{52}{figure.caption.44}}
+\newlabel{char:DisparityToDistanceChart}{{\relax 6.9}{52}{Chart showing the results of the disparity measurement with a plotted trend line\relax }{figure.caption.44}{}}
+\newlabel{equ:delta_d}{{\relax 6.3}{52}{Depth measurement accuracy}{equation.6.2.3}{}}
 \newlabel{equ:power_function}{{\relax 6.4}{53}{Depth measurement accuracy}{equation.6.2.4}{}}
-\newlabel{char:Depth calibration measurement}{{\caption@xref {char:Depth calibration measurement}{ on input line 167}}{55}{Depth measurement accuracy}{table.caption.44}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {\relax 6.3}{\ignorespaces Depth measurement values\relax }}{55}{table.caption.44}}
-\newlabel{tbl:Depth measurement Values}{{\relax 6.3}{55}{Depth measurement values\relax }{table.caption.44}{}}
+\newlabel{char:Depth calibration measurement}{{\caption@xref {char:Depth calibration measurement}{ on input line 170}}{54}{Depth measurement accuracy}{table.caption.45}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {\relax 6.3}{\ignorespaces Depth measurement values\relax }}{54}{table.caption.45}}
+\newlabel{tbl:Depth measurement Values}{{\relax 6.3}{54}{Depth measurement values\relax }{table.caption.45}{}}
 \citation{Casiez.2012}
 \citation{Welch.2001}
 \citation{LaViola.2003}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Data filtering}{56}{section.6.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Data filtering}{55}{section.6.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.4}Inverse kinematics algorithm}{56}{section.6.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.10}{\ignorespaces Hand model representation of the used IK framework: a) Kinematic chains and base structure, b) Hand model with visualized movement constraints\relax }}{57}{figure.caption.45}}
-\newlabel{img:hand-constraint_debug_view}{{\relax 6.10}{57}{Hand model representation of the used IK framework: a) Kinematic chains and base structure, b) Hand model with visualized movement constraints\relax }{figure.caption.45}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.11}{\ignorespaces Hand and tracker model visualization used for testing\relax }}{58}{figure.caption.46}}
-\newlabel{img:hand_rendering}{{\relax 6.11}{58}{Hand and tracker model visualization used for testing\relax }{figure.caption.46}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Grabbing test}{58}{section.6.5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Future Work}{59}{chapter.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.10}{\ignorespaces Hand model representation of the used IK framework: a) Kinematic chains and base structure, b) Hand model with visualized movement constraints\relax }}{56}{figure.caption.46}}
+\newlabel{img:hand-constraint_debug_view}{{\relax 6.10}{56}{Hand model representation of the used IK framework: a) Kinematic chains and base structure, b) Hand model with visualized movement constraints\relax }{figure.caption.46}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Grabbing test}{57}{section.6.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.11}{\ignorespaces Hand and tracker model visualization used for testing\relax }}{57}{figure.caption.47}}
+\newlabel{img:hand_rendering}{{\relax 6.11}{57}{Hand and tracker model visualization used for testing\relax }{figure.caption.47}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Future Work}{58}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion}{60}{chapter.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion}{59}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
