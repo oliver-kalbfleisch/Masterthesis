@@ -1,10 +1,10 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Masterthesis.aux
-I couldn't open style file natplain.bst
----line 4 of file Masterthesis.aux
- : \bibstyle{natplain
- :                   }
-I'm skipping whatever remains of this command
+The style file: unsrtnat.bst
 A level-1 auxiliary file: ./chapter/verzeichnisse.aux
 A level-1 auxiliary file: ./chapter/eid.aux
-I found no style file---while reading file Masterthesis.aux
-(There were 2 error messages)
+Database file #1: literature.bib
+Warning--entry type for "Grimes.1983" isn't style-file defined
+--line 200 of file literature.bib
+Warning--empty journal in AndreasAristidouandJoanLasenby.2009
+Warning--empty year in ThomasA.DeFanti.1977
+(There were 3 warnings)

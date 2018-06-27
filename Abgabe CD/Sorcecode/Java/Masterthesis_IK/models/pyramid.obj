@@ -1,0 +1,54 @@
+# Triangle consisting of 8 lines: A square at the bottom then from each vertex up to the tip
+# Top Left Back
+# v -0.5 0.5 0.0
+# Top Right Back
+# v 0.5 0.5 0.0
+# Bottom Left Back
+# v -0.5 -0.5 0.0
+# Bottom Right Back
+# v 0.5 -0.5 0.0
+# Center Front
+# v 0.0 0.0 1.0
+
+# Top Left Back
+v -0.5 0.5 0.0
+# Bottom Left Back
+v -0.5 -0.5 0.0
+
+# Top Left Back
+v -0.5 0.5 0.0
+# Top Right Back
+v 0.5 0.5 0.0
+
+# Top Right Back
+v 0.5 0.5 0.0
+# Bottom Right Back
+v 0.5 -0.5 0.0
+
+# Bottom Right Back
+v 0.5 -0.5 0.0
+# Bottom Left Back
+v -0.5 -0.5 0.0
+
+
+
+# SQUARE
+# Top Left Back
+v -0.5 0.5 0.0
+# Center Front
+v 0.0 0.0 1.0
+
+# Top Right Back
+v 0.5 0.5 0.0
+# Center Front
+v 0.0 0.0 1.0
+
+# Bottom Left Back
+v -0.5 -0.5 0.0
+# Center Front
+v 0.0 0.0 1.0
+
+# Bottom Right Back
+v 0.5 -0.5 0.0
+# Center Front
+v 0.0 0.0 1.0

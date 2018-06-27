@@ -1,0 +1,68 @@
+{
+    "version": "1",
+    "colorMode": "rgb",
+    "numTrackedColors": "6",
+    "colors": [
+        {
+            "colorID": "0",
+            "name": "changeme",
+            "rUpper": "56",
+            "rLower": "0",
+            "gUpper": "255",
+            "gLower": "82",
+            "bUpper": "56",
+            "bLower": "0"
+        },
+        {
+            "colorID": "1",
+            "name": "changeme",
+            "rUpper": "65",
+            "rLower": "0",
+            "gUpper": "255",
+            "gLower": "193",
+            "bUpper": "255",
+            "bLower": "254"
+        },
+        {
+            "colorID": "2",
+            "name": "changeme",
+            "rUpper": "255",
+            "rLower": "146",
+            "gUpper": "251",
+            "gLower": "217",
+            "bUpper": "124",
+            "bLower": "0"
+        },
+        {
+            "colorID": "3",
+            "name": "changeme",
+            "rUpper": "36",
+            "rLower": "0",
+            "gUpper": "146",
+            "gLower": "0",
+            "bUpper": "255",
+            "bLower": "254"
+        },
+
+        {
+            "colorID": "4",
+            "name": "changeme",
+            "rUpper": "229",
+            "rLower": "165",
+            "gUpper": "109",
+            "gLower": "46",
+            "bUpper": "255",
+            "bLower": "134"
+        },
+        {
+            "colorID": "5",
+            "name": "changeme",
+            "rUpper": "77",
+            "rLower": "35",
+            "gUpper": "84",
+            "gLower": "4",
+            "bUpper": "255",
+            "bLower": "238"
+        }
+    ]
+}

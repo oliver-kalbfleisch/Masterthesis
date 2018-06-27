@@ -1,18 +1,16 @@
-%\documentclass[12pt]{article}
+
 \documentclass[12pt,titlepage,a4paper,oneside]{scrbook}
 \usepackage{scrhack}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
 \usepackage{subcaption}
 \usepackage{geometry}
 \usepackage{wrapfig}
 \usepackage[strings]{underscore}
 \usepackage{textcomp}
 \usepackage{gensymb}
-\usepackage{todonotes} 
 \usepackage[english]{algorithm2e}
 \usepackage{pdflscape}
 \usepackage{caption}
@@ -32,8 +30,11 @@
 \renewcommand\cftchappagefont{\large\bfseries}
 \renewcommand\cftsecpagefont{\small}
 \usepackage{wrapfig}
+%\usepackage[style=numeric,backend=biber]{biblatex}
 \usepackage[numbers,square,sort]{natbib}
-\bibliographystyle{dinat} % or try natplain or unsrtnat
+%\usepackage{natbib}
+%\selectbiblanguage{english}
+\bibliographystyle{unsrtnat} % or try natplain or unsrtnat
 
 % Mittels [H] können Bilder genau an einer Stelle positioniert werden
 \usepackage{float}
@@ -53,6 +54,7 @@
 \usepackage[font=xipt,labelfont=bf]{caption}
 
 \begin{document}
+\selectlanguage{english}
 \frenchspacing 
 \input{./chapter/titelseite}
 \tableofcontents

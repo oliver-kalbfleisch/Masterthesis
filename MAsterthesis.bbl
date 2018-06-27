@@ -1,0 +1,456 @@
+\begin{thebibliography}{60}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bolt(1980)]{Bolt.1980}
+Richard~A. Bolt.
+\newblock Put-that-there.
+\newblock In James~J. Thomas, editor, \emph{Proceedings of the 7th annual
+  conference on Computer graphics and interactive techniques}, pages 262--270,
+  New York, NY, 1980. ACM.
+\newblock ISBN 0897910214.
+\newblock \doi{10.1145/800250.807503}.
+
+\bibitem[Lee and Kunii(1995)]{LEE.1995}
+Jintae Lee and T.~L. Kunii.
+\newblock Model-based analysis of hand posture.
+\newblock \emph{IEEE Computer Graphics and Applications}, 15\penalty0
+  (5):\penalty0 77--86, 1995.
+\newblock ISSN 02721716.
+\newblock \doi{10.1109/38.403831}.
+
+\bibitem[Korein(1985)]{KOREIN.1985}
+James~Urey Korein.
+\newblock \emph{A geometric investigation of reach: Zugl.: Pennsylvania Univ.,
+  Diss. : 1984}.
+\newblock ACM distinguished dissertations. {MIT Press}, Cambridge, Mass., 1985.
+\newblock ISBN 0262111047.
+
+\bibitem[Badler et~al.(1987)Badler, Manoochehri, and Walters]{Badler.1987}
+Norman Badler, Kamran Manoochehri, and Graham Walters.
+\newblock Articulated figure positioning by multiple constraints.
+\newblock \emph{IEEE Computer Graphics and Applications}, 7\penalty0
+  (6):\penalty0 28--38, 1987.
+\newblock ISSN 02721716.
+\newblock \doi{10.1109/MCG.1987.276894}.
+
+\bibitem[Pavlovic et~al.(1997)Pavlovic, Sharma, and Huang]{Pavlovic.1997}
+V.~I. Pavlovic, R.~Sharma, and T.~S. Huang.
+\newblock Visual interpretation of hand gestures for human-computer
+  interaction: A review.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 19\penalty0 (7):\penalty0 677--695, 1997.
+\newblock ISSN 01628828.
+\newblock \doi{10.1109/34.598226}.
+
+\bibitem[Lin et~al.(2000)Lin, Wu, and Huang]{LIN.2000}
+John Lin, Ying Wu, and T.~S. Huang.
+\newblock Modeling the constraints of human hand motion.
+\newblock In \emph{Proceedings, Workshop on Human Motion}, pages 121--126, Los
+  Alamitos, Calif, 2000. {IEEE Computer Society}.
+\newblock ISBN 0-7695-0939-8.
+\newblock \doi{10.1109/HUMO.2000.897381}.
+
+\bibitem[Rijpkema and Girard(1991)]{Rijpkema.1991}
+Hans Rijpkema and Michael Girard.
+\newblock Computer animation of knowledge-based human grasping.
+\newblock In James~J. Thomas, editor, \emph{Proceedings of the 18th annual
+  conference on Computer graphics and interactive techniques}, pages 339--348,
+  New York, NY, 1991. ACM.
+\newblock ISBN 0897914368.
+\newblock \doi{10.1145/122718.122754}.
+
+\bibitem[Denavit and R.S.Hartenberg(1955)]{Denavit.1955}
+J.~Denavit and R.S.Hartenberg.
+\newblock A kinematic notation for lower-pair mechanisms based on matrices.
+\newblock \emph{ASME J. Appl. Mech.}, pages 215--221, 1955.
+
+\bibitem[Spong and Vidyasagar(2008)]{Spong.2008}
+Mark~W. Spong and Mathukumalli Vidyasagar.
+\newblock \emph{Robot dynamics and control}.
+\newblock {John Wiley {\&} Sons}, 2008.
+
+\bibitem[{Andreas Aristidou and Joan
+  Lasenby}(2009)]{AndreasAristidouandJoanLasenby.2009}
+{Andreas Aristidou and Joan Lasenby}.
+\newblock Inverse kinematics: a review of existing techniques and introduction
+  of a new fast iterative solver: University of cambridge, department of
+  engineering.
+\newblock 2009.
+
+\bibitem[Orin and Schrader(1984)]{Orin.1984}
+David~E. Orin and William~W. Schrader.
+\newblock Efficient computation of the jacobian for robot manipulators.
+\newblock \emph{The International Journal of Robotics Research}, Vol.3\penalty0
+  (No.4), 1984.
+\newblock ISSN 0278-3649.
+
+\bibitem[Wolovich and Elliott(1984)]{Wolovich.1984}
+W.~Wolovich and H.~Elliott.
+\newblock A computational technique for inverse kinematics.
+\newblock In \emph{The 23rd IEEE Conference on Decision and Control}, pages
+  1359--1363. IEEE, 1984.
+\newblock \doi{10.1109/CDC.1984.272258}.
+
+\bibitem[Dahmen and Reusken(2008)]{Dahmen.2008}
+Wolfgang Dahmen and Arnold Reusken.
+\newblock \emph{Numerik f{\"u}r Ingenieure und Naturwissenschaftler}.
+\newblock Springer-Lehrbuch. {Springer-Verlag Berlin Heidelberg}, Berlin
+  Heidelberg, zweite, korrigierte auflage edition, 2008.
+\newblock ISBN 9783540764939.
+\newblock URL \url{http://dx.doi.org/10.1007/978-3-540-76493-9}.
+
+\bibitem[Golub and Kahan(1965)]{Golub.1965}
+Gene Golub and William Kahan.
+\newblock Calculating the singular values and pseudo-inverse of a matrix.
+\newblock \emph{ISAM}, 2\penalty0 (2):\penalty0 205--224, 1965.
+\newblock URL
+  \url{http://statistics.uchicago.edu/~lekheng/courses/302/classics/golub-kahan.pdf}.
+
+\bibitem[Wampler(1986)]{Wampler.1986}
+Charles Wampler.
+\newblock Manipulator inverse kinematic solutions based on vector formulations
+  and damped least-squares methods.
+\newblock \emph{IEEE Transactions on Systems, Man, and Cybernetics},
+  16\penalty0 (1):\penalty0 93--101, 1986.
+\newblock ISSN 0018-9472.
+\newblock \doi{10.1109/TSMC.1986.289285}.
+
+\bibitem[Nakamura and Hanafusa(1986)]{Nakamura.1986}
+Yoshihiko Nakamura and Hideo Hanafusa.
+\newblock Inverse kinematic solutions with singularity robustness for robot
+  manipulator control.
+\newblock \emph{Journal of Dynamic Systems, Measurement, and Control},
+  108\penalty0 (3):\penalty0 163, 1986.
+\newblock ISSN 00220434.
+\newblock \doi{10.1115/1.3143764}.
+
+\bibitem[Chiaverini et~al.(1994)Chiaverini, Siciliano, and
+  Egeland]{Chiaverini.1994}
+S.~Chiaverini, B.~Siciliano, and O.~Egeland.
+\newblock Review of the damped least-squares inverse kinematics with
+  experiments on an industrial robot manipulator.
+\newblock \emph{IEEE Transactions on Control Systems Technology}, 2\penalty0
+  (2):\penalty0 123--134, 1994.
+\newblock ISSN 10636536.
+\newblock \doi{10.1109/87.294335}.
+
+\bibitem[Aristidou and Lasenby(2011)]{Aristidou.2011}
+Andreas Aristidou and Joan Lasenby.
+\newblock Fabrik: A fast, iterative solver for the inverse kinematics problem.
+\newblock \emph{Graphical Models}, 73\penalty0 (5):\penalty0 243--260, 2011.
+\newblock ISSN 15240703.
+
+\bibitem[Sturman and Zeltzer(1994)]{Sturman.1994}
+D.~J. Sturman and D.~Zeltzer.
+\newblock A survey of glove-based input.
+\newblock \emph{IEEE Computer Graphics and Applications}, 14\penalty0
+  (1):\penalty0 30--39, 1994.
+\newblock ISSN 02721716.
+\newblock \doi{10.1109/38.250916}.
+
+\bibitem[Welch and Foxlin(2002)]{Welch.2002}
+G.~Welch and E.~Foxlin.
+\newblock Motion tracking: No silver bullet, but a respectable arsenal.
+\newblock \emph{IEEE Computer Graphics and Applications}, 22\penalty0
+  (6):\penalty0 24--38, 2002.
+\newblock ISSN 02721716.
+\newblock \doi{10.1109/MCG.2002.1046626}.
+
+\bibitem[Rolland et~al.(2001)Rolland, Baillot, and Goon]{Rolland.2001}
+Jannick~P. Rolland, Yohan Baillot, and Alexei~A. Goon.
+\newblock A survey of tracking technology for virtual environments: Center for
+  research and education in optics and lasers (creol) university of central
+  florida, orlando fl 32816.
+\newblock \emph{(Fundamentals of wearable computers and augumented reality},
+  2001.
+
+\bibitem[Raab et~al.(1979)Raab, Blood, Steiner, and Jones]{Raab.1979}
+Frederick Raab, Ernest Blood, Terry Steiner, and Herbert Jones.
+\newblock Magnetic position and orientation tracking system.
+\newblock \emph{IEEE Transactions on Aerospace and Electronic Systems},
+  AES-15\penalty0 (5):\penalty0 709--718, 1979.
+\newblock ISSN 0018-9251.
+\newblock \doi{10.1109/TAES.1979.308860}.
+
+\bibitem[optitrack(2017)]{optitrack.2017}
+optitrack.
+\newblock flex13mocapvolume.png (680$\times$375), 2017.
+\newblock URL
+  \url{http://www.optitrack.com/public/images/flex13MocapVolume.png}.
+
+\bibitem[Foxlin et~al.(1998)Foxlin, Harrington, and Pfeifer]{Foxlin.1998}
+Eric Foxlin, Michael Harrington, and George Pfeifer.
+\newblock Constellation.
+\newblock In Steve Cunningham, editor, \emph{Proceedings of the 25th annual
+  conference on Computer graphics and interactive techniques}, pages 371--378,
+  New York, NY, 1998. ACM.
+\newblock ISBN 0897919998.
+\newblock \doi{10.1145/280814.280937}.
+
+\bibitem[{Thomas A. DeFanti} and {Daniel J. Sandin}()]{ThomasA.DeFanti.1977}
+{Thomas A. DeFanti} and {Daniel J. Sandin}.
+\newblock Final report to the national endownment of the arts 1977.
+
+\bibitem[Grimes(1983)]{Grimes.1983}
+Gary~J. Grimes.
+\newblock Digital data entry glove interface device, 1983.
+
+\bibitem[Hernandez-Rebollar et~al.(2002)Hernandez-Rebollar, Kyriakopoulos, and
+  Lindeman]{HernandezRebollar.2002}
+Jose~L. Hernandez-Rebollar, Nicholas Kyriakopoulos, and Robert~W. Lindeman.
+\newblock The acceleglove.
+\newblock In Tom Appolloni, editor, \emph{ACM SIGGRAPH 2002 conference
+  abstracts and applications}, page 259, New York, NY, 2002. ACM.
+\newblock ISBN 1581135254.
+\newblock \doi{10.1145/1242073.1242272}.
+
+\bibitem[Kuroda et~al.(2004)Kuroda, Tabata, Goto, Ikuta, Murakami,
+  et~al.]{Kuroda.2004}
+T.~Kuroda, Y.~Tabata, A.~Goto, H.~Ikuta, M.~Murakami, et~al.
+\newblock Consumer price data-glove for sign language recognition.
+\newblock In \emph{Proc. of 5th Intl Conf. Disability, Virtual Reality Assoc.
+  Tech., Oxford, UK}, pages 253--258, 2004.
+
+\bibitem[Majeau et~al.(2012)Majeau, Borduas, Loranger, El-Iraki, Lavoie,
+  Banville, Latendresse, Beland, Daniel-Rivest, Thiaw, Bambara, Beausoleil,
+  Trottier-Lapointe, and Lapointe]{Majeau.2012}
+L.~Majeau, J.~Borduas, S.~Loranger, Y.~El-Iraki, J.~Lavoie, D.~Banville,
+  V.~Latendresse, V.~Beland, J.~Daniel-Rivest, A.~Thiaw, H.~Bambara, T.~P.
+  Beausoleil, W.~Trottier-Lapointe, and J.~Lapointe.
+\newblock Dataglove for consumer applications: Low cost dataglove using optical
+  fiber sensor.
+\newblock In \emph{7th International Workshop on Fibre and Optical Passive
+  Components (WFOPC), 2011}, pages 1--4, Piscataway, NJ, 2012. IEEE.
+\newblock ISBN 978-1-4577-0861-9.
+\newblock \doi{10.1109/WFOPC.2011.6089679}.
+
+\bibitem[Dipietro et~al.(2008)Dipietro, Sabatini, and Dario]{Dipietro.2008}
+L.~Dipietro, A.~M. Sabatini, and P.~Dario.
+\newblock A survey of glove-based systems and their applications.
+\newblock \emph{IEEE Transactions on Systems, Man, and Cybernetics, Part C
+  (Applications and Reviews)}, 38\penalty0 (4):\penalty0 461--482, 2008.
+\newblock ISSN 1094-6977.
+\newblock \doi{10.1109/TSMCC.2008.923862}.
+
+\bibitem[Wang and Popovi{\'c}(2009)]{Wang.2009}
+Robert~Y. Wang and Jovan Popovi{\'c}.
+\newblock Real-time hand-tracking with a color glove.
+\newblock In \emph{ACM transactions on graphics (TOG)}, volume~28, page~63,
+  2009.
+
+\bibitem[Duca et~al.(2007)Duca, Fredriksson, and Fjeld]{Duca.2007}
+Florin Duca, Jonas Fredriksson, and Morten Fjeld.
+\newblock Real-time 3d hand interaction: Single webcam low-cost approach.
+\newblock In \emph{Proceedings of the Workshop at the IEEE Virtual Reality 2007
+  Conference; Trends and Issues in Tracking for Virtual Environments}, pages
+  1--5, 2007.
+
+\bibitem[Fredriksson et~al.(2008)Fredriksson, Ryen, and
+  Fjeld]{Fredriksson.2008}
+Jonas Fredriksson, Sven~Berg Ryen, and Morten Fjeld.
+\newblock Real-time 3d hand-computer interaction.
+\newblock In Konrad Tollmar, editor, \emph{Proceedings of the 5th Nordic
+  conference on Human-computer interaction building bridges}, page 133, New
+  York, NY, 2008. ACM.
+\newblock ISBN 9781595937049.
+\newblock \doi{10.1145/1463160.1463175}.
+
+\bibitem[de~{La Gorce} et~al.(2008)de~{La Gorce}, Paragios, and
+  Fleet]{LaGorce.2008}
+Martin de~{La Gorce}, Nikos Paragios, and David~J. Fleet.
+\newblock Model-based hand tracking with texture, shading and self-occlusions.
+\newblock In \emph{IEEE Conference on Computer Vision and Pattern Recognition,
+  2008}, pages 1--8, Piscataway, NJ, 2008. {IEEE Service Center}.
+\newblock ISBN 978-1-4244-2242-5.
+\newblock \doi{10.1109/CVPR.2008.4587752}.
+
+\bibitem[Huttenlocher et~al.(1993)Huttenlocher, Klanderman, and
+  Rucklidge]{Huttenlocher.1993}
+D.~P. Huttenlocher, G.~A. Klanderman, and W.~J. Rucklidge.
+\newblock Comparing images using the hausdorff distance.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 15\penalty0 (9):\penalty0 850--863, 1993.
+\newblock ISSN 01628828.
+\newblock \doi{10.1109/34.232073}.
+
+\bibitem[Moeslund et~al.(2006)Moeslund, Hilton, and Kr{\"u}ger]{Moeslund.2006}
+Thomas~B. Moeslund, Adrian Hilton, and Volker Kr{\"u}ger.
+\newblock A survey of advances in vision-based human motion capture and
+  analysis.
+\newblock \emph{Computer vision and image understanding}, 104\penalty0
+  (2-3):\penalty0 90--126, 2006.
+\newblock \doi{10.1016/j.cviu.2006.08.002}.
+
+\bibitem[Moeslund and Granum(2001)]{Moeslund.2001}
+Thomas~B. Moeslund and Erik Granum.
+\newblock A survey of computer vision-based human motion capture.
+\newblock \emph{Computer vision and image understanding}, 81\penalty0
+  (3):\penalty0 231--268, 2001.
+\newblock \doi{10.1006/cviu.2000.0897}.
+
+\bibitem[Stauffer and Grimson(1999)]{Stauffer.1999}
+C.~Stauffer and W.E.L. Grimson.
+\newblock Adaptive background mixture models for real-time tracking.
+\newblock In \emph{1999 IEEE Computer Society Conference on Computer Vision and
+  Pattern Recognition}, pages 246--252, Los Alamitos, Ca, 1999. {IEEE Computer
+  Society}.
+\newblock ISBN 0-7695-0149-4.
+\newblock \doi{10.1109/CVPR.1999.784637}.
+
+\bibitem[Kristensen et~al.(Feb. 2007)Kristensen, Nilsson, and
+  {\"O}wall]{Kristensen.Feb.2007}
+Fredrik Kristensen, Peter Nilsson, and Viktor {\"O}wall.
+\newblock Background segmentation beyond rgb.
+\newblock In P.~J. Narayanan, Shree~K. Nayar, and Heung-Yeung Shum, editors,
+  \emph{Computer Vision - ACCV 2006}, pages 602--612. {Springer London},
+  Guildford, Feb. 2007.
+\newblock ISBN 978-3-540-32432-4.
+
+\bibitem[Erol et~al.(2007)Erol, Bebis, Nicolescu, Boyle, and
+  Twombly]{Erol.2007}
+Ali Erol, George Bebis, Mircea Nicolescu, Richard~D. Boyle, and Xander Twombly.
+\newblock Vision-based hand pose estimation: A review.
+\newblock \emph{Computer vision and image understanding}, 108\penalty0
+  (1-2):\penalty0 52--73, 2007.
+\newblock \doi{10.1016/j.cviu.2006.10.012}.
+
+\bibitem[Zhang(2012)]{Zhang.2012}
+Zhengyou Zhang.
+\newblock Microsoft kinect sensor and its effect.
+\newblock \emph{IEEE Multimedia}, 19\penalty0 (2):\penalty0 4--10, 2012.
+\newblock \doi{10.1109/MMUL.2012.24}.
+
+\bibitem[Weichert et~al.(2013)Weichert, Bachmann, Rudak, and
+  Fisseler]{Weichert.2013}
+Frank Weichert, Daniel Bachmann, Bartholom{\"a}us Rudak, and Denis Fisseler.
+\newblock Analysis of the accuracy and robustness of the leap motion
+  controller.
+\newblock \emph{Sensors (Basel, Switzerland)}, 13\penalty0 (5):\penalty0
+  6380--6393, 2013.
+\newblock \doi{10.3390/s130506380}.
+
+\bibitem[{Intel Corporation}(2018)]{IntelCorporation.2018}
+{Intel Corporation}.
+\newblock Intel realsense technology, 2018.
+\newblock URL \url{https://realsense.intel.com/stereo/}.
+
+\bibitem[{Jamie Shotton} et~al.(2011){Jamie Shotton}, {Andrew Fitzgibbon}, {Mat
+  Cook}, {Toby Sharp}, {Mark Finocchio}, {Richard Moore}, {Alex Kipman}, and
+  {Andrew Blake}]{JamieShotton.2011}
+{Jamie Shotton}, {Andrew Fitzgibbon}, {Mat Cook}, {Toby Sharp}, {Mark
+  Finocchio}, {Richard Moore}, {Alex Kipman}, and {Andrew Blake}, editors.
+\newblock \emph{Real-Time Human Pose Recognition in Parts from Single Depth
+  Images}, 2011.
+
+\bibitem[Oikonomidis et~al.(2011)Oikonomidis, Kyriazis, and
+  Argyros]{Oikonomidis.2011b}
+Iason Oikonomidis, Nikolaos Kyriazis, and Antonis Argyros.
+\newblock Efficient model-based 3d tracking of hand articulations using kinect.
+\newblock In Jesse Hoey, editor, \emph{Proceedings of the British Machine
+  Vision Conference 2011}, pages 101.1--101.11, Durham, 2011. {BMVA Press}.
+\newblock ISBN 1-901725-43-X.
+\newblock \doi{10.5244/C.25.101}.
+
+\bibitem[Mueller et~al.(2017)Mueller, Mehta, Sotnychenko, Sridhar, Casas, and
+  Theobalt]{Mueller.2017}
+Franziska Mueller, Dushyant Mehta, Oleksandr Sotnychenko, Srinath Sridhar, Dan
+  Casas, and Christian Theobalt.
+\newblock Real-time hand tracking under occlusion from an egocentric rgb-d
+  sensor.
+\newblock In \emph{Proceedings of International Conference on Computer Vision
+  (ICCV)}, volume~10, 2017.
+
+\bibitem[HTC(2018)]{HTC.2018}
+HTC.
+\newblock Htc vive, 2018.
+\newblock URL \url{https://www.vive.com/de/product/}.
+
+\bibitem[{Oculus VR}(2018)]{OculusVR.2018}
+LLC. {Oculus VR}.
+\newblock occulus rift, 2018.
+\newblock URL \url{http://www. oculusvr. com/rift}.
+
+\bibitem[Opencv(2018)]{OpenCV.2018}
+Opencv.
+\newblock Camera calibration, 2018.
+\newblock URL
+  \url{https://docs.opencv.org/3.1.0/dc/dbb/tutorial_py_calibration.html}.
+
+\bibitem[Hartley and Zisserman(2000)]{Hartley.2000}
+Richard Hartley and Andrew Zisserman.
+\newblock Multiple view geometry in computer vision second edition.
+\newblock \emph{Cambridge University Press}, 2000.
+
+\bibitem[Cardani(2001)]{Cardani.2001}
+Darrin Cardani.
+\newblock Adventures in hsv space.
+\newblock \emph{Laboratorio de Rob{\'o}tica, Instituto Tecnol{\'o}gico
+  Aut{\'o}nomo de M{\'e}xico}, 2001.
+
+\bibitem[Davies(2017)]{Davies.2017}
+E.~Roy Davies.
+\newblock \emph{Computer Vision: Principles, Algorithms, Applications,
+  Learning}.
+\newblock {Academic Press}, 2017.
+
+\bibitem[Tauer(2010)]{Tauer.2010}
+Holger Tauer.
+\newblock \emph{Stereo-3D: Grundlagen, Technik und Bildgestaltung}.
+\newblock {Fachverlag Schiele {\&} Schoen}, 2010.
+
+\bibitem[{Jernej Mrovlje} and {Damir Vrancic}(2008)]{JernejMrovlje.2008}
+{Jernej Mrovlje} and {Damir Vrancic}.
+\newblock Distance measuring based on stereoscopic pictures.
+\newblock \emph{9th International PhD Workshop on Systems and Control: Young
+  Generation Viewpoint}, 2008.
+\newblock URL \url{http://dsc.ijs.si/files/papers/s101%20mrovlje.pdf}.
+
+\bibitem[{Yasir Dawood Salman} et~al.(2017){Yasir Dawood Salman}, {Ku Ruhana
+  Ku-Mahamud}, and {Eiji Kamioka}]{YasirDawoodSalman.2017}
+{Yasir Dawood Salman}, {Ku Ruhana Ku-Mahamud}, and {Eiji Kamioka}, editors.
+\newblock \emph{Distance measurement for self-driving cars using stereo camera
+  in Zulikha}, 2017.
+
+\bibitem[Lansley et~al.(2016)Lansley, Vamplew, Smith, and Foale]{Lansley.2016}
+Alastair Lansley, Peter Vamplew, Philip Smith, and Cameron Foale.
+\newblock Caliko: An inverse kinematics software library implementation of the
+  fabrik algorithm.
+\newblock \emph{Journal of Open Research Software}, 4\penalty0 (1), 2016.
+\newblock ISSN 2049-9647.
+\newblock \doi{10.5334/jors.116}.
+\newblock URL
+  \url{http://openresearchsoftware.metajnl.com/articles/10.5334/jors.116/galley/192/download/}.
+
+\bibitem[{Manaf A. Mahammed} et~al.(2013){Manaf A. Mahammed}, {Amera I.
+  Melhum}, and {Faris A. Kochery}]{ManafA.Mahammed.2013}
+{Manaf A. Mahammed}, {Amera I. Melhum}, and {Faris A. Kochery}.
+\newblock Object distance measurement by stereo vision.
+\newblock \emph{International Journal of Science and Applied Information
+  Technology (IJSAIT)}, 2, 2013.
+
+\bibitem[Casiez et~al.(2012)Casiez, Roussel, and Vogel]{Casiez.2012}
+G{\'e}ry Casiez, Nicolas Roussel, and Daniel Vogel.
+\newblock 1 euro filter.
+\newblock In Joseph~A. Konstan, Ed~H. Chi, and Kristina H{\"o}{\"o}k, editors,
+  \emph{CHI 2012, it's the experience}, page 2527, New York, NY, 2012. ACM.
+\newblock ISBN 9781450310154.
+\newblock \doi{10.1145/2207676.2208639}.
+
+\bibitem[Welch and Bishop(2001)]{Welch.2001}
+G.~Welch and G.~Bishop.
+\newblock An introduction to the kalman filter; siggraph 2001 course 8; los
+  angeles, ca; aug. 12-17, 2001; http.
+\newblock \emph{info. acm. org/pubs/toc/CRnotice. html}, pages 1--80, 2001.
+
+\bibitem[LaViola(2003)]{LaViola.2003}
+Joseph~J. LaViola.
+\newblock Double exponential smoothing: An alternative to kalman filter-based
+  predictive tracking.
+\newblock In \emph{Proceedings of the workshop on Virtual environments 2003},
+  pages 199--206, 2003.
+
+\end{thebibliography}

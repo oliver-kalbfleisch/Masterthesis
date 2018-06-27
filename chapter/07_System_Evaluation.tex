@@ -92,7 +92,7 @@ Empirical evaluations showed, that for the used tracking space, a ROI region siz
 \subsection{Finger markers}
 \begin{wrapfigure}[19]{r}{0.3\textwidth} 
 \centering
-\includegraphics[width=\textwidth/2,angle=-90]{images/color_markers_hand.jpg}
+\includegraphics[width=0.5\textwidth,angle=-90]{images/color_markers_hand.jpg}
 \caption{First set of shrink tube color markers }
 \label{img:first_set_color_markers}
 \end{wrapfigure}
@@ -101,7 +101,7 @@ The used material of the colored shrink tubing was selected because it seemed to
 \\\\As both markers showed the above described problem of mixing marker area with possible skin reflections, an improvement to the markers was applied. At both ends of the larger markers, a piece of gray colored tape was applied to create an artificial border for the tracking algorithm.
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth/2]{images/small_and_improved_markers.jpg}
+\includegraphics[width=0.5\textwidth]{images/small_and_improved_markers.jpg}
 \caption{Improved larger and smaller set of shrink tube color markers }
 \label{img:second_color_markers}
 \end{figure}
@@ -115,7 +115,7 @@ The idea behind this solution was to create a fixed border between the color are
 \\Another approach that was tested was the usage of matte acrylic paint to cover parts of the finger. The paint comes with the benefit of being easily to apply to the finger. Acrylic paint is available in much more color variations than the shrink tube. The finger coating is dry in under a minute after application. Adaption for finger size is automatically included in the application process. If the tracking system does not need to evaluate for hand rotation, i.e. the working principle is a top on view, a nail polish style application of the color on the fingernail can be sufficient for the tracking system. The thumb needs to be treated separately, as it has more rotation capabilities than the other fingers. It should be marked completely on all sides to achieve a constant tracking. If hand rotation is tracked, the other fingers should be completely marked as well.
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth/2]{images/final_finger_markers.jpg}
+\includegraphics[width=0.5\textwidth]{images/final_finger_markers.jpg}
 \caption{Finger marked with suitable acrylic colors}
 \label{img:final_markers}
 \end{figure}
@@ -200,7 +200,8 @@ The finger marker base jitter measurements showed that the systems can only supp
 To counter this data jitter, the incoming data-set is filtered on the "Master" in several steps with the \textit{1 euro filter} presented by Casiez et al. \cite{Casiez.2012}. It uses a first order low-pass filter with an adaptive cutoff frequency to filter noisy signals for high precision and responsiveness. This means that at low speeds, a low cutoff reduces jitter at the expense of lag. At high speeds, the cutoff is increased to reduce lag rather than jitter.\\
 The filter was chosen, beacuase of a relative simple and easy implementation as well as an uncomplicated setup and tuning process. It also produces faster and better results in comparsion to the normally used \textit{Kalman filter} \cite{Welch.2001}, \textit{moving average filter} or \textit{low-pass filters and exponential smoothing filters} \cite{LaViola.2003}.\\ The filter needs three base values to function correctly. The first one is the frequency at which the data values are delivered. This can easily be measured from the time stamp differences of the incoming data packages. The other two values are the minimum cutoff frequency$f_{c_{min}} $ of the low pass filter and the slope of the filter curve $\beta$.
 \\These values have to be calibrated in a manual process for each marker. In the first step the value of $f_{c_{min}} $ is set to one and $\beta$ is set to zero. The markers are held in a static position or moved very slowly to check for jitter. The value of $f_{c_{min}} $ is then adapted to a point where the jitter is minimized without creating to much lag for these slow movements. In the second step, the tracker is moved fast and the $\beta$ value is increased until lag for fast movements is minimized.
-\\\\ In a first step, the incoming data for each finger and the base marker are filtered separately and component-wise. This allows for specific fine tuning of the filter values, as each marker shows different jitter. The incoming values are also passed to the depth calculation algorithm where the z position of the respective marker is calculated. The result is also filtered before all components are written into the final result position vector.
+\\\\ In a first step, the incoming data for each finger and the base marker are filtered separately and component-wise. This allows for specific fine tuning of the filter values, as each marker shows different jitter. The incoming values are also passed to the depth calculation algorithm where the z position of the respective marker is calculated. The result is also filtered before all components are written into the final result position vector.\\
+The individual filter application to all values resulted in a much smoother and less jittering optical result in comparison to the raw tracking values.
 \newpage
 \section{Inverse kinematics algorithm}
 Figure \ref{img:hand-constraint_debug_view} shows the a debugging representation of the used kinematic structure of the \textit{Caliko} framework. The non-black colored lines of the left picture show the kinematic chains for each finger. The black colored lines are used as an offset structure from the hand base marker.
@@ -219,8 +220,8 @@ To test the tracking limitations of the system , a grabbing test with the tracke
 Before the test was started, it was ensured that the infrared signals from the object tracker do not interfere with the camera images for tracking. 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{images/Hand_rendering_view.png}
-\caption{Hand and tracker model visualization used for testing}
+\includegraphics[width=0.8\textwidth]{images/occlusion_set.jpg}
+\caption{Grabbing test results: Upper image pair shows grabbing of tracker without finger occlusion. The position of the hand and the fingers is correct. The bottom image pair shows the mentioned marker occlusion problem. The tracker  position is correct but the finger tracking is lost and the positoin of the hand incorrect.}
 \label{img:hand_rendering}
 \end{figure}
 The built-in infrared filters of the camera manage to filter out the signals, as no image distortion was visible. The test chore was to pick up the tracked marker based on the position of the marker representation in digital space.

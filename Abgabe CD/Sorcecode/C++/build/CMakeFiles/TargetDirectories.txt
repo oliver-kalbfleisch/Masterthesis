@@ -1,0 +1,6 @@
+/home/pi/Desktop/opencv_project/build/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/opencv_project/build/CMakeFiles/edit_cache.dir
+/home/pi/Desktop/opencv_project/build/CMakeFiles/tracker.dir
+/home/pi/Desktop/opencv_project/build/trackingCore/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/opencv_project/build/trackingCore/CMakeFiles/edit_cache.dir
+/home/pi/Desktop/opencv_project/build/trackingCore/CMakeFiles/trackingCore.dir

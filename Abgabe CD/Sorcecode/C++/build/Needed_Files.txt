@@ -1,0 +1,5 @@
+TO be able t run the Program, the following files are needed:
+
+-cameraCalib.json ->Stores camera calibration values and is used at program startup
+
+-colorCalibration.json -> Stores the color value boundaries for the used color markers and is used at startup

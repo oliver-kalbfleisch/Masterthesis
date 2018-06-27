@@ -93,12 +93,12 @@ After the segmentation of foreground and background is achieved,the hand pose ha
 \textbf{Single frame pose estimation} in contrast to the previous method, does not utilize assumptions on time coherence. At each iteration of the search algorithm the whole data set is searched for a match.  On one side, this introduces more computational work for achieving a match. On the other side, this lowers the amount of constraints that have to be put on the user when initializing the tracker system. Furthermore, the possibly rapid motion of the human hands and fingers acts as failure factor for time coherence dependent approaches, where a single frame approach is not as vulnerable.
 \section{State of the art technologies}
 \label{sec:state_of_the_art}
-\begin{wrapfigure}[12]{r}{\textwidth/2}
+\begin{wrapfigure}[12]{r}{0.5\textwidth}
 \label{img:kinect}
-\includegraphics[width=\textwidth/2]{images/kinnect.JPG} 
+\includegraphics[width=0.5\textwidth]{images/kinnect.JPG} 
 \caption{Microsoft kinect camera system with the three used sensor units \cite{Zhang.2012}}
 \end{wrapfigure}
-The currently most used type of system for tracking hardware is a setup of a combination of RGB and infrared sensors for imaging an depth measurement (RGB-D). The first commercial system using this technology is the \textit{ Microsoft Kinect} system\cite{Zhang.2012}. The system uses a infrared projector and an infrared sensor to measure distances in the captured scene.\\
+The currently most used type of system for tracking hardware is a setup of a combination of RGB and infrared sensors for imaging an depth measurement (RGB-D). The first commercial system using this technology is the \textit{ Microsoft Kinect} system \cite{Zhang.2012}. The system uses a infrared projector and an infrared sensor to measure distances in the captured scene.\\
 State of the art systems that also incorporate depth sensing through infrared distance measurement are the \textit{Intel RealSense} system and the more consumer focused \textit{Leap Motion Controller}. The\textit{ Leap Motion Controller} does not supply a separate RGB sensor and does therefore only provide depth measurement data within a specific range from the device \cite{Weichert.2013}. It combines two infrared cameras with three infrared emitter LED's.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/leapMotion.JPG}

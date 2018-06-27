@@ -1,0 +1,11 @@
+The make build is setup to run on the Raspberry and compile for the ARM Processor architecture of the PI.
+
+To build the Project:
+
+-Go into the the build folder and run "make" .This should start the compilation process.
+- If the compilation is successfull, the programm can be run by calling "./tracker" from inside the build folder.
+
+
+The programs main Sourcecode is Located in the main.cpp class and all needed dependencies can be found in the main.h headder file.
+
+
